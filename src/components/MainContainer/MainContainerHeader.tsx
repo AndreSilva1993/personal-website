@@ -23,9 +23,9 @@ const HeaderAuthorCircle = styled.span`
   text-align: center;
   margin-right: 0.8rem;
   border-radius: 50%;
-  font-weight: ${({ theme }) => theme.fontWeights.boldest};
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.blue};
+  font-weight: ${({ theme }) => theme.fontWeights.boldest};
 `;
 
 const HeaderAuthorName = styled.span`

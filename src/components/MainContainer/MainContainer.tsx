@@ -5,8 +5,7 @@ const Div = styled.div`
   border-radius: 40px;
   margin: 3% auto;
   width: 1240px;
-  box-sizing: border-box;
-  padding: 4rem 5rem;
+  padding: 4rem 7rem;
   background-color: ${({ theme }) => theme.colors.black};
 `;
 

@@ -1,3 +1,5 @@
+import { Author } from '@src/components/Author';
+
 export default function App() {
-  return <div>a</div>;
+  return <Author />;
 }
