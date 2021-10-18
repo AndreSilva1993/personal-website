@@ -87,20 +87,13 @@ video {
   vertical-align: baseline;
 }
 
-html {
-  font-size: 10px;
-  font-family: 'Poppins', sans-serif;
-  background-color: #007ced;
-  background-image: url(/images/page-background.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 html,
-body {
+body,
+#__next {
   width: 100vw;
   height: 100vh;
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 * {

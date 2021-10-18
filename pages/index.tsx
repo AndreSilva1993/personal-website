@@ -1,5 +1,5 @@
-import { Author } from '@src/components/Author';
+import { Homepage } from '@src/components/Pages/Homepage';
 
 export default function App() {
-  return <Author />;
+  return <Homepage />;
 }

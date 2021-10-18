@@ -2,7 +2,7 @@ import { ThemeProvider } from '@emotion/react';
 
 import '@src/theme/global-styles.css';
 import { theme } from '@src/theme';
-import { MainContainer } from '@src/components/MainContainer';
+import { MainContainer } from '@src/components/MainContainer/MainContainer';
 
 export default function App({ Component, props }) {
   return (
