@@ -76,10 +76,17 @@ const TechnologyLi = styled.li`
   align-items: center;
 `;
 
+const TechnologyImageDiv = styled.div`
+  padding: 0.5rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+`;
+
 const TechnologyImage = styled(Image)`
   width: 3rem;
   height: 3rem;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 `;
 
 const StyledProgressBar = styled(ProgressBar)`
@@ -97,14 +104,22 @@ const About: FC = () => {
     return Math.abs(birthdayDateDiff.getUTCFullYear() - 1970);
   }, []);
 
-  const technologies = useMemo(
+  const technologiesData = useMemo(
     () => [
       { image: 'react.svg', name: 'ReactJS', value: 100 },
+      { image: 'typescript.svg', name: 'TypeScript', value: 100 },
       { image: 'javascript.svg', name: 'JavaScript', value: 100 },
       { image: 'css.svg', name: 'CSS', value: 100 },
       { image: 'html.svg', name: 'HTML 5', value: 100 },
-      { image: 'node.svg', name: 'Node.js', value: 80 },
       { image: 'next.svg', name: 'Next.js', value: 100 },
+      { image: 'node.svg', name: 'Node.js', value: 80 },
+      { image: 'jest.svg', name: 'Jest', value: 80 },
+      { image: 'polymer.svg', name: 'Polymer', value: 70 },
+      { image: 'rails.svg', name: 'Ruby On Rails', value: 60 },
+      { image: 'php.svg', name: 'PHP', value: 50 },
+      { image: 'postgresql.svg', name: 'PostgreSQL', value: 50 },
+      { image: 'mysql.svg', name: 'MySQL', value: 50 },
+      { image: 'angular.svg', name: 'Angular', value: 40 },
     ],
     []
   );
@@ -142,7 +157,7 @@ const About: FC = () => {
 
       <H1>{t('about.technologies')}</H1>
       <TechnologyUl>
-        {technologies.map(({ name, image, value }, index) => (
+        {technologiesData.map(({ name, image, value }, index) => (
           <TechnologyLi key={name}>
             <TechnologyImage src={`/images/${image}`} />
             {name}

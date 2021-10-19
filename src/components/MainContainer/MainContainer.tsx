@@ -33,6 +33,7 @@ const PageContainerDiv = styled.div`
   width: 100%;
   max-width: 96rem;
   padding: 10rem 4rem;
+  height: fit-content;
 `;
 
 const MainContainer: FC = ({ children }) => {
