@@ -25,6 +25,7 @@ const RightSideDiv = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
+  overflow: auto;
   background-color: ${({ theme }) => theme.colors.darkGrey};
 `;
 

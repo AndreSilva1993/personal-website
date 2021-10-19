@@ -1,0 +1,18 @@
+{
+  "about": {
+    "name": "André Silva - Web Developer",
+    "description": "Hello, I'm a web developer located in Oporto, Portugal. Forever a surfing and travel lover while coding away in his Macbook Pro - which is obviously owned by the company I currently work at.",
+    "info": {
+      "birthday": "Birthday:",
+      "birthdayAnswer": "14/10/1993",
+      "age": "Age:",
+      "email": "Email:",
+      "emailAnswer": "andreemanuel.1993@gmail.com",
+      "location": "Location:",
+      "locationAnswer": "Matosinhos, Oporto, Portugal",
+      "study": "Study:",
+      "studyAnswer": "Instituto Engenharia do Porto"
+    },
+    "technologies": "Technologies"
+  }
+}

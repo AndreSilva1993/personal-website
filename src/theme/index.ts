@@ -8,15 +8,8 @@ import { fontWeights } from './fontWeights';
 
 declare module '@emotion/react' {
   export interface Theme {
-    colors: {
-      black: string;
-      white: string;
-      darkGrey: string;
-      lightGrey: string;
-    };
-    fontWeights: {
-      bold: number;
-    };
+    colors: typeof colors;
+    fontWeights: typeof fontWeights;
   }
 }
 
