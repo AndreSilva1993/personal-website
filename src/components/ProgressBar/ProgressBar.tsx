@@ -7,7 +7,7 @@ import type { FC } from 'react';
 const ProgressBarWrapper = styled.div<{ delayAnimation: number }>(
   ({ theme }) => css`
     position: relative;
-    background-color: ${theme.colors.lightGrey};
+    background-color: ${theme.colors.grey};
   `
 );
 

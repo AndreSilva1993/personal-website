@@ -1,26 +1,44 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 import { NavigationMenu } from '@src/components/NavigationMenu/NavigationMenu';
 
 import type { FC } from 'react';
 
-const ContainerDiv = styled.div`
-  display: flex;
-  height: 100%;
-  width: 100%;
-`;
+const ContainerDiv = styled.div(
+  ({ theme }) => css`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
-const LeftSideDiv = styled.div`
-  width: 45rem;
-  height: 100%;
-  padding: 10rem;
-  background-color: ${({ theme }) => theme.colors.black};
+    ${theme.breakpoints.desktop} {
+      flex-direction: row;
+    }
+  `
+);
 
-  display: flex;
-  align-items: center;
-`;
+const NavigationDiv = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: ${theme.colors.black};
 
-const RightSideDiv = styled.div`
+    width: 100%;
+    height: 7rem;
+    padding: 2rem 4rem;
+
+    ${theme.breakpoints.desktop} {
+      width: 45rem;
+      height: 100%;
+      padding: 10rem;
+      justify-content: flex-start;
+    }
+  `
+);
+
+const ContentDiv = styled.div`
   flex-grow: 1;
   height: 100%;
   display: flex;
@@ -39,12 +57,12 @@ const PageContainerDiv = styled.div`
 const MainContainer: FC = ({ children }) => {
   return (
     <ContainerDiv>
-      <LeftSideDiv>
+      <NavigationDiv>
         <NavigationMenu />
-      </LeftSideDiv>
-      <RightSideDiv>
+      </NavigationDiv>
+      <ContentDiv>
         <PageContainerDiv>{children}</PageContainerDiv>
-      </RightSideDiv>
+      </ContentDiv>
     </ContainerDiv>
   );
 };

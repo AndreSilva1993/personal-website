@@ -159,7 +159,7 @@ const About: FC = () => {
       <TechnologyUl>
         {technologiesData.map(({ name, image, value }, index) => (
           <TechnologyLi key={name}>
-            <TechnologyImage src={`/images/${image}`} />
+            <TechnologyImage src={`/images/technologies/${image}`} />
             {name}
             <StyledProgressBar value={value} delayAnimation={index} />
           </TechnologyLi>
