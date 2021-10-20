@@ -10,7 +10,7 @@ const Ul = styled.ul(
     font-size: 1.5rem;
     font-weight: ${theme.fontWeights.bold};
 
-    ${theme.breakpoints.desktop} {
+    ${theme.breakpoints.large} {
       flex-direction: column;
     }
   `
@@ -25,7 +25,7 @@ const Li = styled.li(
       margin-right: 2rem;
     }
 
-    ${theme.breakpoints.desktop} {
+    ${theme.breakpoints.large} {
       &:not(:last-of-type) {
         margin-right: 0;
         margin-bottom: 2rem;

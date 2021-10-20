@@ -12,7 +12,7 @@ const ContainerDiv = styled.div(
     display: flex;
     flex-direction: column;
 
-    ${theme.breakpoints.desktop} {
+    ${theme.breakpoints.large} {
       flex-direction: row;
     }
   `
@@ -29,8 +29,8 @@ const NavigationDiv = styled.div(
     height: 7rem;
     padding: 2rem 4rem;
 
-    ${theme.breakpoints.desktop} {
-      width: 45rem;
+    ${theme.breakpoints.large} {
+      width: 40rem;
       height: 100%;
       padding: 10rem;
       justify-content: flex-start;

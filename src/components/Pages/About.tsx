@@ -22,16 +22,24 @@ const H1 = styled.h1(
   `
 );
 
-const AboutDiv = styled.div`
-  display: flex;
-  font-size: 1.5rem;
-  margin-bottom: 5rem;
-`;
+const AboutDiv = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+
+    ${theme.breakpoints.large} {
+      flex-direction: row;
+    }
+  `
+);
 
 const P = styled.p(
   ({ theme }) => css`
     font-style: italic;
     line-height: 3rem;
+    text-align: justify;
     font-weight: ${theme.fontWeights.normal};
     color: ${theme.colors.lightGrey};
 
@@ -40,23 +48,40 @@ const P = styled.p(
   `
 );
 
-const PersonalInfoUl = styled.ul`
-  flex-grow: 1;
-`;
-
-const PersonalInfoLi = styled.li(
+const PersonalInfoUl = styled.ul(
   ({ theme }) => css`
-    margin-bottom: 1.5rem;
-    color: ${theme.colors.lightGrey};
+    flex-grow: 1;
+
+    ${theme.breakpoints.small} {
+      margin-top: 3rem;
+    }
   `
 );
 
-const Span = styled.span(
+const PersonalInfoLi = styled.li(
   ({ theme }) => css`
-    min-width: 10rem;
-    display: inline-block;
+    color: ${theme.colors.lightGrey};
+
+    &:not(:last-of-type) {
+      margin-bottom: 1.5rem;
+    }
+
+    ${theme.breakpoints.large} {
+      display: flex;
+      justify-content: space-between;
+    }
+  `
+);
+
+const PersonalInfoSpan = styled.span(
+  ({ theme }) => css`
     color: ${theme.colors.white};
     font-weight: ${theme.fontWeights.boldest};
+
+    ${theme.breakpoints.small} {
+      min-width: 10rem;
+      display: inline-block;
+    }
   `
 );
 
@@ -68,17 +93,14 @@ const TechnologyUl = styled.ul(
     display: grid;
     grid-gap: 3rem;
     grid-template-columns: repeat(2, 1fr);
+
+    ${theme.breakpoints.extraSmall} {
+      grid-template-columns: 1fr;
+    }
   `
 );
 
 const TechnologyLi = styled.li`
-  display: flex;
-  align-items: center;
-`;
-
-const TechnologyImageDiv = styled.div`
-  padding: 0.5rem;
-  background-color: white;
   display: flex;
   align-items: center;
 `;
@@ -97,12 +119,6 @@ const StyledProgressBar = styled(ProgressBar)`
 
 const About: FC = () => {
   const { t } = useTranslation();
-
-  const age = useMemo(() => {
-    var birthdayDateDiff = new Date(Date.now() - new Date(1993, 9, 14).getTime());
-
-    return Math.abs(birthdayDateDiff.getUTCFullYear() - 1970);
-  }, []);
 
   const technologiesData = useMemo(
     () => [
@@ -133,23 +149,19 @@ const About: FC = () => {
 
         <PersonalInfoUl>
           <PersonalInfoLi>
-            <Span>{t('about.info.birthday')}</Span>
+            <PersonalInfoSpan>{t('about.info.birthday')}</PersonalInfoSpan>
             {t('about.info.birthdayAnswer')}
           </PersonalInfoLi>
           <PersonalInfoLi>
-            <Span>{t('about.info.age')}</Span>
-            {age}
-          </PersonalInfoLi>
-          <PersonalInfoLi>
-            <Span>{t('about.info.email')}</Span>
+            <PersonalInfoSpan>{t('about.info.email')}</PersonalInfoSpan>
             {t('about.info.emailAnswer')}
           </PersonalInfoLi>
           <PersonalInfoLi>
-            <Span>{t('about.info.location')}</Span>
+            <PersonalInfoSpan>{t('about.info.location')}</PersonalInfoSpan>
             {t('about.info.locationAnswer')}
           </PersonalInfoLi>
           <PersonalInfoLi>
-            <Span>{t('about.info.study')}</Span>
+            <PersonalInfoSpan>{t('about.info.study')}</PersonalInfoSpan>
             {t('about.info.studyAnswer')}
           </PersonalInfoLi>
         </PersonalInfoUl>
