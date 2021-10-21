@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 import { fontWeights } from '@src/theme/fontWeights';
@@ -7,7 +8,7 @@ class AppDocument extends Document {
     const requiredFontWeights = Object.values(fontWeights).join(';');
 
     return (
-      <Html>
+      <Html lang={i18next.language}>
         <Head>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />

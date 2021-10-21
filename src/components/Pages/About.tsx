@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
 
-import { PageContainer } from './PageContainer';
 import { Image } from '@src/components/Image/Image';
 import { ProgressBar } from '@src/components/ProgressBar/ProgressBar';
 
@@ -43,8 +42,10 @@ const P = styled.p(
     font-weight: ${theme.fontWeights.normal};
     color: ${theme.colors.lightGrey};
 
-    flex: 0 0 55%;
-    margin-right: 5rem;
+    ${theme.breakpoints.large} {
+      flex: 0 0 55%;
+      margin-right: 5rem;
+    }
   `
 );
 
@@ -141,9 +142,9 @@ const About: FC = () => {
   );
 
   return (
-    <PageContainer>
-      <StyledImage src="http://tokyo.ibthemespro.com/assets/img/slider/1.jpg" />
-      <H1>{t('about.name')}</H1>
+    <>
+      <StyledImage src="http://tokyo.ibthemespro.com/assets/img/slider/1.jpg" alt="About" />
+      <H1>{t('about.title')}</H1>
       <AboutDiv>
         <P>{t('about.description')}</P>
 
@@ -171,13 +172,13 @@ const About: FC = () => {
       <TechnologyUl>
         {technologiesData.map(({ name, image, value }, index) => (
           <TechnologyLi key={name}>
-            <TechnologyImage src={`/images/technologies/${image}`} />
+            <TechnologyImage src={`/images/technologies/${image}`} alt={name} />
             {name}
             <StyledProgressBar value={value} delayAnimation={index} />
           </TechnologyLi>
         ))}
       </TechnologyUl>
-    </PageContainer>
+    </>
   );
 };
 

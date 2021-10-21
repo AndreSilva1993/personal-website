@@ -7,8 +7,8 @@ const Img = styled.img`
   width: 100%;
 `;
 
-const Image: FC<ImageProps> = ({ src, ...remainingProps }) => {
-  return <Img src={src} {...remainingProps} />;
+const Image: FC<ImageProps> = ({ src, alt, ...remainingProps }) => {
+  return <Img src={src} alt={alt} {...remainingProps} />;
 };
 
 export { Image };

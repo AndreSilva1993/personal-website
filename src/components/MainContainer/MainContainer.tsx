@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
+import { PageContainer } from '@src/components/Pages/PageContainer';
 import { NavigationMenu } from '@src/components/NavigationMenu/NavigationMenu';
 
 import type { FC } from 'react';
@@ -61,7 +62,9 @@ const MainContainer: FC = ({ children }) => {
         <NavigationMenu />
       </NavigationDiv>
       <ContentDiv>
-        <PageContainerDiv>{children}</PageContainerDiv>
+        <PageContainerDiv>
+          <PageContainer>{children}</PageContainer>
+        </PageContainerDiv>
       </ContentDiv>
     </ContainerDiv>
   );
