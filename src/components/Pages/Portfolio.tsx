@@ -1,9 +1,12 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import { FC } from 'react';
+import type { FC } from 'react';
+
+type AnimationDirection = 'left' | 'right' | 'top' | 'bottom';
 
 const PortfolioHeading = styled.h1(
   ({ theme }) => css`
@@ -26,53 +29,53 @@ const PortfolioGridDiv = styled.div(
   `
 );
 
-const PortfolioItemSpan = styled.span(
+const PortfolioItemWrapperDiv = styled.div(
+  () => css`
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+  `
+);
+
+const PortfolioItemDiv = styled.div<{ backgroundImage: string; active: boolean }>(
+  ({ backgroundImage, active }) => css`
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url(${backgroundImage});
+
+    transform: scale(1);
+    transition: transform 300ms ease-out;
+
+    ${active &&
+    css`
+      transform: scale(1.1);
+    `}
+  `
+);
+
+const PortfolioItemNameDiv = styled(motion.div)(
   ({ theme }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 5rem;
+    height: 100%;
     bottom: 0;
     position: absolute;
     font-size: 1.8rem;
     color: ${theme.colors.black};
     font-weight: ${theme.fontWeights.boldest};
     background-color: rgba(255, 255, 255, 0.6);
-
-    transform: translateY(100%);
-    transition: transform 400ms ease-out;
   `
 );
-
-const PortfolioItemDiv = styled.div<{ backgroundImage: string }>(
-  ({ backgroundImage }) => css`
-    padding-bottom: 100%;
-    background-size: cover;
-    background-position: center;
-    background-image: url(${backgroundImage});
-    transition: transform 400ms ease-out;
-  `
-);
-
-const PortfolioItemWrapperDiv = styled.div`
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-
-  &:hover {
-    ${PortfolioItemDiv} {
-      transform: scale(1.1);
-    }
-
-    ${PortfolioItemSpan} {
-      transform: translateY(0);
-    }
-  }
-`;
 
 const Portfolio: FC = () => {
   const { t } = useTranslation();
+
+  const [activeItem, setActiveItem] = useState<number>();
+  const [exitAnimationDirection, setExitAnimationDirection] = useState<AnimationDirection>();
+  const [enterAnimationDirection, setEnterAnimationDirection] = useState<AnimationDirection>();
 
   const portfolioItems = useMemo(
     () => [
@@ -84,14 +87,83 @@ const Portfolio: FC = () => {
     []
   );
 
+  function getAnimationDirection({
+    target,
+    clientX,
+    clientY,
+  }: React.MouseEvent): AnimationDirection {
+    const { x, y, height, width } = (target as HTMLElement).getBoundingClientRect();
+
+    const elementBounds = [
+      { direction: 'top', value: y - clientY },
+      { direction: 'right', value: x + width - clientX },
+      { direction: 'bottom', value: y + height - clientY },
+      { direction: 'left', value: x - clientX },
+    ] as Array<{ direction: AnimationDirection; value: number }>;
+
+    return elementBounds.reduce(
+      (closestElementBound, elementBound) =>
+        Math.abs(elementBound.value) < Math.abs(closestElementBound.value)
+          ? elementBound
+          : closestElementBound,
+      elementBounds[0]
+    ).direction;
+  }
+
+  function getAnimationProps(direction: AnimationDirection) {
+    switch (direction) {
+      case 'left':
+        return { x: '-100%' };
+      case 'right':
+        return { x: '100%' };
+      case 'top':
+        return { y: '-100%' };
+      case 'bottom':
+        return { y: '100%' };
+    }
+  }
+
+  function handleItemMouseEnter(event: React.MouseEvent<HTMLElement>, index: number) {
+    setEnterAnimationDirection(getAnimationDirection(event));
+    setActiveItem(index);
+  }
+
+  function handleItemMouseLeave(event: React.MouseEvent<HTMLElement>) {
+    setExitAnimationDirection(getAnimationDirection(event));
+    setTimeout(() => {
+      setActiveItem(undefined);
+    }, 0);
+  }
+
+  const exitAnimationProps = getAnimationProps(exitAnimationDirection);
+  const enterAnimationProps = getAnimationProps(enterAnimationDirection);
+
   return (
     <>
       <PortfolioHeading>{t('portfolio.title')}</PortfolioHeading>
       <PortfolioGridDiv>
-        {portfolioItems.map(({ name, image }) => (
-          <PortfolioItemWrapperDiv key={name}>
-            <PortfolioItemDiv backgroundImage={image}></PortfolioItemDiv>
-            <PortfolioItemSpan>{name}</PortfolioItemSpan>
+        {portfolioItems.map(({ name, image }, index) => (
+          <PortfolioItemWrapperDiv
+            key={name}
+            onMouseLeave={handleItemMouseLeave}
+            onMouseEnter={(event) => handleItemMouseEnter(event, index)}
+          >
+            <PortfolioItemDiv
+              backgroundImage={image}
+              active={activeItem === index}
+            ></PortfolioItemDiv>
+            <AnimatePresence>
+              {activeItem === index ? (
+                <PortfolioItemNameDiv
+                  animate={{ x: 0, y: 0 }}
+                  exit={exitAnimationProps}
+                  initial={enterAnimationProps}
+                  transition={{ ease: 'easeOut', duration: 0.3 }}
+                >
+                  {name}
+                </PortfolioItemNameDiv>
+              ) : null}
+            </AnimatePresence>
           </PortfolioItemWrapperDiv>
         ))}
       </PortfolioGridDiv>
