@@ -28,12 +28,10 @@ const PhotoDiv = styled.div`
 
 const StyledImage = styled(Image)``;
 
-const Homepage: FC = () => {
-  return (
-    <PhotoDiv>
-      <StyledImage src="http://tokyo.ibthemespro.com/static/media/1.6bd902c9.jpg" />
-    </PhotoDiv>
-  );
-};
+const Homepage: FC = () => (
+  <PhotoDiv>
+    <StyledImage src="http://tokyo.ibthemespro.com/static/media/1.6bd902c9.jpg" />
+  </PhotoDiv>
+);
 
 export { Homepage };

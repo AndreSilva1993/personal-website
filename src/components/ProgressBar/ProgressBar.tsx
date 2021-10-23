@@ -18,18 +18,16 @@ const ProgressBarDiv = styled(motion.div)(
   `
 );
 
-const ProgressBar: FC<ProgressBarProps> = ({ value, delayAnimation, ...remainingProps }) => {
-  return (
-    <ProgressBarWrapper delayAnimation={delayAnimation} {...remainingProps}>
-      <ProgressBarDiv
-        style={{ transformOrigin: 'left' }}
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: `${value}%` }}
-        transition={{ duration: 1, delay: 0.5 + 0.1 * delayAnimation, ease: 'easeOut' }}
-      />
-    </ProgressBarWrapper>
-  );
-};
+const ProgressBar: FC<ProgressBarProps> = ({ value, delayAnimation = 0, ...remainingProps }) => (
+  <ProgressBarWrapper delayAnimation={delayAnimation} {...remainingProps}>
+    <ProgressBarDiv
+      style={{ transformOrigin: 'left' }}
+      initial={{ scaleX: 0 }}
+      animate={{ scaleX: `${value}%` }}
+      transition={{ duration: 1, delay: 0.5 + 0.1 * delayAnimation, ease: 'easeOut' }}
+    />
+  </ProgressBarWrapper>
+);
 
 interface ProgressBarProps {
   value: number;

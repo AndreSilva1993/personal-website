@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 import { Image } from '@src/components/Image/Image';
@@ -142,7 +143,11 @@ const About: FC = () => {
   );
 
   return (
-    <>
+    <motion.div
+      animate={{ x: 0, opacity: 1 }}
+      initial={{ x: '-10rem', opacity: 0 }}
+      transition={{ duration: 1, ease: 'easeInOut' }}
+    >
       <StyledImage src="http://tokyo.ibthemespro.com/assets/img/slider/1.jpg" alt="About" />
       <H1>{t('about.title')}</H1>
       <AboutDiv>
@@ -178,7 +183,7 @@ const About: FC = () => {
           </TechnologyLi>
         ))}
       </TechnologyUl>
-    </>
+    </motion.div>
   );
 };
 

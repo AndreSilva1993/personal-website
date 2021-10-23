@@ -4,6 +4,8 @@ import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 
+import type { FC } from 'react';
+
 const Ul = styled.ul(
   ({ theme }) => css`
     display: flex;
@@ -49,8 +51,6 @@ const A = styled.a<{ active?: boolean }>(
     }
   `
 );
-
-import type { FC } from 'react';
 
 const NavigationMenu: FC = () => {
   const { pathname } = useRouter();

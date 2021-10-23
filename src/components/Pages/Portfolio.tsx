@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
@@ -29,7 +29,7 @@ const PortfolioGridDiv = styled.div(
   `
 );
 
-const PortfolioItemWrapperDiv = styled.div(
+const PortfolioItemWrapperDiv = styled(motion.div)(
   () => css`
     cursor: pointer;
     overflow: hidden;
@@ -79,10 +79,10 @@ const Portfolio: FC = () => {
 
   const portfolioItems = useMemo(
     () => [
-      { name: 'Burberry', image: '/images/portfolio/burberry.png' },
-      { name: 'Carmo', image: '/images/portfolio/carmo.png' },
-      { name: 'Tankey', image: '/images/portfolio/tankey.png' },
-      { name: 'TOConline', image: '/images/portfolio/toconline.png' },
+      { name: 'Burberry', image: 'burberry.png' },
+      { name: 'Carmo', image: 'carmo.png' },
+      { name: 'Tankey', image: 'tankey.png' },
+      { name: 'TOConline', image: 'toconline.png' },
     ],
     []
   );
@@ -101,18 +101,21 @@ const Portfolio: FC = () => {
       { direction: 'left', value: x - clientX },
     ] as Array<{ direction: AnimationDirection; value: number }>;
 
-    return elementBounds.reduce(
+    const { direction } = elementBounds.reduce(
       (closestElementBound, elementBound) =>
         Math.abs(elementBound.value) < Math.abs(closestElementBound.value)
           ? elementBound
           : closestElementBound,
       elementBounds[0]
-    ).direction;
+    );
+
+    return direction;
   }
 
   function getAnimationProps(direction: AnimationDirection) {
     switch (direction) {
       case 'left':
+      default:
         return { x: '-100%' };
       case 'right':
         return { x: '100%' };
@@ -147,11 +150,15 @@ const Portfolio: FC = () => {
             key={name}
             onMouseLeave={handleItemMouseLeave}
             onMouseEnter={(event) => handleItemMouseEnter(event, index)}
+            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: '-10rem', opacity: 0 }}
+            transition={{ duration: 1, ease: 'easeOut', delay: 0.25 * index }}
           >
             <PortfolioItemDiv
-              backgroundImage={image}
               active={activeItem === index}
-            ></PortfolioItemDiv>
+              backgroundImage={`/images/portfolio/${image}`}
+            />
+
             <AnimatePresence>
               {activeItem === index ? (
                 <PortfolioItemNameDiv

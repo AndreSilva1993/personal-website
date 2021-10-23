@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { PageContainer } from '@src/components/Pages/PageContainer';
 import { NavigationMenu } from '@src/components/NavigationMenu/NavigationMenu';
 
 import type { FC } from 'react';
@@ -55,19 +54,15 @@ const PageContainerDiv = styled.div`
   height: fit-content;
 `;
 
-const MainContainer: FC = ({ children }) => {
-  return (
-    <ContainerDiv>
-      <NavigationDiv>
-        <NavigationMenu />
-      </NavigationDiv>
-      <ContentDiv>
-        <PageContainerDiv>
-          <PageContainer>{children}</PageContainer>
-        </PageContainerDiv>
-      </ContentDiv>
-    </ContainerDiv>
-  );
-};
+const MainContainer: FC = ({ children }) => (
+  <ContainerDiv>
+    <NavigationDiv>
+      <NavigationMenu />
+    </NavigationDiv>
+    <ContentDiv>
+      <PageContainerDiv>{children}</PageContainerDiv>
+    </ContentDiv>
+  </ContainerDiv>
+);
 
 export { MainContainer };
