@@ -179,7 +179,7 @@ const About: FC = () => {
           <TechnologyLi key={name}>
             <TechnologyImage src={`/images/technologies/${image}`} alt={name} />
             {name}
-            <StyledProgressBar value={value} delayAnimation={index} />
+            <StyledProgressBar value={value} delay={0.5 + 0.1 * index} />
           </TechnologyLi>
         ))}
       </TechnologyUl>

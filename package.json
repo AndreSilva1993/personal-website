@@ -1,4 +1,5 @@
 {
+  "license": "MIT",
   "scripts": {
     "lint": "yarn run eslint . --ext ts,tsx",
     "prepare": "husky install",
