@@ -30,7 +30,7 @@ const StyledImage = styled(Image)``;
 
 const Homepage: FC = () => (
   <PhotoDiv>
-    <StyledImage src="http://tokyo.ibthemespro.com/static/media/1.6bd902c9.jpg" />
+    <StyledImage src="http://tokyo.ibthemespro.com/static/media/1.6bd902c9.jpg" alt="teste" />
   </PhotoDiv>
 );
 
