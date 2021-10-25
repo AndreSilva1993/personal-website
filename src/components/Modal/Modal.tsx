@@ -16,8 +16,8 @@ const ModalOverlay = styled(motion.div)`
 const ModalWrapperDiv = styled(motion.div)`
   position: fixed;
   top: 10%;
-  left: 10%;
-  width: calc(100vw - 20%);
+  left: 20%;
+  width: calc(100vw - 40%);
   height: calc(100vh - 20%);
   overflow: auto;
   margin: auto;

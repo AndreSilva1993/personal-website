@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import { useAnimation, motion } from 'framer-motion';
 
 import type { FC } from 'react';
+import type { PortfolioItemProps } from '@src/components/Portfolio/Portfolio.types';
 import type { ControlsAnimationDefinition } from 'framer-motion/types/animation/types';
 
 type AnimationDirection = 'left' | 'right' | 'top' | 'bottom';
@@ -115,12 +116,5 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, onClick }) 
     </PortfolioItemWrapperDiv>
   );
 };
-
-interface PortfolioItemProps {
-  name: string;
-  image: string;
-  index: number;
-  onClick: (index: number) => void;
-}
 
 export { PortfolioItem };

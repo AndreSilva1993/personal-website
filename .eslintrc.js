@@ -19,6 +19,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/jsx-no-bind': 'off',
     'react/jsx-uses-react': 'off',
+    'react/no-array-index-key': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',

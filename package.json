@@ -1,9 +1,9 @@
 {
   "license": "MIT",
   "scripts": {
-    "lint": "yarn run eslint . --ext ts,tsx",
+    "lint": "eslint . --ext ts,tsx",
     "prepare": "husky install",
-    "start": "next"
+    "start": "next dev --port 4000"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
