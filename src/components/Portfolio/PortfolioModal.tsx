@@ -17,7 +17,7 @@ const ModalWrapperDiv = styled.div`
 const StyledPortfolioCarousel = styled(PortfolioCarousel)`
   width: 100%;
   position: relative;
-  padding-bottom: calc(100% * 9 / 16);
+  padding-bottom: calc(100% * 10 / 16);
 `;
 
 const LogoWrapperDiv = styled.div`
@@ -39,26 +39,12 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ item, open, onClose }) => (
   <Modal open={open} onClose={onClose}>
     <ModalWrapperDiv>
       <StyledPortfolioCarousel>
-        <Image
-          layout="fill"
-          objectFit="cover"
-          alt={item?.name}
-          src={`/images/portfolio/${item?.image}`}
-        />
-        <Image
-          layout="fill"
-          objectFit="cover"
-          alt={item?.name}
-          src={`/images/portfolio/${item?.image}`}
-        />
+        {item?.images.map((image, index) => (
+          <Image key={index} layout="fill" objectFit="cover" alt={item?.name} src={image} />
+        ))}
       </StyledPortfolioCarousel>
       <LogoWrapperDiv>
-        <Image
-          layout="fill"
-          objectFit="contain"
-          alt={item?.name}
-          src={`/images/portfolio/${item?.logoImage}`}
-        />
+        <Image layout="fill" objectFit="contain" alt={item?.name} src={item?.logoImage} />
       </LogoWrapperDiv>
       <DescriptionP>{item?.description}</DescriptionP>
     </ModalWrapperDiv>

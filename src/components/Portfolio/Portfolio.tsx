@@ -39,13 +39,35 @@ const Portfolio: FC = () => {
     () => [
       {
         name: 'Burberry',
-        image: 'burberry.png',
-        logoImage: 'burberry-logo.png',
         description: t('portfolio.items.burberry'),
+        logoImage: '/images/portfolio/burberry/logo.png',
+        image: '/images/portfolio/burberry/1.png',
+        images: [
+          '/images/portfolio/burberry/1.png',
+          '/images/portfolio/burberry/2.png',
+          '/images/portfolio/burberry/3.png',
+          '/images/portfolio/burberry/4.png',
+        ],
       },
-      { name: 'Carmo', image: 'carmo.png', logoImage: 'carmo-logo.svg', description: '' },
-      { name: 'Tankey', image: 'tankey.png', logoImage: 'tankey-logo.png', description: '' },
-      { name: 'TOConline', image: 'toconline.png', logoImage: '', description: '' },
+      {
+        name: 'Tankey',
+        description: t('portfolio.items.tankey'),
+        image: '/images/portfolio/tankey/1.png',
+        images: ['/images/portfolio/tankey/1.png', '/images/portfolio/tankey/2.png'],
+        logoImage: '/images/portfolio/tankey/logo.png',
+      },
+      {
+        name: 'Carmo',
+        image: '/images/portfolio/carmo.png',
+        logoImage: 'carmo-logo.svg',
+        description: '',
+      },
+      {
+        name: 'TOConline',
+        image: '/images/portfolio/toconline.png',
+        logoImage: '',
+        description: '',
+      },
     ],
     []
   );

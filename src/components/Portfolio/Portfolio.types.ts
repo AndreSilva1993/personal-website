@@ -1,6 +1,7 @@
 interface IPortfolioItem {
   name: string;
   image: string;
+  images: string[];
   logoImage: string;
   description: string;
 }
