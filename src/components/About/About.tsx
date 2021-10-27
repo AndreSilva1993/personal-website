@@ -1,4 +1,4 @@
-import Image from 'next/Image';
+import Image from 'next/image';
 import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
