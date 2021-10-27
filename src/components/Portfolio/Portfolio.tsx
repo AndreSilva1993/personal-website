@@ -44,10 +44,10 @@ const Portfolio: FC = () => {
         description: t('portfolio.items.burberry'),
         logoImage: `${IMAGES_BASE_URL}/burberry/logo.png`,
         images: [
-          `${IMAGES_BASE_URL}/burberry/1.png`,
-          `${IMAGES_BASE_URL}/burberry/2.png`,
-          `${IMAGES_BASE_URL}/burberry/3.png`,
-          `${IMAGES_BASE_URL}/burberry/4.png`,
+          `${IMAGES_BASE_URL}/burberry/1.webp`,
+          `${IMAGES_BASE_URL}/burberry/2.webp`,
+          `${IMAGES_BASE_URL}/burberry/3.webp`,
+          `${IMAGES_BASE_URL}/burberry/4.webp`,
         ],
       },
       {
