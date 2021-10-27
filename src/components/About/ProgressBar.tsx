@@ -23,7 +23,7 @@ const ProgressBar: FC<ProgressBarProps> = ({ value, delay = 0, ...remainingProps
     <ProgressBarDiv
       style={{ transformOrigin: 'left' }}
       initial={{ scaleX: 0 }}
-      animate={{ scaleX: `${value}%` }}
+      animate={{ scaleX: value / 100 }}
       transition={{ duration: 1, delay, ease: 'easeOut' }}
     />
   </ProgressBarWrapper>
