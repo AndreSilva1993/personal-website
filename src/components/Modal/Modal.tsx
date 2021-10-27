@@ -22,8 +22,8 @@ const ModalWrapperDiv = styled(motion.div)(
   ({ theme }) => css`
     position: fixed;
     top: 5%;
-    left: 20%;
-    width: calc(100vw - 40%);
+    left: 25%;
+    width: calc(100vw - 50%);
     height: calc(100% - 10%);
     margin: auto;
     background-color: ${theme.colors.white};
