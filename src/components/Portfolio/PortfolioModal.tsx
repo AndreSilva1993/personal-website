@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 import { Modal } from '@src/components/Modal/Modal';
 import { PortfolioCarousel } from '@src/components/Portfolio/PortfolioCarousel';
@@ -10,6 +11,7 @@ import type { PortfolioModalProps } from './Portfolio.types';
 const ModalWrapperDiv = styled.div`
   height: 100%;
   display: flex;
+  overflow: auto;
   align-items: center;
   flex-direction: column;
 `;
@@ -20,10 +22,21 @@ const StyledPortfolioCarousel = styled(PortfolioCarousel)`
   padding-bottom: calc(100% * 10 / 16);
 `;
 
+const LogoOuterWrapperDiv = styled.div<{ backgroundColor: string }>(
+  ({ backgroundColor }) => css`
+    width: 100%;
+    height: 4rem;
+    flex-shrink: 0;
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+    box-sizing: initial;
+    background-color: ${backgroundColor};
+  `
+);
+
 const LogoWrapperDiv = styled.div`
   width: 100%;
-  height: 4rem;
-  margin: 3rem 0;
+  height: 100%;
   position: relative;
   flex-shrink: 0;
 `;
@@ -43,9 +56,17 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ item, open, onClose }) => (
           <Image key={index} layout="fill" objectFit="cover" alt={item?.name} src={image} />
         ))}
       </StyledPortfolioCarousel>
-      <LogoWrapperDiv>
-        <Image layout="fill" objectFit="contain" alt={item?.name} src={item?.logoImage} />
-      </LogoWrapperDiv>
+      <LogoOuterWrapperDiv backgroundColor={item?.logoBackgroundColor}>
+        <LogoWrapperDiv>
+          <Image
+            layout="fill"
+            loading="eager"
+            objectFit="contain"
+            alt={item?.name}
+            src={item?.logoImage}
+          />
+        </LogoWrapperDiv>
+      </LogoOuterWrapperDiv>
       <DescriptionP>{item?.description}</DescriptionP>
     </ModalWrapperDiv>
   </Modal>

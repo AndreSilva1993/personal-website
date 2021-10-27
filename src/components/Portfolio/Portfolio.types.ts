@@ -3,6 +3,7 @@ interface IPortfolioItem {
   images: string[];
   logoImage: string;
   description: string;
+  logoBackgroundColor?: string;
 }
 
 interface PortfolioItemProps {

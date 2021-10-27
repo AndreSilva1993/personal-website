@@ -22,10 +22,9 @@ const ModalWrapperDiv = styled(motion.div)(
   ({ theme }) => css`
     position: fixed;
     top: 5%;
-    left: 25%;
-    width: calc(100vw - 50%);
+    left: 20%;
+    width: calc(100vw - 40%);
     height: calc(100% - 10%);
-    overflow: auto;
     margin: auto;
     background-color: ${theme.colors.white};
 
@@ -40,13 +39,19 @@ const ModalWrapperDiv = styled(motion.div)(
 
 const StyledMdClose = styled(MdClose)(
   ({ theme }) => css`
-    top: 1rem;
-    right: 1rem;
+    top: -3rem;
+    right: -3rem;
     width: 3rem;
     height: 3rem;
     position: absolute;
     cursor: pointer;
-    color: ${theme.colors.black};
+    color: ${theme.colors.white};
+
+    ${theme.breakpoints.extraSmall} {
+      top: 1.5rem;
+      right: 1.5rem;
+      color: ${theme.colors.black};
+    }
   `
 );
 

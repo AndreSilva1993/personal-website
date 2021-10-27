@@ -97,7 +97,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, onClick }) 
       initial={{ x: '-10rem', opacity: 0 }}
       transition={{ duration: 1, ease: 'easeOut', delay: 0.25 * index }}
     >
-      <Image src={image} layout="fill" objectFit="cover" alt={name} />
+      <Image src={image} layout="fill" objectFit="cover" alt={name} loading="eager" />
 
       <PortfolioItemNameDiv
         animate={controls}

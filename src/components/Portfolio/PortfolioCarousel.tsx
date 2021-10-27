@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useAnimation, motion } from 'framer-motion';
 import { useEffect, useState, Children } from 'react';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 import type { FC } from 'react';
 
@@ -47,6 +48,42 @@ const PaginationItemLi = styled.li<{ active: boolean }>(
   `
 );
 
+const StyledMdChevronLeft = styled(MdChevronLeft)<{ disabled: boolean }>(
+  ({ theme, disabled }) => css`
+    position: absolute;
+    top: calc(50% - 2.5rem);
+    left: 0;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    transition: color 250ms ease-out;
+    color: ${disabled ? theme.colors.lightGrey : theme.colors.black};
+
+    ${disabled &&
+    css`
+      pointer-events: none;
+    `}
+  `
+);
+
+const StyledMdChevronRight = styled(MdChevronRight)<{ disabled: boolean }>(
+  ({ theme, disabled }) => css`
+    position: absolute;
+    top: calc(50% - 2.5rem);
+    right: 0;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    transition: color 250ms ease-out;
+    color: ${disabled ? theme.colors.lightGrey : theme.colors.black};
+
+    ${disabled &&
+    css`
+      pointer-events: none;
+    `}
+  `
+);
+
 const PortfolioCarousel: FC = ({ children, ...remainingProps }) => {
   const controls = useAnimation();
   const [autoplay, setAutoplay] = useState(true);
@@ -85,6 +122,14 @@ const PortfolioCarousel: FC = ({ children, ...remainingProps }) => {
     setCarouselIndex(index);
   }
 
+  function handleChevronLeftClick() {
+    setCarouselIndex((previousIndex) => previousIndex - 1);
+  }
+
+  function handleChevronRightClick() {
+    setCarouselIndex((previousIndex) => previousIndex + 1);
+  }
+
   return (
     <CarouselWrapperDiv
       onMouseEnter={handleWrapperMouseEnter}
@@ -106,6 +151,12 @@ const PortfolioCarousel: FC = ({ children, ...remainingProps }) => {
           />
         ))}
       </PaginationWrapperUl>
+
+      <StyledMdChevronLeft onClick={handleChevronLeftClick} disabled={carouselIndex === 0} />
+      <StyledMdChevronRight
+        onClick={handleChevronRightClick}
+        disabled={carouselIndex === Children.count(children) - 1}
+      />
     </CarouselWrapperDiv>
   );
 };
