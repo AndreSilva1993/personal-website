@@ -1,16 +1,19 @@
+import Image from 'next/Image';
 import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
-import { Image } from '@src/components/Image/Image';
-import { ProgressBar } from '@src/components/ProgressBar/ProgressBar';
+import { ProgressBar } from '@src/components/About/ProgressBar';
 
 import type { FC } from 'react';
 
-const StyledImage = styled(Image)`
+const AboutImageWrapperDiv = styled.div`
+  width: 100%;
   margin-bottom: 5rem;
+  position: relative;
+  padding-bottom: calc(100% * 9 / 16);
 `;
 
 const H1 = styled.h1(
@@ -107,17 +110,21 @@ const TechnologyLi = styled.li`
   align-items: center;
 `;
 
-const TechnologyImage = styled(Image)`
-  width: 3rem;
-  height: 3rem;
-  margin-right: 1.5rem;
+const TechnologySpan = styled.span`
+  margin-left: 1.5rem;
 `;
 
-const StyledProgressBar = styled(ProgressBar)`
-  flex: 0 0 60%;
-  height: 0.5rem;
-  margin-left: auto;
-`;
+const StyledProgressBar = styled(ProgressBar)(
+  ({ theme }) => css`
+    flex: 0 0 55%;
+    height: 0.5rem;
+    margin-left: auto;
+
+    ${theme.breakpoints.extraSmall} {
+      flex: 0 0 40%;
+    }
+  `
+);
 
 const About: FC = () => {
   const { t } = useTranslation();
@@ -148,7 +155,13 @@ const About: FC = () => {
       initial={{ x: '-10rem', opacity: 0 }}
       transition={{ duration: 1, ease: 'easeInOut' }}
     >
-      <StyledImage src="http://tokyo.ibthemespro.com/assets/img/slider/1.jpg" alt="About" />
+      <AboutImageWrapperDiv>
+        <Image
+          alt="About"
+          layout="fill"
+          src="http://tokyo.ibthemespro.com/assets/img/slider/1.jpg"
+        />
+      </AboutImageWrapperDiv>
       <H1>{t('about.title')}</H1>
       <AboutDiv>
         <P>{t('about.description')}</P>
@@ -177,8 +190,8 @@ const About: FC = () => {
       <TechnologyUl>
         {technologiesData.map(({ name, image, value }, index) => (
           <TechnologyLi key={name}>
-            <TechnologyImage src={`/images/technologies/${image}`} alt={name} />
-            {name}
+            <Image alt={name} width={30} height={30} src={`/images/technologies/${image}`} />
+            <TechnologySpan>{name}</TechnologySpan>
             <StyledProgressBar value={value} delay={0.5 + 0.1 * index} />
           </TechnologyLi>
         ))}

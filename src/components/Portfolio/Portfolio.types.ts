@@ -18,8 +18,4 @@ interface PortfolioModalProps {
   onClose: VoidFunction;
 }
 
-interface PortfolioCarouselProps {
-  items: string[];
-}
-
 export type { IPortfolioItem, PortfolioItemProps, PortfolioModalProps, PortfolioCarouselProps };

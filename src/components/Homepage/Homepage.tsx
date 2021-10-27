@@ -1,7 +1,6 @@
+import Image from 'next/image';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
-
-import { Image } from '@src/components/Image/Image';
 
 import type { FC } from 'react';
 
@@ -26,11 +25,14 @@ const PhotoDiv = styled.div`
   animation: ${PhotoKeyframes} 8s ease-in-out infinite 1s;
 `;
 
-const StyledImage = styled(Image)``;
-
 const Homepage: FC = () => (
   <PhotoDiv>
-    <StyledImage src="http://tokyo.ibthemespro.com/static/media/1.6bd902c9.jpg" alt="teste" />
+    <Image
+      alt="teste"
+      width={50}
+      height={50}
+      src="http://tokyo.ibthemespro.com/static/media/1.6bd902c9.jpg"
+    />
   </PhotoDiv>
 );
 

@@ -1,13 +1,13 @@
+import Image from 'next/Image';
 import styled from '@emotion/styled';
 
-import { Image } from '@src/components/Image/Image';
 import { Modal } from '@src/components/Modal/Modal';
 import { PortfolioCarousel } from '@src/components/Portfolio/PortfolioCarousel';
 
 import type { FC } from 'react';
 import type { PortfolioModalProps } from './Portfolio.types';
 
-const WrapperDiv = styled.div`
+const ModalWrapperDiv = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
@@ -16,35 +16,52 @@ const WrapperDiv = styled.div`
 
 const StyledPortfolioCarousel = styled(PortfolioCarousel)`
   width: 100%;
-  flex: 0 0 50%;
+  position: relative;
+  padding-bottom: calc(100% * 9 / 16);
 `;
 
-const LogoImage = styled(Image)`
-  width: 30rem;
+const LogoWrapperDiv = styled.div`
+  width: 100%;
+  height: 4rem;
   margin: 3rem 0;
+  position: relative;
+  flex-shrink: 0;
 `;
 
 const DescriptionP = styled.p`
   font-size: 1.5rem;
   line-height: 2.5rem;
-  padding: 0 15%;
+  padding: 0 15% 2.5rem;
   text-align: center;
 `;
 
 const PortfolioModal: FC<PortfolioModalProps> = ({ item, open, onClose }) => (
   <Modal open={open} onClose={onClose}>
-    <WrapperDiv>
-      <StyledPortfolioCarousel
-        items={[
-          `/images/portfolio/${item?.image}`,
-          `/images/portfolio/${item?.image}`,
-          `/images/portfolio/${item?.image}`,
-          `/images/portfolio/${item?.image}`,
-        ]}
-      />
-      <LogoImage alt={item?.name} src={`/images/portfolio/${item?.logoImage}`} />
+    <ModalWrapperDiv>
+      <StyledPortfolioCarousel>
+        <Image
+          layout="fill"
+          objectFit="cover"
+          alt={item?.name}
+          src={`/images/portfolio/${item?.image}`}
+        />
+        <Image
+          layout="fill"
+          objectFit="cover"
+          alt={item?.name}
+          src={`/images/portfolio/${item?.image}`}
+        />
+      </StyledPortfolioCarousel>
+      <LogoWrapperDiv>
+        <Image
+          layout="fill"
+          objectFit="contain"
+          alt={item?.name}
+          src={`/images/portfolio/${item?.logoImage}`}
+        />
+      </LogoWrapperDiv>
       <DescriptionP>{item?.description}</DescriptionP>
-    </WrapperDiv>
+    </ModalWrapperDiv>
   </Modal>
 );
 

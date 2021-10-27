@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useRef } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
@@ -14,15 +15,7 @@ const PortfolioItemWrapperDiv = styled(motion.div)(
     cursor: pointer;
     overflow: hidden;
     position: relative;
-  `
-);
-
-const PortfolioItemDiv = styled.div<{ backgroundImage: string }>(
-  ({ backgroundImage }) => css`
     padding-bottom: 100%;
-    background-size: cover;
-    background-position: center;
-    background-image: url(${backgroundImage});
   `
 );
 
@@ -104,7 +97,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, onClick }) 
       initial={{ x: '-10rem', opacity: 0 }}
       transition={{ duration: 1, ease: 'easeOut', delay: 0.25 * index }}
     >
-      <PortfolioItemDiv backgroundImage={`/images/portfolio/${image}`} />
+      <Image src={`/images/portfolio/${image}`} layout="fill" objectFit="cover" alt={name} />
 
       <PortfolioItemNameDiv
         animate={controls}

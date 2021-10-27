@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { useEffect, useState } from 'react';
 import { useAnimation, motion } from 'framer-motion';
+import { useEffect, useState, Children } from 'react';
 
 import type { FC } from 'react';
-import type { PortfolioCarouselProps } from './Portfolio.types';
 
 const CarouselWrapperDiv = styled.div`
   overflow: hidden;
@@ -13,20 +12,17 @@ const CarouselWrapperDiv = styled.div`
 
 const CarouselItemsWrapperDiv = styled(motion.div)`
   display: flex;
+  width: 100%;
   height: 100%;
+  position: absolute;
 `;
 
-const CarouselItemDiv = styled.div<{ backgroundImage: string }>(
-  ({ backgroundImage }) => css`
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-
-    background-size: cover;
-    background-position: center;
-    background-image: url(${backgroundImage});
-  `
-);
+const CarouselItemDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  position: relative;
+`;
 
 const PaginationWrapperUl = styled.ul`
   display: flex;
@@ -51,7 +47,7 @@ const PaginationItemLi = styled.li<{ active: boolean }>(
   `
 );
 
-const PortfolioCarousel: FC<PortfolioCarouselProps> = ({ items, ...remainingProps }) => {
+const PortfolioCarousel: FC = ({ children, ...remainingProps }) => {
   const controls = useAnimation();
   const [autoplay, setAutoplay] = useState(true);
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
@@ -61,7 +57,7 @@ const PortfolioCarousel: FC<PortfolioCarouselProps> = ({ items, ...remainingProp
 
     const autoplayInterval = window.setInterval(() => {
       setCarouselIndex((previousIndex) =>
-        previousIndex === items.length - 1 ? 0 : previousIndex + 1
+        previousIndex === Children.count(children) - 1 ? 0 : previousIndex + 1
       );
     }, 3000);
 
@@ -96,13 +92,13 @@ const PortfolioCarousel: FC<PortfolioCarouselProps> = ({ items, ...remainingProp
       {...remainingProps}
     >
       <CarouselItemsWrapperDiv animate={controls} initial={{ x: 0 }}>
-        {items.map((item, index) => (
-          <CarouselItemDiv key={index} backgroundImage={item} />
+        {Children.map(children, (item, index) => (
+          <CarouselItemDiv key={index}>{item}</CarouselItemDiv>
         ))}
       </CarouselItemsWrapperDiv>
 
       <PaginationWrapperUl>
-        {Array.from({ length: items.length }).map((_item, index) => (
+        {Array.from({ length: Children.count(children) }).map((_item, index) => (
           <PaginationItemLi
             key={index}
             active={carouselIndex === index}

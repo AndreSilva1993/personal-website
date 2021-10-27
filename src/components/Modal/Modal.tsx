@@ -1,52 +1,93 @@
+import { useEffect } from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
+import { MdClose } from 'react-icons/md';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import type { FC } from 'react';
 
-const ModalOverlay = styled(motion.div)`
-  height: 100%;
-  width: 100vw;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: ${({ theme }) => theme.colors.black};
-`;
-
-const ModalWrapperDiv = styled(motion.div)`
-  position: fixed;
-  top: 10%;
-  left: 20%;
-  width: calc(100vw - 40%);
-  height: calc(100vh - 20%);
-  overflow: auto;
-  margin: auto;
-  background-color: ${({ theme }) => theme.colors.white};
-`;
-
-const Modal: FC<ModalProps> = ({ children, open, onClose }) => (
-  <AnimatePresence>
-    {open ? (
-      <>
-        <ModalOverlay
-          onClick={onClose}
-          exit={{ opacity: 0 }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
-          transition={{ duration: 0.5 }}
-        />
-        <ModalWrapperDiv
-          exit={{ opacity: 0, x: 0 }}
-          initial={{ opacity: 0, x: '-3rem' }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {children}
-        </ModalWrapperDiv>
-      </>
-    ) : null}
-  </AnimatePresence>
+const ModalOverlay = styled(motion.div)(
+  ({ theme }) => css`
+    height: 100%;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: ${theme.colors.black};
+  `
 );
+
+const ModalWrapperDiv = styled(motion.div)(
+  ({ theme }) => css`
+    position: fixed;
+    top: 5%;
+    left: 20%;
+    width: calc(100vw - 40%);
+    height: calc(100% - 10%);
+    overflow: auto;
+    margin: auto;
+    background-color: ${theme.colors.white};
+
+    ${theme.breakpoints.extraSmall} {
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+    }
+  `
+);
+
+const StyledMdClose = styled(MdClose)(
+  ({ theme }) => css`
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    cursor: pointer;
+    color: ${theme.colors.black};
+  `
+);
+
+const Modal: FC<ModalProps> = ({ children, open, onClose }) => {
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const handleDocumentKeyDown = ({ key }: KeyboardEvent) => {
+      if (key === 'Escape') onClose();
+    };
+
+    document.addEventListener('keydown', handleDocumentKeyDown);
+
+    return () => document.removeEventListener('keydown', handleDocumentKeyDown);
+  }, [open]);
+
+  return (
+    <AnimatePresence>
+      {open ? (
+        <>
+          <ModalOverlay
+            onClick={onClose}
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.6 }}
+            transition={{ duration: 0.5 }}
+          />
+          <ModalWrapperDiv
+            exit={{ opacity: 0, x: 0 }}
+            initial={{ opacity: 0, x: '-3rem' }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {children}
+            <StyledMdClose onClick={onClose} />
+          </ModalWrapperDiv>
+        </>
+      ) : null}
+    </AnimatePresence>
+  );
+};
 
 interface ModalProps {
   open: boolean;
