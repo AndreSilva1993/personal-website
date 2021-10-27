@@ -1,6 +1,5 @@
 interface IPortfolioItem {
   name: string;
-  image: string;
   images: string[];
   logoImage: string;
   description: string;
@@ -19,4 +18,4 @@ interface PortfolioModalProps {
   onClose: VoidFunction;
 }
 
-export type { IPortfolioItem, PortfolioItemProps, PortfolioModalProps, PortfolioCarouselProps };
+export type { IPortfolioItem, PortfolioItemProps, PortfolioModalProps };

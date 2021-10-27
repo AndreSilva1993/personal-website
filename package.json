@@ -3,7 +3,8 @@
   "scripts": {
     "lint": "eslint . --ext ts,tsx",
     "prepare": "husky install",
-    "start": "next dev --port 4000"
+    "start": "next dev --port 4000",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",

@@ -30,6 +30,8 @@ const PortfolioGridDiv = styled.div(
   `
 );
 
+const IMAGES_BASE_URL = '/images/portfolio';
+
 const Portfolio: FC = () => {
   const { t } = useTranslation();
 
@@ -40,31 +42,29 @@ const Portfolio: FC = () => {
       {
         name: 'Burberry',
         description: t('portfolio.items.burberry'),
-        logoImage: '/images/portfolio/burberry/logo.png',
-        image: '/images/portfolio/burberry/1.png',
+        logoImage: `${IMAGES_BASE_URL}/burberry/logo.png`,
         images: [
-          '/images/portfolio/burberry/1.png',
-          '/images/portfolio/burberry/2.png',
-          '/images/portfolio/burberry/3.png',
-          '/images/portfolio/burberry/4.png',
+          `${IMAGES_BASE_URL}/burberry/1.png`,
+          `${IMAGES_BASE_URL}/burberry/2.png`,
+          `${IMAGES_BASE_URL}/burberry/3.png`,
+          `${IMAGES_BASE_URL}/burberry/4.png`,
         ],
       },
       {
         name: 'Tankey',
         description: t('portfolio.items.tankey'),
-        image: '/images/portfolio/tankey/1.png',
-        images: ['/images/portfolio/tankey/1.png', '/images/portfolio/tankey/2.png'],
-        logoImage: '/images/portfolio/tankey/logo.png',
+        images: [`${IMAGES_BASE_URL}/tankey/1.png`, `${IMAGES_BASE_URL}/tankey/2.png`],
+        logoImage: `${IMAGES_BASE_URL}/tankey/logo.png`,
       },
       {
         name: 'Carmo',
-        image: '/images/portfolio/carmo.png',
+        images: [`${IMAGES_BASE_URL}/carmo.png`],
         logoImage: 'carmo-logo.svg',
         description: '',
       },
       {
         name: 'TOConline',
-        image: '/images/portfolio/toconline.png',
+        images: [`${IMAGES_BASE_URL}/toconline.png`],
         logoImage: '',
         description: '',
       },
@@ -80,12 +80,12 @@ const Portfolio: FC = () => {
     <>
       <PortfolioH1>{t('portfolio.title')}</PortfolioH1>
       <PortfolioGridDiv>
-        {portfolioItems.map(({ name, image }, index) => (
+        {portfolioItems.map(({ name, images }, index) => (
           <PortfolioItem
             key={name}
             name={name}
-            image={image}
             index={index}
+            image={images[0]}
             onClick={handlePortfolioItemClick}
           />
         ))}

@@ -1,4 +1,4 @@
-import Image from 'next/Image';
+import Image from 'next/image';
 import styled from '@emotion/styled';
 
 import { Modal } from '@src/components/Modal/Modal';
