@@ -18,7 +18,11 @@ const ProgressBarDiv = styled(motion.div)(
   `
 );
 
-const ProgressBar: FC<ProgressBarProps> = ({ value, delay = 0, ...remainingProps }) => (
+const ProgressBar: FC<ProgressBarProps> = ({
+  value,
+  delay = 0,
+  ...remainingProps
+}) => (
   <ProgressBarWrapper {...remainingProps}>
     <ProgressBarDiv
       style={{ transformOrigin: 'left' }}

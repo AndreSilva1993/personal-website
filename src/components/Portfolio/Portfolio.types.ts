@@ -7,9 +7,10 @@ interface IPortfolioItem {
 }
 
 interface PortfolioItemProps {
+  index: number;
   name: string;
   image: string;
-  index: number;
+  logoImage: string;
   onClick: (index: number) => void;
 }
 

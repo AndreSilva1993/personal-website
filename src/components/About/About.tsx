@@ -190,7 +190,12 @@ const About: FC = () => {
       <TechnologyUl>
         {technologiesData.map(({ name, image, value }, index) => (
           <TechnologyLi key={name}>
-            <Image alt={name} width={30} height={30} src={`/images/technologies/${image}`} />
+            <Image
+              alt={name}
+              width={30}
+              height={30}
+              src={`/images/technologies/${image}`}
+            />
             <TechnologySpan>{name}</TechnologySpan>
             <StyledProgressBar value={value} delay={0.5 + 0.1 * index} />
           </TechnologyLi>

@@ -71,7 +71,9 @@ const NavigationMenu: FC = () => {
         </Li>
         <Li>
           <Link href="/portfolio">
-            <A active={pathname === '/portfolio'}>{t('navigation.portfolio')}</A>
+            <A active={pathname === '/portfolio'}>
+              {t('navigation.portfolio')}
+            </A>
           </Link>
         </Li>
       </Ul>

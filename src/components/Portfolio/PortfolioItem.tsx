@@ -19,23 +19,27 @@ const PortfolioItemWrapperDiv = styled(motion.div)(
   `
 );
 
-const PortfolioItemNameDiv = styled(motion.div)(
-  ({ theme }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    position: absolute;
-    font-size: 1.8rem;
-    color: ${theme.colors.black};
-    font-weight: ${theme.fontWeights.boldest};
-    background-color: rgba(255, 255, 255, 0.6);
-  `
-);
+const PortfolioItemNameDiv = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+  padding: 20%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+`;
 
-const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, onClick }) => {
+const LogoWrapperDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+`;
+
+const PortfolioItem: FC<PortfolioItemProps> = ({
+  name,
+  image,
+  index,
+  logoImage,
+  onClick,
+}) => {
   const controls = useAnimation();
   const wrapperRef = useRef<HTMLDivElement>();
 
@@ -57,7 +61,9 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, onClick }) 
 
     const { direction } = elementBounds.reduce(
       (closestBound, bound) =>
-        Math.abs(bound.value) < Math.abs(closestBound.value) ? bound : closestBound,
+        Math.abs(bound.value) < Math.abs(closestBound.value)
+          ? bound
+          : closestBound,
       elementBounds[0]
     );
 
@@ -97,14 +103,23 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, onClick }) 
       initial={{ x: '-10rem', opacity: 0 }}
       transition={{ duration: 1, ease: 'easeOut', delay: 0.25 * index }}
     >
-      <Image src={image} layout="fill" objectFit="cover" alt={name} loading="eager" />
+      <Image
+        priority
+        alt={name}
+        src={image}
+        sizes="50vw"
+        layout="fill"
+        objectFit="cover"
+      />
 
       <PortfolioItemNameDiv
         animate={controls}
         initial={{ x: '-100%', y: 0 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
-        {name}
+        <LogoWrapperDiv>
+          <Image src={logoImage} layout="fill" objectFit="contain" />
+        </LogoWrapperDiv>
       </PortfolioItemNameDiv>
     </PortfolioItemWrapperDiv>
   );

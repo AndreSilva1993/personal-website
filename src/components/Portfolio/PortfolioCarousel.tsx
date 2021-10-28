@@ -144,13 +144,15 @@ const PortfolioCarousel: FC = ({ children, ...remainingProps }) => {
       </CarouselItemsWrapperDiv>
 
       <PaginationWrapperUl>
-        {Array.from({ length: Children.count(children) }).map((_item, index) => (
-          <PaginationItemLi
-            key={index}
-            active={carouselIndex === index}
-            onClick={() => handlePaginationItemClick(index)}
-          />
-        ))}
+        {Array.from({ length: Children.count(children) }).map(
+          (_item, index) => (
+            <PaginationItemLi
+              key={index}
+              active={carouselIndex === index}
+              onClick={() => handlePaginationItemClick(index)}
+            />
+          )
+        )}
       </PaginationWrapperUl>
 
       <ChevronWrapperDiv

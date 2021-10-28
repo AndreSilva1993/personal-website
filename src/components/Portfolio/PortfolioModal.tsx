@@ -22,24 +22,14 @@ const StyledPortfolioCarousel = styled(PortfolioCarousel)`
   padding-bottom: calc(100% * 10 / 16);
 `;
 
-const LogoOuterWrapperDiv = styled.div<{ backgroundColor: string }>(
-  ({ backgroundColor }) => css`
-    width: 100%;
-    height: 4rem;
-    flex-shrink: 0;
-    padding: 2rem 0;
-    margin-bottom: 3rem;
-    box-sizing: initial;
-    background-color: ${backgroundColor};
+const H1 = styled.h1(
+  ({ theme }) => css`
+    color: ${theme.colors.black};
+    font-size: 3rem;
+    font-weight: ${theme.fontWeights.boldest};
+    margin: 2.5rem 0;
   `
 );
-
-const LogoWrapperDiv = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  flex-shrink: 0;
-`;
 
 const DescriptionP = styled.p`
   font-size: 1.5rem;
@@ -53,20 +43,18 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ item, open, onClose }) => (
     <ModalWrapperDiv>
       <StyledPortfolioCarousel>
         {item?.images.map((image, index) => (
-          <Image key={index} layout="fill" objectFit="cover" alt={item?.name} src={image} />
+          <Image
+            priority
+            src={image}
+            key={index}
+            alt={item?.name}
+            sizes="50vw"
+            layout="fill"
+            objectFit="cover"
+          />
         ))}
       </StyledPortfolioCarousel>
-      <LogoOuterWrapperDiv backgroundColor={item?.logoBackgroundColor}>
-        <LogoWrapperDiv>
-          <Image
-            layout="fill"
-            loading="eager"
-            objectFit="contain"
-            alt={item?.name}
-            src={item?.logoImage}
-          />
-        </LogoWrapperDiv>
-      </LogoOuterWrapperDiv>
+      <H1>{item?.name}</H1>
       <DescriptionP>{item?.description}</DescriptionP>
     </ModalWrapperDiv>
   </Modal>

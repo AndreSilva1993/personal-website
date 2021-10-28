@@ -42,7 +42,7 @@ const Portfolio: FC = () => {
       {
         name: 'Burberry',
         description: t('portfolio.items.burberry'),
-        logoImage: `${IMAGES_BASE_URL}/burberry/logo.png`,
+        logoImage: `${IMAGES_BASE_URL}/burberry/logo.webp`,
         images: [
           `${IMAGES_BASE_URL}/burberry/1.webp`,
           `${IMAGES_BASE_URL}/burberry/2.webp`,
@@ -54,7 +54,10 @@ const Portfolio: FC = () => {
       {
         name: 'Tankey',
         description: t('portfolio.items.tankey'),
-        images: [`${IMAGES_BASE_URL}/tankey/1.webp`, `${IMAGES_BASE_URL}/tankey/2.webp`],
+        images: [
+          `${IMAGES_BASE_URL}/tankey/1.webp`,
+          `${IMAGES_BASE_URL}/tankey/2.webp`,
+        ],
         logoImage: `${IMAGES_BASE_URL}/tankey/logo.webp`,
         logoBackgroundColor: 'rgba(74, 159, 223, 0.5)',
       },
@@ -71,7 +74,10 @@ const Portfolio: FC = () => {
       },
       {
         name: 'TOConline',
-        images: [`${IMAGES_BASE_URL}/toconline/1.webp`, `${IMAGES_BASE_URL}/toconline/2.webp`],
+        images: [
+          `${IMAGES_BASE_URL}/toconline/1.webp`,
+          `${IMAGES_BASE_URL}/toconline/2.webp`,
+        ],
         logoImage: `${IMAGES_BASE_URL}/toconline/logo.webp`,
         description: t('portfolio.items.toconline'),
         logoBackgroundColor: 'rgba(35, 164, 179, 0.5)',
@@ -88,12 +94,13 @@ const Portfolio: FC = () => {
     <>
       <PortfolioH1>{t('portfolio.title')}</PortfolioH1>
       <PortfolioGridDiv>
-        {portfolioItems.map(({ name, images }, index) => (
+        {portfolioItems.map(({ name, images, logoImage }, index) => (
           <PortfolioItem
             key={name}
             name={name}
             index={index}
             image={images[0]}
+            logoImage={logoImage}
             onClick={handlePortfolioItemClick}
           />
         ))}
