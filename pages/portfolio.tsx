@@ -9,7 +9,8 @@ export default function App() {
   return (
     <>
       <Head>
-        <title>{t('portfolio.pageTitle')}</title>
+        <title>{t('portfolio.seo.title')}</title>
+        <meta name="description" content={t('portfolio.seo.description')} />
       </Head>
       <Portfolio />
     </>

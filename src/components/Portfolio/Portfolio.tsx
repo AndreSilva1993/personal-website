@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { PortfolioItem } from '@src/components/Portfolio/PortfolioItem';
-import { PortfolioModal } from '@src/components/Portfolio//PortfolioModal';
+import { PortfolioModal } from '@src/components/Portfolio/PortfolioModal';
 
 import type { FC } from 'react';
 import type { IPortfolioItem } from './Portfolio.types';
@@ -49,7 +49,6 @@ const Portfolio: FC = () => {
           `${IMAGES_BASE_URL}/burberry/3.webp`,
           `${IMAGES_BASE_URL}/burberry/4.webp`,
         ],
-        logoBackgroundColor: 'rgba(0, 0, 0, 0.2)',
       },
       {
         name: 'Tankey',
@@ -59,7 +58,6 @@ const Portfolio: FC = () => {
           `${IMAGES_BASE_URL}/tankey/2.webp`,
         ],
         logoImage: `${IMAGES_BASE_URL}/tankey/logo.webp`,
-        logoBackgroundColor: 'rgba(74, 159, 223, 0.5)',
       },
       {
         name: 'Carmo',
@@ -70,7 +68,6 @@ const Portfolio: FC = () => {
         ],
         logoImage: `${IMAGES_BASE_URL}/carmo/logo.svg`,
         description: t('portfolio.items.carmo'),
-        logoBackgroundColor: 'rgba(107, 192, 70, 0.5)',
       },
       {
         name: 'TOConline',
@@ -80,7 +77,6 @@ const Portfolio: FC = () => {
         ],
         logoImage: `${IMAGES_BASE_URL}/toconline/logo.webp`,
         description: t('portfolio.items.toconline'),
-        logoBackgroundColor: 'rgba(35, 164, 179, 0.5)',
       },
     ],
     []

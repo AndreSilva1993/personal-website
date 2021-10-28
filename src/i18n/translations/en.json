@@ -5,7 +5,10 @@
     "portfolio": "Portfolio"
   },
   "about": {
-    "pageTitle": "About Me",
+    "seo": {
+      "title": "About Me",
+      "description": "Hello, I'm a web developer located in Oporto, Portugal. Forever a surfing and travel lover while coding away in his Macbook Pro - which is obviously owned by the company I currently work at."
+    },
     "title": "André Silva - Web Developer",
     "description": "Hello, I'm a web developer located in Oporto, Portugal. Forever a surfing and travel lover while coding away in his Macbook Pro - which is obviously owned by the company I currently work at.",
     "info": {
@@ -21,7 +24,10 @@
     "technologies": "Technologies"
   },
   "portfolio": {
-    "pageTitle": "Portfolio",
+    "seo": {
+      "title": "Portfolio",
+      "description": "The main projects I worked on during my web development career."
+    },
     "title": "Portfolio",
     "items": {
       "burberry": "Burberry is a British luxury fashion house headquartered in London, England. It currently designs and distributes ready to wear including trench coats (for which it is most famous), leather goods, footwear, fashion accessories, eye-wear, fragrances, and cosmetics. Established in 1856 by Thomas Burberry, originally focusing on the development of outdoor attire, the house has moved into the high fashion market, developing gabardine, and products made exclusively for the brand. In this project I was one of the frontend developers behind the brand's content and editorial pages used in several campaigns and launches. The concept behind the project consisted in using the ContentStack CMS where the content creators could build the pages using re-usable components that the frontend application would then map into styled React components. To achieve this the project was developed using the React framework Next.js alongside TypeScript, Emotion, HTML 5 and CSS 3.",
