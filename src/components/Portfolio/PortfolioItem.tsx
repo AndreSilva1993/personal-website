@@ -118,7 +118,13 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
         <LogoWrapperDiv>
-          <Image priority src={logoImage} layout="fill" objectFit="contain" />
+          <Image
+            priority
+            alt={name}
+            src={logoImage}
+            layout="fill"
+            objectFit="contain"
+          />
         </LogoWrapperDiv>
       </PortfolioItemNameDiv>
     </PortfolioItemWrapperDiv>
