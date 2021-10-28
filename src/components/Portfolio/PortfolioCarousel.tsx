@@ -39,8 +39,12 @@ const PaginationItemLi = styled.li<{ active: boolean }>(
     height: 1.5rem;
     cursor: pointer;
     border-radius: 50%;
-    background-color: ${active ? theme.colors.black : theme.colors.lightGrey};
+    background-color: ${active ? theme.colors.darkBlue : theme.colors.white};
     transition: background-color 250ms ease-out;
+
+    &:hover {
+      background-color: ${theme.colors.darkBlue};
+    }
 
     &:not(:last-of-type) {
       margin-right: 1.5rem;
@@ -48,41 +52,38 @@ const PaginationItemLi = styled.li<{ active: boolean }>(
   `
 );
 
-const StyledMdChevronLeft = styled(MdChevronLeft)<{ disabled: boolean }>(
+const ChevronWrapperDiv = styled.div<{ disabled: boolean }>(
   ({ theme, disabled }) => css`
     position: absolute;
+    border-radius: 50%;
     top: calc(50% - 2.5rem);
-    left: 0;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
+    padding: 1rem;
+    color: ${disabled ? theme.colors.white : theme.colors.black};
+    background-color: ${disabled ? theme.colors.lightGrey : theme.colors.white};
     cursor: pointer;
-    transition: color 250ms ease-out;
-    color: ${disabled ? theme.colors.lightGrey : theme.colors.black};
 
-    ${disabled &&
-    css`
-      pointer-events: none;
-    `}
+    transition: color 250ms ease-out, background-color 250ms ease-out;
+
+    pointer-events: ${disabled ? 'none' : 'all'};
+
+    &:hover {
+      color: ${theme.colors.white};
+      background-color: ${theme.colors.darkBlue};
+    }
   `
 );
 
-const StyledMdChevronRight = styled(MdChevronRight)<{ disabled: boolean }>(
-  ({ theme, disabled }) => css`
-    position: absolute;
-    top: calc(50% - 2.5rem);
-    right: 0;
-    width: 5rem;
-    height: 5rem;
-    cursor: pointer;
-    transition: color 250ms ease-out;
-    color: ${disabled ? theme.colors.lightGrey : theme.colors.black};
+const StyledMdChevronLeft = styled(MdChevronLeft)`
+  width: 100%;
+  height: 100%;
+`;
 
-    ${disabled &&
-    css`
-      pointer-events: none;
-    `}
-  `
-);
+const StyledMdChevronRight = styled(MdChevronRight)`
+  width: 100%;
+  height: 100%;
+`;
 
 const PortfolioCarousel: FC = ({ children, ...remainingProps }) => {
   const controls = useAnimation();
@@ -152,11 +153,20 @@ const PortfolioCarousel: FC = ({ children, ...remainingProps }) => {
         ))}
       </PaginationWrapperUl>
 
-      <StyledMdChevronLeft onClick={handleChevronLeftClick} disabled={carouselIndex === 0} />
-      <StyledMdChevronRight
+      <ChevronWrapperDiv
+        onClick={handleChevronLeftClick}
+        disabled={carouselIndex === 0}
+        css={{ left: '2rem' }}
+      >
+        <StyledMdChevronLeft />
+      </ChevronWrapperDiv>
+      <ChevronWrapperDiv
         onClick={handleChevronRightClick}
         disabled={carouselIndex === Children.count(children) - 1}
-      />
+        css={{ right: '2rem' }}
+      >
+        <StyledMdChevronRight />
+      </ChevronWrapperDiv>
     </CarouselWrapperDiv>
   );
 };
