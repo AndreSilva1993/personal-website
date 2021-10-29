@@ -4,6 +4,15 @@
     "about": "About",
     "portfolio": "Portfolio"
   },
+  "404": {
+    "seo": {
+      "title": "404",
+      "description": "The page you requested was lost in space"
+    },
+    "title": "404",
+    "description": "The page you requested was lost in space",
+    "cta": "Return to homepage"
+  },
   "about": {
     "seo": {
       "title": "About Me",

@@ -16,6 +16,10 @@ class AppDocument extends Document {
             href={`https://fonts.googleapis.com/css2?family=Montserrat:wght@${requiredFontWeights}`}
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Dosis"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
