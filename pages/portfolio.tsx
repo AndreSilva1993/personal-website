@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Portfolio } from '@src/components/Portfolio/Portfolio';
 
-export default function App() {
+export default function Page() {
   const { t } = useTranslation();
 
   return (

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useAnimation, motion } from 'framer-motion';
@@ -42,6 +42,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
 }) => {
   const controls = useAnimation();
   const wrapperRef = useRef<HTMLDivElement>();
+  const [isHovering, setIsHovering] = useState(false);
 
   function getAnimationDirection({
     clientX,
@@ -85,11 +86,13 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
   }
 
   function handleItemMouseEnter(event: React.MouseEvent<HTMLElement>) {
+    setIsHovering(true);
     controls.set(getAnimationDirection(event));
     controls.start({ x: 0, y: 0 });
   }
 
   function handleItemMouseLeave(event: React.MouseEvent<HTMLElement>) {
+    setIsHovering(false);
     controls.start(getAnimationDirection(event));
   }
 
@@ -110,6 +113,10 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
         sizes="50vw"
         layout="fill"
         objectFit="cover"
+        css={css`
+          transform: scale(${isHovering ? 1.1 : 1});
+          transition: transform 500ms ease, filter 500ms ease;
+        `}
       />
 
       <PortfolioItemNameDiv

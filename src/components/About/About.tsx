@@ -9,6 +9,11 @@ import { ProgressBar } from '@src/components/About/ProgressBar';
 
 import type { FC } from 'react';
 
+const AboutWrapperDiv = styled(motion.div)`
+  margin: 0 auto;
+  max-width: 96rem;
+`;
+
 const AboutImageWrapperDiv = styled.div`
   width: 100%;
   margin-bottom: 5rem;
@@ -150,7 +155,7 @@ const About: FC = () => {
   );
 
   return (
-    <motion.div
+    <AboutWrapperDiv
       animate={{ x: 0, opacity: 1 }}
       initial={{ x: '-10rem', opacity: 0 }}
       transition={{ duration: 1, ease: 'easeInOut' }}
@@ -201,7 +206,7 @@ const About: FC = () => {
           </TechnologyLi>
         ))}
       </TechnologyUl>
-    </motion.div>
+    </AboutWrapperDiv>
   );
 };
 

@@ -9,6 +9,11 @@ import { PortfolioModal } from '@src/components/Portfolio/PortfolioModal';
 import type { FC } from 'react';
 import type { IPortfolioItem } from './Portfolio.types';
 
+const PortfolioWrapperDiv = styled.div`
+  margin: 0 auto;
+  max-width: 96rem;
+`;
+
 const PortfolioH1 = styled.h1(
   ({ theme }) => css`
     color: ${theme.colors.white};
@@ -87,7 +92,7 @@ const Portfolio: FC = () => {
   }
 
   return (
-    <>
+    <PortfolioWrapperDiv>
       <PortfolioH1>{t('portfolio.title')}</PortfolioH1>
       <PortfolioGridDiv>
         {portfolioItems.map(({ name, images, logoImage }, index) => (
@@ -107,7 +112,7 @@ const Portfolio: FC = () => {
         open={modalActiveItem !== undefined}
         onClose={() => setModalActiveItem(undefined)}
       />
-    </>
+    </PortfolioWrapperDiv>
   );
 };
 

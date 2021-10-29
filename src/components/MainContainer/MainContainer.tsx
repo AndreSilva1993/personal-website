@@ -41,17 +41,9 @@ const NavigationDiv = styled.div(
 const ContentDiv = styled.div`
   flex-grow: 1;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  overflow: auto;
   background-color: ${({ theme }) => theme.colors.darkGrey};
-`;
-
-const PageContainerDiv = styled.div`
-  width: 100%;
-  max-width: 96rem;
+  overflow: auto;
   padding: 10rem 4rem;
-  height: fit-content;
 `;
 
 const MainContainer: FC = ({ children }) => (
@@ -59,9 +51,7 @@ const MainContainer: FC = ({ children }) => (
     <NavigationDiv>
       <NavigationMenu />
     </NavigationDiv>
-    <ContentDiv>
-      <PageContainerDiv>{children}</PageContainerDiv>
-    </ContentDiv>
+    <ContentDiv>{children}</ContentDiv>
   </ContainerDiv>
 );
 
