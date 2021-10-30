@@ -37,7 +37,7 @@ const AboutDiv = styled.div(
     font-size: 1.5rem;
     margin-bottom: 5rem;
 
-    ${theme.breakpoints.large} {
+    ${theme.breakpoints.gteMedium} {
       flex-direction: row;
     }
   `
@@ -51,7 +51,7 @@ const P = styled.p(
     font-weight: ${theme.fontWeights.normal};
     color: ${theme.colors.lightGrey};
 
-    ${theme.breakpoints.large} {
+    ${theme.breakpoints.gteMedium} {
       flex: 0 0 55%;
       margin-right: 5rem;
     }
@@ -62,7 +62,7 @@ const PersonalInfoUl = styled.ul(
   ({ theme }) => css`
     flex-grow: 1;
 
-    ${theme.breakpoints.small} {
+    ${theme.breakpoints.lteSmall} {
       margin-top: 3rem;
     }
   `
@@ -76,7 +76,7 @@ const PersonalInfoLi = styled.li(
       margin-bottom: 1.5rem;
     }
 
-    ${theme.breakpoints.large} {
+    ${theme.breakpoints.gteMedium} {
       display: flex;
       justify-content: space-between;
     }
@@ -88,7 +88,7 @@ const PersonalInfoSpan = styled.span(
     color: ${theme.colors.white};
     font-weight: ${theme.fontWeights.boldest};
 
-    ${theme.breakpoints.small} {
+    ${theme.breakpoints.lteSmall} {
       min-width: 10rem;
       display: inline-block;
     }
