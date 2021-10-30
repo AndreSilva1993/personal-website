@@ -133,7 +133,7 @@ const About: FC = () => {
       { image: 'node.svg', name: 'Node.js', value: 80 },
       { image: 'jest.svg', name: 'Jest', value: 80 },
       { image: 'polymer.svg', name: 'Polymer', value: 70 },
-      { image: 'rails.svg', name: 'Ruby On Rails', value: 60 },
+      { image: 'rails.svg', name: 'Rails', value: 60 },
       { image: 'php.svg', name: 'PHP', value: 50 },
       { image: 'postgresql.svg', name: 'PostgreSQL', value: 50 },
       { image: 'mysql.svg', name: 'MySQL', value: 50 },
