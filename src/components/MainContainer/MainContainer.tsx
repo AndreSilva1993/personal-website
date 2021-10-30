@@ -46,10 +46,6 @@ const ContentDiv = styled.div(
     background-color: ${theme.colors.darkGrey};
     overflow: auto;
     padding: 10rem 4rem;
-
-    ${theme.breakpoints.extraSmall} {
-      padding: 5rem 2rem;
-    }
   `
 );
 

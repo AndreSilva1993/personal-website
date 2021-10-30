@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { motion } from 'framer-motion';
+import { Fragment, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ProgressBar } from '@src/components/About/ProgressBar';
@@ -95,41 +95,29 @@ const PersonalInfoSpan = styled.span(
   `
 );
 
-const TechnologyUl = styled.ul(
+const TechnologyGridDiv = styled.div(
   ({ theme }) => css`
-    font-size: 1.5rem;
-    color: ${theme.colors.lightGrey};
-
     display: grid;
-    grid-gap: 3rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 3rem auto 1fr);
+    color: ${theme.colors.white};
+    font-size: 1.5rem;
 
     ${theme.breakpoints.extraSmall} {
-      grid-template-columns: 1fr;
+      grid-template-columns: 3rem auto 1fr;
     }
   `
 );
 
-const TechnologyLi = styled.li`
+const TechnologyGridItemDiv = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const TechnologySpan = styled.span`
-  margin-left: 1.5rem;
+const StyledProgressBar = styled(ProgressBar)`
+  width: 100%;
+  height: 0.5rem;
 `;
-
-const StyledProgressBar = styled(ProgressBar)(
-  ({ theme }) => css`
-    flex: 0 0 55%;
-    height: 0.5rem;
-    margin-left: auto;
-
-    ${theme.breakpoints.extraSmall} {
-      flex: 0 0 40%;
-    }
-  `
-);
 
 const About: FC = () => {
   const { t } = useTranslation();
@@ -192,20 +180,23 @@ const About: FC = () => {
       </AboutDiv>
 
       <H1>{t('about.technologies')}</H1>
-      <TechnologyUl>
+
+      <TechnologyGridDiv>
         {technologiesData.map(({ name, image, value }, index) => (
-          <TechnologyLi key={name}>
+          <Fragment key={index}>
             <Image
               alt={name}
               width={30}
               height={30}
               src={`/images/technologies/${image}`}
             />
-            <TechnologySpan>{name}</TechnologySpan>
-            <StyledProgressBar value={value} delay={0.5 + 0.1 * index} />
-          </TechnologyLi>
+            <TechnologyGridItemDiv>{name}</TechnologyGridItemDiv>
+            <TechnologyGridItemDiv>
+              <StyledProgressBar value={value} delay={0.5 + 0.1 * index} />
+            </TechnologyGridItemDiv>
+          </Fragment>
         ))}
-      </TechnologyUl>
+      </TechnologyGridDiv>
     </AboutWrapperDiv>
   );
 };
