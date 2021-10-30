@@ -19,6 +19,7 @@ const AstronautKeyframes = keyframes`
 const StarsCanvas = styled.canvas`
   top: 0;
   left: 0;
+  z-index: -1;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -46,15 +47,21 @@ const H2 = styled.h2`
   color: ${({ theme }) => theme.colors.white};
 `;
 
-const AstronautImageWrapperDiv = styled.div`
+const ImagesWrapperDiv = styled.div`
+  position: relative;
+`;
+
+const AstronautImageDiv = styled.div`
+  top: 5rem;
+  right: 5rem;
   width: 5rem;
   height: 5rem;
-  position: relative;
+  position: absolute;
 
   animation: ${AstronautKeyframes} 10s infinite linear;
 `;
 
-const PlanetImageWrapperDiv = styled.div(
+const PlanetImageDiv = styled.div(
   ({ theme }) => css`
     width: 50rem;
     height: 50rem;
@@ -69,6 +76,7 @@ const PlanetImageWrapperDiv = styled.div(
 
 const StyledA = styled.a(
   ({ theme }) => css`
+    cursor: pointer;
     font-size: 1.5rem;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -76,6 +84,12 @@ const StyledA = styled.a(
     color: ${theme.colors.white};
     border: 1px solid ${theme.colors.white};
     border-radius: 1rem;
+    transition: color 150ms ease-out, background-color 150ms ease-out;
+
+    &:hover {
+      color: ${theme.colors.black};
+      background-color: ${theme.colors.white};
+    }
   `
 );
 
@@ -92,6 +106,9 @@ export default function Page() {
     canvasRef.current.width = offsetWidth;
     canvasRef.current.height = offsetHeight;
 
+    canvasContext.fillStyle = colors.darkGrey;
+    canvasContext.fillRect(0, 0, offsetWidth, offsetHeight);
+
     const drawStars = (color: string) => {
       for (let count = 0; count < numberOfStars; count += 1) {
         const x = Math.random() * offsetWidth;
@@ -105,8 +122,9 @@ export default function Page() {
       }
     };
 
+    drawStars(colors.grey);
     drawStars(colors.white);
-    drawStars('rgba(0, 169, 255, 0.8)');
+    drawStars(colors.darkBlue);
   }, []);
 
   return (
@@ -119,12 +137,14 @@ export default function Page() {
       <WrapperDiv>
         <H1>{t('404.title')}</H1>
         <H2>{t('404.description')}</H2>
-        <PlanetImageWrapperDiv>
-          <Image src="/images/404/planet.svg" layout="fill" />
-        </PlanetImageWrapperDiv>
-        <AstronautImageWrapperDiv>
-          <Image src="/images/404/astronaut.svg" layout="fill" />
-        </AstronautImageWrapperDiv>
+        <ImagesWrapperDiv>
+          <PlanetImageDiv>
+            <Image src="/images/404/planet.svg" layout="fill" />
+          </PlanetImageDiv>
+          <AstronautImageDiv>
+            <Image src="/images/404/astronaut.svg" layout="fill" />
+          </AstronautImageDiv>
+        </ImagesWrapperDiv>
         <Link href="/">
           <StyledA>{t('404.cta')}</StyledA>
         </Link>

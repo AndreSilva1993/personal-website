@@ -6,14 +6,6 @@ import { NavigationMenu } from '@src/components/NavigationMenu/NavigationMenu';
 
 import type { FC } from 'react';
 
-const FullPageContainerDiv = styled.div(
-  ({ theme }) => css`
-    width: 100vw;
-    height: 100vh;
-    background-color: ${theme.colors.darkGrey};
-  `
-);
-
 const ContainerDiv = styled.div(
   ({ theme }) => css`
     width: 100%;
@@ -65,7 +57,7 @@ const MainContainer: FC = ({ children }) => {
   const { pathname } = useRouter();
 
   if (pathname === '/404') {
-    return <FullPageContainerDiv>{children}</FullPageContainerDiv>;
+    return <>{children}</>;
   }
 
   return (
