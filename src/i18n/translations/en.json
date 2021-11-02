@@ -2,7 +2,8 @@
   "navigation": {
     "home": "Home",
     "about": "About",
-    "portfolio": "Portfolio"
+    "portfolio": "Portfolio",
+    "travels": "Travels"
   },
   "404": {
     "seo": {
@@ -44,5 +45,11 @@
       "carmo": "Carmo is made up of a group of 10 companies based in Portugal, and the whole process of transformation, product creation, and technical development is Portuguese. Carmo offers a wide range of products in the national territory and across borders, in sectors as diverse as agriculture, the equestrian world, construction, tourism, leisure, security, and telecommunications. To promote this brand, I helped develop a website where the users could see their diverse catalogue using HTML 5, CSS 3, PHP framework Yii 2 and jQuery.",
       "toconline": "TOConline is one of the biggest billing and accounting program in Portugal which allows tens of thousands of accountants and managers run every single aspect of their company on it. Management of their employees, contracts, salaries, sales, purchases, assets, accounting / billing were some of the features provided by TOConline and the product was in constant evolution as the company established a close communication with their customers which constantly requested new features. In this particular project I was responsible for the development and management of re-usable Polymer components that the other developers would use to create new pages and features. Those components would range from simple ones as buttons, labels, badges to more complex ones such as a full-on data grid with data fetching, pagination, caching and re-fetching when the information was marked as stale and so many other features. To a lesser extent, I've also developed some small features on the backend side of things using Ruby and PostgreSQL."
     }
+  },
+  "travels": {
+    "seo": {
+      "title": "Travels"
+    },
+    "title": "Travels"
   }
 }

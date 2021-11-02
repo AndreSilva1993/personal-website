@@ -19,7 +19,7 @@ const ModalWrapperDiv = styled.div`
 const StyledPortfolioCarousel = styled(PortfolioCarousel)`
   width: 100%;
   position: relative;
-  padding-bottom: calc(100% * 10 / 16);
+  aspect-ratio: 16 / 10;
 `;
 
 const H1 = styled.h1(

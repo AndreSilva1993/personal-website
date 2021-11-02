@@ -1,0 +1,852 @@
+{
+  "travels": [
+    {
+      "name": "Austria",
+      "image": "/images/travels/austria.svg",
+      "cities": [
+        {
+          "name": "Vienna",
+          "places": []
+        }
+      ]
+    },
+    {
+      "name": "Belgium",
+      "image": "/images/travels/belgium.svg",
+      "cities": [
+        {
+          "name": "Ghent",
+          "places": [
+            {
+              "name": "Saint Bavo's Cathedral",
+              "coordinates": [
+                51.052974,
+                3.7270591
+              ]
+            },
+            {
+              "name": "City Pavillion",
+              "coordinates": [
+                51.0539298,
+                3.724344
+              ]
+            },
+            {
+              "name": "Saint Nicholas' Church",
+              "coordinates": [
+                51.053753,
+                3.7228513
+              ]
+            },
+            {
+              "name": "Sint-Jacobskerk",
+              "coordinates": [
+                51.0565185,
+                3.7270439
+              ]
+            },
+            {
+              "name": "Gravensteen",
+              "coordinates": [
+                51.0575292,
+                3.7207367
+              ]
+            },
+            {
+              "name": "Saint Michael's Church",
+              "coordinates": [
+                51.0535101,
+                3.7196995
+              ]
+            },
+            {
+              "name": "Sint-Michielsbrug",
+              "coordinates": [
+                51.0538849,
+                3.7205421
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Brussels",
+          "places": [
+            {
+              "name": "Atomium",
+              "coordinates": [
+                50.8954958,
+                4.3408462
+              ]
+            },
+            {
+              "name": "European Parliament",
+              "coordinates": [
+                50.8392109,
+                4.3745547
+              ]
+            },
+            {
+              "name": "Royal Palace of Brussels",
+              "coordinates": [
+                50.8426759,
+                4.3626751
+              ]
+            },
+            {
+              "name": "Le Botanique",
+              "coordinates": [
+                50.8546778,
+                4.3661713
+              ]
+            },
+            {
+              "name": "Royal Gallery of Saint Hurbert",
+              "coordinates": [
+                50.8480832,
+                4.3552506
+              ]
+            },
+            {
+              "name": "Royal Library of Belgium",
+              "coordinates": [
+                50.8433475,
+                4.3538905
+              ]
+            },
+            {
+              "name": "Musical Instruments Museum",
+              "coordinates": [
+                50.8427437,
+                4.3590242
+              ]
+            },
+            {
+              "name": "Halle Gate",
+              "coordinates": [
+                50.8329997,
+                4.3448675
+              ]
+            },
+            {
+              "name": "Manneken Pis",
+              "coordinates": [
+                50.8449964,
+                4.3478003
+              ]
+            },
+            {
+              "name": "Grande Place",
+              "coordinates": [
+                50.8467887,
+                4.3524356
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bulgaria",
+      "image": "/images/travels/bulgaria.svg",
+      "cities": [
+        {
+          "name": "Budapest",
+          "places": []
+        }
+      ]
+    },
+    {
+      "name": "Czech Republic",
+      "image": "/images/travels/czech-republic.svg",
+      "cities": [
+        {
+          "name": "Prague",
+          "places": []
+        }
+      ]
+    },
+    {
+      "name": "France",
+      "image": "/images/travels/france.svg",
+      "cities": [
+        {
+          "name": "Paris",
+          "places": [
+            {
+              "name": "Sacré-Cœur",
+              "coordinates": [
+                48.8867046,
+                2.3431043
+              ]
+            },
+            {
+              "name": "Tuileries Garden",
+              "coordinates": [
+                48.8634951,
+                2.3253056
+              ]
+            },
+            {
+              "name": "Arc de Triomphe",
+              "coordinates": [
+                48.8737917,
+                2.2950275
+              ]
+            },
+            {
+              "name": "Tour Eiffel",
+              "coordinates": [
+                48.8583701,
+                2.2944813
+              ]
+            },
+            {
+              "name": "Hôtel de Ville",
+              "coordinates": [
+                48.8564826,
+                2.3524135
+              ]
+            },
+            {
+              "name": "Panthéon",
+              "coordinates": [
+                48.8462253,
+                2.3442251
+              ]
+            },
+            {
+              "name": "Notre Dame",
+              "coordinates": [
+                48.8516602,
+                2.3591612
+              ]
+            },
+            {
+              "name": "Louvre Museum",
+              "coordinates": [
+                48.8606146,
+                2.3354553
+              ]
+            },
+            {
+              "name": "Montparnasse Tower",
+              "coordinates": [
+                48.841965,
+                2.322531
+              ]
+            },
+            {
+              "name": "Pont Alexandre III",
+              "coordinates": [
+                48.8638995,
+                2.313559
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Versailles",
+          "places": [
+            {
+              "name": "Palace of Versailles",
+              "coordinates": [
+                48.8014,
+                2.1301
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Portugal",
+      "image": "/images/travels/portugal.svg",
+      "cities": [
+        {
+          "name": "Ponta Delgada",
+          "places": [
+            {
+              "name": "Miradouro das Cumeeiras",
+              "coordinates": [
+                37.8802,
+                -25.7767
+              ]
+            },
+            {
+              "name": "Gruta do Carvão",
+              "coordinates": [
+                37.7482,
+                -25.6871
+              ]
+            },
+            {
+              "name": "Lagoa do Fogo",
+              "coordinates": [
+                37.7631342,
+                -25.4753767
+              ]
+            },
+            {
+              "name": "Caldeira Velha",
+              "coordinates": [
+                37.7821,
+                -25.5003
+              ]
+            },
+            {
+              "name": "Lagoa do Congro",
+              "coordinates": [
+                37.7564065,
+                -25.4080541
+              ]
+            },
+            {
+              "name": "Miradouro da Ponta do Sossego",
+              "coordinates": [
+                37.7992,
+                -25.1459
+              ]
+            },
+            {
+              "name": "Miradouro do Pôr-do-Sol",
+              "coordinates": [
+                37.7531062,
+                -25.2188253
+              ]
+            },
+            {
+              "name": "Miradouro do Pico dos Bodes",
+              "coordinates": [
+                37.7469931,
+                -25.2212601
+              ]
+            },
+            {
+              "name": "Poça da Dona Beija",
+              "coordinates": [
+                37.7691634,
+                -25.3213369
+              ]
+            },
+            {
+              "name": "Lagoa do Canário",
+              "coordinates": [
+                37.8361597,
+                -25.7618183
+              ]
+            },
+            {
+              "name": "Ponta da Ferraria",
+              "coordinates": [
+                37.8583611,
+                -25.8544965
+              ]
+            },
+            {
+              "name": "Miradouro da Boca do Inferno",
+              "coordinates": [
+                37.8429639,
+                -25.7655288
+              ]
+            },
+            {
+              "name": "Hotel Monte Palace",
+              "coordinates": [
+                37.8389261,
+                -25.7963058
+              ]
+            },
+            {
+              "name": "Lagoa das Sete Cidades",
+              "coordinates": [
+                37.8550078,
+                -25.7907664
+              ]
+            },
+            {
+              "name": "Miradouro do Salto do Cavalo",
+              "coordinates": [
+                37.787394,
+                -25.2858992
+              ]
+            },
+            {
+              "name": "Casa Grená",
+              "coordinates": [
+                37.7663435,
+                -25.3377637
+              ]
+            },
+            {
+              "name": "Lagoa das Furnas",
+              "coordinates": [
+                37.7595184,
+                -25.3375279
+              ]
+            },
+            {
+              "name": "Capela de Nossa Senhora das Vitórias",
+              "coordinates": [
+                37.7535977,
+                -25.3338586
+              ]
+            },
+            {
+              "name": "Parque Terra Nostra",
+              "coordinates": [
+                37.771687,
+                -25.3172526
+              ]
+            },
+            {
+              "name": "Igreja de Nossa Senhora da Alegria",
+              "coordinates": [
+                37.7729572,
+                -25.3132967
+              ]
+            },
+            {
+              "name": "Ermida de Nossa Senhora da Paz",
+              "coordinates": [
+                37.7285567,
+                -25.4335181
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Madeira",
+          "places": [
+            {
+              "name": "Miradouro dos Balcões",
+              "coordinates": [
+                32.7414302,
+                -16.8925299
+              ]
+            },
+            {
+              "name": "Levada das 25 Fontes",
+              "coordinates": [
+                32.7549076,
+                -17.1360567
+              ]
+            },
+            {
+              "name": "Pico Ruivo",
+              "coordinates": [
+                32.758953,
+                -16.9430303
+              ]
+            },
+            {
+              "name": "Levada Nova",
+              "coordinates": [
+                32.6940452,
+                -17.0876439
+              ]
+            },
+            {
+              "name": "Fajã dos Padres",
+              "coordinates": [
+                32.6569985,
+                -17.0237307
+              ]
+            },
+            {
+              "name": "Cabo Girão",
+              "coordinates": [
+                32.6565925,
+                -17.0067413
+              ]
+            },
+            {
+              "name": "Parque das Queimadas",
+              "coordinates": [
+                32.7836128,
+                -16.9080988
+              ]
+            },
+            {
+              "name": "Casas Típicas de Santana",
+              "coordinates": [
+                32.8053621,
+                -16.8843907
+              ]
+            },
+            {
+              "name": "Miradouro do Guindaste",
+              "coordinates": [
+                32.7940254,
+                -16.8515682
+              ]
+            },
+            {
+              "name": "Porto da Cruz",
+              "coordinates": [
+                32.7676407,
+                -16.8208683
+              ]
+            },
+            {
+              "name": "Praia de Machico",
+              "coordinates": [
+                32.7194429,
+                -16.7599649
+              ]
+            },
+            {
+              "name": "Ponta de São Lourenço",
+              "coordinates": [
+                32.739213,
+                -16.6898891
+              ]
+            },
+            {
+              "name": "Monte Palace Madeira",
+              "coordinates": [
+                32.6750137,
+                -16.902579
+              ]
+            },
+            {
+              "name": "Ponta do Garajau",
+              "coordinates": [
+                32.637022,
+                -16.8545562
+              ]
+            },
+            {
+              "name": "Jardim Botânico da Madeira",
+              "coordinates": [
+                32.6619499,
+                -16.894201
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spain",
+      "image": "/images/travels/spain.svg",
+      "cities": [
+        {
+          "name": "Madrid",
+          "places": [
+            {
+              "name": "Wanda Metropolitano Stadium",
+              "coordinates": [
+                40.4361939,
+                -3.5994674
+              ]
+            },
+            {
+              "name": "Santiago Bernabéu Stadium",
+              "coordinates": [
+                40.4540749,
+                -3.688331
+              ]
+            },
+            {
+              "name": "Estación del Arte",
+              "coordinates": [
+                40.4088513,
+                -3.6924846
+              ]
+            },
+            {
+              "name": "San Jerónimo el Real",
+              "coordinates": [
+                40.4145055,
+                -3.6931654
+              ]
+            },
+            {
+              "name": "Museo Nacional del Prado",
+              "coordinates": [
+                40.4137818,
+                -3.6921271
+              ]
+            },
+            {
+              "name": "Tío Pio's Hill",
+              "coordinates": [
+                40.3980244,
+                -3.6576932
+              ]
+            },
+            {
+              "name": "Plaza Mayor",
+              "coordinates": [
+                40.4158176,
+                -3.7061186
+              ]
+            },
+            {
+              "name": "Mercado de San Miguel",
+              "coordinates": [
+                40.4153835,
+                -3.7111584
+              ]
+            },
+            {
+              "name": "Temple of Debod",
+              "coordinates": [
+                40.4240216,
+                -3.7177695
+              ]
+            },
+            {
+              "name": "Royal Palace of Madrid",
+              "coordinates": [
+                40.417955,
+                -3.714312
+              ]
+            },
+            {
+              "name": "Calle Gran Vía",
+              "coordinates": [
+                40.418935,
+                -3.6969639
+              ]
+            },
+            {
+              "name": "Puerta del Sol",
+              "coordinates": [
+                40.4170164,
+                -3.7026175
+              ]
+            },
+            {
+              "name": "Círculo de Bellas Artes",
+              "coordinates": [
+                40.4183083,
+                -3.698722
+              ]
+            },
+            {
+              "name": "Palacio de Cibeles",
+              "coordinates": [
+                40.4189355,
+                -3.6921633
+              ]
+            },
+            {
+              "name": "El Retiro Park",
+              "coordinates": [
+                40.4152606,
+                -3.6866882
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Barcelona",
+          "places": [
+            {
+              "name": "Plaça d'Espanya",
+              "coordinates": [
+                41.3750218,
+                2.1469346
+              ]
+            },
+            {
+              "name": "Montserrat",
+              "coordinates": [
+                41.5957839,
+                1.8254368
+              ]
+            },
+            {
+              "name": "Tibidabo",
+              "coordinates": [
+                41.4232901,
+                2.1178993
+              ]
+            },
+            {
+              "name": "Park Güell",
+              "coordinates": [
+                41.4144988,
+                2.1505058
+              ]
+            },
+            {
+              "name": "Ciutadella Park",
+              "coordinates": [
+                41.388127,
+                2.1838265
+              ]
+            },
+            {
+              "name": "Arc de Triomf",
+              "coordinates": [
+                41.391037,
+                2.1784728
+              ]
+            },
+            {
+              "name": "La Sagrada Familia",
+              "coordinates": [
+                41.4036339,
+                2.1721671
+              ]
+            },
+            {
+              "name": "Basilica of Santa Maria del Mar",
+              "coordinates": [
+                41.3838911,
+                2.1798824
+              ]
+            },
+            {
+              "name": "Catedral de Barcelona",
+              "coordinates": [
+                41.383966,
+                2.1740104
+              ]
+            },
+            {
+              "name": "Casa Milà",
+              "coordinates": [
+                41.3952195,
+                2.1597137
+              ]
+            },
+            {
+              "name": "Casa Batlló",
+              "coordinates": [
+                41.3916088,
+                2.1625536
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "United Kingdom",
+      "image": "/images/travels/united-kingdom.svg",
+      "cities": [
+        {
+          "name": "London",
+          "places": [
+            {
+              "name": "Saint Paul's Cathedral",
+              "coordinates": [
+                51.5138,
+                -0.0984
+              ]
+            },
+            {
+              "name": "National Gallery",
+              "image": "/images/travels/united-kingdom/london/1.jpeg",
+              "coordinates": [
+                51.5089,
+                -0.1283
+              ]
+            },
+            {
+              "name": "British Museum",
+              "coordinates": [
+                51.5194,
+                -0.1270
+              ]
+            },
+            {
+              "name": "Hyde Park",
+              "coordinates": [
+                51.5073,
+                -0.1657
+              ]
+            },
+            {
+              "name": "Kew Gardens",
+              "coordinates": [
+                51.4787,
+                -0.2956
+              ]
+            },
+            {
+              "name": "Westminster Palace",
+              "coordinates": [
+                51.4995,
+                -0.1248
+              ]
+            },
+            {
+              "name": "Harrods",
+              "coordinates": [
+                51.4994,
+                -0.1632
+              ]
+            },
+            {
+              "name": "Natural History Museum",
+              "coordinates": [
+                51.4967,
+                -0.1764
+              ]
+            },
+            {
+              "name": "London Eye",
+              "coordinates": [
+                51.5033,
+                -0.1196
+              ]
+            },
+            {
+              "name": "St. Pancras International",
+              "coordinates": [
+                51.5314,
+                -0.1261
+              ]
+            },
+            {
+              "name": "Westminster Abbey",
+              "coordinates": [
+                51.4994,
+                -0.1273
+              ]
+            },
+            {
+              "name": "Hay's Galleria",
+              "coordinates": [
+                51.5057,
+                -0.0834
+              ]
+            },
+            {
+              "name": "The Shard",
+              "coordinates": [
+                51.5045,
+                -0.0865
+              ]
+            },
+            {
+              "name": "Sky Garden",
+              "coordinates": [
+                51.5112,
+                -0.0835
+              ]
+            },
+            {
+              "name": "Leadenhall Market",
+              "coordinates": [
+                51.5128,
+                -0.0835
+              ]
+            },
+            {
+              "name": "The Gherkin",
+              "coordinates": [
+                51.5145,
+                -0.0803
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

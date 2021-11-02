@@ -76,6 +76,11 @@ const NavigationMenu: FC = () => {
             </A>
           </Link>
         </Li>
+        <Li>
+          <Link href="/travels">
+            <A active={pathname === '/travels'}>{t('navigation.travels')}</A>
+          </Link>
+        </Li>
       </Ul>
     </nav>
   );

@@ -15,7 +15,7 @@ const PortfolioItemWrapperDiv = styled(motion.div)(
     cursor: pointer;
     overflow: hidden;
     position: relative;
-    padding-bottom: 100%;
+    aspect-ratio: 1;
   `
 );
 
