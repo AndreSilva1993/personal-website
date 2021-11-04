@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { motion } from 'framer-motion';
 import { Fragment, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ProgressBar } from '@src/components/About/ProgressBar';
+import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
 import type { FC } from 'react';
 
-const AboutWrapperDiv = styled(motion.div)`
+const StyledPageContainer = styled(PageContainer)`
   margin: 0 auto;
   max-width: 96rem;
 `;
@@ -143,11 +143,7 @@ const About: FC = () => {
   );
 
   return (
-    <AboutWrapperDiv
-      animate={{ x: 0, opacity: 1 }}
-      initial={{ x: '-10rem', opacity: 0 }}
-      transition={{ duration: 1, ease: 'easeInOut' }}
-    >
+    <StyledPageContainer>
       <AboutImageWrapperDiv>
         <Image
           alt="About"
@@ -197,7 +193,7 @@ const About: FC = () => {
           </Fragment>
         ))}
       </TechnologyGridDiv>
-    </AboutWrapperDiv>
+    </StyledPageContainer>
   );
 };
 

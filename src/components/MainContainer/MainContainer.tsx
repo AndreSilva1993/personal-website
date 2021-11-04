@@ -29,6 +29,7 @@ const NavigationDiv = styled.div(
     width: 100%;
     height: 7rem;
     padding: 2rem 4rem;
+    flex-shrink: 0;
 
     ${theme.breakpoints.large} {
       width: 40rem;
@@ -43,9 +44,9 @@ const ContentDiv = styled.div(
   ({ theme }) => css`
     flex-grow: 1;
     height: 100%;
-    background-color: ${theme.colors.darkGrey};
     overflow: auto;
-    padding: 10rem 4rem;
+    padding: 6rem 4rem;
+    background-color: ${theme.colors.darkGrey};
   `
 );
 

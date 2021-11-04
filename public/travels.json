@@ -2,20 +2,22 @@
   "travels": [
     {
       "name": "Austria",
-      "image": "/images/travels/austria.svg",
+      "flagImage": "/images/travels/austria.svg",
       "cities": [
         {
           "name": "Vienna",
+          "images": [],
           "places": []
         }
       ]
     },
     {
       "name": "Belgium",
-      "image": "/images/travels/belgium.svg",
+      "flagImage": "/images/travels/belgium.svg",
       "cities": [
         {
           "name": "Ghent",
+          "images": [],
           "places": [
             {
               "name": "Saint Bavo's Cathedral",
@@ -70,6 +72,7 @@
         },
         {
           "name": "Brussels",
+          "images": [],
           "places": [
             {
               "name": "Atomium",
@@ -146,31 +149,34 @@
       ]
     },
     {
-      "name": "Bulgaria",
-      "image": "/images/travels/bulgaria.svg",
+      "name": "Hungary",
+      "flagImage": "/images/travels/Hungary.svg",
       "cities": [
         {
           "name": "Budapest",
+          "images": [],
           "places": []
         }
       ]
     },
     {
       "name": "Czech Republic",
-      "image": "/images/travels/czech-republic.svg",
+      "flagImage": "/images/travels/czech-republic.svg",
       "cities": [
         {
           "name": "Prague",
+          "images": [],
           "places": []
         }
       ]
     },
     {
       "name": "France",
-      "image": "/images/travels/france.svg",
+      "flagImage": "/images/travels/france.svg",
       "cities": [
         {
           "name": "Paris",
+          "images": [],
           "places": [
             {
               "name": "Sacré-Cœur",
@@ -246,6 +252,7 @@
         },
         {
           "name": "Versailles",
+          "images": [],
           "places": [
             {
               "name": "Palace of Versailles",
@@ -260,10 +267,11 @@
     },
     {
       "name": "Portugal",
-      "image": "/images/travels/portugal.svg",
+      "flagImage": "/images/travels/portugal.svg",
       "cities": [
         {
           "name": "Ponta Delgada",
+          "images": [],
           "places": [
             {
               "name": "Miradouro das Cumeeiras",
@@ -416,6 +424,7 @@
         },
         {
           "name": "Madeira",
+          "images": [],
           "places": [
             {
               "name": "Miradouro dos Balcões",
@@ -528,10 +537,11 @@
     },
     {
       "name": "Spain",
-      "image": "/images/travels/spain.svg",
+      "flagImage": "/images/travels/spain.svg",
       "cities": [
         {
           "name": "Madrid",
+          "images": [],
           "places": [
             {
               "name": "Wanda Metropolitano Stadium",
@@ -642,6 +652,7 @@
         },
         {
           "name": "Barcelona",
+          "images": [],
           "places": [
             {
               "name": "Plaça d'Espanya",
@@ -726,7 +737,7 @@
     },
     {
       "name": "United Kingdom",
-      "image": "/images/travels/united-kingdom.svg",
+      "flagImage": "/images/travels/united-kingdom.svg",
       "cities": [
         {
           "name": "London",
@@ -740,7 +751,8 @@
             },
             {
               "name": "National Gallery",
-              "image": "/images/travels/united-kingdom/london/1.jpeg",
+              "image": "/images/travels/united-kingdom/london/national-gallery.jpeg",
+              "description": "travels.places.national-gallery",
               "coordinates": [
                 51.5089,
                 -0.1283
@@ -748,6 +760,8 @@
             },
             {
               "name": "British Museum",
+              "image": "/images/travels/united-kingdom/london/british-museum.jpeg",
+              "description": "travels.places.british-museum",
               "coordinates": [
                 51.5194,
                 -0.1270
@@ -762,6 +776,8 @@
             },
             {
               "name": "Kew Gardens",
+              "image": "/images/travels/united-kingdom/london/kew-gardens.jpeg",
+              "description": "travels.places.kew-gardens",
               "coordinates": [
                 51.4787,
                 -0.2956
@@ -783,6 +799,8 @@
             },
             {
               "name": "Natural History Museum",
+              "image": "/images/travels/united-kingdom/london/natural-history-museum.jpeg",
+              "description": "travels.places.natural-history-museum",
               "coordinates": [
                 51.4967,
                 -0.1764
@@ -790,6 +808,8 @@
             },
             {
               "name": "London Eye",
+              "image": "/images/travels/united-kingdom/london/london-eye.jpeg",
+              "description": "travels.places.london-eye",
               "coordinates": [
                 51.5033,
                 -0.1196
@@ -797,6 +817,7 @@
             },
             {
               "name": "St. Pancras International",
+              "image": "/images/travels/united-kingdom/london/saint-pancras.jpeg",
               "coordinates": [
                 51.5314,
                 -0.1261
@@ -804,6 +825,7 @@
             },
             {
               "name": "Westminster Abbey",
+              "image": "/images/travels/united-kingdom/london/westminster-abbey.jpeg",
               "coordinates": [
                 51.4994,
                 -0.1273
@@ -811,6 +833,7 @@
             },
             {
               "name": "Hay's Galleria",
+              "image": "/images/travels/united-kingdom/london/hays-galleria.jpeg",
               "coordinates": [
                 51.5057,
                 -0.0834
@@ -818,6 +841,7 @@
             },
             {
               "name": "The Shard",
+              "image": "/images/travels/united-kingdom/london/the-shard.jpeg",
               "coordinates": [
                 51.5045,
                 -0.0865

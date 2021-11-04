@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useAnimation, motion } from 'framer-motion';
-import { useEffect, useState, Children } from 'react';
+import { useEffect, useState, Children, useRef } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 import type { FC } from 'react';
+import type { CarouselProps } from './Carousel.types';
 
 const CarouselWrapperDiv = styled.div`
   overflow: hidden;
@@ -34,16 +35,16 @@ const PaginationWrapperUl = styled.ul`
 `;
 
 const PaginationItemLi = styled.li<{ active: boolean }>(
-  ({ active, theme }) => css`
+  ({ active, theme: { colors } }) => css`
     width: 1.5rem;
     height: 1.5rem;
     cursor: pointer;
     border-radius: 50%;
-    background-color: ${active ? theme.colors.darkBlue : theme.colors.white};
+    background-color: ${active ? colors.darkBlue : colors.white};
     transition: background-color 250ms ease-out;
 
     &:hover {
-      background-color: ${theme.colors.darkBlue};
+      background-color: ${colors.darkBlue};
     }
 
     &:not(:last-of-type) {
@@ -53,15 +54,15 @@ const PaginationItemLi = styled.li<{ active: boolean }>(
 );
 
 const ChevronWrapperDiv = styled.div<{ disabled: boolean }>(
-  ({ theme, disabled }) => css`
+  ({ theme: { colors }, disabled }) => css`
     position: absolute;
     border-radius: 50%;
     top: calc(50% - 2.5rem);
     width: 4rem;
     height: 4rem;
     padding: 1rem;
-    color: ${disabled ? theme.colors.white : theme.colors.black};
-    background-color: ${disabled ? theme.colors.lightGrey : theme.colors.white};
+    color: ${disabled ? colors.white : colors.black};
+    background-color: ${disabled ? colors.lightGrey : colors.white};
     cursor: pointer;
 
     transition: color 250ms ease-out, background-color 250ms ease-out;
@@ -69,8 +70,8 @@ const ChevronWrapperDiv = styled.div<{ disabled: boolean }>(
     pointer-events: ${disabled ? 'none' : 'all'};
 
     &:hover {
-      color: ${theme.colors.white};
-      background-color: ${theme.colors.darkBlue};
+      color: ${colors.white};
+      background-color: ${colors.darkBlue};
     }
   `
 );
@@ -85,38 +86,80 @@ const StyledMdChevronRight = styled(MdChevronRight)`
   height: 100%;
 `;
 
-const PortfolioCarousel: FC = ({ children, ...remainingProps }) => {
+const Carousel: FC<CarouselProps> = ({
+  children,
+  onCarouselTouchEnd,
+  onCarouselTouchStart,
+  onCarouselIndexChange,
+  ...remainingProps
+}) => {
+  const wrapperRef = useRef<HTMLDivElement>();
+  const swipeRef = useRef<{
+    startX: number;
+    shouldGoToNextSlide?: boolean;
+    shouldGoToPreviousSlide?: boolean;
+  }>();
+
   const controls = useAnimation();
-  const [autoplay, setAutoplay] = useState(true);
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
 
+  // React when the carousel index changes.
   useEffect(() => {
-    if (!autoplay) return undefined;
+    onCarouselIndexChange?.(carouselIndex);
 
-    const autoplayInterval = window.setInterval(() => {
-      setCarouselIndex((previousIndex) =>
-        previousIndex === Children.count(children) - 1 ? 0 : previousIndex + 1
-      );
-    }, 3000);
-
-    return () => {
-      clearInterval(autoplayInterval);
-    };
-  }, [autoplay]);
-
-  useEffect(() => {
     controls.start({
-      x: `-${carouselIndex * 100}%`,
+      x: `-${100 * carouselIndex}%`,
       transition: { ease: 'easeOut', duration: 0.5 },
     });
   }, [carouselIndex]);
 
-  function handleWrapperMouseEnter() {
-    setAutoplay(false);
+  function handleWrapperTouchStart(event: React.TouchEvent<HTMLDivElement>) {
+    onCarouselTouchStart?.();
+    swipeRef.current = { startX: event.touches[0].clientX };
   }
 
-  function handleWrapperMouseLeave() {
-    setAutoplay(true);
+  function handleWrapperTouchMove(event: React.TouchEvent<HTMLDivElement>) {
+    const swipePercentage =
+      ((swipeRef.current.startX - event.touches[0].clientX) /
+        wrapperRef.current.offsetWidth) *
+      100;
+
+    swipeRef.current = {
+      ...swipeRef.current,
+      shouldGoToNextSlide: swipePercentage > 0,
+      shouldGoToPreviousSlide: swipePercentage < 0,
+    };
+
+    const clampedValue = Math.max(
+      Math.min(
+        100 * carouselIndex + swipePercentage,
+        100 * (Children.count(children) - 1)
+      ),
+      0
+    );
+
+    controls.set({ x: `-${clampedValue}%` });
+  }
+
+  function handleWrapperTouchEnd() {
+    onCarouselTouchEnd?.();
+
+    if (swipeRef.current.shouldGoToNextSlide) {
+      setCarouselIndex((previousIndex) =>
+        previousIndex === Children.count(children) - 1
+          ? previousIndex
+          : previousIndex + 1
+      );
+    } else if (swipeRef.current.shouldGoToPreviousSlide) {
+      setCarouselIndex((previousIndex) =>
+        previousIndex === 0 ? previousIndex : previousIndex - 1
+      );
+    } else {
+      controls.start({
+        x: `-${100 * carouselIndex}%`,
+        transition: { ease: 'easeOut', duration: 0.5 },
+      });
+    }
   }
 
   function handlePaginationItemClick(index: number) {
@@ -133,8 +176,10 @@ const PortfolioCarousel: FC = ({ children, ...remainingProps }) => {
 
   return (
     <CarouselWrapperDiv
-      onMouseEnter={handleWrapperMouseEnter}
-      onMouseLeave={handleWrapperMouseLeave}
+      ref={wrapperRef}
+      onTouchEnd={handleWrapperTouchEnd}
+      onTouchMove={handleWrapperTouchMove}
+      onTouchStart={handleWrapperTouchStart}
       {...remainingProps}
     >
       <CarouselItemsWrapperDiv animate={controls} initial={{ x: 0 }}>
@@ -173,4 +218,4 @@ const PortfolioCarousel: FC = ({ children, ...remainingProps }) => {
   );
 };
 
-export { PortfolioCarousel };
+export { Carousel };

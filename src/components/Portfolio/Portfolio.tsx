@@ -5,11 +5,12 @@ import { useTranslation } from 'react-i18next';
 
 import { PortfolioItem } from '@src/components/Portfolio/PortfolioItem';
 import { PortfolioModal } from '@src/components/Portfolio/PortfolioModal';
+import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
 import type { FC } from 'react';
 import type { IPortfolioItem } from './Portfolio.types';
 
-const PortfolioWrapperDiv = styled.div`
+const StyledPageContainer = styled(PageContainer)`
   margin: 0 auto;
   max-width: 96rem;
 `;
@@ -92,7 +93,7 @@ const Portfolio: FC = () => {
   }
 
   return (
-    <PortfolioWrapperDiv>
+    <StyledPageContainer>
       <PortfolioH1>{t('portfolio.title')}</PortfolioH1>
       <PortfolioGridDiv>
         {portfolioItems.map(({ name, images, logoImage }, index) => (
@@ -112,7 +113,7 @@ const Portfolio: FC = () => {
         open={modalActiveItem !== undefined}
         onClose={() => setModalActiveItem(undefined)}
       />
-    </PortfolioWrapperDiv>
+    </StyledPageContainer>
   );
 };
 
