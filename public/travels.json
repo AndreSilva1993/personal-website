@@ -1,685 +1,656 @@
 {
   "travels": [
     {
-      "name": "Austria",
-      "flagImage": "/images/travels/austria.svg",
-      "cities": [
-        {
-          "name": "Vienna",
-          "places": []
-        }
-      ]
+      "name": "Vienna",
+      "image": "/images/travels/barcelona/tibidabo.jpeg",
+      "places": []
     },
     {
-      "name": "Hungary",
-      "flagImage": "/images/travels/Hungary.svg",
-      "cities": [
+      "name": "London",
+      "image": "/images/travels/london/kew-gardens.jpeg",
+      "places": [
         {
-          "name": "Budapest",
-          "places": []
-        }
-      ]
-    },
-    {
-      "name": "Czech Republic",
-      "flagImage": "/images/travels/czech-republic.svg",
-      "cities": [
-        {
-          "name": "Prague",
-          "places": []
-        }
-      ]
-    },
-    {
-      "name": "Portugal",
-      "flagImage": "/images/travels/portugal.svg",
-      "cities": [
-        {
-          "name": "Azores",
-          "places": [
-            {
-              "name": "Miradouro das Cumeeiras",
-              "description": "travels.places.azores.miradouro-cumeeiras",
-              "image": {
-                "url": "/images/travels/azores/miradouro-cumeeiras.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                37.8802,
-                -25.7767
-              ]
-            },
-            {
-              "name": "Gruta do Carvão",
-              "description": "travels.places.azores.gruta-carvao",
-              "image": {
-                "url": "/images/travels/azores/gruta-carvao.jpeg",
-                "landscape": false
-              },
-              "coordinates": [
-                37.7482,
-                -25.6871
-              ]
-            },
-            {
-              "name": "Lagoa do Fogo",
-              "description": "travels.places.azores.lagoa-fogo",
-              "image": {
-                "url": "/images/travels/azores/lagoa-fogo.jpeg",
-                "landscape": false
-              },
-              "coordinates": [
-                37.7631342,
-                -25.4753767
-              ]
-            },
-            {
-              "name": "Caldeira Velha",
-              "description": "travels.places.azores.caldeira-velha",
-              "image": {
-                "url": "/images/travels/azores/caldeira-velha.jpeg",
-                "landscape": false
-              },
-              "coordinates": [
-                37.7821,
-                -25.5003
-              ]
-            },
-            {
-              "name": "Lagoa do Congro",
-              "description": "travels.places.azores.lagoa-congro",
-              "image": {
-                "url": "/images/travels/azores/lagoa-congro.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                37.7564065,
-                -25.4080541
-              ]
-            },
-            {
-              "name": "Miradouro da Ponta do Sossego",
-              "description": "travels.places.azores.miradouro-ponta-sossego",
-              "image": {
-                "url": "/images/travels/azores/miradouro-ponta-sossego.jpeg",
-                "landscape": false
-              },
-              "coordinates": [
-                37.7992,
-                -25.1459
-              ]
-            },
-            {
-              "name": "Miradouro do Pôr-do-Sol",
-              "coordinates": [
-                37.7531062,
-                -25.2188253
-              ]
-            },
-            {
-              "name": "Miradouro do Pico dos Bodes",
-              "coordinates": [
-                37.7469931,
-                -25.2212601
-              ]
-            },
-            {
-              "name": "Poça da Dona Beija",
-              "coordinates": [
-                37.7691634,
-                -25.3213369
-              ]
-            },
-            {
-              "name": "Lagoa do Canário",
-              "coordinates": [
-                37.8361597,
-                -25.7618183
-              ]
-            },
-            {
-              "name": "Ponta da Ferraria",
-              "coordinates": [
-                37.8583611,
-                -25.8544965
-              ]
-            },
-            {
-              "name": "Miradouro da Boca do Inferno",
-              "description": "travels.places.azores.miradouro-boca-inferno",
-              "image": {
-                "url": "/images/travels/azores/miradouro-boca-inferno.jpeg",
-                "landscape": false
-              },
-              "coordinates": [
-                37.8429639,
-                -25.7655288
-              ]
-            },
-            {
-              "name": "Hotel Monte Palace",
-              "description": "travels.places.azores.hotel-monte-palace",
-              "image": {
-                "url": "/images/travels/azores/hotel-monte-palace.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                37.8389261,
-                -25.7963058
-              ]
-            },
-            {
-              "name": "Lagoa das Sete Cidades",
-              "description": "travels.places.azores.lagoa-sete-cidades",
-              "image": {
-                "url": "/images/travels/azores/lagoa-sete-cidades.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                37.8550078,
-                -25.7907664
-              ]
-            },
-            {
-              "name": "Miradouro do Salto do Cavalo",
-              "description": "travels.places.azores.miradouro-salto-cavalo",
-              "image": {
-                "url": "/images/travels/azores/miradouro-salto-cavalo.jpeg",
-                "landscape": false
-              },
-              "coordinates": [
-                37.787394,
-                -25.2858992
-              ]
-            },
-            {
-              "name": "Casa Grená",
-              "description": "travels.places.azores.casa-grena",
-              "image": {
-                "url": "/images/travels/azores/casa-grena.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                37.7663435,
-                -25.3377637
-              ]
-            },
-            {
-              "name": "Lagoa das Furnas",
-              "description": "travels.places.azores.lagoa-furnas",
-              "image": {
-                "url": "/images/travels/azores/lagoa-furnas.jpeg",
-                "landscape": false
-              },
-              "coordinates": [
-                37.7595184,
-                -25.3375279
-              ]
-            },
-            {
-              "name": "Capela de Nossa Senhora das Vitórias",
-              "coordinates": [
-                37.7503787,
-                -25.3328243
-              ]
-            },
-            {
-              "name": "Parque Terra Nostra",
-              "description": "travels.places.azores.parque-terra-nostra",
-              "image": {
-                "url": "/images/travels/azores/parque-terra-nostra.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                37.771687,
-                -25.3172526
-              ]
-            },
-            {
-              "name": "Igreja de Nossa Senhora da Alegria",
-              "coordinates": [
-                37.7729572,
-                -25.3132967
-              ]
-            },
-            {
-              "name": "Ermida de Nossa Senhora da Paz",
-              "coordinates": [
-                37.7285567,
-                -25.4335181
-              ]
-            }
+          "name": "Saint Paul's Cathedral",
+          "coordinates": [
+            51.5138,
+            -0.0984
           ]
         },
         {
-          "name": "Madeira",
-          "places": [
-            {
-              "name": "Miradouro dos Balcões",
-              "description": "travels.places.madeira.miradouro-balcoes",
-              "image": {
-                "url": "/images/travels/madeira/miradouro-balcoes.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                32.7414302,
-                -16.8925299
-              ]
-            },
-            {
-              "name": "Levada das 25 Fontes",
-              "coordinates": [
-                32.7549076,
-                -17.1360567
-              ]
-            },
-            {
-              "name": "Pico Ruivo",
-              "coordinates": [
-                32.758953,
-                -16.9430303
-              ]
-            },
-            {
-              "name": "Levada Nova",
-              "coordinates": [
-                32.6940452,
-                -17.0876439
-              ]
-            },
-            {
-              "name": "Fajã dos Padres",
-              "coordinates": [
-                32.6569985,
-                -17.0237307
-              ]
-            },
-            {
-              "name": "Cabo Girão",
-              "description": "travels.places.madeira.cabo-girao",
-              "image": {
-                "url": "/images/travels/madeira/cabo-girao.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                32.6565925,
-                -17.0067413
-              ]
-            },
-            {
-              "name": "Parque das Queimadas",
-              "description": "travels.places.madeira.parque-queimadas",
-              "image": {
-                "url": "/images/travels/madeira/parque-queimadas.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                32.7836128,
-                -16.9080988
-              ]
-            },
-            {
-              "name": "Casas Típicas de Santana",
-              "coordinates": [
-                32.8053621,
-                -16.8843907
-              ]
-            },
-            {
-              "name": "Miradouro do Guindaste",
-              "coordinates": [
-                32.7940254,
-                -16.8515682
-              ]
-            },
-            {
-              "name": "Porto da Cruz",
-              "coordinates": [
-                32.7676407,
-                -16.8208683
-              ]
-            },
-            {
-              "name": "Praia de Machico",
-              "coordinates": [
-                32.7194429,
-                -16.7599649
-              ]
-            },
-            {
-              "name": "Ponta de São Lourenço",
-              "description": "travels.places.madeira.ponta-sao-lourenco",
-              "image": {
-                "url": "/images/travels/madeira/ponta-sao-lourenco.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                32.7430294,
-                -16.7030567
-              ]
-            },
-            {
-              "name": "Monte Palace",
-              "description": "travels.places.madeira.monte-palace",
-              "image": {
-                "url": "/images/travels/madeira/monte-palace.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                32.6750137,
-                -16.902579
-              ]
-            },
-            {
-              "name": "Ponta do Garajau",
-              "coordinates": [
-                32.637022,
-                -16.8545562
-              ]
-            },
-            {
-              "name": "Jardim Botânico da Madeira",
-              "coordinates": [
-                32.6619499,
-                -16.894201
-              ]
-            }
+          "name": "British Museum",
+          "image": {
+            "url": "/images/travels/london/british-museum.jpeg",
+            "landscape": true
+          },
+          "description": "travels.places.london.british-museum",
+          "coordinates": [
+            51.5194,
+            -0.1270
+          ]
+        },
+        {
+          "name": "National Gallery",
+          "image": {
+            "url": "/images/travels/london/national-gallery.jpeg",
+            "landscape": false
+          },
+          "description": "travels.places.london.national-gallery",
+          "coordinates": [
+            51.5089,
+            -0.1283
+          ]
+        },
+        {
+          "name": "Hyde Park",
+          "coordinates": [
+            51.5073,
+            -0.1657
+          ]
+        },
+        {
+          "name": "Kew Gardens",
+          "image": {
+            "url": "/images/travels/london/kew-gardens.jpeg",
+            "landscape": true
+          },
+          "description": "travels.places.london.kew-gardens",
+          "coordinates": [
+            51.4787,
+            -0.2956
+          ]
+        },
+        {
+          "name": "Westminster Palace",
+          "coordinates": [
+            51.4995,
+            -0.1248
+          ]
+        },
+        {
+          "name": "Harrods",
+          "coordinates": [
+            51.4994,
+            -0.1632
+          ]
+        },
+        {
+          "name": "Natural History Museum",
+          "image": {
+            "url": "/images/travels/london/natural-history-museum.jpeg",
+            "landscape": false
+          },
+          "description": "travels.places.london.natural-history-museum",
+          "coordinates": [
+            51.4967,
+            -0.1764
+          ]
+        },
+        {
+          "name": "London Eye",
+          "image": {
+            "url": "/images/travels/united-kingdom-eye.jpeg",
+            "landscape": true
+          },
+          "description": "travels.places.london.london-eye",
+          "coordinates": [
+            51.5033,
+            -0.1196
+          ]
+        },
+        {
+          "name": "St. Pancras International",
+          "image": {
+            "url": "/images/travels/london/saint-pancras.jpeg",
+            "landscape": true
+          },
+          "description": "travels.places.london.saint-pancras-international",
+          "coordinates": [
+            51.5314,
+            -0.1261
+          ]
+        },
+        {
+          "name": "Westminster Abbey",
+          "image": {
+            "url": "/images/travels/london/westminster-abbey.jpeg",
+            "landscape": false
+          },
+          "description": "travels.places.london.westminster-abbey",
+          "coordinates": [
+            51.4994,
+            -0.1273
+          ]
+        },
+        {
+          "name": "Hay's Galleria",
+          "image": {
+            "url": "/images/travels/london/hays-galleria.jpeg",
+            "landscape": false
+          },
+          "description": "travels.places.london.hays-galleria",
+          "coordinates": [
+            51.5057,
+            -0.0834
+          ]
+        },
+        {
+          "name": "The Shard",
+          "image": {
+            "url": "/images/travels/london/the-shard.jpeg",
+            "landscape": false
+          },
+          "description": "travels.places.london.the-shard",
+          "coordinates": [
+            51.5045,
+            -0.0865
+          ]
+        },
+        {
+          "name": "Sky Garden",
+          "coordinates": [
+            51.5112,
+            -0.0835
+          ]
+        },
+        {
+          "name": "Leadenhall Market",
+          "coordinates": [
+            51.5128,
+            -0.0835
+          ]
+        },
+        {
+          "name": "The Gherkin",
+          "coordinates": [
+            51.5145,
+            -0.0803
           ]
         }
       ]
     },
     {
-      "name": "Spain",
-      "flagImage": "/images/travels/spain.svg",
-      "cities": [
+      "name": "Budapest",
+      "image": "/images/travels/barcelona/tibidabo.jpeg",
+      "places": []
+    },
+    {
+      "name": "Prague",
+      "image": "/images/travels/barcelona/tibidabo.jpeg",
+      "places": []
+    },
+    {
+      "name": "Azores",
+      "image": "/images/travels/azores/miradouro-cumeeiras.jpeg",
+      "places": [
         {
-          "name": "Barcelona",
-          "places": [
-            {
-              "name": "Tibidabo",
-              "description": "travels.places.barcelona.tibidabo",
-              "image": {
-                "url": "/images/travels/barcelona/tibidabo.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                41.4232901,
-                2.1178993
-              ]
-            },
-            {
-              "name": "Plaza d'Espanya",
-              "description": "travels.places.barcelona.plaza-espanya",
-              "image": {
-                "url": "/images/travels/barcelona/plaza-espanya.jpeg",
-                "landscape": false
-              },
-              "coordinates": [
-                41.3750218,
-                2.1469346
-              ]
-            },
-            {
-              "name": "Montserrat",
-              "description": "travels.places.barcelona.montserrat",
-              "image": {
-                "url": "/images/travels/barcelona/montserrat.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                41.5957839,
-                1.8254368
-              ]
-            },
-            {
-              "name": "Park Güell",
-              "description": "travels.places.barcelona.park-guell",
-              "image": {
-                "url": "/images/travels/barcelona/park-guell.jpeg",
-                "landscape": false
-              },
-              "coordinates": [
-                41.4144988,
-                2.1505058
-              ]
-            },
-            {
-              "name": "Ciutadella Park",
-              "coordinates": [
-                41.388127,
-                2.1838265
-              ]
-            },
-            {
-              "name": "Arc de Triomf",
-              "description": "travels.places.barcelona.arc-triomf",
-              "image": {
-                "url": "/images/travels/barcelona/arc-triomf.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                41.391037,
-                2.1784728
-              ]
-            },
-            {
-              "name": "La Sagrada Familia",
-              "description": "travels.places.barcelona.sagrada-familia",
-              "image": {
-                "url": "/images/travels/barcelona/sagrada-familia.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                41.4036339,
-                2.1721671
-              ]
-            },
-            {
-              "name": "Basilica of Santa Maria del Mar",
-              "coordinates": [
-                41.3838911,
-                2.1798824
-              ]
-            },
-            {
-              "name": "Catedral de Barcelona",
-              "description": "travels.places.barcelona.catedral-barcelona",
-              "image": {
-                "url": "/images/travels/barcelona/catedral-barcelona.jpeg",
-                "landscape": true
-              },
-              "coordinates": [
-                41.383966,
-                2.1740104
-              ]
-            },
-            {
-              "name": "Casa Milà",
-              "coordinates": [
-                41.3952195,
-                2.1597137
-              ]
-            },
-            {
-              "name": "Casa Batlló",
-              "description": "travels.places.barcelona.casa-batllo",
-              "image": {
-                "url": "/images/travels/barcelona/casa-batllo.jpeg",
-                "landscape": false
-              },
-              "coordinates": [
-                41.3916088,
-                2.1625536
-              ]
-            }
+          "name": "Miradouro das Cumeeiras",
+          "description": "travels.places.azores.miradouro-cumeeiras",
+          "image": {
+            "url": "/images/travels/azores/miradouro-cumeeiras.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            37.8802,
+            -25.7767
+          ]
+        },
+        {
+          "name": "Gruta do Carvão",
+          "description": "travels.places.azores.gruta-carvao",
+          "image": {
+            "url": "/images/travels/azores/gruta-carvao.jpeg",
+            "landscape": false
+          },
+          "coordinates": [
+            37.7482,
+            -25.6871
+          ]
+        },
+        {
+          "name": "Lagoa do Fogo",
+          "description": "travels.places.azores.lagoa-fogo",
+          "image": {
+            "url": "/images/travels/azores/lagoa-fogo.jpeg",
+            "landscape": false
+          },
+          "coordinates": [
+            37.7631342,
+            -25.4753767
+          ]
+        },
+        {
+          "name": "Caldeira Velha",
+          "description": "travels.places.azores.caldeira-velha",
+          "image": {
+            "url": "/images/travels/azores/caldeira-velha.jpeg",
+            "landscape": false
+          },
+          "coordinates": [
+            37.7821,
+            -25.5003
+          ]
+        },
+        {
+          "name": "Lagoa do Congro",
+          "description": "travels.places.azores.lagoa-congro",
+          "image": {
+            "url": "/images/travels/azores/lagoa-congro.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            37.7564065,
+            -25.4080541
+          ]
+        },
+        {
+          "name": "Miradouro da Ponta do Sossego",
+          "description": "travels.places.azores.miradouro-ponta-sossego",
+          "image": {
+            "url": "/images/travels/azores/miradouro-ponta-sossego.jpeg",
+            "landscape": false
+          },
+          "coordinates": [
+            37.7992,
+            -25.1459
+          ]
+        },
+        {
+          "name": "Miradouro do Pôr-do-Sol",
+          "coordinates": [
+            37.7531062,
+            -25.2188253
+          ]
+        },
+        {
+          "name": "Miradouro do Pico dos Bodes",
+          "coordinates": [
+            37.7469931,
+            -25.2212601
+          ]
+        },
+        {
+          "name": "Poça da Dona Beija",
+          "coordinates": [
+            37.7691634,
+            -25.3213369
+          ]
+        },
+        {
+          "name": "Lagoa do Canário",
+          "coordinates": [
+            37.8361597,
+            -25.7618183
+          ]
+        },
+        {
+          "name": "Ponta da Ferraria",
+          "coordinates": [
+            37.8583611,
+            -25.8544965
+          ]
+        },
+        {
+          "name": "Miradouro da Boca do Inferno",
+          "description": "travels.places.azores.miradouro-boca-inferno",
+          "image": {
+            "url": "/images/travels/azores/miradouro-boca-inferno.jpeg",
+            "landscape": false
+          },
+          "coordinates": [
+            37.8429639,
+            -25.7655288
+          ]
+        },
+        {
+          "name": "Hotel Monte Palace",
+          "description": "travels.places.azores.hotel-monte-palace",
+          "image": {
+            "url": "/images/travels/azores/hotel-monte-palace.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            37.8389261,
+            -25.7963058
+          ]
+        },
+        {
+          "name": "Lagoa das Sete Cidades",
+          "description": "travels.places.azores.lagoa-sete-cidades",
+          "image": {
+            "url": "/images/travels/azores/lagoa-sete-cidades.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            37.8550078,
+            -25.7907664
+          ]
+        },
+        {
+          "name": "Miradouro do Salto do Cavalo",
+          "description": "travels.places.azores.miradouro-salto-cavalo",
+          "image": {
+            "url": "/images/travels/azores/miradouro-salto-cavalo.jpeg",
+            "landscape": false
+          },
+          "coordinates": [
+            37.787394,
+            -25.2858992
+          ]
+        },
+        {
+          "name": "Casa Grená",
+          "description": "travels.places.azores.casa-grena",
+          "image": {
+            "url": "/images/travels/azores/casa-grena.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            37.7663435,
+            -25.3377637
+          ]
+        },
+        {
+          "name": "Lagoa das Furnas",
+          "description": "travels.places.azores.lagoa-furnas",
+          "image": {
+            "url": "/images/travels/azores/lagoa-furnas.jpeg",
+            "landscape": false
+          },
+          "coordinates": [
+            37.7595184,
+            -25.3375279
+          ]
+        },
+        {
+          "name": "Capela de Nossa Senhora das Vitórias",
+          "coordinates": [
+            37.7503787,
+            -25.3328243
+          ]
+        },
+        {
+          "name": "Parque Terra Nostra",
+          "description": "travels.places.azores.parque-terra-nostra",
+          "image": {
+            "url": "/images/travels/azores/parque-terra-nostra.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            37.771687,
+            -25.3172526
+          ]
+        },
+        {
+          "name": "Igreja de Nossa Senhora da Alegria",
+          "coordinates": [
+            37.7729572,
+            -25.3132967
+          ]
+        },
+        {
+          "name": "Ermida de Nossa Senhora da Paz",
+          "coordinates": [
+            37.7285567,
+            -25.4335181
           ]
         }
       ]
     },
     {
-      "name": "United Kingdom",
-      "flagImage": "/images/travels/united-kingdom.svg",
-      "cities": [
+      "name": "Madeira",
+      "image": "/images/travels/madeira/ponta-sao-lourenco.jpeg",
+      "places": [
         {
-          "name": "London",
-          "places": [
-            {
-              "name": "Saint Paul's Cathedral",
-              "coordinates": [
-                51.5138,
-                -0.0984
-              ]
-            },
-            {
-              "name": "British Museum",
-              "image": {
-                "url": "/images/travels/united-kingdom/british-museum.jpeg",
-                "landscape": true
-              },
-              "description": "travels.places.london.british-museum",
-              "coordinates": [
-                51.5194,
-                -0.1270
-              ]
-            },
-            {
-              "name": "National Gallery",
-              "image": {
-                "url": "/images/travels/united-kingdom/national-gallery.jpeg",
-                "landscape": false
-              },
-              "description": "travels.places.london.national-gallery",
-              "coordinates": [
-                51.5089,
-                -0.1283
-              ]
-            },
-            {
-              "name": "Hyde Park",
-              "coordinates": [
-                51.5073,
-                -0.1657
-              ]
-            },
-            {
-              "name": "Kew Gardens",
-              "image": {
-                "url": "/images/travels/united-kingdom/kew-gardens.jpeg",
-                "landscape": true
-              },
-              "description": "travels.places.london.kew-gardens",
-              "coordinates": [
-                51.4787,
-                -0.2956
-              ]
-            },
-            {
-              "name": "Westminster Palace",
-              "coordinates": [
-                51.4995,
-                -0.1248
-              ]
-            },
-            {
-              "name": "Harrods",
-              "coordinates": [
-                51.4994,
-                -0.1632
-              ]
-            },
-            {
-              "name": "Natural History Museum",
-              "image": {
-                "url": "/images/travels/united-kingdom/natural-history-museum.jpeg",
-                "landscape": false
-              },
-              "description": "travels.places.london.natural-history-museum",
-              "coordinates": [
-                51.4967,
-                -0.1764
-              ]
-            },
-            {
-              "name": "London Eye",
-              "image": {
-                "url": "/images/travels/united-kingdom-eye.jpeg",
-                "landscape": true
-              },
-              "description": "travels.places.london.london-eye",
-              "coordinates": [
-                51.5033,
-                -0.1196
-              ]
-            },
-            {
-              "name": "St. Pancras International",
-              "image": {
-                "url": "/images/travels/united-kingdom/saint-pancras.jpeg",
-                "landscape": true
-              },
-              "description": "travels.places.london.saint-pancras-international",
-              "coordinates": [
-                51.5314,
-                -0.1261
-              ]
-            },
-            {
-              "name": "Westminster Abbey",
-              "image": {
-                "url": "/images/travels/united-kingdom/westminster-abbey.jpeg",
-                "landscape": false
-              },
-              "description": "travels.places.london.westminster-abbey",
-              "coordinates": [
-                51.4994,
-                -0.1273
-              ]
-            },
-            {
-              "name": "Hay's Galleria",
-              "image": {
-                "url": "/images/travels/united-kingdom/hays-galleria.jpeg",
-                "landscape": false
-              },
-              "description": "travels.places.london.hays-galleria",
-              "coordinates": [
-                51.5057,
-                -0.0834
-              ]
-            },
-            {
-              "name": "The Shard",
-              "image": {
-                "url": "/images/travels/united-kingdom/the-shard.jpeg",
-                "landscape": false
-              },
-              "description": "travels.places.london.the-shard",
-              "coordinates": [
-                51.5045,
-                -0.0865
-              ]
-            },
-            {
-              "name": "Sky Garden",
-              "coordinates": [
-                51.5112,
-                -0.0835
-              ]
-            },
-            {
-              "name": "Leadenhall Market",
-              "coordinates": [
-                51.5128,
-                -0.0835
-              ]
-            },
-            {
-              "name": "The Gherkin",
-              "coordinates": [
-                51.5145,
-                -0.0803
-              ]
-            }
+          "name": "Miradouro dos Balcões",
+          "description": "travels.places.madeira.miradouro-balcoes",
+          "image": {
+            "url": "/images/travels/madeira/miradouro-balcoes.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            32.7414302,
+            -16.8925299
+          ]
+        },
+        {
+          "name": "Levada das 25 Fontes",
+          "coordinates": [
+            32.7549076,
+            -17.1360567
+          ]
+        },
+        {
+          "name": "Pico Ruivo",
+          "coordinates": [
+            32.758953,
+            -16.9430303
+          ]
+        },
+        {
+          "name": "Levada Nova",
+          "coordinates": [
+            32.6940452,
+            -17.0876439
+          ]
+        },
+        {
+          "name": "Fajã dos Padres",
+          "coordinates": [
+            32.6569985,
+            -17.0237307
+          ]
+        },
+        {
+          "name": "Cabo Girão",
+          "description": "travels.places.madeira.cabo-girao",
+          "image": {
+            "url": "/images/travels/madeira/cabo-girao.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            32.6565925,
+            -17.0067413
+          ]
+        },
+        {
+          "name": "Parque das Queimadas",
+          "description": "travels.places.madeira.parque-queimadas",
+          "image": {
+            "url": "/images/travels/madeira/parque-queimadas.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            32.7836128,
+            -16.9080988
+          ]
+        },
+        {
+          "name": "Casas Típicas de Santana",
+          "coordinates": [
+            32.8053621,
+            -16.8843907
+          ]
+        },
+        {
+          "name": "Miradouro do Guindaste",
+          "coordinates": [
+            32.7940254,
+            -16.8515682
+          ]
+        },
+        {
+          "name": "Porto da Cruz",
+          "coordinates": [
+            32.7676407,
+            -16.8208683
+          ]
+        },
+        {
+          "name": "Praia de Machico",
+          "coordinates": [
+            32.7194429,
+            -16.7599649
+          ]
+        },
+        {
+          "name": "Ponta de São Lourenço",
+          "description": "travels.places.madeira.ponta-sao-lourenco",
+          "image": {
+            "url": "/images/travels/madeira/ponta-sao-lourenco.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            32.7430294,
+            -16.7030567
+          ]
+        },
+        {
+          "name": "Monte Palace",
+          "description": "travels.places.madeira.monte-palace",
+          "image": {
+            "url": "/images/travels/madeira/monte-palace.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            32.6750137,
+            -16.902579
+          ]
+        },
+        {
+          "name": "Ponta do Garajau",
+          "coordinates": [
+            32.637022,
+            -16.8545562
+          ]
+        },
+        {
+          "name": "Jardim Botânico da Madeira",
+          "coordinates": [
+            32.6619499,
+            -16.894201
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Barcelona",
+      "image": "/images/travels/barcelona/tibidabo.jpeg",
+      "places": [
+        {
+          "name": "Tibidabo",
+          "description": "travels.places.barcelona.tibidabo",
+          "image": {
+            "url": "/images/travels/barcelona/tibidabo.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            41.4232901,
+            2.1178993
+          ]
+        },
+        {
+          "name": "Plaza d'Espanya",
+          "description": "travels.places.barcelona.plaza-espanya",
+          "image": {
+            "url": "/images/travels/barcelona/plaza-espanya.jpeg",
+            "landscape": false
+          },
+          "coordinates": [
+            41.3750218,
+            2.1469346
+          ]
+        },
+        {
+          "name": "Montserrat",
+          "description": "travels.places.barcelona.montserrat",
+          "image": {
+            "url": "/images/travels/barcelona/montserrat.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            41.5957839,
+            1.8254368
+          ]
+        },
+        {
+          "name": "Park Güell",
+          "description": "travels.places.barcelona.park-guell",
+          "image": {
+            "url": "/images/travels/barcelona/park-guell.jpeg",
+            "landscape": false
+          },
+          "coordinates": [
+            41.4144988,
+            2.1505058
+          ]
+        },
+        {
+          "name": "Ciutadella Park",
+          "coordinates": [
+            41.388127,
+            2.1838265
+          ]
+        },
+        {
+          "name": "Arc de Triomf",
+          "description": "travels.places.barcelona.arc-triomf",
+          "image": {
+            "url": "/images/travels/barcelona/arc-triomf.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            41.391037,
+            2.1784728
+          ]
+        },
+        {
+          "name": "La Sagrada Familia",
+          "description": "travels.places.barcelona.sagrada-familia",
+          "image": {
+            "url": "/images/travels/barcelona/sagrada-familia.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            41.4036339,
+            2.1721671
+          ]
+        },
+        {
+          "name": "Basilica of Santa Maria del Mar",
+          "coordinates": [
+            41.3838911,
+            2.1798824
+          ]
+        },
+        {
+          "name": "Catedral de Barcelona",
+          "description": "travels.places.barcelona.catedral-barcelona",
+          "image": {
+            "url": "/images/travels/barcelona/catedral-barcelona.jpeg",
+            "landscape": true
+          },
+          "coordinates": [
+            41.383966,
+            2.1740104
+          ]
+        },
+        {
+          "name": "Casa Milà",
+          "coordinates": [
+            41.3952195,
+            2.1597137
+          ]
+        },
+        {
+          "name": "Casa Batlló",
+          "description": "travels.places.barcelona.casa-batllo",
+          "image": {
+            "url": "/images/travels/barcelona/casa-batllo.jpeg",
+            "landscape": false
+          },
+          "coordinates": [
+            41.3916088,
+            2.1625536
           ]
         }
       ]

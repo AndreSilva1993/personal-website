@@ -6,20 +6,25 @@ import Image from 'next/image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useRef, useMemo, useState } from 'react';
-import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 
 import { Carousel } from '@src/components/Carousel/Carousel';
-import { TravelsFlags } from '@src/components/Travels/TravelsFlags';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
 import type { FC } from 'react';
-import type { TravelCity, TravelCountry, TravelPlace } from './Travels.types';
+import type { TravelCity, TravelPlace } from './Travels.types';
+
+const StyledPageContainer = styled(PageContainer)`
+  max-width: 150rem;
+  margin: 0 auto;
+`;
 
 const MapContainer = styled.div(
   ({ theme }) => css`
     width: 100%;
     aspect-ratio: 16 / 7;
+    margin-bottom: 1rem;
 
     ${theme.breakpoints.lteExtraSmall} {
       aspect-ratio: 4 / 3;
@@ -27,43 +32,55 @@ const MapContainer = styled.div(
   `
 );
 
-const CityTabsUl = styled.ul`
+const CitiesUl = styled.ul`
   display: flex;
-  margin-bottom: 4rem;
-  position: relative;
-  border-bottom: 0.1rem solid ${({ theme }) => theme.colors.grey};
+  flex-wrap: wrap;
 `;
 
-const CityTabLi = styled.li(
+const CityLi = styled.li(
   ({ theme }) => css`
-    flex-grow: 1;
-    max-width: 20rem;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 2rem;
+    height: 46rem;
+    flex: 1 0 40%;
+    padding: 1rem;
     cursor: pointer;
-    color: ${theme.colors.white};
+    overflow: hidden;
+
+    &:nth-child(4n + 1),
+    &:nth-child(4n + 4) {
+      flex: 1 0 60%;
+    }
+
+    &:nth-child(odd) {
+      padding-left: 0;
+    }
+
+    &:nth-child(even) {
+      padding-right: 0;
+    }
 
     ${theme.breakpoints.extraSmall} {
-      max-width: unset;
+      flex: 0 0 100%;
+      height: 20rem;
+      padding: 1rem 0;
     }
   `
 );
 
-const CityUnderlineTabDiv = styled(motion.div)<{ underlineWidth: number }>(
-  ({ theme, underlineWidth }) => css`
-    height: 0.2rem;
-    width: 20rem;
-    left: 0;
-    bottom: 0;
-    position: absolute;
-    background-color: ${theme.colors.white};
+const CityWrapperImage = styled.div`
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+`;
 
-    ${theme.breakpoints.extraSmall} {
-      width: ${underlineWidth}%;
-    }
-  `
-);
+const CityImage = styled(Image)`
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 250ms ease-out;
+  }
+`;
 
 const CityWrapperDiv = styled(motion.div)`
   width: 100%;
@@ -110,14 +127,12 @@ const PlaceDescriptionP = styled.p(
 
 const Travels: FC = () => {
   const { t } = useTranslation();
-  const underlineControls = useAnimation();
 
   const leafletMapRef = useRef<L.Map>();
   const leafletMarkersRef = useRef<L.Marker[]>([]);
 
-  const countries = useMemo<TravelCountry[]>(() => travelsJSON.travels, []);
+  const cities = useMemo<TravelCity[]>(() => travelsJSON.travels, []);
 
-  const [activeCountry, setActiveCountry] = useState<TravelCountry>();
   const [activeCity, setActiveCity] = useState<TravelCity>();
   const [activePlace, setActivePlace] = useState<TravelPlace>();
 
@@ -130,27 +145,8 @@ const Travels: FC = () => {
     );
   }, [activeCity]);
 
-  const flags = useMemo(
-    () =>
-      countries.map(({ name, flagImage }) => ({
-        name,
-        image: flagImage,
-        active: activeCountry?.name === name,
-      })),
-    [activeCountry]
-  );
-
-  function handleFlagClick(index: number) {
-    setActiveCountry(countries[index]);
-    setActiveCity(countries[index].cities[0]);
-
-    underlineControls.start({ x: 0 });
-  }
-
   function handleCityClick(index: number) {
-    setActiveCity(activeCountry.cities[index]);
-
-    underlineControls.start({ x: `${100 * index}%` });
+    setActiveCity(cities[index]);
   }
 
   function handleCarouselIndexChange(index: number) {
@@ -161,26 +157,25 @@ const Travels: FC = () => {
     L.Icon.Default.imagePath = '/images/leaflet/';
 
     leafletMapRef.current = L.map('map-container', {
+      scrollWheelZoom: false,
       layers: [L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png')],
     });
 
-    countries.forEach(({ cities }) => {
-      cities.forEach(({ places }) => {
-        places.forEach(({ name, coordinates }) => {
-          const marker = L.marker(coordinates as L.LatLngExpression);
-          marker.bindPopup(name);
-          marker.addTo(leafletMapRef.current);
+    cities.forEach(({ places }) => {
+      places.forEach(({ name, coordinates }) => {
+        const marker = L.marker(coordinates as L.LatLngExpression);
+        marker.bindPopup(name);
+        marker.addTo(leafletMapRef.current);
 
-          leafletMarkersRef.current.push(marker);
-        });
+        leafletMarkersRef.current.push(marker);
       });
     });
 
     leafletMapRef.current.fitBounds(
       L.latLngBounds(leafletMarkersRef.current.map((marker) => marker.getLatLng())),
       {
-        paddingTopLeft: [10, 10],
-        paddingBottomRight: [10, 10],
+        paddingTopLeft: [50, 50],
+        paddingBottomRight: [50, 50],
       }
     );
   }, []);
@@ -207,56 +202,72 @@ const Travels: FC = () => {
   }, [activePlace]);
 
   return (
-    <PageContainer>
+    <StyledPageContainer>
       <MapContainer id="map-container" />
 
-      <TravelsFlags flags={flags} onFlagClick={handleFlagClick} />
-
-      {activeCountry && (
-        <CityTabsUl>
-          <CityUnderlineTabDiv
-            animate={underlineControls}
-            underlineWidth={100 / activeCountry.cities.length}
-          />
-
-          {activeCountry.cities.map((city, index) => (
-            <CityTabLi key={city.name} onClick={() => handleCityClick(index)}>
-              {city.name}
-            </CityTabLi>
-          ))}
-        </CityTabsUl>
-      )}
-
-      <AnimatePresence exitBeforeEnter>
-        {activeCity && (
-          <CityWrapperDiv
-            key={activeCity.name}
-            exit={{ opacity: 0 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+      <AnimatePresence>
+        {!activeCity && (
+          <motion.div
+            initial={{ opacity: 0, x: '-100%' }}
+            exit={{ opacity: 0, x: '-100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <StyledCarousel onCarouselIndexChange={handleCarouselIndexChange}>
-              {placesWithImages.map(({ image: { url, landscape }, name }) => (
-                <Image
-                  src={url}
-                  alt={name}
-                  layout="fill"
-                  draggable={false}
-                  objectFit={landscape ? 'cover' : 'contain'}
-                />
+            <CitiesUl>
+              {cities.map((city, index) => (
+                <CityLi onClick={() => handleCityClick(index)}>
+                  <CityWrapperImage>
+                    <CityImage
+                      alt={city.name}
+                      title={city.name}
+                      src={city.image}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                    />
+                  </CityWrapperImage>
+                </CityLi>
               ))}
-            </StyledCarousel>
-
-            {activePlace && (
-              <>
-                <PlaceNameH1>{activePlace.name}</PlaceNameH1>
-                <PlaceDescriptionP>{t(activePlace.description)}</PlaceDescriptionP>
-              </>
-            )}
-          </CityWrapperDiv>
+            </CitiesUl>
+          </motion.div>
         )}
       </AnimatePresence>
-    </PageContainer>
+
+      <AnimatePresence>
+        {activeCity && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            exit={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <CityWrapperDiv key={activeCity.name}>
+              <button type="button" onClick={() => setActiveCity(undefined)}>
+                teste
+              </button>
+              <StyledCarousel onCarouselIndexChange={handleCarouselIndexChange}>
+                {placesWithImages.map(({ image: { url, landscape }, name }) => (
+                  <Image
+                    src={url}
+                    alt={name}
+                    layout="fill"
+                    draggable={false}
+                    objectFit={landscape ? 'cover' : 'contain'}
+                  />
+                ))}
+              </StyledCarousel>
+
+              {activePlace && (
+                <>
+                  <PlaceNameH1>{activePlace.name}</PlaceNameH1>
+                  <PlaceDescriptionP>{t(activePlace.description)}</PlaceDescriptionP>
+                </>
+              )}
+            </CityWrapperDiv>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </StyledPageContainer>
   );
 };
 

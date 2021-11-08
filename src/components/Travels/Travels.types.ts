@@ -1,11 +1,6 @@
-interface TravelCountry {
-  name: string;
-  flagImage: string;
-  cities: TravelCity[];
-}
-
 interface TravelCity {
   name: string;
+  image: string;
   places: TravelPlace[];
 }
 
@@ -21,4 +16,4 @@ interface TravelsFlagsProps {
   onFlagClick: (index: number) => void;
 }
 
-export type { TravelCountry, TravelCity, TravelPlace, TravelsFlagsProps };
+export type { TravelCity, TravelPlace, TravelsFlagsProps };
