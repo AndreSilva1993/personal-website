@@ -4,6 +4,7 @@ export const breakpoints = {
   medium: '@media only screen and (min-width: 993px) and (max-width: 1366px)',
   large: '@media only screen and (min-width: 1367px)',
 
+  lteExtraSmall: '@media only screen and (max-width: 767px)',
   lteSmall: '@media only screen and (max-width: 992px)',
   gteSmall: '@media only screen and (min-width: 768px)',
 

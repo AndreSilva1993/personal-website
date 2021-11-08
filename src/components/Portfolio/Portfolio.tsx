@@ -54,6 +54,7 @@ const Portfolio: FC = () => {
           `${IMAGES_BASE_URL}/burberry/2.webp`,
           `${IMAGES_BASE_URL}/burberry/3.webp`,
           `${IMAGES_BASE_URL}/burberry/4.webp`,
+          `${IMAGES_BASE_URL}/burberry/5.webp`,
         ],
       },
       {

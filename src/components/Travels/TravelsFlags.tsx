@@ -1,35 +1,37 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 import type { FC } from 'react';
 import type { TravelsFlagsProps } from './Travels.types';
 
-const FlagsWrapperDiv = styled.ul`
-  width: 100%;
+const FlagsWrapperUl = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 4rem 0;
-  position: relative;
 `;
 
-const FlagWrapperDiv = styled.li`
-  width: 5rem;
-  cursor: pointer;
-  position: relative;
-  aspect-ratio: 4 / 3;
+const FlagWrapperLi = styled.li(
+  ({ theme }) => css`
+    width: 5rem;
+    margin: 2rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    aspect-ratio: 4 / 3;
 
-  &:not(:last-of-type) {
-    margin-right: 3rem;
-  }
-`;
+    ${theme.breakpoints.extraSmall} {
+      margin: 1rem;
+    }
+  `
+);
 
 const TravelsFlags: FC<TravelsFlagsProps> = ({ flags, onFlagClick }) => (
-  <FlagsWrapperDiv>
+  <FlagsWrapperUl>
     {flags.map(({ name, image }, index) => (
-      <FlagWrapperDiv key={index} onClick={() => onFlagClick(index)}>
+      <FlagWrapperLi key={index} onClick={() => onFlagClick(index)}>
         <img alt={name} title={name} src={image} />
-      </FlagWrapperDiv>
+      </FlagWrapperLi>
     ))}
-  </FlagsWrapperDiv>
+  </FlagsWrapperUl>
 );
 
 export { TravelsFlags };

@@ -31,6 +31,7 @@ const PaginationWrapperUl = styled.ul`
   width: 100%;
   position: absolute;
   bottom: 1.5rem;
+  flex-wrap: wrap;
   justify-content: center;
 `;
 
@@ -42,13 +43,10 @@ const PaginationItemLi = styled.li<{ active: boolean }>(
     border-radius: 50%;
     background-color: ${active ? colors.darkBlue : colors.white};
     transition: background-color 250ms ease-out;
+    margin: 0 1rem 1rem 1rem;
 
     &:hover {
       background-color: ${colors.darkBlue};
-    }
-
-    &:not(:last-of-type) {
-      margin-right: 1.5rem;
     }
   `
 );
@@ -120,9 +118,7 @@ const Carousel: FC<CarouselProps> = ({
 
   function handleWrapperTouchMove(event: React.TouchEvent<HTMLDivElement>) {
     const swipePercentage =
-      ((swipeRef.current.startX - event.touches[0].clientX) /
-        wrapperRef.current.offsetWidth) *
-      100;
+      ((swipeRef.current.startX - event.touches[0].clientX) / wrapperRef.current.offsetWidth) * 100;
 
     swipeRef.current = {
       ...swipeRef.current,
@@ -131,10 +127,7 @@ const Carousel: FC<CarouselProps> = ({
     };
 
     const clampedValue = Math.max(
-      Math.min(
-        100 * carouselIndex + swipePercentage,
-        100 * (Children.count(children) - 1)
-      ),
+      Math.min(100 * carouselIndex + swipePercentage, 100 * (Children.count(children) - 1)),
       0
     );
 
@@ -146,9 +139,7 @@ const Carousel: FC<CarouselProps> = ({
 
     if (swipeRef.current.shouldGoToNextSlide) {
       setCarouselIndex((previousIndex) =>
-        previousIndex === Children.count(children) - 1
-          ? previousIndex
-          : previousIndex + 1
+        previousIndex === Children.count(children) - 1 ? previousIndex : previousIndex + 1
       );
     } else if (swipeRef.current.shouldGoToPreviousSlide) {
       setCarouselIndex((previousIndex) =>
@@ -189,15 +180,13 @@ const Carousel: FC<CarouselProps> = ({
       </CarouselItemsWrapperDiv>
 
       <PaginationWrapperUl>
-        {Array.from({ length: Children.count(children) }).map(
-          (_item, index) => (
-            <PaginationItemLi
-              key={index}
-              active={carouselIndex === index}
-              onClick={() => handlePaginationItemClick(index)}
-            />
-          )
-        )}
+        {Array.from({ length: Children.count(children) }).map((_item, index) => (
+          <PaginationItemLi
+            key={index}
+            active={carouselIndex === index}
+            onClick={() => handlePaginationItemClick(index)}
+          />
+        ))}
       </PaginationWrapperUl>
 
       <ChevronWrapperDiv

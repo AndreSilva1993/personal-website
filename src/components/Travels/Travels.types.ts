@@ -11,9 +11,9 @@ interface TravelCity {
 
 interface TravelPlace {
   name: string;
-  image?: string;
-  description?: string;
   coordinates: number[];
+  description?: string;
+  image?: { url: string; landscape: boolean };
 }
 
 interface TravelsFlagsProps {
