@@ -2,20 +2,13 @@
   "travels": [
     {
       "name": "Vienna",
-      "image": "/images/travels/barcelona/tibidabo.jpeg",
+      "image": "http://via.placeholder.com/300x200",
       "places": []
     },
     {
       "name": "London",
       "image": "/images/travels/london/kew-gardens.jpeg",
       "places": [
-        {
-          "name": "Saint Paul's Cathedral",
-          "coordinates": [
-            51.5138,
-            -0.0984
-          ]
-        },
         {
           "name": "British Museum",
           "image": {
@@ -42,6 +35,11 @@
         },
         {
           "name": "Hyde Park",
+          "image": {
+            "url": "/images/travels/london/hyde-park.jpeg",
+            "landscape": false
+          },
+          "description": "travels.places.london.hyde-park",
           "coordinates": [
             51.5073,
             -0.1657
@@ -60,14 +58,12 @@
           ]
         },
         {
-          "name": "Westminster Palace",
-          "coordinates": [
-            51.4995,
-            -0.1248
-          ]
-        },
-        {
           "name": "Harrods",
+          "image": {
+            "url": "/images/travels/london/harrods.jpeg",
+            "landscape": true
+          },
+          "description": "travels.places.london.harrods",
           "coordinates": [
             51.4994,
             -0.1632
@@ -100,7 +96,7 @@
         {
           "name": "St. Pancras International",
           "image": {
-            "url": "/images/travels/london/saint-pancras.jpeg",
+            "url": "/images/travels/london/saint-pancras-international.jpeg",
             "landscape": true
           },
           "description": "travels.places.london.saint-pancras-international",
@@ -147,35 +143,26 @@
         },
         {
           "name": "Sky Garden",
+          "image": {
+            "url": "/images/travels/london/sky-garden.jpeg",
+            "landscape": false
+          },
+          "description": "travels.places.london.sky-garden",
           "coordinates": [
             51.5112,
             -0.0835
-          ]
-        },
-        {
-          "name": "Leadenhall Market",
-          "coordinates": [
-            51.5128,
-            -0.0835
-          ]
-        },
-        {
-          "name": "The Gherkin",
-          "coordinates": [
-            51.5145,
-            -0.0803
           ]
         }
       ]
     },
     {
       "name": "Budapest",
-      "image": "/images/travels/barcelona/tibidabo.jpeg",
+      "image": "http://via.placeholder.com/300x200",
       "places": []
     },
     {
       "name": "Prague",
-      "image": "/images/travels/barcelona/tibidabo.jpeg",
+      "image": "http://via.placeholder.com/300x200",
       "places": []
     },
     {
@@ -255,41 +242,6 @@
           ]
         },
         {
-          "name": "Miradouro do Pôr-do-Sol",
-          "coordinates": [
-            37.7531062,
-            -25.2188253
-          ]
-        },
-        {
-          "name": "Miradouro do Pico dos Bodes",
-          "coordinates": [
-            37.7469931,
-            -25.2212601
-          ]
-        },
-        {
-          "name": "Poça da Dona Beija",
-          "coordinates": [
-            37.7691634,
-            -25.3213369
-          ]
-        },
-        {
-          "name": "Lagoa do Canário",
-          "coordinates": [
-            37.8361597,
-            -25.7618183
-          ]
-        },
-        {
-          "name": "Ponta da Ferraria",
-          "coordinates": [
-            37.8583611,
-            -25.8544965
-          ]
-        },
-        {
           "name": "Miradouro da Boca do Inferno",
           "description": "travels.places.azores.miradouro-boca-inferno",
           "image": {
@@ -362,13 +314,6 @@
           ]
         },
         {
-          "name": "Capela de Nossa Senhora das Vitórias",
-          "coordinates": [
-            37.7503787,
-            -25.3328243
-          ]
-        },
-        {
           "name": "Parque Terra Nostra",
           "description": "travels.places.azores.parque-terra-nostra",
           "image": {
@@ -378,20 +323,6 @@
           "coordinates": [
             37.771687,
             -25.3172526
-          ]
-        },
-        {
-          "name": "Igreja de Nossa Senhora da Alegria",
-          "coordinates": [
-            37.7729572,
-            -25.3132967
-          ]
-        },
-        {
-          "name": "Ermida de Nossa Senhora da Paz",
-          "coordinates": [
-            37.7285567,
-            -25.4335181
           ]
         }
       ]
@@ -410,34 +341,6 @@
           "coordinates": [
             32.7414302,
             -16.8925299
-          ]
-        },
-        {
-          "name": "Levada das 25 Fontes",
-          "coordinates": [
-            32.7549076,
-            -17.1360567
-          ]
-        },
-        {
-          "name": "Pico Ruivo",
-          "coordinates": [
-            32.758953,
-            -16.9430303
-          ]
-        },
-        {
-          "name": "Levada Nova",
-          "coordinates": [
-            32.6940452,
-            -17.0876439
-          ]
-        },
-        {
-          "name": "Fajã dos Padres",
-          "coordinates": [
-            32.6569985,
-            -17.0237307
           ]
         },
         {
@@ -465,34 +368,6 @@
           ]
         },
         {
-          "name": "Casas Típicas de Santana",
-          "coordinates": [
-            32.8053621,
-            -16.8843907
-          ]
-        },
-        {
-          "name": "Miradouro do Guindaste",
-          "coordinates": [
-            32.7940254,
-            -16.8515682
-          ]
-        },
-        {
-          "name": "Porto da Cruz",
-          "coordinates": [
-            32.7676407,
-            -16.8208683
-          ]
-        },
-        {
-          "name": "Praia de Machico",
-          "coordinates": [
-            32.7194429,
-            -16.7599649
-          ]
-        },
-        {
           "name": "Ponta de São Lourenço",
           "description": "travels.places.madeira.ponta-sao-lourenco",
           "image": {
@@ -514,20 +389,6 @@
           "coordinates": [
             32.6750137,
             -16.902579
-          ]
-        },
-        {
-          "name": "Ponta do Garajau",
-          "coordinates": [
-            32.637022,
-            -16.8545562
-          ]
-        },
-        {
-          "name": "Jardim Botânico da Madeira",
-          "coordinates": [
-            32.6619499,
-            -16.894201
           ]
         }
       ]
@@ -585,13 +446,6 @@
           ]
         },
         {
-          "name": "Ciutadella Park",
-          "coordinates": [
-            41.388127,
-            2.1838265
-          ]
-        },
-        {
           "name": "Arc de Triomf",
           "description": "travels.places.barcelona.arc-triomf",
           "image": {
@@ -617,6 +471,11 @@
         },
         {
           "name": "Basilica of Santa Maria del Mar",
+          "description": "travels.places.barcelona.santa-maria-del-mar",
+          "image": {
+            "url": "/images/travels/barcelona/santa-maria-del-mar.jpeg",
+            "landscape": false
+          },
           "coordinates": [
             41.3838911,
             2.1798824
@@ -636,6 +495,11 @@
         },
         {
           "name": "Casa Milà",
+          "description": "travels.places.barcelona.casa-mila",
+          "image": {
+            "url": "/images/travels/barcelona/casa-mila.jpeg",
+            "landscape": false
+          },
           "coordinates": [
             41.3952195,
             2.1597137
