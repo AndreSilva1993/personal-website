@@ -1,4 +1,7 @@
 {
+  "common": {
+    "goBack": "Go Back"
+  },
   "navigation": {
     "home": "Home",
     "about": "About",

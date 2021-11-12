@@ -1,6 +1,7 @@
 interface ITravelCountry {
   name: string;
   code: string;
+  image: string;
 }
 
 interface ITravelCity {

@@ -101,19 +101,19 @@ const TravelCities: FC<TravelCitiesProps> = ({ cities, onCityClick }) => (
     initial={{ opacity: 0, x: '-100%' }}
   >
     <CitiesUl>
-      {cities.map((city, index) => (
+      {cities.map(({ name, image }, index) => (
         <CityLi onClick={() => onCityClick(index)}>
           <CityImageWrapperDiv>
             <CityImage
-              alt={city.name}
-              title={city.name}
-              src={city.image}
+              src={image}
+              alt={name}
+              title={name}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
             />
           </CityImageWrapperDiv>
-          <CityNameSpan>{city.name}</CityNameSpan>
+          <CityNameSpan>{name}</CityNameSpan>
         </CityLi>
       ))}
     </CitiesUl>

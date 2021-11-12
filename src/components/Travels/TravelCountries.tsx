@@ -29,13 +29,13 @@ const CountryLi = styled.li`
 `;
 
 const CountryLiBorder = styled(motion.div)`
-  position: absolute;
-  height: calc(100% + 2rem);
-  border: 2px solid white;
-  width: calc(100% + 2rem);
-  border-radius: 50%;
   top: -1rem;
   left: -1rem;
+  position: absolute;
+  width: calc(100% + 2rem);
+  height: calc(100% + 2rem);
+  border: 2px solid white;
+  border-radius: 50%;
 `;
 
 const CountryImg = styled.img`
@@ -47,20 +47,16 @@ const TravelCountries: FC<TravelCountriesProps> = ({
   activeCountry = {},
   onCountryClick,
 }) => {
-  function handleCountryClick(index: number, countryCode: string) {
-    if (activeCountry.code === countryCode) {
-      onCountryClick();
-    } else {
-      onCountryClick(index);
-    }
+  function handleCountryClick(index: number) {
+    onCountryClick(index);
   }
 
   return (
     <AnimateSharedLayout>
       <CountriesUl>
-        {countries.map(({ name, code }, index) => (
-          <CountryLi onClick={() => handleCountryClick(index, code)}>
-            <CountryImg alt={name} src={`/images/travels/flags/${code}.svg`} />
+        {countries.map(({ name, image, code }, index) => (
+          <CountryLi onClick={() => handleCountryClick(index)}>
+            <CountryImg alt={name} src={image} />
             {activeCountry.code === code && (
               <CountryLiBorder initial={false} layoutId="underline" />
             )}

@@ -1,28 +1,39 @@
 {
   "countries": [
     {
+      "name": "World",
+      "code": "world",
+      "image": "/images/travels/flags/world.svg"
+    },
+    {
       "name": "Portugal",
-      "code": "pt"
+      "code": "pt",
+      "image": "/images/travels/flags/pt.svg"
     },
     {
       "name": "United Kingdom",
-      "code": "gb"
+      "code": "gb",
+      "image": "/images/travels/flags/gb.svg"
     },
     {
       "name": "Spain",
-      "code": "es"
+      "code": "es",
+      "image": "/images/travels/flags/es.svg"
     },
     {
       "name": "Austria",
-      "code": "at"
+      "code": "at",
+      "image": "/images/travels/flags/at.svg"
     },
     {
       "name": "Czech Republic",
-      "code": "cz"
+      "code": "cz",
+      "image": "/images/travels/flags/cz.svg"
     },
     {
       "name": "Hungary",
-      "code": "hu"
+      "code": "hu",
+      "image": "/images/travels/flags/hu.svg"
     }
   ],
   "travels": [

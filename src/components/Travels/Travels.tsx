@@ -42,11 +42,11 @@ const Travels: FC = () => {
 
   const [activeCity, setActiveCity] = useState<ITravelCity>();
   const [activePlace, setActivePlace] = useState<ITravelPlace>();
-  const [activeCountry, setActiveCountry] = useState<ITravelCountry>();
+  const [activeCountry, setActiveCountry] = useState<ITravelCountry>(() => countries[0]);
   const [filteredCities, setFilteredCities] = useState<ITravelCity[]>(() => cities);
 
-  function handleCountryClick(index?: number) {
-    setActiveCountry(index !== undefined ? countries[index] : undefined);
+  function handleCountryClick(index: number) {
+    setActiveCountry(countries[index]);
     setActiveCity(undefined);
     setActivePlace(undefined);
   }
@@ -69,7 +69,6 @@ const Travels: FC = () => {
   }
 
   function handleGoBackButtonClick() {
-    setActiveCountry(undefined);
     setActiveCity(undefined);
     setActivePlace(undefined);
 
@@ -119,7 +118,7 @@ const Travels: FC = () => {
 
   useEffect(
     function onActiveCountryChange() {
-      if (!activeCountry) {
+      if (!activeCountry || activeCountry.code === 'world') {
         setFilteredCities(cities);
         flyToMapBounds(leafletMarkersRef.current.map((marker) => marker.getLatLng()));
         return;

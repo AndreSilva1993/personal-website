@@ -92,7 +92,7 @@ const TravelCity: FC<TravelCityProps> = ({
 
         <Button onClick={onGoBackButtonClick}>
           <MdArrowBack />
-          Go back
+          {t('common.goBack')}
         </Button>
       </CityHeadingWrapperDiv>
       <CityWrapperDiv>
