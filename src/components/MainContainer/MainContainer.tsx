@@ -54,7 +54,7 @@ const MainContainer: FC = ({ children }) => {
   const { pathname } = useRouter();
 
   if (pathname === '/404') {
-    return <>{children}</>;
+    return <>children</>;
   }
 
   return (

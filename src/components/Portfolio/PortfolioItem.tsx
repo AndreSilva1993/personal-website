@@ -33,13 +33,7 @@ const LogoWrapperDiv = styled.div`
   position: relative;
 `;
 
-const PortfolioItem: FC<PortfolioItemProps> = ({
-  name,
-  image,
-  index,
-  logoImage,
-  onClick,
-}) => {
+const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, onClick }) => {
   const controls = useAnimation();
   const wrapperRef = useRef<HTMLDivElement>();
   const [isHovering, setIsHovering] = useState(false);
@@ -62,22 +56,20 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
 
     const { direction } = elementBounds.reduce(
       (closestBound, bound) =>
-        Math.abs(bound.value) < Math.abs(closestBound.value)
-          ? bound
-          : closestBound,
+        Math.abs(bound.value) < Math.abs(closestBound.value) ? bound : closestBound,
       elementBounds[0]
     );
 
     switch (direction) {
-      case 'left':
-      default:
-        return { x: '-100%', y: 0 };
       case 'right':
         return { x: '100%', y: 0 };
       case 'top':
         return { y: '-100%', x: 0 };
       case 'bottom':
         return { y: '100%', x: 0 };
+      case 'left':
+      default:
+        return { x: '-100%', y: 0 };
     }
   }
 
@@ -125,13 +117,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
         <LogoWrapperDiv>
-          <Image
-            priority
-            alt={name}
-            src={logoImage}
-            layout="fill"
-            objectFit="contain"
-          />
+          <Image priority alt={name} src={logoImage} layout="fill" objectFit="contain" />
         </LogoWrapperDiv>
       </PortfolioItemNameDiv>
     </PortfolioItemWrapperDiv>

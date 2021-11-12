@@ -15,7 +15,6 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    'react/jsx-filename-extension': [2, { extensions: ['.ts', '.tsx'] }],
     'react/prop-types': 'off',
     'react/jsx-no-bind': 'off',
     'react/jsx-uses-react': 'off',
@@ -23,6 +22,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/function-component-definition': 'off',
+    'react/jsx-filename-extension': [2, { extensions: ['.ts', '.tsx'] }],
     'import/prefer-default-export': 'off',
     'no-use-before-define': 'off',
     'prefer-arrow-callback': 'off',

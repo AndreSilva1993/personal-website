@@ -1,19 +1,45 @@
-interface TravelCity {
+interface ITravelCountry {
   name: string;
-  image: string;
-  places: TravelPlace[];
+  code: string;
 }
 
-interface TravelPlace {
+interface ITravelCity {
+  name: string;
+  image: string;
+  countryCode: string;
+  places: ITravelPlace[];
+}
+
+interface ITravelPlace {
   name: string;
   coordinates: number[];
   description?: string;
   image?: { url: string; landscape: boolean };
 }
 
-interface TravelsFlagsProps {
-  flags: Array<{ name: string; image: string; active: boolean }>;
-  onFlagClick: (index: number) => void;
+interface TravelCountriesProps {
+  countries: ITravelCountry[];
+  activeCountry: ITravelCountry;
+  onCountryClick: (index?: number) => void;
 }
 
-export type { TravelCity, TravelPlace, TravelsFlagsProps };
+interface TravelCitiesProps {
+  cities: ITravelCity[];
+  onCityClick: (index: number) => void;
+}
+
+interface TravelCityProps {
+  city: ITravelCity;
+  place: ITravelPlace;
+  onGoBackButtonClick: () => void;
+  onPlacesCarouselIndexChange: (index: number) => void;
+}
+
+export type {
+  ITravelCountry,
+  ITravelCity,
+  ITravelPlace,
+  TravelCountriesProps,
+  TravelCityProps,
+  TravelCitiesProps,
+};

@@ -1,13 +1,41 @@
 {
+  "countries": [
+    {
+      "name": "Portugal",
+      "code": "pt"
+    },
+    {
+      "name": "United Kingdom",
+      "code": "gb"
+    },
+    {
+      "name": "Spain",
+      "code": "es"
+    },
+    {
+      "name": "Austria",
+      "code": "at"
+    },
+    {
+      "name": "Czech Republic",
+      "code": "cz"
+    },
+    {
+      "name": "Hungary",
+      "code": "hu"
+    }
+  ],
   "travels": [
     {
       "name": "Vienna",
+      "countryCode": "at",
       "image": "http://via.placeholder.com/300x200",
       "places": []
     },
     {
       "name": "London",
-      "image": "/images/travels/london/kew-gardens.jpeg",
+      "countryCode": "gb",
+      "image": "/images/travels/london/the-shard.jpeg",
       "places": [
         {
           "name": "British Museum",
@@ -157,16 +185,19 @@
     },
     {
       "name": "Budapest",
+      "countryCode": "hu",
       "image": "http://via.placeholder.com/300x200",
       "places": []
     },
     {
       "name": "Prague",
+      "countryCode": "cz",
       "image": "http://via.placeholder.com/300x200",
       "places": []
     },
     {
       "name": "Azores",
+      "countryCode": "pt",
       "image": "/images/travels/azores/miradouro-cumeeiras.jpeg",
       "places": [
         {
@@ -329,6 +360,7 @@
     },
     {
       "name": "Madeira",
+      "countryCode": "pt",
       "image": "/images/travels/madeira/ponta-sao-lourenco.jpeg",
       "places": [
         {
@@ -395,6 +427,7 @@
     },
     {
       "name": "Barcelona",
+      "countryCode": "es",
       "image": "/images/travels/barcelona/tibidabo.jpeg",
       "places": [
         {
