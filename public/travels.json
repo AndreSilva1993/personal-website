@@ -123,7 +123,7 @@
         {
           "name": "London Eye",
           "image": {
-            "url": "/images/travels/united-kingdom-eye.jpeg",
+            "url": "/images/travels/london/london-eye.jpeg",
             "landscape": true
           },
           "description": "travels.places.london.london-eye",

@@ -9,6 +9,7 @@ const CountriesUl = styled.ul(
   ({ theme }) => css`
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     font-size: 1.5rem;
     margin: 2rem 0;
@@ -22,10 +23,7 @@ const CountryLi = styled.li`
   align-items: center;
   cursor: pointer;
   position: relative;
-
-  &:not(:last-of-type) {
-    margin-right: 4rem;
-  }
+  margin: 1rem;
 `;
 
 const CountryLiBorder = styled(motion.div)`

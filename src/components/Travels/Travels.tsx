@@ -22,8 +22,8 @@ const StyledPageContainer = styled(PageContainer)`
 
 const MapContainerDiv = styled.div(
   ({ theme }) => css`
-    height: 46rem;
     width: 100%;
+    aspect-ratio: 16 / 6;
     margin-bottom: 1rem;
 
     ${theme.breakpoints.lteExtraSmall} {
@@ -117,7 +117,7 @@ const Travels: FC = () => {
   }, []);
 
   useEffect(
-    function onActiveCountryChange() {
+    function onActiveCountryAndCityChange() {
       if (!activeCountry || activeCountry.code === 'world') {
         setFilteredCities(cities);
         flyToMapBounds(leafletMarkersRef.current.map((marker) => marker.getLatLng()));
@@ -133,7 +133,7 @@ const Travels: FC = () => {
           .flat()
       );
     },
-    [activeCountry]
+    [activeCountry, activeCity]
   );
 
   useEffect(
