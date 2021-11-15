@@ -9,6 +9,24 @@ import { Carousel } from '@src/components/Carousel/Carousel';
 import type { FC } from 'react';
 import type { PortfolioModalProps } from './Portfolio.types';
 
+const StyledModal = styled(Modal)(
+  ({ theme }) => css`
+    top: 5%;
+    left: 25%;
+    width: calc(100vw - 50%);
+    height: calc(100% - 10%);
+    margin: auto;
+    background-color: ${theme.colors.white};
+
+    ${theme.breakpoints.extraSmall} {
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+    }
+  `
+);
+
 const ModalWrapperDiv = styled.div<{ disableScroll: boolean }>(
   ({ disableScroll }) => css`
     height: 100%;
@@ -54,7 +72,16 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ item, open, onClose }) => {
   }
 
   return (
-    <Modal open={open} onClose={onClose}>
+    <StyledModal
+      open={open}
+      onClose={onClose}
+      motionProps={{
+        exit: { opacity: 0, x: 0 },
+        initial: { opacity: 0, x: '-3rem' },
+        animate: { opacity: 1, x: 0 },
+        transition: { duration: 0.5 },
+      }}
+    >
       <ModalWrapperDiv disableScroll={disableModalScroll}>
         <StyledCarousel
           onCarouselTouchEnd={handleCarouselTouchEnd}
@@ -75,7 +102,7 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ item, open, onClose }) => {
         <H1>{item?.name}</H1>
         <DescriptionP>{item?.description}</DescriptionP>
       </ModalWrapperDiv>
-    </Modal>
+    </StyledModal>
   );
 };
 

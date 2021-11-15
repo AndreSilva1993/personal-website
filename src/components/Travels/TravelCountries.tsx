@@ -36,9 +36,15 @@ const CountryLiBorder = styled(motion.div)`
   border-radius: 50%;
 `;
 
-const CountryImg = styled.img`
-  height: 5rem;
-`;
+const CountryImg = styled.img(
+  ({ theme }) => css`
+    height: 5rem;
+
+    ${theme.breakpoints.extraSmall} {
+      height: 3rem;
+    }
+  `
+);
 
 const TravelCountries: FC<TravelCountriesProps> = ({
   countries,

@@ -16,15 +16,25 @@ import type { FC } from 'react';
 import type { ITravelCity, ITravelPlace, ITravelCountry } from './Travels.types';
 
 const StyledPageContainer = styled(PageContainer)`
-  max-width: 150rem;
   margin: 0 auto;
+  max-width: 150rem;
 `;
+
+const TravelH1 = styled.h1(
+  ({ theme }) => css`
+    color: ${theme.colors.white};
+    font-size: 3rem;
+    text-align: center;
+    font-weight: ${theme.fontWeights.boldest};
+  `
+);
 
 const MapContainerDiv = styled.div(
   ({ theme }) => css`
     width: 100%;
     aspect-ratio: 16 / 6;
     margin-bottom: 1rem;
+    z-index: 0;
 
     ${theme.breakpoints.lteExtraSmall} {
       aspect-ratio: 4 / 3;
@@ -159,13 +169,13 @@ const Travels: FC = () => {
 
   return (
     <StyledPageContainer>
-      <MapContainerDiv id="map-container" ref={leafletMapContainerRef} />
-
+      <TravelH1>{activeCountry.name}</TravelH1>
       <TravelCountries
         countries={countries}
         activeCountry={activeCountry}
         onCountryClick={handleCountryClick}
       />
+      <MapContainerDiv id="map-container" ref={leafletMapContainerRef} />
 
       <AnimatePresence exitBeforeEnter>
         {!activeCity ? (

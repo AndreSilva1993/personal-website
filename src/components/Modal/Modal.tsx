@@ -5,35 +5,25 @@ import { MdClose } from 'react-icons/md';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import type { FC } from 'react';
+import type { ModalProps } from '@src/components/Modal/Modal.types';
 
 const ModalOverlay = styled(motion.div)(
   ({ theme }) => css`
-    height: 100%;
-    width: 100vw;
-    overflow: hidden;
-    position: fixed;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
     background-color: ${theme.colors.black};
+    z-index: ${theme.layers.modalOverlay};
   `
 );
 
 const ModalWrapperDiv = styled(motion.div)(
   ({ theme }) => css`
     position: fixed;
-    top: 5%;
-    left: 25%;
-    width: calc(100vw - 50%);
-    height: calc(100% - 10%);
-    margin: auto;
-    background-color: ${theme.colors.white};
-
-    ${theme.breakpoints.extraSmall} {
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100%;
-    }
+    z-index: ${theme.layers.modal};
   `
 );
 
@@ -55,7 +45,7 @@ const StyledMdClose = styled(MdClose)(
   `
 );
 
-const Modal: FC<ModalProps> = ({ children, open, onClose }) => {
+const Modal: FC<ModalProps> = ({ children, open, onClose, motionProps, ...remainingProps }) => {
   useEffect(() => {
     if (!open) return undefined;
 
@@ -79,12 +69,7 @@ const Modal: FC<ModalProps> = ({ children, open, onClose }) => {
             animate={{ opacity: 0.6 }}
             transition={{ duration: 0.5 }}
           />
-          <ModalWrapperDiv
-            exit={{ opacity: 0, x: 0 }}
-            initial={{ opacity: 0, x: '-3rem' }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <ModalWrapperDiv {...motionProps} {...remainingProps}>
             {children}
           </ModalWrapperDiv>
           <StyledMdClose onClick={onClose} />
@@ -93,10 +78,5 @@ const Modal: FC<ModalProps> = ({ children, open, onClose }) => {
     </AnimatePresence>
   );
 };
-
-interface ModalProps {
-  open: boolean;
-  onClose: VoidFunction;
-}
 
 export { Modal };

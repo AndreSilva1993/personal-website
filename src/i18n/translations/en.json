@@ -6,7 +6,8 @@
     "home": "Home",
     "about": "About",
     "portfolio": "Portfolio",
-    "travels": "Travels"
+    "travels": "Travels",
+    "music": "Music"
   },
   "404": {
     "seo": {
@@ -51,7 +52,8 @@
   },
   "travels": {
     "seo": {
-      "title": "Travels"
+      "title": "Travels",
+      "description": ""
     },
     "title": "Travels",
     "places": {
