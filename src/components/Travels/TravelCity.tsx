@@ -39,7 +39,7 @@ const StyledCarousel = styled(Carousel)(
     margin: 0 4rem 0 0;
     aspect-ratio: 4 / 3;
 
-    ${theme.breakpoints.lteExtraSmall} {
+    ${theme.media.lteExtraSmall} {
       width: 100%;
       height: unset;
       float: initial;
@@ -56,7 +56,7 @@ const PlaceNameH1 = styled.h1(
     color: ${theme.colors.white};
     font-weight: ${theme.fontWeights.boldest};
 
-    ${theme.breakpoints.lteExtraSmall} {
+    ${theme.media.lteExtraSmall} {
       text-align: center;
     }
   `

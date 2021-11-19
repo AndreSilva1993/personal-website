@@ -30,7 +30,7 @@ const PortfolioGridDiv = styled.div(
     grid-gap: 5rem;
     grid-template-columns: repeat(2, 1fr);
 
-    ${theme.breakpoints.extraSmall} {
+    ${theme.media.extraSmall} {
       grid-template-columns: 1fr;
     }
   `
@@ -48,7 +48,7 @@ const Portfolio: FC = () => {
       {
         name: 'Burberry',
         description: t('portfolio.items.burberry'),
-        logoImage: `${IMAGES_BASE_URL}/burberry/logo.webp`,
+        logoImage: `${IMAGES_BASE_URL}/burberry/logo.svg`,
         images: [
           `${IMAGES_BASE_URL}/burberry/1.webp`,
           `${IMAGES_BASE_URL}/burberry/2.webp`,
@@ -60,10 +60,7 @@ const Portfolio: FC = () => {
       {
         name: 'Tankey',
         description: t('portfolio.items.tankey'),
-        images: [
-          `${IMAGES_BASE_URL}/tankey/1.webp`,
-          `${IMAGES_BASE_URL}/tankey/2.webp`,
-        ],
+        images: [`${IMAGES_BASE_URL}/tankey/1.webp`, `${IMAGES_BASE_URL}/tankey/2.webp`],
         logoImage: `${IMAGES_BASE_URL}/tankey/logo.webp`,
       },
       {
@@ -78,10 +75,7 @@ const Portfolio: FC = () => {
       },
       {
         name: 'TOConline',
-        images: [
-          `${IMAGES_BASE_URL}/toconline/1.webp`,
-          `${IMAGES_BASE_URL}/toconline/2.webp`,
-        ],
+        images: [`${IMAGES_BASE_URL}/toconline/1.webp`, `${IMAGES_BASE_URL}/toconline/2.webp`],
         logoImage: `${IMAGES_BASE_URL}/toconline/logo.webp`,
         description: t('portfolio.items.toconline'),
       },

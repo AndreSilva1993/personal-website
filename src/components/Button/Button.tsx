@@ -27,8 +27,8 @@ const StyledButton = styled.button(
   `
 );
 
-const Button: FC<ButtonProps> = ({ onClick, children }) => (
-  <StyledButton onClick={onClick} type="button">
+const Button: FC<ButtonProps> = ({ onClick, children, ...remainingProps }) => (
+  <StyledButton onClick={onClick} type="button" {...remainingProps}>
     {children}
   </StyledButton>
 );

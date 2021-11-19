@@ -40,7 +40,7 @@ const CountryImg = styled.img(
   ({ theme }) => css`
     height: 5rem;
 
-    ${theme.breakpoints.extraSmall} {
+    ${theme.media.extraSmall} {
       height: 3rem;
     }
   `

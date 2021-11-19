@@ -13,7 +13,7 @@ const ContainerDiv = styled.div(
     display: flex;
     flex-direction: column;
 
-    ${theme.breakpoints.large} {
+    ${theme.media.large} {
       flex-direction: row;
     }
   `

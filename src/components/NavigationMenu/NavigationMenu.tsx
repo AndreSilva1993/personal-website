@@ -18,7 +18,7 @@ const NavigationNav = styled.nav(
     padding: 2rem 4rem;
     flex-shrink: 0;
 
-    ${theme.breakpoints.large} {
+    ${theme.media.large} {
       width: 40rem;
       height: 100%;
       padding: 10rem;

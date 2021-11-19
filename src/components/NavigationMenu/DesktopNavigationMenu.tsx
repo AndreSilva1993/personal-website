@@ -12,11 +12,11 @@ const Ul = styled.ul(
     font-size: 1.5rem;
     font-weight: ${theme.fontWeights.bold};
 
-    ${theme.breakpoints.extraSmall} {
+    ${theme.media.extraSmall} {
       display: none;
     }
 
-    ${theme.breakpoints.large} {
+    ${theme.media.large} {
       flex-direction: column;
     }
   `
@@ -31,7 +31,7 @@ const Li = styled.li(
       margin-right: 2rem;
     }
 
-    ${theme.breakpoints.large} {
+    ${theme.media.large} {
       &:not(:last-of-type) {
         margin-right: 0;
         margin-bottom: 2rem;

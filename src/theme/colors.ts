@@ -4,5 +4,6 @@ export const colors = {
   darkGrey: '#111',
   grey: '#555',
   lightGrey: '#bbb',
-  darkBlue: '#1d4fd8',
+  pink: '#bb86fc',
+  pinkTransparent: 'rgba(187, 134, 252, 0.12)',
 };

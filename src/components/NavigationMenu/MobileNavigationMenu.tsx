@@ -10,13 +10,13 @@ import { Modal } from '@src/components/Modal/Modal';
 
 import type { FC } from 'react';
 
-const StyledMdMenu = styled(MdMenu)(
+const StyledMenu = styled(MdMenu)(
   ({ theme }) => css`
     width: 2.5rem;
     height: 2.5rem;
     color: ${theme.colors.white};
 
-    ${theme.breakpoints.gteSmall} {
+    ${theme.media.gteSmall} {
       display: none;
     }
   `
@@ -30,7 +30,7 @@ const StyledModal = styled(Modal)(
     height: 100vh;
 
     position: fixed;
-    background-color: ${theme.colors.black};
+    background-color: ${theme.colors.darkGrey};
   `
 );
 
@@ -49,14 +49,14 @@ const A = styled.a<{ active?: boolean }>(
   ({ theme, active }) => css`
     width: 100%;
     height: 100%;
-    padding: 0.8rem 1.6rem;
+    padding: 1.2rem 1.6rem;
     display: flex;
     align-items: center;
 
     text-decoration: none;
     transition: color 200ms ease;
-    color: ${active ? theme.colors.black : theme.colors.white};
-    background-color: ${active ? theme.colors.white : theme.colors.black};
+    color: ${active ? theme.colors.pink : theme.colors.white};
+    background-color: ${active ? theme.colors.pinkTransparent : theme.colors.darkGrey};
 
     transition: color 250ms ease-out, background-color 250ms ease-out;
   `
@@ -87,7 +87,7 @@ const MobileNavigationMenu: FC = () => {
 
   return (
     <>
-      <StyledMdMenu onClick={handleMenuIconClick} />
+      <StyledMenu onClick={handleMenuIconClick} />
 
       <StyledModal
         open={menuOpen}
@@ -101,7 +101,7 @@ const MobileNavigationMenu: FC = () => {
       >
         <Ul>
           {navigationLinks.map(({ href, title, Icon }) => (
-            <Li>
+            <Li key={title}>
               <Link href={href}>
                 <A active={pathname === href} onClick={handleModalClose}>
                   <Icon css={{ height: '2.4rem', width: '2.4rem', marginRight: '3.2rem' }} />

@@ -41,12 +41,12 @@ const PaginationItemLi = styled.li<{ active: boolean }>(
     height: 1.5rem;
     cursor: pointer;
     border-radius: 50%;
-    background-color: ${active ? colors.darkBlue : colors.white};
+    background-color: ${active ? colors.pink : colors.white};
     transition: background-color 250ms ease-out;
     margin: 0 1rem 1rem 1rem;
 
     &:hover {
-      background-color: ${colors.darkBlue};
+      background-color: ${colors.pink};
     }
   `
 );
@@ -69,7 +69,7 @@ const ChevronWrapperDiv = styled.div<{ disabled: boolean }>(
 
     &:hover {
       color: ${colors.white};
-      background-color: ${colors.darkBlue};
+      background-color: ${colors.pink};
     }
   `
 );

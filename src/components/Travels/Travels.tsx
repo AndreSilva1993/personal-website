@@ -36,7 +36,7 @@ const MapContainerDiv = styled.div(
     margin-bottom: 1rem;
     z-index: 0;
 
-    ${theme.breakpoints.lteExtraSmall} {
+    ${theme.media.lteExtraSmall} {
       aspect-ratio: 4 / 3;
     }
   `

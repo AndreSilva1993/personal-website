@@ -27,7 +27,7 @@ const ModalWrapperDiv = styled(motion.div)(
   `
 );
 
-const StyledMdClose = styled(MdClose)(
+const StyledClose = styled(MdClose)(
   ({ theme }) => css`
     top: 3rem;
     right: 3rem;
@@ -37,7 +37,7 @@ const StyledMdClose = styled(MdClose)(
     cursor: pointer;
     color: ${theme.colors.white};
 
-    ${theme.breakpoints.extraSmall} {
+    ${theme.media.extraSmall} {
       top: 1.5rem;
       right: 1.5rem;
       color: ${theme.colors.black};
@@ -72,7 +72,7 @@ const Modal: FC<ModalProps> = ({ children, open, onClose, motionProps, ...remain
           <ModalWrapperDiv {...motionProps} {...remainingProps}>
             {children}
           </ModalWrapperDiv>
-          <StyledMdClose onClick={onClose} />
+          <StyledClose onClick={onClose} />
         </>
       ) : null}
     </AnimatePresence>

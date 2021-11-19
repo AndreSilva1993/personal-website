@@ -18,7 +18,7 @@ const CityImage = styled(Image)`
 const CityLi = styled.li(
   ({ theme }) => css`
     height: 46rem;
-    flex: 1 0 40%;
+    flex: 0 0 40%;
     padding: 1rem;
     cursor: pointer;
     overflow: hidden;
@@ -26,7 +26,7 @@ const CityLi = styled.li(
 
     &:nth-child(4n + 1),
     &:nth-child(4n + 4) {
-      flex: 1 0 60%;
+      flex: 0 0 60%;
     }
 
     &:nth-child(odd) {
@@ -37,7 +37,7 @@ const CityLi = styled.li(
       padding-right: 0;
     }
 
-    ${theme.breakpoints.extraSmall} {
+    ${theme.media.extraSmall} {
       flex: 0 0 100%;
       height: 20rem;
       padding: 1rem 0;
@@ -89,6 +89,10 @@ const CityNameSpan = styled.span(
       &::after {
         transform: scaleX(1.5);
       }
+    }
+
+    ${theme.media.extraSmall} {
+      font-size: 1.5rem;
     }
   `
 );

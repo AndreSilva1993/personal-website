@@ -18,7 +18,7 @@ const StyledModal = styled(Modal)(
     margin: auto;
     background-color: ${theme.colors.white};
 
-    ${theme.breakpoints.extraSmall} {
+    ${theme.media.extraSmall} {
       top: 0;
       left: 0;
       width: 100vw;

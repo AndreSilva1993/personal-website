@@ -67,7 +67,7 @@ const PlanetImageDiv = styled.div(
     height: 50rem;
     position: relative;
 
-    ${theme.breakpoints.extraSmall} {
+    ${theme.media.extraSmall} {
       width: 30rem;
       height: 30rem;
     }
@@ -122,9 +122,9 @@ export default function Page() {
       }
     };
 
+    drawStars(colors.pink);
     drawStars(colors.grey);
     drawStars(colors.white);
-    drawStars(colors.darkBlue);
   }, []);
 
   return (

@@ -4,21 +4,21 @@ import { Theme } from '@emotion/react';
 
 import { colors } from './colors';
 import { layers } from './layers';
-import { breakpoints } from './breakpoints';
+import { media } from './media';
 import { fontWeights } from './fontWeights';
 
 declare module '@emotion/react' {
   export interface Theme {
+    media: typeof media;
     colors: typeof colors;
     layers: typeof layers;
-    breakpoints: typeof breakpoints;
     fontWeights: typeof fontWeights;
   }
 }
 
 export const theme: Theme = {
+  media,
   colors,
   layers,
   fontWeights,
-  breakpoints,
 };

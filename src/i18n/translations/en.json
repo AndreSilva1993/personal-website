@@ -53,7 +53,7 @@
   "travels": {
     "seo": {
       "title": "Travels",
-      "description": ""
+      "description": "As an addicted traveller always looking into the next adventure, these have been all my trips and all the photos I've taken."
     },
     "title": "Travels",
     "places": {
@@ -106,5 +106,14 @@
         "ponta-sao-lourenco": "This peninsula is volcanic in origin, and is mainly made of basalt, although there are also some limestone sediment formations. At the end of the Point there are two islets: the Cevada, Metade or Desembarcadouro Islet, and the S. Lourenço Point, Farol or Fora Islet. The stone partition marks where the Regional government’s land begins, and is part of the Madeira Natural Park. The peninsula is classified as a partial natural reserve and the Desembarcadouro Islet is a total natural reserve. The semi-arid climate and its exposure to North winds have sculpted the low vegetation and explain the lack of trees, which distinguish this area from the rest of the Island and is a veritable natural heritage. Here you can see the Island’s basal plate at its best and several rare and endemic plants. Of the 138 species of plant identified on the peninsula, 31 are endemic (exclusive) to Madeira island. In terms of fauna there is one of the largest colonies of seagull (Larus cachinnans atlantis) in the region, which nests on the Desembarcadouro islet. Along the route you can often see several bird species such as the Berthelot’s Pipit (Anthus bertheloti madeirensis), the Goldfinch (Carduelis carduelis parva), the Common Canary (Serinus canaria canaria), and the Kestrel (Falco tinunculus). Protected marine birds also nest here such as Cory’s Shearwater (Calonectris diomedea), the Band-rumped Storm-Petrel (Oceanodroma castro), Bulwer’s Petrel, (Bulweria bulwerii), and the Common Tern (Sterna hirundo). The Madeiran lizard (Lacerta dugesii), which is the island’s only reptile, is very common here. Another interesting aspect of this area is the high number of endemic land molluscs (24), commonly known as snails."
       }
     }
+  },
+  "music": {
+    "seo": {
+      "title": "Music",
+      "description": ""
+    },
+    "playCount": "{{playCount}} plays",
+    "loadMore": "Load more albums",
+    "streamingNow": "Streaming Now"
   }
 }

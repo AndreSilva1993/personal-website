@@ -37,7 +37,7 @@ const AboutDiv = styled.div(
     font-size: 1.5rem;
     margin-bottom: 5rem;
 
-    ${theme.breakpoints.gteMedium} {
+    ${theme.media.gteMedium} {
       flex-direction: row;
     }
   `
@@ -51,7 +51,7 @@ const P = styled.p(
     font-weight: ${theme.fontWeights.normal};
     color: ${theme.colors.lightGrey};
 
-    ${theme.breakpoints.gteMedium} {
+    ${theme.media.gteMedium} {
       flex: 0 0 55%;
       margin-right: 5rem;
     }
@@ -62,7 +62,7 @@ const PersonalInfoUl = styled.ul(
   ({ theme }) => css`
     flex-grow: 1;
 
-    ${theme.breakpoints.lteSmall} {
+    ${theme.media.lteSmall} {
       margin-top: 3rem;
     }
   `
@@ -76,7 +76,7 @@ const PersonalInfoLi = styled.li(
       margin-bottom: 1.5rem;
     }
 
-    ${theme.breakpoints.gteMedium} {
+    ${theme.media.gteMedium} {
       display: flex;
       justify-content: space-between;
     }
@@ -88,7 +88,7 @@ const PersonalInfoSpan = styled.span(
     color: ${theme.colors.white};
     font-weight: ${theme.fontWeights.boldest};
 
-    ${theme.breakpoints.lteSmall} {
+    ${theme.media.lteSmall} {
       min-width: 10rem;
       display: inline-block;
     }
@@ -103,7 +103,7 @@ const TechnologyGridDiv = styled.div(
     color: ${theme.colors.white};
     font-size: 1.5rem;
 
-    ${theme.breakpoints.extraSmall} {
+    ${theme.media.extraSmall} {
       grid-template-columns: 3rem auto 1fr;
     }
   `
@@ -180,12 +180,7 @@ const About: FC = () => {
       <TechnologyGridDiv>
         {technologiesData.map(({ name, image, value }, index) => (
           <Fragment key={index}>
-            <Image
-              alt={name}
-              width={30}
-              height={30}
-              src={`/images/technologies/${image}`}
-            />
+            <Image alt={name} width={30} height={30} src={`/images/technologies/${image}`} />
             <TechnologyGridItemDiv>{name}</TechnologyGridItemDiv>
             <TechnologyGridItemDiv>
               <StyledProgressBar value={value} delay={0.5 + 0.1 * index} />
