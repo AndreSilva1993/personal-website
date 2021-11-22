@@ -2,9 +2,13 @@ import axios from 'axios';
 
 import type {
   LastFMTimePeriod,
+  LastFMUserInfo,
   LastFMTopAlbum,
   LastFMRecentTrack,
+  LastFMUserInfoResponse,
   LastFMTopAlbumsResponse,
+  LastFMTopArtistsResponse,
+  LastFMLovedTracksResponse,
   LastFMRecentTracksResponse,
 } from './last-fm.types';
 
@@ -57,3 +61,16 @@ export const getRecentTracks = async (): Promise<LastFMRecentTrack[]> => {
     return [];
   }
 };
+
+export const getUserInfo = async (): Promise<LastFMUserInfo> =>
+  Promise.all([
+    lastFMClient.get<LastFMUserInfoResponse>('', { params: { method: 'user.getinfo' } }),
+    lastFMClient.get<LastFMTopAlbumsResponse>('', { params: { method: 'user.gettopalbums' } }),
+    lastFMClient.get<LastFMTopArtistsResponse>('', { params: { method: 'user.gettopartists' } }),
+    lastFMClient.get<LastFMLovedTracksResponse>('', { params: { method: 'user.getlovedtracks' } }),
+  ]).then(([{ data: userInfo }, { data: albums }, { data: artists }, { data: lovedTracks }]) => ({
+    playCount: Number(userInfo.user.playcount),
+    albumsCount: Number(albums.topalbums['@attr'].total),
+    artistsCount: Number(artists.topartists['@attr'].total),
+    lovedTracksCount: Number(lovedTracks.lovedtracks['@attr'].total),
+  }));

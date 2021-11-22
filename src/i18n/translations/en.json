@@ -114,6 +114,20 @@
     },
     "playCount": "{{playCount}} plays",
     "loadMore": "Load more albums",
-    "streamingNow": "Streaming Now"
+    "streamingNow": "Streaming Now",
+    "statistics": {
+      "scrobbles": "Scrobbles",
+      "tracksLoved": "Tracks Loved",
+      "artistsListened": "Artists Listened",
+      "albumsListened": "Albums Listened"
+    },
+    "filters": {
+      "allTime": "All Time",
+      "last7Days": "Last 7 Days",
+      "last30Days": "Last 30 Days",
+      "last90Days": "Last 90 Days",
+      "last180Days": "Last 180 Days",
+      "last365Days": "Last 365 Days"
+    }
   }
 }

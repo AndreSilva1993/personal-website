@@ -22,6 +22,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/jsx-no-useless-fragment': 'off',
     'react/function-component-definition': 'off',
     'react/jsx-filename-extension': [2, { extensions: ['.ts', '.tsx'] }],
     'import/prefer-default-export': 'off',

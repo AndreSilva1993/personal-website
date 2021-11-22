@@ -1,12 +1,12 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
 
 import { useLastFMRecentTracks } from '@src/queries/last-fm';
 
 import type { FC } from 'react';
 
-const Li = styled.li(
+const TrackLi = styled.li(
   ({ theme }) => css`
     display: flex;
     align-items: center;
@@ -34,7 +34,7 @@ const TrackArtistSpan = styled.span(
       white-space: nowrap;
       text-overflow: ellipsis;
       padding-right: 2rem;
-      font-weight: ${theme.fontWeights.bold};
+      font-weight: ${theme.fontWeights.boldest};
     `
 );
 
@@ -48,6 +48,9 @@ const TrackNameSpan = styled.span`
 
 const TrackAlbumSpan = styled.span`
   flex: 0 0 25%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const TrackListenDateSpan = styled.span(
@@ -69,7 +72,7 @@ const MusicRecentTracks: FC = () => {
   return (
     <ul>
       {recentTracks.map(({ image, artist, name, album, unixTimestamp }) => (
-        <Li>
+        <TrackLi key={`${artist}-${name}-${unixTimestamp}`}>
           <TrackAlbumImg src={image} width="30" height="30" />
           <TrackDetailsDiv>
             <TrackArtistSpan>{artist}</TrackArtistSpan>
@@ -79,7 +82,7 @@ const MusicRecentTracks: FC = () => {
               {unixTimestamp ? formatTimestamp(unixTimestamp) : t('music.streamingNow')}
             </TrackListenDateSpan>
           </TrackDetailsDiv>
-        </Li>
+        </TrackLi>
       ))}
     </ul>
   );

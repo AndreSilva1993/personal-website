@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useQuery, useInfiniteQuery } from 'react-query';
 
 import type {
+  LastFMUserInfo,
   LastFMTopAlbum,
   LastFMTimePeriod,
   LastFMRecentTrack,
@@ -30,6 +31,15 @@ async function fetchRecentTracks(): Promise<LastFMRecentTrack[]> {
   }
 }
 
+async function fetchUserInfo(): Promise<LastFMUserInfo> {
+  try {
+    const { data } = await axios.get('/api/last-fm/user-info');
+    return data;
+  } catch (error) {
+    return { playCount: 0, lovedTracksCount: 0, artistsCount: 0, albumsCount: 0 };
+  }
+}
+
 const useLastFMTopAlbums = (timePeriod: LastFMTimePeriod) =>
   useInfiniteQuery(
     ['last-fm', 'top-albums', timePeriod],
@@ -42,4 +52,6 @@ const useLastFMTopAlbums = (timePeriod: LastFMTimePeriod) =>
 const useLastFMRecentTracks = () =>
   useQuery(['last-fm', 'recent-tracks'], () => fetchRecentTracks());
 
-export { useLastFMTopAlbums, useLastFMRecentTracks };
+const useLastFMUserInfo = () => useQuery(['last-fm', 'user-info'], () => fetchUserInfo());
+
+export { useLastFMTopAlbums, useLastFMRecentTracks, useLastFMUserInfo };

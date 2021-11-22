@@ -8,6 +8,11 @@ interface LastFMTopAlbumsResponse {
         image: LastFMImage[];
       }
     ];
+    '@attr': {
+      total: string;
+      page: string;
+      totalPages: string;
+    };
   };
 }
 
@@ -18,16 +23,40 @@ interface LastFMRecentTracksResponse {
         name: string;
         album: { '#text': string };
         artist: { '#text': string };
-        date: { uts: number };
+        date?: { uts: number };
         image: LastFMImage[];
       }
     ];
   };
 }
 
-interface LastFMTopArtist {
-  name: string;
+interface LastFMUserInfoResponse {
+  user: {
+    playcount: string;
+  };
+}
+
+interface LastFMTopArtistsResponse {
+  topartists: {
+    '@attr': {
+      total: string;
+    };
+  };
+}
+
+interface LastFMLovedTracksResponse {
+  lovedtracks: {
+    '@attr': {
+      total: string;
+    };
+  };
+}
+
+interface LastFMUserInfo {
   playCount: number;
+  albumsCount: number;
+  artistsCount: number;
+  lovedTracksCount: number;
 }
 
 interface LastFMTopAlbum {
@@ -56,8 +85,11 @@ type LastFMTimePeriod = 'overall' | '7day' | '1month' | '3month' | '6month' | '1
 export type {
   LastFMTimePeriod,
   LastFMTopAlbum,
-  LastFMTopArtist,
+  LastFMUserInfo,
   LastFMRecentTrack,
+  LastFMUserInfoResponse,
   LastFMTopAlbumsResponse,
+  LastFMTopArtistsResponse,
+  LastFMLovedTracksResponse,
   LastFMRecentTracksResponse,
 };
