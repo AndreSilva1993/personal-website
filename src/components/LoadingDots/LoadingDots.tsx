@@ -30,11 +30,11 @@ const DotDiv = styled.div(
     animation-name: ${dotKeyframes};
     animation-iteration-count: infinite;
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       animation-delay: 0.125s;
     }
 
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       animation-delay: 0.25s;
     }
 

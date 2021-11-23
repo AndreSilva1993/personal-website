@@ -21,13 +21,10 @@ const lastFMClient = axios.create({
   },
 });
 
-export const getTopAlbums = async ({
-  page = 1,
-  period = 'overall',
-}: {
-  page: number;
-  period: LastFMTimePeriod;
-}): Promise<LastFMTopAlbum[]> => {
+export const getTopAlbums = async (
+  page: number = 1,
+  period: LastFMTimePeriod = 'overall'
+): Promise<LastFMTopAlbum[]> => {
   try {
     const { data } = await lastFMClient.get<LastFMTopAlbumsResponse>('', {
       params: { method: 'user.gettopalbums', page, period, limit: 20 },
@@ -54,7 +51,7 @@ export const getRecentTracks = async (): Promise<LastFMRecentTrack[]> => {
       name,
       album: album['#text'],
       artist: artist['#text'],
-      unixTimestamp: date?.uts,
+      unixTimestamp: date?.uts || null,
       image: image.find(({ size }) => size === 'extralarge')['#text'],
     }));
   } catch (error) {

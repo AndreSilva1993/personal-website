@@ -10,14 +10,14 @@ class AppDocument extends Document {
     return (
       <Html lang={i18next.language}>
         <Head>
+          <link rel="icon" href="/favicon.png" />
+          <link rel="apple-touch-icon" href="/favicon.png" />
+
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Dosis" rel="stylesheet" />
           <link
-            href={`https://fonts.googleapis.com/css2?family=Montserrat:wght@${requiredFontWeights}`}
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Dosis"
+            href={`https://fonts.googleapis.com/css2?family=Montserrat:wght@${requiredFontWeights}&display=swap`}
             rel="stylesheet"
           />
         </Head>

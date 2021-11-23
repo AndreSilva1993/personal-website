@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -8,6 +9,7 @@ import { Button } from '@src/components/Button/Button';
 import { Select } from '@src/components/Select/Select';
 import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 import { useLastFMTopAlbums } from '@src/queries/last-fm';
+import { usePropsContext } from '@src/contexts/PropsContext';
 
 import type { LastFMTimePeriod, LastFMTopAlbum } from '@src/clients/last-fm/last-fm.types';
 
@@ -37,10 +39,11 @@ const AlbumsWrapperDiv = styled.div`
 
 const AlbumCoverWrapperDiv = styled.div`
   height: 0;
+  position: relative;
   padding-bottom: 100%;
 `;
 
-const AlbumCoverImg = styled.img`
+const AlbumCoverImg = styled(Image)`
   max-width: 100%;
 `;
 
@@ -93,6 +96,7 @@ const StyledButton = styled(Button)`
 
 const MusicAlbums = () => {
   const { t } = useTranslation();
+  const { initialTopAlbums } = usePropsContext<{ initialTopAlbums: LastFMTopAlbum[] }>();
 
   const albumsWrapperRef = useRef<HTMLDivElement[]>([]);
 
@@ -104,7 +108,9 @@ const MusicAlbums = () => {
     isFetching,
     data: topAlbums = { pages: [] },
     fetchNextPage: fetchNextAlbums,
-  } = useLastFMTopAlbums(timePeriod);
+  } = useLastFMTopAlbums(timePeriod, {
+    initialData: { pages: [initialTopAlbums], pageParams: [] },
+  });
 
   function handleAlbumsMouseLeave() {
     setHoveringAlbum(undefined);
@@ -127,11 +133,11 @@ const MusicAlbums = () => {
         <AlbumsH1>{t('music.topAlbumsTitle')}</AlbumsH1>
         <Select value={timePeriod} onChange={handleTimePeriodChange}>
           <option value="overall">{t('music.filters.allTime')}</option>
-          <option value="7day">{t('music.filters.last7Days')}</option>
-          <option value="1month">{t('music.filters.last30Days')}</option>
-          <option value="3month">{t('music.filters.last90Days')}</option>
-          <option value="6month">{t('music.filters.last180Days')}</option>
           <option value="12month">{t('music.filters.last365Days')}</option>
+          <option value="6month">{t('music.filters.last180Days')}</option>
+          <option value="3month">{t('music.filters.last90Days')}</option>
+          <option value="1month">{t('music.filters.last30Days')}</option>
+          <option value="7day">{t('music.filters.last7Days')}</option>
         </Select>
       </SearchOptionsWrapperDiv>
 
@@ -144,7 +150,7 @@ const MusicAlbums = () => {
               albumsWrapperRef.current[index] = ref;
             }}
           >
-            <AlbumCoverImg src={image} alt={name} />
+            <AlbumCoverImg src={image} alt={name} layout="fill" priority />
           </AlbumCoverWrapperDiv>
         ))}
 

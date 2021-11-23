@@ -3,8 +3,10 @@ import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
 
 import { useLastFMRecentTracks } from '@src/queries/last-fm';
+import { usePropsContext } from '@src/contexts/PropsContext';
 
 import type { FC } from 'react';
+import type { LastFMRecentTrack } from '@src/clients/last-fm/last-fm.types';
 
 const RecentTracksH1 = styled.h1(
   ({ theme }) => css`
@@ -77,7 +79,11 @@ function formatTimestamp(timestamp: number) {
 
 const MusicRecentTracks: FC = () => {
   const { t } = useTranslation();
-  const { data: recentTracks = [] } = useLastFMRecentTracks();
+  const { initialRecentTracks } = usePropsContext<{ initialRecentTracks: LastFMRecentTrack[] }>();
+
+  const { data: recentTracks = [] } = useLastFMRecentTracks({
+    initialData: initialRecentTracks,
+  });
 
   return (
     <>
@@ -85,7 +91,7 @@ const MusicRecentTracks: FC = () => {
       <ul>
         {recentTracks.map(({ image, artist, name, album, unixTimestamp }) => (
           <TrackLi key={`${artist}-${name}-${unixTimestamp}`}>
-            <TrackAlbumImg src={image} width="30" height="30" />
+            <TrackAlbumImg src={image} alt={album} width="35" height="35" />
             <TrackDetailsDiv>
               <TrackArtistSpan>{artist}</TrackArtistSpan>
               <TrackNameSpan>{name}</TrackNameSpan>

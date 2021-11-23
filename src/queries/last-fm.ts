@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useQuery, useInfiniteQuery } from 'react-query';
 
+import type { UseQueryOptions, UseInfiniteQueryOptions } from 'react-query';
 import type {
   LastFMUserInfo,
   LastFMTopAlbum,
@@ -40,17 +41,21 @@ async function fetchUserInfo(): Promise<LastFMUserInfo> {
   }
 }
 
-const useLastFMTopAlbums = (timePeriod: LastFMTimePeriod) =>
+const useLastFMTopAlbums = (
+  timePeriod: LastFMTimePeriod,
+  options?: UseInfiniteQueryOptions<LastFMTopAlbum[]>
+) =>
   useInfiniteQuery(
     ['last-fm', 'top-albums', timePeriod],
     ({ pageParam }) => fetchTopAlbums(pageParam, timePeriod),
     {
       getNextPageParam: (_lastPage, allPages) => allPages.length + 1,
+      ...options,
     }
   );
 
-const useLastFMRecentTracks = () =>
-  useQuery(['last-fm', 'recent-tracks'], () => fetchRecentTracks());
+const useLastFMRecentTracks = (options?: UseQueryOptions<LastFMRecentTrack[]>) =>
+  useQuery(['last-fm', 'recent-tracks'], () => fetchRecentTracks(), options);
 
 const useLastFMUserInfo = () => useQuery(['last-fm', 'user-info'], () => fetchUserInfo());
 
