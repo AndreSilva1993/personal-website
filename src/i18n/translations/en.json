@@ -112,6 +112,8 @@
       "title": "Music",
       "description": ""
     },
+    "topAlbumsTitle": "Most Listened Albums",
+    "recentTracksTitle": "Recently Listened Tracks",
     "playCount": "{{playCount}} plays",
     "loadMore": "Load more albums",
     "streamingNow": "Streaming Now",

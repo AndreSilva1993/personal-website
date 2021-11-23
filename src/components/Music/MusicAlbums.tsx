@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { Button } from '@src/components/Button/Button';
 import { Select } from '@src/components/Select/Select';
+import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 import { useLastFMTopAlbums } from '@src/queries/last-fm';
 
 import type { LastFMTimePeriod, LastFMTopAlbum } from '@src/clients/last-fm/last-fm.types';
@@ -78,12 +79,15 @@ const AlbumDetailsNameSpan = styled.span`
 
 const AlbumDetailsPlayCountSpan = styled.span(
   ({ theme }) => css`
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: ${theme.colors.lightGrey};
   `
 );
 
 const StyledButton = styled(Button)`
+  display: flex;
+  justify-content: center;
+  width: 20rem;
   margin: 2rem auto;
 `;
 
@@ -96,8 +100,11 @@ const MusicAlbums = () => {
   const [hoveringAlbum, setHoveringAlbum] = useState<LastFMTopAlbum>();
   const [overlayPosition, setOverlayPosition] = useState<{ x: number; y: number }>();
 
-  const { data: topAlbums = { pages: [] }, fetchNextPage: fetchNextAlbums } =
-    useLastFMTopAlbums(timePeriod);
+  const {
+    isFetching,
+    data: topAlbums = { pages: [] },
+    fetchNextPage: fetchNextAlbums,
+  } = useLastFMTopAlbums(timePeriod);
 
   function handleAlbumsMouseLeave() {
     setHoveringAlbum(undefined);
@@ -117,8 +124,7 @@ const MusicAlbums = () => {
   return (
     <>
       <SearchOptionsWrapperDiv>
-        <AlbumsH1>Most Listened Albums</AlbumsH1>
-        <span>Filter By:</span>
+        <AlbumsH1>{t('music.topAlbumsTitle')}</AlbumsH1>
         <Select value={timePeriod} onChange={handleTimePeriodChange}>
           <option value="overall">{t('music.filters.allTime')}</option>
           <option value="7day">{t('music.filters.last7Days')}</option>
@@ -150,19 +156,19 @@ const MusicAlbums = () => {
               animate={{ opacity: 1, x: overlayPosition.x, y: overlayPosition.y }}
               transition={{ ease: 'easeOut', duration: 0.25 }}
             >
-              <>
-                <AlbumDetailsArtistSpan>{hoveringAlbum.artist}</AlbumDetailsArtistSpan>
-                <AlbumDetailsNameSpan>{hoveringAlbum.name}</AlbumDetailsNameSpan>
-                <AlbumDetailsPlayCountSpan>
-                  {t('music.playCount', { playCount: hoveringAlbum.playCount })}
-                </AlbumDetailsPlayCountSpan>
-              </>
+              <AlbumDetailsArtistSpan>{hoveringAlbum.artist}</AlbumDetailsArtistSpan>
+              <AlbumDetailsNameSpan>{hoveringAlbum.name}</AlbumDetailsNameSpan>
+              <AlbumDetailsPlayCountSpan>
+                {t('music.playCount', { playCount: hoveringAlbum.playCount })}
+              </AlbumDetailsPlayCountSpan>
             </AlbumDetailsOverlayDiv>
           )}
         </AnimatePresence>
       </AlbumsWrapperDiv>
 
-      <StyledButton onClick={() => fetchNextAlbums()}>{t('music.loadMore')}</StyledButton>
+      <StyledButton onClick={() => fetchNextAlbums()}>
+        {isFetching ? <LoadingDots /> : t('music.loadMore')}
+      </StyledButton>
     </>
   );
 };

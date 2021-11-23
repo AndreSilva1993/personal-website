@@ -6,6 +6,16 @@ import { useLastFMRecentTracks } from '@src/queries/last-fm';
 
 import type { FC } from 'react';
 
+const RecentTracksH1 = styled.h1(
+  ({ theme }) => css`
+    font-size: 2rem;
+    font-weight: ${theme.fontWeights.bold};
+    text-transform: uppercase;
+    color: ${theme.colors.white};
+    margin: 2rem 0;
+  `
+);
+
 const TrackLi = styled.li(
   ({ theme }) => css`
     display: flex;
@@ -70,21 +80,24 @@ const MusicRecentTracks: FC = () => {
   const { data: recentTracks = [] } = useLastFMRecentTracks();
 
   return (
-    <ul>
-      {recentTracks.map(({ image, artist, name, album, unixTimestamp }) => (
-        <TrackLi key={`${artist}-${name}-${unixTimestamp}`}>
-          <TrackAlbumImg src={image} width="30" height="30" />
-          <TrackDetailsDiv>
-            <TrackArtistSpan>{artist}</TrackArtistSpan>
-            <TrackNameSpan>{name}</TrackNameSpan>
-            <TrackAlbumSpan>{album}</TrackAlbumSpan>
-            <TrackListenDateSpan>
-              {unixTimestamp ? formatTimestamp(unixTimestamp) : t('music.streamingNow')}
-            </TrackListenDateSpan>
-          </TrackDetailsDiv>
-        </TrackLi>
-      ))}
-    </ul>
+    <>
+      <RecentTracksH1>{t('music.recentTracksTitle')}</RecentTracksH1>
+      <ul>
+        {recentTracks.map(({ image, artist, name, album, unixTimestamp }) => (
+          <TrackLi key={`${artist}-${name}-${unixTimestamp}`}>
+            <TrackAlbumImg src={image} width="30" height="30" />
+            <TrackDetailsDiv>
+              <TrackArtistSpan>{artist}</TrackArtistSpan>
+              <TrackNameSpan>{name}</TrackNameSpan>
+              <TrackAlbumSpan>{album}</TrackAlbumSpan>
+              <TrackListenDateSpan>
+                {unixTimestamp ? formatTimestamp(unixTimestamp) : t('music.streamingNow')}
+              </TrackListenDateSpan>
+            </TrackDetailsDiv>
+          </TrackLi>
+        ))}
+      </ul>
+    </>
   );
 };
 
