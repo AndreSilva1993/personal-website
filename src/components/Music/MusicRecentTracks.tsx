@@ -31,7 +31,6 @@ const TracksUl = styled.div(
     font-size: 1.5rem;
     padding: 1rem 2rem;
     color: ${theme.colors.white};
-    border-bottom: 1px solid ${theme.colors.grey};
 
     ${theme.media.extraSmall} {
       padding: 0;
