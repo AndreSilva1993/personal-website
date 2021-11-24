@@ -7,6 +7,7 @@ const MusicStatisticsCounter: FC<MusicStatisticsCounterProps> = ({
   value,
   duration = 2500,
   iterations = 100,
+  ...remainingProps
 }) => {
   const intervalRef = useRef<number>();
   const [currentValue, setCurrentValue] = useState(0);
@@ -29,7 +30,7 @@ const MusicStatisticsCounter: FC<MusicStatisticsCounterProps> = ({
     return () => window.clearInterval(intervalRef.current);
   }, [value]);
 
-  return <>{currentValue}</>;
+  return <span {...remainingProps}>{currentValue}</span>;
 };
 
 export { MusicStatisticsCounter };

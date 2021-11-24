@@ -120,8 +120,8 @@
     "statistics": {
       "scrobbles": "Scrobbles",
       "tracksLoved": "Tracks Loved",
-      "artistsListened": "Artists Listened",
-      "albumsListened": "Albums Listened"
+      "artistsListened": "Artists",
+      "albumsListened": "Albums"
     },
     "filters": {
       "allTime": "All Time",

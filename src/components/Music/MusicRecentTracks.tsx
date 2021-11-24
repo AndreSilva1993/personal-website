@@ -14,62 +14,93 @@ const RecentTracksH1 = styled.h1(
     font-weight: ${theme.fontWeights.bold};
     text-transform: uppercase;
     color: ${theme.colors.white};
-    margin: 2rem 0;
+    margin: 3rem 0;
+
+    ${theme.media.extraSmall} {
+      font-size: 1.5rem;
+      text-align: center;
+    }
   `
 );
 
-const TrackLi = styled.li(
+const TracksUl = styled.div(
   ({ theme }) => css`
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 3.5rem 1fr 1.5fr 1fr 8rem;
     font-size: 1.5rem;
-    color: ${theme.colors.white};
     padding: 1rem 2rem;
+    color: ${theme.colors.white};
     border-bottom: 1px solid ${theme.colors.grey};
+
+    ${theme.media.extraSmall} {
+      padding: 0;
+      grid-template-columns: 3.5rem 1fr 1.5fr;
+    }
   `
 );
 
-const TrackAlbumImg = styled.img`
-  margin-right: 2rem;
-`;
-
-const TrackDetailsDiv = styled.div`
+const TrackAlbumWrapperDiv = styled.div`
   display: flex;
-  width: 100%;
+  align-items: center;
 `;
 
 const TrackArtistSpan = styled.span(
-  ({ theme }) =>
-    css`
-      flex: 0 0 25%;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      padding-right: 2rem;
-      font-weight: ${theme.fontWeights.boldest};
-    `
+  ({ theme }) => css`
+    display: flex;
+    align-items: center;
+    font-weight: ${theme.fontWeights.boldest};
+
+    ${theme.media.extraSmall} {
+      font-size: 1.2rem;
+    }
+  `
 );
 
-const TrackNameSpan = styled.span`
-  flex: 0 0 35%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding-right: 2rem;
-`;
+const TrackNameSpan = styled.span(
+  ({ theme }) => css`
+    display: flex;
+    align-items: center;
 
-const TrackAlbumSpan = styled.span`
-  flex: 0 0 25%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-`;
+    ${theme.media.extraSmall} {
+      font-size: 1.2rem;
+    }
+  `
+);
+
+const TrackAlbumSpan = styled.span(
+  ({ theme }) => css`
+    display: flex;
+    align-items: center;
+
+    ${theme.media.extraSmall} {
+      display: none;
+    }
+  `
+);
 
 const TrackListenDateSpan = styled.span(
   ({ theme }) => css`
-    flex: 0 0 15%;
-    text-align: end;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     color: ${theme.colors.lightGrey};
+
+    ${theme.media.extraSmall} {
+      display: none;
+    }
+  `
+);
+
+const TrackDividerDiv = styled.div(
+  ({ theme }) => css`
+    height: 0.1rem;
+    grid-column: span 5;
+    background-color: ${theme.colors.grey};
+
+    ${theme.media.extraSmall} {
+      grid-column: span 3;
+    }
   `
 );
 
@@ -88,21 +119,23 @@ const MusicRecentTracks: FC = () => {
   return (
     <>
       <RecentTracksH1>{t('music.recentTracksTitle')}</RecentTracksH1>
-      <ul>
+      <TracksUl>
         {recentTracks.map(({ image, artist, name, album, unixTimestamp }) => (
-          <TrackLi key={`${artist}-${name}-${unixTimestamp}`}>
-            <TrackAlbumImg src={image} alt={album} width="35" height="35" />
-            <TrackDetailsDiv>
-              <TrackArtistSpan>{artist}</TrackArtistSpan>
-              <TrackNameSpan>{name}</TrackNameSpan>
-              <TrackAlbumSpan>{album}</TrackAlbumSpan>
-              <TrackListenDateSpan>
-                {unixTimestamp ? formatTimestamp(unixTimestamp) : t('music.streamingNow')}
-              </TrackListenDateSpan>
-            </TrackDetailsDiv>
-          </TrackLi>
+          <>
+            <TrackAlbumWrapperDiv>
+              <img src={image} alt={album} width="35" height="35" />
+            </TrackAlbumWrapperDiv>
+            <TrackArtistSpan>{artist}</TrackArtistSpan>
+            <TrackNameSpan>{name}</TrackNameSpan>
+            <TrackAlbumSpan>{album}</TrackAlbumSpan>
+            <TrackListenDateSpan>
+              {unixTimestamp ? formatTimestamp(unixTimestamp) : t('music.streamingNow')}
+            </TrackListenDateSpan>
+
+            <TrackDividerDiv />
+          </>
         ))}
-      </ul>
+      </TracksUl>
     </>
   );
 };

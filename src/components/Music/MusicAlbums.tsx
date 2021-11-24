@@ -13,13 +13,19 @@ import { usePropsContext } from '@src/contexts/PropsContext';
 
 import type { LastFMTimePeriod, LastFMTopAlbum } from '@src/clients/last-fm/last-fm.types';
 
-const SearchOptionsWrapperDiv = styled.div`
-  width: 100%;
-  display: flex;
-  margin: 2rem 0;
-  align-items: center;
-  justify-content: space-between;
-`;
+const SearchOptionsWrapperDiv = styled.div(
+  ({ theme }) => css`
+    width: 100%;
+    display: flex;
+    margin: 2rem 0;
+    align-items: center;
+    justify-content: space-between;
+
+    ${theme.media.extraSmall} {
+      flex-direction: column;
+    }
+  `
+);
 
 const AlbumsH1 = styled.h1(
   ({ theme }) => css`
@@ -27,15 +33,35 @@ const AlbumsH1 = styled.h1(
     font-weight: ${theme.fontWeights.bold};
     text-transform: uppercase;
     color: ${theme.colors.white};
+
+    ${theme.media.extraSmall} {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
   `
 );
 
-const AlbumsWrapperDiv = styled.div`
-  display: grid;
-  width: 100%;
-  position: relative;
-  grid-template-columns: repeat(5, 1fr);
-`;
+const StyledSelect = styled(Select)(
+  ({ theme }) => css`
+    ${theme.media.extraSmall} {
+      width: 100%;
+      text-align: center;
+    }
+  `
+);
+
+const AlbumsWrapperDiv = styled.div(
+  ({ theme }) => css`
+    display: grid;
+    width: 100%;
+    position: relative;
+    grid-template-columns: repeat(5, 1fr);
+
+    ${theme.media.extraSmall} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  `
+);
 
 const AlbumCoverWrapperDiv = styled.div`
   height: 0;
@@ -62,8 +88,11 @@ const AlbumDetailsOverlayDiv = styled(motion.div)(
     text-align: center;
     text-transform: uppercase;
     padding: 2rem;
-
     background-color: rgba(0, 0, 0, 0.75);
+
+    ${theme.media.extraSmall} {
+      width: 50%;
+    }
   `
 );
 
@@ -72,18 +101,32 @@ const AlbumDetailsArtistSpan = styled.span(
     font-size: 1.5rem;
     font-weight: ${theme.fontWeights.boldest};
     margin-bottom: 1rem;
+
+    ${theme.media.lteSmall} {
+      font-size: 1rem;
+    }
   `
 );
 
-const AlbumDetailsNameSpan = styled.span`
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-`;
+const AlbumDetailsNameSpan = styled.span(
+  ({ theme }) => css`
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+    ${theme.media.lteSmall} {
+      font-size: 1rem;
+    }
+  `
+);
 
 const AlbumDetailsPlayCountSpan = styled.span(
   ({ theme }) => css`
     font-size: 1.3rem;
     color: ${theme.colors.lightGrey};
+
+    ${theme.media.lteSmall} {
+      font-size: 1rem;
+    }
   `
 );
 
@@ -105,7 +148,7 @@ const MusicAlbums = () => {
   const [overlayPosition, setOverlayPosition] = useState<{ x: number; y: number }>();
 
   const {
-    isFetching,
+    isFetchingNextPage,
     data: topAlbums = { pages: [] },
     fetchNextPage: fetchNextAlbums,
   } = useLastFMTopAlbums(timePeriod, {
@@ -131,14 +174,14 @@ const MusicAlbums = () => {
     <>
       <SearchOptionsWrapperDiv>
         <AlbumsH1>{t('music.topAlbumsTitle')}</AlbumsH1>
-        <Select value={timePeriod} onChange={handleTimePeriodChange}>
+        <StyledSelect value={timePeriod} onChange={handleTimePeriodChange}>
           <option value="overall">{t('music.filters.allTime')}</option>
           <option value="12month">{t('music.filters.last365Days')}</option>
           <option value="6month">{t('music.filters.last180Days')}</option>
           <option value="3month">{t('music.filters.last90Days')}</option>
           <option value="1month">{t('music.filters.last30Days')}</option>
           <option value="7day">{t('music.filters.last7Days')}</option>
-        </Select>
+        </StyledSelect>
       </SearchOptionsWrapperDiv>
 
       <AlbumsWrapperDiv onMouseLeave={handleAlbumsMouseLeave}>
@@ -173,7 +216,7 @@ const MusicAlbums = () => {
       </AlbumsWrapperDiv>
 
       <StyledButton onClick={() => fetchNextAlbums()}>
-        {isFetching ? <LoadingDots /> : t('music.loadMore')}
+        {isFetchingNextPage ? <LoadingDots /> : t('music.loadMore')}
       </StyledButton>
     </>
   );

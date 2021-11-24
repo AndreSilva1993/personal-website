@@ -24,17 +24,19 @@ const CityLi = styled.li(
     overflow: hidden;
     position: relative;
 
-    &:nth-child(4n + 1),
-    &:nth-child(4n + 4) {
-      flex: 0 0 60%;
-    }
+    ${theme.media.gteSmall} {
+      &:nth-child(4n + 1),
+      &:nth-child(4n + 4) {
+        flex: 0 0 60%;
+      }
 
-    &:nth-child(odd) {
-      padding-left: 0;
-    }
+      &:nth-child(odd) {
+        padding-left: 0;
+      }
 
-    &:nth-child(even) {
-      padding-right: 0;
+      &:nth-child(even) {
+        padding-right: 0;
+      }
     }
 
     ${theme.media.extraSmall} {

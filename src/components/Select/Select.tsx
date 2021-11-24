@@ -15,8 +15,8 @@ const StyledSelect = styled.select(
   `
 );
 
-const Select: FC<SelectProps> = ({ value, onChange, children }) => (
-  <StyledSelect value={value} onChange={onChange}>
+const Select: FC<SelectProps> = ({ value, onChange, children, ...remainingProps }) => (
+  <StyledSelect value={value} onChange={onChange} {...remainingProps}>
     {children}
   </StyledSelect>
 );
