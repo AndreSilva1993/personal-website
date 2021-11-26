@@ -3,7 +3,7 @@ const contentSecurityPolicies = [
   { 'img-src': ["'self'", 'data:'] },
   { 'font-src': ['fonts.gstatic.com'] },
   { 'script-src': ["'self'", "'unsafe-eval'"] },
-  { 'connect-src': ['vitals.vercel-insights.com'] },
+  { 'connect-src': ['vitals.vercel-insights.com', "'self'"] },
   { 'style-src': ['fonts.googleapis.com', "'unsafe-inline'", "'self'"] },
 ];
 
