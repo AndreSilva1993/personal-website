@@ -1,10 +1,10 @@
 const contentSecurityPolicies = [
   { 'default-src': ["'self'"] },
-  { 'img-src': ["'self'", 'data:'] },
-  { 'font-src': ['fonts.gstatic.com'] },
+  { 'img-src': ["'self'", 'data:', 'tiles.stadiamaps.com'] },
+  { 'font-src': ["'self'", 'fonts.gstatic.com'] },
   { 'script-src': ["'self'", "'unsafe-eval'"] },
-  { 'connect-src': ['vitals.vercel-insights.com', "'self'"] },
-  { 'style-src': ['fonts.googleapis.com', "'unsafe-inline'", "'self'"] },
+  { 'connect-src': ["'self'", 'vitals.vercel-insights.com'] },
+  { 'style-src': ["'self'", 'fonts.googleapis.com', "'unsafe-inline'"] },
 ];
 
 module.exports = {
