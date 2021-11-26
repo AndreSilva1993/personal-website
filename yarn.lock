@@ -364,9 +364,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.6.0":
-  version: 11.6.0
-  resolution: "@emotion/react@npm:11.6.0"
+"@emotion/react@npm:^11.7.0":
+  version: 11.7.0
+  resolution: "@emotion/react@npm:11.7.0"
   dependencies:
     "@babel/runtime": ^7.13.10
     "@emotion/cache": ^11.6.0
@@ -383,7 +383,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 4fb2d108dc32716d1f162026ac5fdbd0662e3b435a34fb324629d72bb6bff61b18ac8975b51457c16ffa41543bade5d07558566ab76420b3926fbb9159441232
+  checksum: 8b50d61caabe04ae413ae23b98c170da643754ec89f25eb001464095685686585d0f88988bc36432f231e6de6abdbee73308c42ba427de9eaaf5a54d7f2f6ae5
   languageName: node
   linkType: hard
 
@@ -825,14 +825,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17.0.36":
-  version: 17.0.36
-  resolution: "@types/react@npm:17.0.36"
+"@types/react@npm:^17.0.37":
+  version: 17.0.37
+  resolution: "@types/react@npm:17.0.37"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: feeaa484d5d7e354ba6830b06342dec6fd1a2ac87f73d21d3d4f2a3d311459de4090330a1e8af7275c8d1e7737b655a7550c8dd3dbc74ccf34ffd3fc824bbd12
+  checksum: e68b0d59aa69577fc6a6d654b25d5d8408625498f4c483f160b557fac21e840f6e8807cbde93e9f039949b6d624a019b1990d18499c1d65aecf3605c25e30242
   languageName: node
   linkType: hard
 
@@ -2781,9 +2781,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^5.3.2":
-  version: 5.3.2
-  resolution: "framer-motion@npm:5.3.2"
+"framer-motion@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "framer-motion@npm:5.3.3"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     framesync: 6.0.1
@@ -2797,7 +2797,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 63ca3580a9beb12f7b896357988f712842c219a7e7c281e5955d09481f4131b6822d26d9dedef0abd3e44884466a20c102ecdda3302a2555a2759205b0854ef3
+  checksum: 95a112cf427bc2c087fc918b626c39a6bfc77842cf5beec133e96af08e67f6ad984f0a210a7e436d409a334f00cb27e570119106c71458d465b7c163cb0992a4
   languageName: node
   linkType: hard
 
@@ -4771,12 +4771,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.4.1":
-  version: 2.4.1
-  resolution: "prettier@npm:2.4.1"
+"prettier@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "prettier@npm:2.5.0"
   bin:
     prettier: bin-prettier.js
-  checksum: cc6830588b401b0d742862fe9c46bc9118204fb307c3abe0e49e95b35ed23629573807ffdf9cdd65289c252a0bb51fc0171437f6626ee36378dea80f0ee80b91
+  checksum: aad1b35b73e7c14596d389d90977a83dad0db689ba5802a0ef319c357b7867f55b885db197972aa6a56c30f53088c9f8e0d7f7930ae074c275a4e9cbe091d21d
   languageName: node
   linkType: hard
 
@@ -4967,9 +4967,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-query@npm:^3.33.4":
-  version: 3.33.4
-  resolution: "react-query@npm:3.33.4"
+"react-query@npm:^3.33.5":
+  version: 3.33.5
+  resolution: "react-query@npm:3.33.5"
   dependencies:
     "@babel/runtime": ^7.5.5
     broadcast-channel: ^3.4.1
@@ -4981,7 +4981,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 8926b124dd2154b6515c7646722c9694e2e8d54cd19b68c1a6d62fcc45d9472cbb79749a680fa3baa711da3262720fc143f5c922e6b5fb9ae11071f62167d18e
+  checksum: 558194aaf3240ffc5640c842daea9da090e081fdd266c67ffb569ae352a6a718cf512ddc3f8f031b1e2e9581e4722e051ae30b29914375054e6645a8b2910586
   languageName: node
   linkType: hard
 
@@ -5220,10 +5220,10 @@ __metadata:
     "@commitlint/cli": ^15.0.0
     "@commitlint/config-conventional": ^15.0.0
     "@emotion/babel-plugin": ^11.3.0
-    "@emotion/react": ^11.6.0
+    "@emotion/react": ^11.7.0
     "@emotion/styled": ^11.6.0
     "@types/node": ^16.11.10
-    "@types/react": ^17.0.36
+    "@types/react": ^17.0.37
     "@types/react-dom": ^17.0.11
     "@types/react-leaflet": ^2.8.2
     "@typescript-eslint/eslint-plugin": ^5.4.0
@@ -5238,17 +5238,17 @@ __metadata:
     eslint-plugin-jsx-a11y: ^6.5.1
     eslint-plugin-react: ^7.27.1
     eslint-plugin-react-hooks: ^4.3.0
-    framer-motion: ^5.3.2
+    framer-motion: ^5.3.3
     husky: ^7.0.4
     i18next: ^21.5.3
     leaflet: ^1.7.1
     next: ^12.0.4
-    prettier: ^2.4.1
+    prettier: ^2.5.0
     react: ^17.0.2
     react-dom: ^17.0.2
     react-i18next: ^11.14.3
     react-icons: ^4.3.1
-    react-query: ^3.33.4
+    react-query: ^3.33.5
     typescript: ^4.5.2
   languageName: unknown
   linkType: soft
