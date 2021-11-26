@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
@@ -5,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useLastFMRecentTracks } from '@src/queries/last-fm';
 import { usePropsContext } from '@src/contexts/PropsContext';
 
-import type { FC } from 'react';
+import { FC, Fragment } from 'react';
 import type { LastFMRecentTrack } from '@src/clients/last-fm/last-fm.types';
 
 const RecentTracksH1 = styled.h1(
@@ -27,7 +28,7 @@ const TracksUl = styled.div(
   ({ theme }) => css`
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 3.5rem 1fr 1.5fr 1fr 8rem;
+    grid-template-columns: 3.5rem 1fr 1.5fr 1fr 12rem;
     font-size: 1.5rem;
     padding: 1rem 2rem;
     color: ${theme.colors.white};
@@ -104,7 +105,7 @@ const TrackDividerDiv = styled.div(
 );
 
 function formatTimestamp(timestamp: number) {
-  return new Date(timestamp * 1000).toLocaleDateString();
+  return new Date(timestamp * 1000).toLocaleDateString('pt-PT');
 }
 
 const MusicRecentTracks: FC = () => {
@@ -120,9 +121,9 @@ const MusicRecentTracks: FC = () => {
       <RecentTracksH1>{t('music.recentTracksTitle')}</RecentTracksH1>
       <TracksUl>
         {recentTracks.map(({ image, artist, name, album, unixTimestamp }) => (
-          <>
+          <Fragment key={unixTimestamp}>
             <TrackAlbumWrapperDiv>
-              <img src={image} alt={album} width="35" height="35" />
+              <Image src={image} alt={album} width="35" height="35" />
             </TrackAlbumWrapperDiv>
             <TrackArtistSpan>{artist}</TrackArtistSpan>
             <TrackNameSpan>{name}</TrackNameSpan>
@@ -132,7 +133,7 @@ const MusicRecentTracks: FC = () => {
             </TrackListenDateSpan>
 
             <TrackDividerDiv />
-          </>
+          </Fragment>
         ))}
       </TracksUl>
     </>
