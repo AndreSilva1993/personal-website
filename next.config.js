@@ -11,7 +11,12 @@ module.exports = {
   images: {
     minimumCacheTTL: 60 * 60 * 24,
     formats: ['image/avif', 'image/webp'],
-    domains: ['tokyo.ibthemespro.com', 'via.placeholder.com', 'lastfm.freetls.fastly.net'],
+    domains: [
+      'i.scdn.co', // Spotify images.
+      'lastfm.freetls.fastly.net', // LastFM images.
+      'tokyo.ibthemespro.com',
+      'via.placeholder.com',
+    ],
   },
   async headers() {
     return [

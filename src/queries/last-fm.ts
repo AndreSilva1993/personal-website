@@ -14,7 +14,7 @@ async function fetchTopAlbums(
   timePeriod: LastFMTimePeriod
 ): Promise<LastFMTopAlbum[]> {
   try {
-    const { data } = await axios.get('/api/last-fm/top-albums', {
+    const { data } = await axios.get<LastFMTopAlbum[]>('/api/last-fm/top-albums', {
       params: { page: pageParam, period: timePeriod },
     });
     return data;
@@ -25,7 +25,7 @@ async function fetchTopAlbums(
 
 async function fetchRecentTracks(): Promise<LastFMRecentTrack[]> {
   try {
-    const { data } = await axios.get('/api/last-fm/recent-tracks');
+    const { data } = await axios.get<LastFMRecentTrack[]>('/api/last-fm/recent-tracks');
     return data;
   } catch (error) {
     return [];
@@ -34,7 +34,7 @@ async function fetchRecentTracks(): Promise<LastFMRecentTrack[]> {
 
 async function fetchUserInfo(): Promise<LastFMUserInfo> {
   try {
-    const { data } = await axios.get('/api/last-fm/user-info');
+    const { data } = await axios.get<LastFMUserInfo>('/api/last-fm/user-info');
     return data;
   } catch (error) {
     return { playCount: 0, lovedTracksCount: 0, artistsCount: 0, albumsCount: 0 };

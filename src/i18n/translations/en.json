@@ -113,6 +113,7 @@
       "description": "One of my other favourite things to do is listen to music and discover new artists as well."
     },
     "topAlbumsTitle": "Most Listened Albums",
+    "topArtistsTitle": "Most Listened Artists",
     "recentTracksTitle": "Recently Listened Tracks",
     "playCount": "{{playCount}} plays",
     "loadMore": "Load more albums",

@@ -1,15 +1,15 @@
-import React, { useRef, useState } from 'react';
+import Image from 'next/image';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
 
 import { Button } from '@src/components/Button/Button';
 import { Select } from '@src/components/Select/Select';
 import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 import { useLastFMTopAlbums } from '@src/queries/last-fm';
 import { usePropsContext } from '@src/contexts/PropsContext';
+import { MusicGrid } from '@src/components/Music/MusicGrid';
 
 import type { LastFMTimePeriod, LastFMTopAlbum } from '@src/clients/last-fm/last-fm.types';
 
@@ -50,19 +50,6 @@ const StyledSelect = styled(Select)(
   `
 );
 
-const AlbumsWrapperDiv = styled.div(
-  ({ theme }) => css`
-    display: grid;
-    width: 100%;
-    position: relative;
-    grid-template-columns: repeat(5, 1fr);
-
-    ${theme.media.extraSmall} {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  `
-);
-
 const AlbumCoverWrapperDiv = styled.div`
   height: 0;
   position: relative;
@@ -72,29 +59,6 @@ const AlbumCoverWrapperDiv = styled.div`
 const AlbumCoverImg = styled(Image)`
   max-width: 100%;
 `;
-
-const AlbumDetailsOverlayDiv = styled(motion.div)(
-  ({ theme }) => css`
-    top: 0;
-    left: 0;
-    width: 20%;
-    aspect-ratio: 1;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: ${theme.colors.white};
-    text-align: center;
-    text-transform: uppercase;
-    padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.75);
-
-    ${theme.media.extraSmall} {
-      width: 50%;
-    }
-  `
-);
 
 const AlbumDetailsArtistSpan = styled.span(
   ({ theme }) => css`
@@ -141,11 +105,7 @@ const MusicAlbums = () => {
   const { t } = useTranslation();
   const { initialTopAlbums } = usePropsContext<{ initialTopAlbums: LastFMTopAlbum[] }>();
 
-  const albumsWrapperRef = useRef<HTMLDivElement[]>([]);
-
   const [timePeriod, setTimePeriod] = useState<LastFMTimePeriod>('overall');
-  const [hoveringAlbum, setHoveringAlbum] = useState<LastFMTopAlbum>();
-  const [overlayPosition, setOverlayPosition] = useState<{ x: number; y: number }>();
 
   const {
     isFetchingNextPage,
@@ -154,17 +114,6 @@ const MusicAlbums = () => {
   } = useLastFMTopAlbums(timePeriod, {
     initialData: { pages: [initialTopAlbums], pageParams: [] },
   });
-
-  function handleAlbumsMouseLeave() {
-    setHoveringAlbum(undefined);
-  }
-
-  function handleAlbumMouseEnter(index: number) {
-    const { offsetLeft, offsetTop } = albumsWrapperRef.current[index];
-
-    setHoveringAlbum(topAlbums.pages.flat()[index]);
-    setOverlayPosition({ x: offsetLeft, y: offsetTop });
-  }
 
   function handleTimePeriodChange(event: React.ChangeEvent<HTMLSelectElement>) {
     setTimePeriod(event.target.value as LastFMTimePeriod);
@@ -184,36 +133,23 @@ const MusicAlbums = () => {
         </StyledSelect>
       </SearchOptionsWrapperDiv>
 
-      <AlbumsWrapperDiv onMouseLeave={handleAlbumsMouseLeave}>
-        {topAlbums.pages.flat().map(({ image, name }, index) => (
-          <AlbumCoverWrapperDiv
-            key={name}
-            onMouseEnter={() => handleAlbumMouseEnter(index)}
-            ref={(ref) => {
-              albumsWrapperRef.current[index] = ref;
-            }}
-          >
+      <MusicGrid
+        items={topAlbums.pages.flat()}
+        render={({ name, image }, props) => (
+          <AlbumCoverWrapperDiv key={name} {...props}>
             <AlbumCoverImg src={image} alt={name} layout="fill" priority />
           </AlbumCoverWrapperDiv>
-        ))}
-
-        <AnimatePresence>
-          {hoveringAlbum && (
-            <AlbumDetailsOverlayDiv
-              exit={{ opacity: 0 }}
-              initial={{ opacity: 0, x: overlayPosition.x, y: overlayPosition.y }}
-              animate={{ opacity: 1, x: overlayPosition.x, y: overlayPosition.y }}
-              transition={{ ease: 'easeOut', duration: 0.25 }}
-            >
-              <AlbumDetailsArtistSpan>{hoveringAlbum.artist}</AlbumDetailsArtistSpan>
-              <AlbumDetailsNameSpan>{hoveringAlbum.name}</AlbumDetailsNameSpan>
-              <AlbumDetailsPlayCountSpan>
-                {t('music.playCount', { playCount: hoveringAlbum.playCount })}
-              </AlbumDetailsPlayCountSpan>
-            </AlbumDetailsOverlayDiv>
-          )}
-        </AnimatePresence>
-      </AlbumsWrapperDiv>
+        )}
+        renderHoveringItem={({ artist, name, playCount }) => (
+          <>
+            <AlbumDetailsArtistSpan>{artist}</AlbumDetailsArtistSpan>
+            <AlbumDetailsNameSpan>{name}</AlbumDetailsNameSpan>
+            <AlbumDetailsPlayCountSpan>
+              {t('music.playCount', { playCount })}
+            </AlbumDetailsPlayCountSpan>
+          </>
+        )}
+      />
 
       <StyledButton onClick={() => fetchNextAlbums()}>
         {isFetchingNextPage ? <LoadingDots /> : t('music.loadMore')}
