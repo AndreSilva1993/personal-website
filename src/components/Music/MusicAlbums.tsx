@@ -120,7 +120,7 @@ const MusicAlbums = () => {
   }
 
   return (
-    <>
+    <section>
       <SearchOptionsWrapperDiv>
         <AlbumsH1>{t('music.topAlbumsTitle')}</AlbumsH1>
         <StyledSelect value={timePeriod} onChange={handleTimePeriodChange}>
@@ -154,7 +154,7 @@ const MusicAlbums = () => {
       <StyledButton onClick={() => fetchNextAlbums()}>
         {isFetchingNextPage ? <LoadingDots /> : t('music.loadMoreAlbums')}
       </StyledButton>
-    </>
+    </section>
   );
 };
 

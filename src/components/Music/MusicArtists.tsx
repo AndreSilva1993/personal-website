@@ -101,7 +101,7 @@ const MusicArtists: FC = () => {
   }
 
   return (
-    <>
+    <section>
       <SearchOptionsWrapperDiv>
         <ArtistsH1>{t('music.topArtistsTitle')}</ArtistsH1>
         <StyledSelect value={timeRange} onChange={handleTimePeriodChange}>
@@ -124,7 +124,7 @@ const MusicArtists: FC = () => {
       <StyledButton onClick={() => fetchNextArtists()}>
         {isFetchingNextPage ? <LoadingDots /> : t('music.loadMoreArtists')}
       </StyledButton>
-    </>
+    </section>
   );
 };
 

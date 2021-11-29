@@ -19,7 +19,7 @@ const ContainerDiv = styled.div(
   `
 );
 
-const ContentDiv = styled.div(
+const ContentMain = styled.main(
   ({ theme }) => css`
     flex-grow: 1;
     height: 100%;
@@ -39,7 +39,7 @@ const MainContainer: FC = ({ children }) => {
   return (
     <ContainerDiv>
       <NavigationMenu />
-      <ContentDiv>{children}</ContentDiv>
+      <ContentMain>{children}</ContentMain>
     </ContainerDiv>
   );
 };

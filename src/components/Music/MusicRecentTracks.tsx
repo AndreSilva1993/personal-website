@@ -117,7 +117,7 @@ const MusicRecentTracks: FC = () => {
   });
 
   return (
-    <>
+    <section>
       <RecentTracksH1>{t('music.recentTracksTitle')}</RecentTracksH1>
       <TracksUl>
         {recentTracks.map(({ image, artist, name, album, unixTimestamp }) => (
@@ -136,7 +136,7 @@ const MusicRecentTracks: FC = () => {
           </Fragment>
         ))}
       </TracksUl>
-    </>
+    </section>
   );
 };
 
