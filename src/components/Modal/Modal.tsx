@@ -36,6 +36,7 @@ const StyledClose = styled(MdClose)(
     position: fixed;
     cursor: pointer;
     color: ${theme.colors.white};
+    z-index: ${theme.layers.modal};
 
     ${theme.media.extraSmall} {
       top: 1.5rem;
@@ -69,10 +70,14 @@ const Modal: FC<ModalProps> = ({ children, open, onClose, motionProps, ...remain
             animate={{ opacity: 0.6 }}
             transition={{ duration: 0.5 }}
           />
+
           <ModalWrapperDiv {...motionProps} {...remainingProps}>
             {children}
           </ModalWrapperDiv>
-          <StyledClose onClick={onClose} />
+
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <StyledClose onClick={onClose} />
+          </motion.div>
         </>
       ) : null}
     </AnimatePresence>
