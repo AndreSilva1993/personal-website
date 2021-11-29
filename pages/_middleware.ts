@@ -3,8 +3,8 @@ import { NextResponse } from 'next/server';
 
 import type { NextRequest } from 'next/server';
 
-export async function middleware(request: NextRequest) {
-  if (request.page.name && request.page.name === '/music') {
+export async function middleware({ page }: NextRequest) {
+  if (page.name && (page.name === '/music' || page.name.startsWith('/api/spotify'))) {
     auth(process.env.UPSTASH_REDIS_REST_URL, process.env.UPSTASH_REDIS_REST_TOKEN);
     const { data } = await exists([process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY]);
 
