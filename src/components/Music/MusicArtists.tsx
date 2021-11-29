@@ -114,7 +114,7 @@ const MusicArtists: FC = () => {
       <MusicGrid
         items={topArtists.pages.flat()}
         render={({ image, name }, props) => (
-          <ArtistImageWrapperDiv {...props}>
+          <ArtistImageWrapperDiv key={name} {...props}>
             <ArtistImage src={image} alt={name} layout="fill" objectFit="cover" />
           </ArtistImageWrapperDiv>
         )}
