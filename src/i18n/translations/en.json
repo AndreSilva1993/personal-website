@@ -116,7 +116,8 @@
     "topArtistsTitle": "Most Listened Artists",
     "recentTracksTitle": "Recently Listened Tracks",
     "playCount": "{{playCount}} plays",
-    "loadMore": "Load more albums",
+    "loadMoreAlbums": "Load more albums",
+    "loadMoreArtists": "Load more artists",
     "streamingNow": "Streaming Now",
     "statistics": {
       "scrobbles": "Scrobbles",
@@ -125,12 +126,19 @@
       "albumsListened": "Albums"
     },
     "filters": {
-      "allTime": "All Time",
-      "last7Days": "Last 7 Days",
-      "last30Days": "Last 30 Days",
-      "last90Days": "Last 90 Days",
-      "last180Days": "Last 180 Days",
-      "last365Days": "Last 365 Days"
+      "albums": {
+        "allTime": "All Time",
+        "last7Days": "Last 7 Days",
+        "last30Days": "Last 30 Days",
+        "last90Days": "Last 90 Days",
+        "last180Days": "Last 180 Days",
+        "last365Days": "Last 365 Days"
+      },
+      "artists": {
+        "longTerm": "Long Term",
+        "mediumTerm": "Medium Term",
+        "shortTerm": "Short Term"
+      }
     }
   }
 }

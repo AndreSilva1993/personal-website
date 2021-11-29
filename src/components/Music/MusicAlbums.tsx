@@ -124,12 +124,12 @@ const MusicAlbums = () => {
       <SearchOptionsWrapperDiv>
         <AlbumsH1>{t('music.topAlbumsTitle')}</AlbumsH1>
         <StyledSelect value={timePeriod} onChange={handleTimePeriodChange}>
-          <option value="overall">{t('music.filters.allTime')}</option>
-          <option value="12month">{t('music.filters.last365Days')}</option>
-          <option value="6month">{t('music.filters.last180Days')}</option>
-          <option value="3month">{t('music.filters.last90Days')}</option>
-          <option value="1month">{t('music.filters.last30Days')}</option>
-          <option value="7day">{t('music.filters.last7Days')}</option>
+          <option value="overall">{t('music.filters.albums.allTime')}</option>
+          <option value="12month">{t('music.filters.albums.last365Days')}</option>
+          <option value="6month">{t('music.filters.albums.last180Days')}</option>
+          <option value="3month">{t('music.filters.albums.last90Days')}</option>
+          <option value="1month">{t('music.filters.albums.last30Days')}</option>
+          <option value="7day">{t('music.filters.albums.last7Days')}</option>
         </StyledSelect>
       </SearchOptionsWrapperDiv>
 
@@ -152,7 +152,7 @@ const MusicAlbums = () => {
       />
 
       <StyledButton onClick={() => fetchNextAlbums()}>
-        {isFetchingNextPage ? <LoadingDots /> : t('music.loadMore')}
+        {isFetchingNextPage ? <LoadingDots /> : t('music.loadMoreAlbums')}
       </StyledButton>
     </>
   );

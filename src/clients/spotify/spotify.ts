@@ -1,20 +1,24 @@
 import axios from 'axios';
-import { auth, get } from '@upstash/redis';
 
 import type {
   SpotifyTopArtist,
+  SpotifyTimeRange,
   SpotifyTopArtistsResponse,
 } from '@src/clients/spotify/spotify.types';
 
-auth(process.env.UPSTASH_REDIS_REST_URL, process.env.UPSTASH_REDIS_REST_TOKEN);
-
-export const getTopArtists = async (): Promise<SpotifyTopArtist[]> => {
-  const { data: accessToken } = await get(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY);
-
+export const getTopArtists = async (
+  accessToken: string,
+  timeRange: SpotifyTimeRange = 'long_term',
+  page: number = 1
+): Promise<SpotifyTopArtist[]> => {
   const { data: topArtists } = await axios.get<SpotifyTopArtistsResponse>(
     `${process.env.SPOTIFY_API_URL}/me/top/artists`,
     {
-      params: { time_range: 'long_term' },
+      params: {
+        time_range: timeRange,
+        limit: 20,
+        offset: 20 * (page - 1),
+      },
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -23,6 +27,8 @@ export const getTopArtists = async (): Promise<SpotifyTopArtist[]> => {
 
   return topArtists.items.map(({ name, images }) => ({
     name,
-    image: images.sort((a, b) => b.height - a.height)[1].url,
+    image: images.sort(
+      (artistImage, nextArtistImage) => artistImage.height - nextArtistImage.height
+    )[1].url,
   }));
 };

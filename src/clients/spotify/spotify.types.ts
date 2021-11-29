@@ -16,4 +16,6 @@ interface SpotifyTopArtist {
   image: string;
 }
 
-export type { SpotifyImage, SpotifyTopArtist, SpotifyTopArtistsResponse };
+type SpotifyTimeRange = 'long_term' | 'medium_term' | 'short_term';
+
+export type { SpotifyImage, SpotifyTopArtist, SpotifyTimeRange, SpotifyTopArtistsResponse };
