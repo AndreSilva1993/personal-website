@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
@@ -60,33 +61,26 @@ const DesktopNavigationMenu: FC = () => {
   const { t } = useTranslation();
   const { pathname } = useRouter();
 
+  const navigationLinks = useMemo(
+    () => [
+      { href: '/', title: t('navigation.home') },
+      { href: '/about', title: t('navigation.about') },
+      { href: '/portfolio', title: t('navigation.portfolio') },
+      { href: '/travels', title: t('navigation.travels') },
+      { href: '/music', title: t('navigation.music') },
+    ],
+    []
+  );
+
   return (
     <Ul>
-      <Li>
-        <Link href="/">
-          <A active={pathname === '/'}>{t('navigation.home')}</A>
-        </Link>
-      </Li>
-      <Li>
-        <Link href="/about">
-          <A active={pathname === '/about'}>{t('navigation.about')}</A>
-        </Link>
-      </Li>
-      <Li>
-        <Link href="/portfolio">
-          <A active={pathname === '/portfolio'}>{t('navigation.portfolio')}</A>
-        </Link>
-      </Li>
-      <Li>
-        <Link href="/travels">
-          <A active={pathname === '/travels'}>{t('navigation.travels')}</A>
-        </Link>
-      </Li>
-      <Li>
-        <Link href="/music">
-          <A active={pathname === '/music'}>{t('navigation.music')}</A>
-        </Link>
-      </Li>
+      {navigationLinks.map(({ href, title }) => (
+        <Li key={title}>
+          <Link href={href} passHref>
+            <A active={pathname === href}>{title}</A>
+          </Link>
+        </Li>
+      ))}
     </Ul>
   );
 };

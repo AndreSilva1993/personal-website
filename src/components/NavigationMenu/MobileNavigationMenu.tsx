@@ -102,7 +102,7 @@ const MobileNavigationMenu: FC = () => {
         <Ul>
           {navigationLinks.map(({ href, title, Icon }) => (
             <Li key={title}>
-              <Link href={href}>
+              <Link href={href} passHref>
                 <A active={pathname === href} onClick={handleModalClose}>
                   <Icon css={{ height: '2.4rem', width: '2.4rem', marginRight: '3.2rem' }} />
                   {title}

@@ -11,7 +11,7 @@ const AstronautKeyframes = keyframes`
     transform: rotate(0deg);
   }
 
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 `;
@@ -145,7 +145,7 @@ export default function Page() {
             <Image src="/images/404/astronaut.svg" layout="fill" />
           </AstronautImageDiv>
         </ImagesWrapperDiv>
-        <Link href="/">
+        <Link href="/" passHref>
           <StyledA>{t('404.cta')}</StyledA>
         </Link>
       </WrapperDiv>
