@@ -25,8 +25,9 @@ export const getTopArtists = async (
     }
   );
 
-  return topArtists.items.map(({ name, images }) => ({
+  return topArtists.items.map(({ name, images, external_urls }) => ({
     name,
+    link: external_urls.spotify,
     image: images.sort(
       (artistImage, nextArtistImage) => artistImage.height - nextArtistImage.height
     )[1].url,

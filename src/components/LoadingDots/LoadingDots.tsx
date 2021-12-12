@@ -2,17 +2,9 @@ import styled from '@emotion/styled';
 import { keyframes, css } from '@emotion/react';
 
 const dotKeyframes = keyframes`
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-0.5rem);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: scale(1.1); }
+  50% { transform: scale(0.1); }
+  100% { transform: scale(1); }
 `;
 
 const DotsWrapperDiv = styled.div`
@@ -26,7 +18,7 @@ const DotDiv = styled.div(
     border-radius: 50%;
     background-color: ${theme.colors.white};
 
-    animation-duration: 0.75s;
+    animation-duration: 1s;
     animation-name: ${dotKeyframes};
     animation-iteration-count: infinite;
 

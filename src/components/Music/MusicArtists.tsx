@@ -62,12 +62,13 @@ const ArtistImage = styled(Image)`
   max-width: 100%;
 `;
 
-const ArtistDetailsNameSpan = styled.span(
+const ArtistDetailsNameA = styled.a(
   ({ theme }) => css`
     color: white;
     font-size: 1.5rem;
     font-weight: ${theme.fontWeights.boldest};
     margin-bottom: 1rem;
+    text-decoration: none;
 
     ${theme.media.lteSmall} {
       font-size: 1rem;
@@ -118,7 +119,11 @@ const MusicArtists: FC = () => {
             <ArtistImage src={image} alt={name} layout="fill" objectFit="cover" />
           </ArtistImageWrapperDiv>
         )}
-        renderHoveringItem={({ name }) => <ArtistDetailsNameSpan>{name}</ArtistDetailsNameSpan>}
+        renderHoveringItem={({ name, link }) => (
+          <ArtistDetailsNameA href={link} target="_blank">
+            {name}
+          </ArtistDetailsNameA>
+        )}
       />
 
       <StyledButton onClick={() => fetchNextArtists()}>
