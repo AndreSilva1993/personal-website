@@ -195,8 +195,85 @@
             "landscape": false
           },
           "coordinates": [
-            47.507121,
-            19.045669
+            47.5071,
+            19.0457
+          ]
+        },
+        {
+          "name": "Ferris Wheel of Budapest",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.49855,
+            19.05231
+          ]
+        },
+        {
+          "name": "Dohány Street Synagogue",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.4959,
+            19.0606
+          ]
+        },
+        {
+          "name": "Fisherman's Bastion",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.5022,
+            19.0348
+          ]
+        },
+        {
+          "name": "Matthias Church",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.5020,
+            19.0342
+          ]
+        },
+        {
+          "name": "Hungarian National Museum",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.4912,
+            19.0625
+          ]
+        },
+        {
+          "name": "Gellért Hill",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.4864,
+            19.0411
+          ]
+        },
+        {
+          "name": "St. Stephens Basilica",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.5009,
+            19.0540
           ]
         }
       ]
@@ -215,6 +292,61 @@
           "coordinates": [
             50.0877361,
             14.4226854
+          ]
+        },
+        {
+          "name": "National Museum",
+          "image": {
+            "url": "",
+            "landscape": true
+          },
+          "coordinates": [
+            50.0789482,
+            14.4287322
+          ]
+        },
+        {
+          "name": "St. Vitus Cathedral",
+          "image": {
+            "url": "",
+            "landscape": true
+          },
+          "coordinates": [
+            50.0908918,
+            14.3983227
+          ]
+        },
+        {
+          "name": "Dancing House",
+          "image": {
+            "url": "",
+            "landscape": true
+          },
+          "coordinates": [
+            50.0754031,
+            14.4141787
+          ]
+        },
+        {
+          "name": "Vyšehrad",
+          "image": {
+            "url": "",
+            "landscape": true
+          },
+          "coordinates": [
+            50.0638429,
+            14.4185331
+          ]
+        },
+        {
+          "name": "Charles Bridge",
+          "image": {
+            "url": "",
+            "landscape": true
+          },
+          "coordinates": [
+            50.0864771,
+            14.4114366
           ]
         }
       ]
