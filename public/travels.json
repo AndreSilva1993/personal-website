@@ -33,6 +33,101 @@
   ],
   "travels": [
     {
+      "name": "Budapest",
+      "countryCode": "hu",
+      "image": "/images/travels/budapest/hungarian-parliament.jpeg",
+      "places": [
+        {
+          "name": "Hungarian Parliament Building",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.5071,
+            19.0457
+          ]
+        },
+        {
+          "name": "Ferris Wheel of Budapest",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.49855,
+            19.05231
+          ]
+        },
+        {
+          "name": "Dohány Street Synagogue",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.4959,
+            19.0606
+          ]
+        },
+        {
+          "name": "Fisherman's Bastion",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.5022,
+            19.0348
+          ]
+        },
+        {
+          "name": "Matthias Church",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.5020,
+            19.0342
+          ]
+        },
+        {
+          "name": "Hungarian National Museum",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.4912,
+            19.0625
+          ]
+        },
+        {
+          "name": "Gellért Hill",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.4864,
+            19.0411
+          ]
+        },
+        {
+          "name": "St. Stephens Basilica",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.5009,
+            19.0540
+          ]
+        }
+      ]
+    },
+    {
       "name": "London",
       "countryCode": "gb",
       "image": "/images/travels/london/the-shard.jpeg",
@@ -184,104 +279,9 @@
       ]
     },
     {
-      "name": "Budapest",
-      "countryCode": "hu",
-      "image": "http://via.placeholder.com/300x200",
-      "places": [
-        {
-          "name": "Hungarian Parliament Building",
-          "image": {
-            "url": "",
-            "landscape": false
-          },
-          "coordinates": [
-            47.5071,
-            19.0457
-          ]
-        },
-        {
-          "name": "Ferris Wheel of Budapest",
-          "image": {
-            "url": "",
-            "landscape": false
-          },
-          "coordinates": [
-            47.49855,
-            19.05231
-          ]
-        },
-        {
-          "name": "Dohány Street Synagogue",
-          "image": {
-            "url": "",
-            "landscape": false
-          },
-          "coordinates": [
-            47.4959,
-            19.0606
-          ]
-        },
-        {
-          "name": "Fisherman's Bastion",
-          "image": {
-            "url": "",
-            "landscape": false
-          },
-          "coordinates": [
-            47.5022,
-            19.0348
-          ]
-        },
-        {
-          "name": "Matthias Church",
-          "image": {
-            "url": "",
-            "landscape": false
-          },
-          "coordinates": [
-            47.5020,
-            19.0342
-          ]
-        },
-        {
-          "name": "Hungarian National Museum",
-          "image": {
-            "url": "",
-            "landscape": false
-          },
-          "coordinates": [
-            47.4912,
-            19.0625
-          ]
-        },
-        {
-          "name": "Gellért Hill",
-          "image": {
-            "url": "",
-            "landscape": false
-          },
-          "coordinates": [
-            47.4864,
-            19.0411
-          ]
-        },
-        {
-          "name": "St. Stephens Basilica",
-          "image": {
-            "url": "",
-            "landscape": false
-          },
-          "coordinates": [
-            47.5009,
-            19.0540
-          ]
-        }
-      ]
-    },
-    {
       "name": "Prague",
       "countryCode": "cz",
-      "image": "http://via.placeholder.com/300x200",
+      "image": "/images/travels/prague/vysehrad.jpeg",
       "places": [
         {
           "name": "Church of Our Lady before Týn",
@@ -296,6 +296,7 @@
         },
         {
           "name": "National Museum",
+          "description": "travels.places.prague.national-museum",
           "image": {
             "url": "",
             "landscape": true

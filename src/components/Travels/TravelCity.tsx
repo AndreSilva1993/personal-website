@@ -34,7 +34,7 @@ const CityNameH1 = styled.h1(
 
 const StyledCarousel = styled(Carousel)(
   ({ theme }) => css`
-    height: 42rem;
+    height: 45rem;
     float: left;
     margin: 0 4rem 0 0;
     aspect-ratio: 4 / 3;
