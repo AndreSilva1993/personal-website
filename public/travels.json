@@ -21,11 +21,6 @@
       "image": "/images/travels/flags/es.svg"
     },
     {
-      "name": "Austria",
-      "code": "at",
-      "image": "/images/travels/flags/at.svg"
-    },
-    {
       "name": "Czech Republic",
       "code": "cz",
       "image": "/images/travels/flags/cz.svg"
@@ -37,12 +32,6 @@
     }
   ],
   "travels": [
-    {
-      "name": "Vienna",
-      "countryCode": "at",
-      "image": "http://via.placeholder.com/300x200",
-      "places": []
-    },
     {
       "name": "London",
       "countryCode": "gb",
@@ -198,13 +187,37 @@
       "name": "Budapest",
       "countryCode": "hu",
       "image": "http://via.placeholder.com/300x200",
-      "places": []
+      "places": [
+        {
+          "name": "Hungarian Parliament Building",
+          "image": {
+            "url": "",
+            "landscape": false
+          },
+          "coordinates": [
+            47.507121,
+            19.045669
+          ]
+        }
+      ]
     },
     {
       "name": "Prague",
       "countryCode": "cz",
       "image": "http://via.placeholder.com/300x200",
-      "places": []
+      "places": [
+        {
+          "name": "Church of Our Lady before Týn",
+          "image": {
+            "url": "",
+            "landscape": true
+          },
+          "coordinates": [
+            50.0877361,
+            14.4226854
+          ]
+        }
+      ]
     },
     {
       "name": "Azores",
