@@ -11,7 +11,7 @@
     "@emotion/styled": "^11.6.0",
     "@upstash/redis": "^0.2.1",
     "axios": "^0.24.0",
-    "framer-motion": "^5.5.4",
+    "framer-motion": "^5.5.5",
     "i18next": "^21.6.2",
     "leaflet": "^1.7.1",
     "next": "^12.0.7",
