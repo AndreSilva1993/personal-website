@@ -11,7 +11,7 @@
     "@emotion/styled": "^11.6.0",
     "@upstash/redis": "^0.2.1",
     "axios": "^0.24.0",
-    "framer-motion": "^5.5.4",
+    "framer-motion": "^5.5.5",
     "i18next": "^21.6.2",
     "leaflet": "^1.7.1",
     "next": "^12.0.7",
@@ -19,13 +19,13 @@
     "react-dom": "^17.0.2",
     "react-i18next": "^11.15.1",
     "react-icons": "^4.3.1",
-    "react-query": "^3.34.4"
+    "react-query": "^3.34.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@emotion/babel-plugin": "^11.7.1",
-    "@types/node": "^16.11.14",
+    "@types/node": "^17.0.0",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@types/react-leaflet": "^2.8.2",
