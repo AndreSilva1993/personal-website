@@ -75,9 +75,12 @@ const TravelCity: FC<TravelCityProps> = ({
   city,
   place,
   onGoBackButtonClick,
-  onPlacesCarouselIndexChange,
+  onCarouselPlaceChange,
 }) => {
   const { t } = useTranslation();
+  const placesImages = city.places
+    .map(({ images, name }) => images.map(({ url, landscape }) => ({ url, landscape, name })))
+    .flat();
 
   return (
     <motion.div
@@ -96,8 +99,10 @@ const TravelCity: FC<TravelCityProps> = ({
         </Button>
       </CityHeadingWrapperDiv>
       <CityWrapperDiv>
-        <StyledCarousel onCarouselIndexChange={onPlacesCarouselIndexChange}>
-          {city.places.map(({ image: { url, landscape }, name }) => (
+        <StyledCarousel
+          onCarouselIndexChange={(index) => onCarouselPlaceChange(placesImages[index].name)}
+        >
+          {placesImages.map(({ url, landscape, name }) => (
             <Image
               src={url}
               alt={name}

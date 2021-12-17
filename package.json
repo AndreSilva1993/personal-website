@@ -11,26 +11,26 @@
     "@emotion/styled": "^11.6.0",
     "@upstash/redis": "^0.2.1",
     "axios": "^0.24.0",
-    "framer-motion": "^5.4.5",
-    "i18next": "^21.6.0",
+    "framer-motion": "^5.5.4",
+    "i18next": "^21.6.2",
     "leaflet": "^1.7.1",
     "next": "^12.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.15.1",
     "react-icons": "^4.3.1",
-    "react-query": "^3.34.2"
+    "react-query": "^3.34.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@emotion/babel-plugin": "^11.7.1",
-    "@types/node": "^16.11.12",
+    "@types/node": "^16.11.14",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@types/react-leaflet": "^2.8.2",
-    "@typescript-eslint/eslint-plugin": "^5.6.0",
-    "@typescript-eslint/parser": "^5.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
     "eslint": "^8.4.1",
     "eslint-config-airbnb": "^19.0.2",
     "eslint-config-airbnb-typescript": "^16.1.0",
@@ -43,7 +43,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.3"
+    "typescript": "^4.5.4"
   },
   "packageManager": "yarn@3.1.0"
 }

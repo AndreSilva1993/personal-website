@@ -145,11 +145,7 @@ const About: FC = () => {
   return (
     <StyledPageContainer>
       <AboutImageWrapperDiv>
-        <Image
-          alt="About"
-          layout="fill"
-          src="http://tokyo.ibthemespro.com/assets/img/slider/1.jpg"
-        />
+        <Image alt="About" layout="fill" src="/images/about.jpeg" objectFit="cover" />
       </AboutImageWrapperDiv>
       <H1>{t('about.title')}</H1>
       <AboutDiv>

@@ -14,8 +14,6 @@ module.exports = {
     domains: [
       'i.scdn.co', // Spotify images.
       'lastfm.freetls.fastly.net', // LastFM images.
-      'tokyo.ibthemespro.com',
-      'via.placeholder.com',
     ],
   },
   async headers() {

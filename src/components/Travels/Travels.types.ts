@@ -15,7 +15,7 @@ interface ITravelPlace {
   name: string;
   coordinates: number[];
   description?: string;
-  image?: { url: string; landscape: boolean };
+  images?: Array<{ url: string; landscape: boolean }>;
 }
 
 interface TravelCountriesProps {
@@ -33,7 +33,7 @@ interface TravelCityProps {
   city: ITravelCity;
   place: ITravelPlace;
   onGoBackButtonClick: () => void;
-  onPlacesCarouselIndexChange: (index: number) => void;
+  onCarouselPlaceChange: (name: string) => void;
 }
 
 export type {

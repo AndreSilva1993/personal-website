@@ -74,8 +74,8 @@ const Travels: FC = () => {
     });
   }
 
-  function handlePlacesCarouselIndexChange(index: number) {
-    setActivePlace(activeCity.places[index]);
+  function handleCarouselPlaceChange(name: string) {
+    setActivePlace(activeCity.places.find((place) => place.name === name));
   }
 
   function handleGoBackButtonClick() {
@@ -190,7 +190,7 @@ const Travels: FC = () => {
             city={activeCity}
             place={activePlace}
             onGoBackButtonClick={handleGoBackButtonClick}
-            onPlacesCarouselIndexChange={handlePlacesCarouselIndexChange}
+            onCarouselPlaceChange={handleCarouselPlaceChange}
           />
         )}
       </AnimatePresence>

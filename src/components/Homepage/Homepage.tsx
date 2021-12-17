@@ -27,12 +27,7 @@ const PhotoDiv = styled.div`
 
 const Homepage: FC = () => (
   <PhotoDiv>
-    <Image
-      alt="teste"
-      width={50}
-      height={50}
-      src="http://tokyo.ibthemespro.com/static/media/1.6bd902c9.jpg"
-    />
+    <Image alt="teste" width={50} height={50} src="/images/about.jpeg" />
   </PhotoDiv>
 );
 
