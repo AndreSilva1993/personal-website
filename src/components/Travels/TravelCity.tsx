@@ -114,7 +114,7 @@ const TravelCity: FC<TravelCityProps> = ({
           ))}
         </StyledCarousel>
 
-        <PlaceNameH1>{place.name}</PlaceNameH1>
+        <PlaceNameH1>{t(place.name)}</PlaceNameH1>
         <PlaceDescriptionP>{t(place.description)}</PlaceDescriptionP>
       </CityWrapperDiv>
     </motion.div>

@@ -4,6 +4,7 @@ import travelsJSON from '@public/travels.json';
 import L from 'leaflet';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import { useTranslation } from 'react-i18next';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useRef, useMemo, useState } from 'react';
 
@@ -43,6 +44,8 @@ const MapContainerDiv = styled.div(
 );
 
 const Travels: FC = () => {
+  const { t } = useTranslation();
+
   const leafletMapRef = useRef<L.Map>();
   const leafletMarkersRef = useRef<L.Marker[]>([]);
   const leafletMapContainerRef = useRef<HTMLDivElement>();
@@ -110,7 +113,7 @@ const Travels: FC = () => {
     cities.forEach(({ places }) => {
       places.forEach(({ name, coordinates }) => {
         const marker = L.marker(coordinates as L.LatLngExpression);
-        marker.bindPopup(name);
+        marker.bindPopup(t(name));
         marker.addTo(leafletMapRef.current);
 
         leafletMarkersRef.current.push(marker);
