@@ -104,6 +104,7 @@ const TravelCity: FC<TravelCityProps> = ({
         >
           {placesImages.map(({ url, landscape, name }) => (
             <Image
+              priority
               src={url}
               alt={name}
               layout="fill"

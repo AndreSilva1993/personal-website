@@ -39,7 +39,24 @@
       "places": [
         {
           "name": "Hungarian Parliament Building",
-          "images": [],
+          "images": [
+            {
+              "url": "/images/travels/budapest/hungarian-parliament.jpeg",
+              "landscape": true
+            },
+            {
+              "url": "/images/travels/budapest/hungarian-parliament-2.jpeg",
+              "landscape": true
+            },
+            {
+              "url": "/images/travels/budapest/hungarian-parliament-3.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/budapest/hungarian-parliament-4.jpeg",
+              "landscape": false
+            }
+          ],
           "coordinates": [
             47.5071,
             19.0457
@@ -63,7 +80,20 @@
         },
         {
           "name": "Fisherman's Bastion",
-          "images": [],
+          "images": [
+            {
+              "url": "/images/travels/budapest/fisherman-bastion.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/budapest/fisherman-bastion-2.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/budapest/fisherman-bastion-3.jpeg",
+              "landscape": false
+            }
+          ],
           "coordinates": [
             47.5022,
             19.0348
@@ -79,7 +109,16 @@
         },
         {
           "name": "Hungarian National Museum",
-          "images": [],
+          "images": [
+            {
+              "url": "/images/travels/budapest/hungarian-national-museum.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/budapest/hungarian-national-museum-2.jpeg",
+              "landscape": false
+            }
+          ],
           "coordinates": [
             47.4912,
             19.0625
@@ -318,6 +357,10 @@
             {
               "url": "/images/travels/prague/national-museum-2.jpeg",
               "landscape": false
+            },
+            {
+              "url": "/images/travels/prague/national-museum-3.jpeg",
+              "landscape": false
             }
           ],
           "coordinates": [
@@ -335,7 +378,12 @@
         },
         {
           "name": "Dancing House",
-          "images": [],
+          "images": [
+            {
+              "url": "/images/travels/prague/dancing-house.jpeg",
+              "landscape": false
+            }
+          ],
           "coordinates": [
             50.0754031,
             14.4141787
