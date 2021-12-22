@@ -116,7 +116,13 @@ const MusicArtists: FC = () => {
         items={topArtists.pages.flat()}
         render={({ image, name }, props) => (
           <ArtistImageWrapperDiv key={name} {...props}>
-            <ArtistImage src={image} alt={name} layout="fill" objectFit="cover" />
+            <ArtistImage
+              src={image}
+              alt={name}
+              layout="fill"
+              objectFit="cover"
+              sizes="(max-width: 767px) 50vw, 20vw"
+            />
           </ArtistImageWrapperDiv>
         )}
         renderHoveringItem={({ name, link }) => (

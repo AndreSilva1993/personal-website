@@ -145,7 +145,13 @@ const About: FC = () => {
   return (
     <StyledPageContainer>
       <AboutImageWrapperDiv>
-        <Image alt="About" layout="fill" src="/images/about.jpeg" objectFit="cover" />
+        <Image
+          alt="About"
+          layout="fill"
+          src="/images/about.jpeg"
+          objectFit="cover"
+          sizes="(max-width: 992px) 100vw, 75vw"
+        />
       </AboutImageWrapperDiv>
       <H1>{t('about.title')}</H1>
       <AboutDiv>
@@ -176,7 +182,13 @@ const About: FC = () => {
       <TechnologyGridDiv>
         {technologiesData.map(({ name, image, value }, index) => (
           <Fragment key={index}>
-            <Image alt={name} width={30} height={30} src={`/images/technologies/${image}`} />
+            <Image
+              alt={name}
+              width={30}
+              height={30}
+              src={`/images/technologies/${image}`}
+              loading="eager"
+            />
             <TechnologyGridItemDiv>{name}</TechnologyGridItemDiv>
             <TechnologyGridItemDiv>
               <StyledProgressBar value={value} delay={0.5 + 0.1 * index} />

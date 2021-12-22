@@ -56,7 +56,7 @@ const AlbumCoverWrapperDiv = styled.div`
   padding-bottom: 100%;
 `;
 
-const AlbumCoverImg = styled(Image)`
+const AlbumCoverImage = styled(Image)`
   max-width: 100%;
 `;
 
@@ -137,7 +137,12 @@ const MusicAlbums = () => {
         items={topAlbums.pages.flat()}
         render={({ name, image }, props) => (
           <AlbumCoverWrapperDiv key={name} {...props}>
-            <AlbumCoverImg src={image} alt={name} layout="fill" priority />
+            <AlbumCoverImage
+              src={image}
+              alt={name}
+              layout="fill"
+              sizes="(max-width: 767px) 50vw, 20vw"
+            />
           </AlbumCoverWrapperDiv>
         )}
         renderHoveringItem={({ artist, name, playCount }) => (

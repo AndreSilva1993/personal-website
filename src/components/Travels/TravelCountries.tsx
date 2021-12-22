@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { motion, AnimateSharedLayout } from 'framer-motion';
@@ -36,7 +37,7 @@ const CountryLiBorder = styled(motion.div)`
   border-radius: 50%;
 `;
 
-const CountryImg = styled.img(
+const CountryImage = styled(Image)(
   ({ theme }) => css`
     height: 5rem;
 
@@ -60,7 +61,7 @@ const TravelCountries: FC<TravelCountriesProps> = ({
       <CountriesUl>
         {countries.map(({ name, image, code }, index) => (
           <CountryLi key={name} onClick={() => handleCountryClick(index)}>
-            <CountryImg alt={name} src={image} />
+            <CountryImage alt={name} src={image} width={50} height={50} />
             {activeCountry.code === code && (
               <CountryLiBorder initial={false} layoutId="underline" />
             )}

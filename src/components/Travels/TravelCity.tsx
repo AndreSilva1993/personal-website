@@ -14,6 +14,7 @@ import type { TravelCityProps } from './Travels.types';
 const CityWrapperDiv = styled(motion.div)`
   width: 100%;
   min-height: 42rem;
+  user-select: none;
 `;
 
 const CityHeadingWrapperDiv = styled.div`
