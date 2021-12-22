@@ -25,16 +25,16 @@ const CityLi = styled.li(
     position: relative;
 
     ${theme.media.gteSmall} {
-      &:nth-child(4n + 1),
-      &:nth-child(4n + 4) {
+      &:nth-of-type(4n + 1),
+      &:nth-of-type(4n + 4) {
         flex: 0 0 60%;
       }
 
-      &:nth-child(odd) {
+      &:nth-of-type(odd) {
         padding-left: 0;
       }
 
-      &:nth-child(even) {
+      &:nth-of-type(even) {
         padding-right: 0;
       }
     }
@@ -108,7 +108,7 @@ const TravelCities: FC<TravelCitiesProps> = ({ cities, onCityClick }) => (
   >
     <CitiesUl>
       {cities.map(({ name, image }, index) => (
-        <CityLi onClick={() => onCityClick(index)}>
+        <CityLi key={name} onClick={() => onCityClick(index)}>
           <CityImageWrapperDiv>
             <CityImage
               src={image}
@@ -117,6 +117,8 @@ const TravelCities: FC<TravelCitiesProps> = ({ cities, onCityClick }) => (
               layout="fill"
               objectFit="cover"
               objectPosition="center"
+              sizes="(max-width: 767px) 100vw, 50vw"
+              priority={index < 2}
             />
           </CityImageWrapperDiv>
           <CityNameSpan>{name}</CityNameSpan>

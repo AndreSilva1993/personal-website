@@ -59,7 +59,7 @@ const TravelCountries: FC<TravelCountriesProps> = ({
     <AnimateSharedLayout>
       <CountriesUl>
         {countries.map(({ name, image, code }, index) => (
-          <CountryLi onClick={() => handleCountryClick(index)}>
+          <CountryLi key={name} onClick={() => handleCountryClick(index)}>
             <CountryImg alt={name} src={image} />
             {activeCountry.code === code && (
               <CountryLiBorder initial={false} layoutId="underline" />

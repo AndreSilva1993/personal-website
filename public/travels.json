@@ -38,7 +38,7 @@
       "image": "/images/travels/budapest/hungarian-parliament.jpeg",
       "places": [
         {
-          "name": "travels.places.budapest.hungarian-parliament-building.title",
+          "name": "travels.places.budapest.hungarian-parliament.title",
           "images": [
             {
               "url": "/images/travels/budapest/hungarian-parliament.jpeg",
@@ -370,7 +370,16 @@
         },
         {
           "name": "St. Vitus Cathedral",
-          "images": [],
+          "images": [
+            {
+              "url": "/images/travels/prague/st-vitus-cathedral.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/prague/st-vitus-cathedral-2.jpeg",
+              "landscape": false
+            }
+          ],
           "coordinates": [
             50.0908918,
             14.3983227
@@ -624,7 +633,7 @@
     {
       "name": "Madeira",
       "countryCode": "pt",
-      "image": "/images/travels/madeira/ponta-sao-lourenco.jpeg",
+      "image": "/images/travels/madeira/sao-lourenco-point.jpeg",
       "places": [
         {
           "name": "travels.places.madeira.balcoes-viewpoint.title",

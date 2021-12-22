@@ -102,9 +102,9 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, 
         priority
         alt={name}
         src={image}
-        sizes="50vw"
-        layout="fill"
         objectFit="cover"
+        layout="fill"
+        sizes="(max-width: 767px) 100vw, 33vw"
         css={css`
           transform: scale(${isHovering ? 1.1 : 1});
           transition: transform 500ms ease, filter 500ms ease;
@@ -117,7 +117,14 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, 
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
         <LogoWrapperDiv>
-          <Image priority alt={name} src={logoImage} layout="fill" objectFit="contain" />
+          <Image
+            priority
+            alt={name}
+            src={logoImage}
+            layout="fill"
+            objectFit="contain"
+            sizes="(max-width: 767px) 100vw, 33vw"
+          />
         </LogoWrapperDiv>
       </PortfolioItemNameDiv>
     </PortfolioItemWrapperDiv>

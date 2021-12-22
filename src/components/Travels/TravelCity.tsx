@@ -104,12 +104,12 @@ const TravelCity: FC<TravelCityProps> = ({
         >
           {placesImages.map(({ url, landscape, name }) => (
             <Image
-              priority
               src={url}
               alt={name}
               layout="fill"
               draggable={false}
               objectFit={landscape ? 'cover' : 'contain'}
+              sizes="(max-width: 767px) 100vw, 33vw"
             />
           ))}
         </StyledCarousel>
