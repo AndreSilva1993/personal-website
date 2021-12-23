@@ -39,6 +39,7 @@
       "places": [
         {
           "name": "travels.places.budapest.hungarian-parliament.title",
+          "description": "travels.places.budapest.hungarian-parliament.description",
           "images": [
             {
               "url": "/images/travels/budapest/hungarian-parliament.jpeg",
@@ -63,16 +64,18 @@
           ]
         },
         {
-          "name": "Ferris Wheel of Budapest",
-          "images": [],
-          "coordinates": [
-            47.49855,
-            19.05231
-          ]
-        },
-        {
-          "name": "Dohány Street Synagogue",
-          "images": [],
+          "name": "travels.places.budapest.dohany-street-synagogue.title",
+          "description": "travels.places.budapest.dohany-street-synagogue.description",
+          "images": [
+            {
+              "url": "/images/travels/budapest/dohany-street-synagogue.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/budapest/dohany-street-synagogue-2.jpeg",
+              "landscape": false
+            }
+          ],
           "coordinates": [
             47.4959,
             19.0606
@@ -80,6 +83,7 @@
         },
         {
           "name": "travels.places.budapest.fisherman-bastion.title",
+          "description": "travels.places.budapest.fisherman-bastion.description",
           "images": [
             {
               "url": "/images/travels/budapest/fisherman-bastion.jpeg",
@@ -100,8 +104,18 @@
           ]
         },
         {
-          "name": "Matthias Church",
-          "images": [],
+          "name": "travels.places.budapest.matthias-church.title",
+          "description": "travels.places.budapest.matthias-church.description",
+          "images": [
+            {
+              "url": "/images/travels/budapest/matthias-church.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/budapest/matthias-church-2.jpeg",
+              "landscape": true
+            }
+          ],
           "coordinates": [
             47.5020,
             19.0342
@@ -109,6 +123,7 @@
         },
         {
           "name": "travels.places.budapest.hungarian-national-museum.title",
+          "description": "travels.places.budapest.hungarian-national-museum.description",
           "images": [
             {
               "url": "/images/travels/budapest/hungarian-national-museum.jpeg",
@@ -133,8 +148,18 @@
           ]
         },
         {
-          "name": "St. Stephens Basilica",
-          "images": [],
+          "name": "travels.places.budapest.st-stephen-basilica.title",
+          "description": "travels.places.budapest.st-stephen-basilica.description",
+          "images": [
+            {
+              "url": "/images/travels/budapest/st-stephen-basilica.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/budapest/st-stephen-basilica-2.jpeg",
+              "landscape": false
+            }
+          ],
           "coordinates": [
             47.5009,
             19.0540
@@ -369,7 +394,8 @@
           ]
         },
         {
-          "name": "St. Vitus Cathedral",
+          "name": "travels.places.prague.st-vitus-cathedral.title",
+          "description": "travels.places.prague.st-vitus-cathedral.description",
           "images": [
             {
               "url": "/images/travels/prague/st-vitus-cathedral.jpeg",
@@ -387,6 +413,7 @@
         },
         {
           "name": "travels.places.prague.dancing-house.title",
+          "description": "travels.places.prague.dancing-house.description",
           "images": [
             {
               "url": "/images/travels/prague/dancing-house.jpeg",
@@ -400,6 +427,7 @@
         },
         {
           "name": "travels.places.prague.vysehrad.title",
+          "description": "travels.places.prague.vysehrad.description",
           "images": [
             {
               "url": "/images/travels/prague/vysehrad.jpeg",
