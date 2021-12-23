@@ -19,13 +19,23 @@ const CountriesUl = styled.ul(
   `
 );
 
-const CountryLi = styled.li`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-  margin: 1rem;
-`;
+const CountryLi = styled.li(
+  ({ theme: { media } }) => css`
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    margin: 1rem;
+
+    width: 5rem;
+    height: 5rem;
+
+    ${media.extraSmall} {
+      height: 3rem;
+      width: 3rem;
+    }
+  `
+);
 
 const CountryLiBorder = styled(motion.div)`
   top: -1rem;
@@ -61,7 +71,7 @@ const TravelCountries: FC<TravelCountriesProps> = ({
       <CountriesUl>
         {countries.map(({ name, image, code }, index) => (
           <CountryLi key={name} onClick={() => handleCountryClick(index)}>
-            <CountryImage alt={name} src={image} width={50} height={50} />
+            <CountryImage alt={name} src={image} layout="fill" />
             {activeCountry.code === code && (
               <CountryLiBorder initial={false} layoutId="underline" />
             )}
