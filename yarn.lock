@@ -809,10 +809,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^17.0.2":
+"@types/node@npm:*":
   version: 17.0.2
   resolution: "@types/node@npm:17.0.2"
   checksum: a827d2542ef7adba5c79ba7f85b7c2ba8256d317bd99d77ed7af237cfebae0034dff5c4182e1845e6fbef29ae4c78186c4b4a7dbf236037a04120783aa30ba74
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^17.0.4":
+  version: 17.0.4
+  resolution: "@types/node@npm:17.0.4"
+  checksum: 92e6a25fea2314cd34e81962bd07c8b79b92cae04d84a0336a8c49a2b8aa4c34ff8cb428baeac2022daf597809bd3b7987c624b07a91c4d01b6230f82c293190
   languageName: node
   linkType: hard
 
@@ -856,7 +863,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^17.0.37":
+"@types/react@npm:*":
   version: 17.0.37
   resolution: "@types/react@npm:17.0.37"
   dependencies:
@@ -864,6 +871,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: e68b0d59aa69577fc6a6d654b25d5d8408625498f4c483f160b557fac21e840f6e8807cbde93e9f039949b6d624a019b1990d18499c1d65aecf3605c25e30242
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^17.0.38":
+  version: 17.0.38
+  resolution: "@types/react@npm:17.0.38"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 4079f4f959cd4a4bfaeda8b89fe8a1b1f8bdc9d87acfdc5f74a0b39cec9ec6a470724357c62778c0f063180b360c250e920c5a142f1dbcda67d9cc25a6d43a85
   languageName: node
   linkType: hard
 
@@ -1738,13 +1756,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"confusing-browser-globals@npm:^1.0.10":
-  version: 1.0.11
-  resolution: "confusing-browser-globals@npm:1.0.11"
-  checksum: 3afc635abd37e566477f610e7978b15753f0e84025c25d49236f1f14d480117185516bdd40d2a2167e6bed8048641a9854964b9c067e3dcdfa6b5d0ad3c3a5ef
-  languageName: node
-  linkType: hard
-
 "console-control-strings@npm:^1.0.0, console-control-strings@npm:^1.1.0":
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
@@ -2294,50 +2305,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-airbnb-base@npm:^15.0.0":
-  version: 15.0.0
-  resolution: "eslint-config-airbnb-base@npm:15.0.0"
-  dependencies:
-    confusing-browser-globals: ^1.0.10
-    object.assign: ^4.1.2
-    object.entries: ^1.1.5
-    semver: ^6.3.0
-  peerDependencies:
-    eslint: ^7.32.0 || ^8.2.0
-    eslint-plugin-import: ^2.25.2
-  checksum: 38626bad2ce2859fccac86b30cd2b86c9b7d8d71d458331860861dc05290a5b198bded2f4fb89efcb9046ec48f8ab4c4fb00365ba8916f27b172671da28b93ea
-  languageName: node
-  linkType: hard
-
-"eslint-config-airbnb-typescript@npm:^16.1.0":
-  version: 16.1.0
-  resolution: "eslint-config-airbnb-typescript@npm:16.1.0"
-  dependencies:
-    eslint-config-airbnb-base: ^15.0.0
-  peerDependencies:
-    "@typescript-eslint/eslint-plugin": ^5.0.0
-    "@typescript-eslint/parser": ^5.0.0
-  checksum: 65bb6763ab825c228d01c884ddb306001f3b5cbb5c138646f6629ac780acc68d388091844b3983aa9f8f138e4e972a2a1d5a23ce95bd7a217b4a917e4e2366dd
-  languageName: node
-  linkType: hard
-
-"eslint-config-airbnb@npm:^19.0.2":
-  version: 19.0.2
-  resolution: "eslint-config-airbnb@npm:19.0.2"
-  dependencies:
-    eslint-config-airbnb-base: ^15.0.0
-    object.assign: ^4.1.2
-    object.entries: ^1.1.5
-  peerDependencies:
-    eslint: ^7.32.0 || ^8.2.0
-    eslint-plugin-import: ^2.25.3
-    eslint-plugin-jsx-a11y: ^6.5.1
-    eslint-plugin-react: ^7.27.1
-    eslint-plugin-react-hooks: ^4.3.0
-  checksum: 668d91fee4d8e1b7ecefc3844caed6bb77a72b29521dd9595a14abaebb8651439b831da792614b51e7913bbe3b6d20df03e76f52287ccf511dee1982460d3f71
-  languageName: node
-  linkType: hard
-
 "eslint-config-next@npm:^12.0.7":
   version: 12.0.7
   resolution: "eslint-config-next@npm:12.0.7"
@@ -2383,7 +2350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-typescript@npm:^2.4.0, eslint-import-resolver-typescript@npm:^2.5.0":
+"eslint-import-resolver-typescript@npm:^2.4.0":
   version: 2.5.0
   resolution: "eslint-import-resolver-typescript@npm:2.5.0"
   dependencies:
@@ -2410,7 +2377,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.25.2, eslint-plugin-import@npm:^2.25.3":
+"eslint-plugin-import@npm:^2.25.2":
   version: 2.25.3
   resolution: "eslint-plugin-import@npm:2.25.3"
   dependencies:
@@ -2464,7 +2431,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.27.0, eslint-plugin-react@npm:^7.27.1":
+"eslint-plugin-react@npm:^7.27.0":
   version: 7.27.1
   resolution: "eslint-plugin-react@npm:7.27.1"
   dependencies:
@@ -5029,9 +4996,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-query@npm:^3.34.5":
-  version: 3.34.5
-  resolution: "react-query@npm:3.34.5"
+"react-query@npm:^3.34.6":
+  version: 3.34.6
+  resolution: "react-query@npm:3.34.6"
   dependencies:
     "@babel/runtime": ^7.5.5
     broadcast-channel: ^3.4.1
@@ -5043,7 +5010,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: c33b7b438863fa405a229c35a5dd972f9a9c6e1702eb27a1d54b96428b0046af6aebe29cfaa5c0f807e4fd1b3562a1d46f67151b9eeea032adf61fd96374bcee
+  checksum: aeb67c10d762012f2d40ca4514992d7167803fa9cd6c75b1583beb8421df0762b13aa540ebe4670b7e690b5b0e68c260954c08e8b7db94c431e0188be3ef2a49
   languageName: node
   linkType: hard
 
@@ -5281,8 +5248,8 @@ __metadata:
     "@emotion/babel-plugin": ^11.7.2
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
-    "@types/node": ^17.0.2
-    "@types/react": ^17.0.37
+    "@types/node": ^17.0.4
+    "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     "@types/react-leaflet": ^2.8.2
     "@typescript-eslint/eslint-plugin": ^5.8.0
@@ -5290,15 +5257,8 @@ __metadata:
     "@upstash/redis": ^0.2.1
     axios: ^0.24.0
     eslint: ^8.5.0
-    eslint-config-airbnb: ^19.0.2
-    eslint-config-airbnb-typescript: ^16.1.0
     eslint-config-next: ^12.0.7
     eslint-config-prettier: ^8.3.0
-    eslint-import-resolver-typescript: ^2.5.0
-    eslint-plugin-import: ^2.25.3
-    eslint-plugin-jsx-a11y: ^6.5.1
-    eslint-plugin-react: ^7.27.1
-    eslint-plugin-react-hooks: ^4.3.0
     framer-motion: ^5.5.5
     husky: ^7.0.4
     i18next: ^21.6.3
@@ -5309,7 +5269,7 @@ __metadata:
     react-dom: ^17.0.2
     react-i18next: ^11.15.1
     react-icons: ^4.3.1
-    react-query: ^3.34.5
+    react-query: ^3.34.6
     typescript: ^4.5.4
   languageName: unknown
   linkType: soft

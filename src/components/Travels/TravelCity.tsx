@@ -103,8 +103,9 @@ const TravelCity: FC<TravelCityProps> = ({
         <StyledCarousel
           onCarouselIndexChange={(index) => onCarouselPlaceChange(placesImages[index].name)}
         >
-          {placesImages.map(({ url, landscape, name }) => (
+          {placesImages.map(({ url, landscape, name }, index) => (
             <Image
+              key={index}
               src={url}
               alt={name}
               layout="fill"

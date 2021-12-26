@@ -134,10 +134,10 @@ export default function Page() {
         <H2>{t('404.description')}</H2>
         <ImagesWrapperDiv>
           <PlanetImageDiv>
-            <Image src="/images/404/planet.svg" layout="fill" />
+            <Image src="/images/404/planet.svg" layout="fill" alt="Planet" />
           </PlanetImageDiv>
           <AstronautImageDiv>
-            <Image src="/images/404/astronaut.svg" layout="fill" />
+            <Image src="/images/404/astronaut.svg" layout="fill" alt="Astronaut" />
           </AstronautImageDiv>
         </ImagesWrapperDiv>
         <Link href="/" passHref>

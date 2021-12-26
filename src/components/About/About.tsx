@@ -21,76 +21,54 @@ const AboutImageWrapperDiv = styled.div`
   padding-bottom: calc(100% * 9 / 16);
 `;
 
+const TitleWrapperDiv = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ${theme.media.extraSmall} {
+      flex-direction: column;
+    }
+  `
+);
+
 const H1 = styled.h1(
   ({ theme }) => css`
-    margin-bottom: 3rem;
     color: ${theme.colors.white};
     font-size: 2.2rem;
     font-weight: ${theme.fontWeights.boldest};
+
+    ${theme.media.extraSmall} {
+      text-align: center;
+    }
   `
 );
+const SocialContainerDiv = styled.div`
+  display: flex;
+`;
+
+const StyledSocialA = styled.a`
+  &:not(:first-of-type) {
+    margin-left: 2rem;
+  }
+`;
 
 const AboutDiv = styled.div(
   ({ theme }) => css`
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
-    margin-bottom: 5rem;
+    margin: 3rem 0;
 
-    ${theme.media.gteMedium} {
-      flex-direction: row;
-    }
-  `
-);
-
-const P = styled.p(
-  ({ theme }) => css`
     font-style: italic;
     line-height: 3rem;
     text-align: justify;
+    color: ${theme.colors.lightGrey};
     font-weight: ${theme.fontWeights.normal};
-    color: ${theme.colors.lightGrey};
 
     ${theme.media.gteMedium} {
-      flex: 0 0 55%;
-      margin-right: 5rem;
-    }
-  `
-);
-
-const PersonalInfoUl = styled.ul(
-  ({ theme }) => css`
-    flex-grow: 1;
-
-    ${theme.media.lteSmall} {
-      margin-top: 3rem;
-    }
-  `
-);
-
-const PersonalInfoLi = styled.li(
-  ({ theme }) => css`
-    color: ${theme.colors.lightGrey};
-
-    &:not(:last-of-type) {
-      margin-bottom: 1.5rem;
-    }
-
-    ${theme.media.gteMedium} {
-      display: flex;
-      justify-content: space-between;
-    }
-  `
-);
-
-const PersonalInfoSpan = styled.span(
-  ({ theme }) => css`
-    color: ${theme.colors.white};
-    font-weight: ${theme.fontWeights.boldest};
-
-    ${theme.media.lteSmall} {
-      min-width: 10rem;
-      display: inline-block;
+      flex-direction: row;
     }
   `
 );
@@ -99,6 +77,7 @@ const TechnologyGridDiv = styled.div(
   ({ theme }) => css`
     display: grid;
     grid-gap: 2rem;
+    margin-top: 3rem;
     grid-template-columns: repeat(2, 3rem auto 1fr);
     color: ${theme.colors.white};
     font-size: 1.5rem;
@@ -148,34 +127,27 @@ const About: FC = () => {
         <Image
           alt="About"
           layout="fill"
-          src="/images/about.jpeg"
+          src="/images/about/about.jpeg"
           objectFit="cover"
           sizes="(max-width: 992px) 100vw, 75vw"
         />
       </AboutImageWrapperDiv>
-      <H1>{t('about.title')}</H1>
-      <AboutDiv>
-        <P>{t('about.description')}</P>
 
-        <PersonalInfoUl>
-          <PersonalInfoLi>
-            <PersonalInfoSpan>{t('about.info.birthday')}</PersonalInfoSpan>
-            {t('about.info.birthdayAnswer')}
-          </PersonalInfoLi>
-          <PersonalInfoLi>
-            <PersonalInfoSpan>{t('about.info.email')}</PersonalInfoSpan>
-            {t('about.info.emailAnswer')}
-          </PersonalInfoLi>
-          <PersonalInfoLi>
-            <PersonalInfoSpan>{t('about.info.location')}</PersonalInfoSpan>
-            {t('about.info.locationAnswer')}
-          </PersonalInfoLi>
-          <PersonalInfoLi>
-            <PersonalInfoSpan>{t('about.info.study')}</PersonalInfoSpan>
-            {t('about.info.studyAnswer')}
-          </PersonalInfoLi>
-        </PersonalInfoUl>
-      </AboutDiv>
+      <TitleWrapperDiv>
+        <H1>{t('about.title')}</H1>
+        <SocialContainerDiv>
+          <StyledSocialA target="_blank" href={process.env.NEXT_PUBLIC_GITHUB_URL}>
+            <Image width={25} height={25} src="/images/about/github.svg" alt="GitHub" />
+          </StyledSocialA>
+          <StyledSocialA target="_blank" href={process.env.NEXT_PUBLIC_LINKEDIN_URL}>
+            <Image width={25} height={25} src="/images/about/linkedin.svg" alt="LinkedIn" />
+          </StyledSocialA>
+          <StyledSocialA target="_blank" href={process.env.NEXT_PUBLIC_INSTAGRAM_URL}>
+            <Image width={25} height={25} src="/images/about/instagram.svg" alt="Instagram" />
+          </StyledSocialA>
+        </SocialContainerDiv>
+      </TitleWrapperDiv>
+      <AboutDiv>{t('about.description')}</AboutDiv>
 
       <H1>{t('about.technologies')}</H1>
 
@@ -186,7 +158,7 @@ const About: FC = () => {
               alt={name}
               width={30}
               height={30}
-              src={`/images/technologies/${image}`}
+              src={`/images/about/${image}`}
               loading="eager"
             />
             <TechnologyGridItemDiv>{name}</TechnologyGridItemDiv>
