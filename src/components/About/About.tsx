@@ -44,9 +44,15 @@ const H1 = styled.h1(
     }
   `
 );
-const SocialContainerDiv = styled.div`
-  display: flex;
-`;
+const SocialContainerDiv = styled.div(
+  ({ theme }) => css`
+    display: flex;
+
+    ${theme.media.extraSmall} {
+      margin-top: 3rem;
+    }
+  `
+);
 
 const StyledSocialA = styled.a`
   &:not(:first-of-type) {
