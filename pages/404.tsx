@@ -131,8 +131,6 @@ export default function Page() {
       <Head>
         <title>{t('404.seo.title')}</title>
         <meta name="description" content={t('404.seo.description')} />
-
-        <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet" />
       </Head>
       <StarsCanvas ref={canvasRef} />
       <OuterWrapperDiv>
