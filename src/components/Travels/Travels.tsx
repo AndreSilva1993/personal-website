@@ -172,7 +172,7 @@ const Travels: FC = () => {
 
   return (
     <StyledPageContainer>
-      <TravelH1>{activeCountry.name}</TravelH1>
+      <TravelH1>{t(activeCountry.name)}</TravelH1>
       <TravelCountries
         countries={countries}
         activeCountry={activeCountry}

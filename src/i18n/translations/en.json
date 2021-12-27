@@ -46,6 +46,14 @@
       "description": "As an addicted traveller always looking into the next adventure, these have been all my trips and all the photos I've taken."
     },
     "title": "Travels",
+    "countries": {
+      "world": "World",
+      "spain": "Spain",
+      "hungary": "Hungary",
+      "portugal": "Portugal",
+      "czech-republic": "Czech Republic",
+      "united-kingdom": "United Kingdom"
+    },
     "places": {
       "london": {
         "kew-gardens": {
