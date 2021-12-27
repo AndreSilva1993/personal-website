@@ -20,6 +20,10 @@ const StarsCanvas = styled.canvas`
   position: fixed;
 `;
 
+const OuterWrapperDiv = styled.div`
+  padding: 10rem;
+`;
+
 const WrapperDiv = styled.div`
   width: 100%;
   height: 100%;
@@ -127,23 +131,27 @@ export default function Page() {
       <Head>
         <title>{t('404.seo.title')}</title>
         <meta name="description" content={t('404.seo.description')} />
+
+        <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet" />
       </Head>
       <StarsCanvas ref={canvasRef} />
-      <WrapperDiv>
-        <H1>{t('404.title')}</H1>
-        <H2>{t('404.description')}</H2>
-        <ImagesWrapperDiv>
-          <PlanetImageDiv>
-            <Image src="/images/404/planet.svg" layout="fill" alt="Planet" />
-          </PlanetImageDiv>
-          <AstronautImageDiv>
-            <Image src="/images/404/astronaut.svg" layout="fill" alt="Astronaut" />
-          </AstronautImageDiv>
-        </ImagesWrapperDiv>
-        <Link href="/" passHref>
-          <StyledA>{t('404.cta')}</StyledA>
-        </Link>
-      </WrapperDiv>
+      <OuterWrapperDiv>
+        <WrapperDiv>
+          <H1>{t('404.title')}</H1>
+          <H2>{t('404.description')}</H2>
+          <ImagesWrapperDiv>
+            <PlanetImageDiv>
+              <Image src="/images/404/planet.svg" layout="fill" alt="Planet" />
+            </PlanetImageDiv>
+            <AstronautImageDiv>
+              <Image src="/images/404/astronaut.svg" layout="fill" alt="Astronaut" />
+            </AstronautImageDiv>
+          </ImagesWrapperDiv>
+          <Link href="/" passHref>
+            <StyledA>{t('404.cta')}</StyledA>
+          </Link>
+        </WrapperDiv>
+      </OuterWrapperDiv>
     </>
   );
 }
