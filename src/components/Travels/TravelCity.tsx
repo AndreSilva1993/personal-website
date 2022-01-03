@@ -2,10 +2,9 @@ import Image from 'next/image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { motion } from 'framer-motion';
-import { MdArrowBack } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
+import Button from '@mui/material/Button';
 
-import { Button } from '@src/components/Button/Button';
 import { Carousel } from '@src/components/Carousel/Carousel';
 
 import type { FC } from 'react';
@@ -94,8 +93,7 @@ const TravelCity: FC<TravelCityProps> = ({
       <CityHeadingWrapperDiv>
         <CityNameH1>{city.name}</CityNameH1>
 
-        <Button onClick={onGoBackButtonClick}>
-          <MdArrowBack />
+        <Button variant="outlined" onClick={onGoBackButtonClick}>
           {t('common.goBack')}
         </Button>
       </CityHeadingWrapperDiv>

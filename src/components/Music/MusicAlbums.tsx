@@ -1,16 +1,18 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import Button from '@mui/material/Button';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '@src/components/Button/Button';
-import { Select } from '@src/components/Select/Select';
-import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 import { useLastFMTopAlbums } from '@src/queries/last-fm';
 import { usePropsContext } from '@src/contexts/PropsContext';
-import { MusicGrid } from '@src/components/Music/MusicGrid';
+import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
+import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 
+import type { SelectChangeEvent } from '@mui/material';
 import type { LastFMTimePeriod, LastFMTopAlbum } from '@src/clients/last-fm/last-fm.types';
 
 const SearchOptionsWrapperDiv = styled.div(
@@ -43,6 +45,8 @@ const AlbumsH1 = styled.h1(
 
 const StyledSelect = styled(Select)(
   ({ theme }) => css`
+    width: 25rem;
+
     ${theme.media.extraSmall} {
       width: 100%;
       text-align: center;
@@ -96,9 +100,9 @@ const AlbumDetailsPlayCountSpan = styled.span(
 
 const StyledButton = styled(Button)`
   display: flex;
-  justify-content: center;
   width: 20rem;
   margin: 2rem auto;
+  height: 3.6rem;
 `;
 
 const MusicAlbums = () => {
@@ -115,7 +119,7 @@ const MusicAlbums = () => {
     initialData: { pages: [initialTopAlbums], pageParams: [] },
   });
 
-  function handleTimePeriodChange(event: React.ChangeEvent<HTMLSelectElement>) {
+  function handleTimePeriodChange(event: SelectChangeEvent) {
     setTimePeriod(event.target.value as LastFMTimePeriod);
   }
 
@@ -124,19 +128,19 @@ const MusicAlbums = () => {
       <SearchOptionsWrapperDiv>
         <AlbumsH1>{t('music.topAlbumsTitle')}</AlbumsH1>
         <StyledSelect value={timePeriod} onChange={handleTimePeriodChange}>
-          <option value="overall">{t('music.filters.albums.allTime')}</option>
-          <option value="12month">{t('music.filters.albums.last365Days')}</option>
-          <option value="6month">{t('music.filters.albums.last180Days')}</option>
-          <option value="3month">{t('music.filters.albums.last90Days')}</option>
-          <option value="1month">{t('music.filters.albums.last30Days')}</option>
-          <option value="7day">{t('music.filters.albums.last7Days')}</option>
+          <MenuItem value="overall">{t('music.filters.albums.allTime')}</MenuItem>
+          <MenuItem value="12month">{t('music.filters.albums.last365Days')}</MenuItem>
+          <MenuItem value="6month">{t('music.filters.albums.last180Days')}</MenuItem>
+          <MenuItem value="3month">{t('music.filters.albums.last90Days')}</MenuItem>
+          <MenuItem value="1month">{t('music.filters.albums.last30Days')}</MenuItem>
+          <MenuItem value="7day">{t('music.filters.albums.last7Days')}</MenuItem>
         </StyledSelect>
       </SearchOptionsWrapperDiv>
 
-      <MusicGrid
+      <ImageGrid
         items={topAlbums.pages.flat()}
-        render={({ name, image }, props) => (
-          <AlbumCoverWrapperDiv key={name} {...props}>
+        render={({ name, image }, renderProps) => (
+          <AlbumCoverWrapperDiv key={name} {...renderProps}>
             <AlbumCoverImage
               src={image}
               alt={name}
@@ -156,7 +160,7 @@ const MusicAlbums = () => {
         )}
       />
 
-      <StyledButton onClick={() => fetchNextAlbums()}>
+      <StyledButton variant="outlined" onClick={() => fetchNextAlbums()}>
         {isFetchingNextPage ? <LoadingDots /> : t('music.loadMoreAlbums')}
       </StyledButton>
     </section>

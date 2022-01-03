@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { MdClose } from 'react-icons/md';
+import { Close } from '@mui/icons-material';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import type { FC } from 'react';
@@ -27,7 +27,7 @@ const ModalWrapperDiv = styled(motion.div)(
   `
 );
 
-const StyledClose = styled(MdClose)(
+const StyledClose = styled(Close)(
   ({ theme }) => css`
     top: 3rem;
     right: 3rem;

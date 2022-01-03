@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 
 import type { FC } from 'react';
+import type { DesktopNavigationMenuProps } from './NavigationMenu.types';
 
 const Ul = styled.ul(
   ({ theme }) => css`
@@ -57,20 +57,9 @@ const A = styled.a<{ active?: boolean }>(
   `
 );
 
-const DesktopNavigationMenu: FC = () => {
+const DesktopNavigationMenu: FC<DesktopNavigationMenuProps> = ({ navigationLinks }) => {
   const { t } = useTranslation();
   const { pathname } = useRouter();
-
-  const navigationLinks = useMemo(
-    () => [
-      { href: '/', title: t('navigation.home') },
-      { href: '/about', title: t('navigation.about') },
-      { href: '/portfolio', title: t('navigation.portfolio') },
-      { href: '/travels', title: t('navigation.travels') },
-      { href: '/music', title: t('navigation.music') },
-    ],
-    []
-  );
 
   return (
     <Ul>

@@ -2,16 +2,18 @@ import Image from 'next/image';
 import { useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import Button from '@mui/material/Button';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import { useTranslation } from 'react-i18next';
 
 import { useTopArtists } from '@src/queries/spotify';
-import { Select } from '@src/components/Select/Select';
-import { Button } from '@src/components/Button/Button';
-import { MusicGrid } from '@src/components/Music/MusicGrid';
 import { usePropsContext } from '@src/contexts/PropsContext';
+import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
 import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 
 import type { FC } from 'react';
+import type { SelectChangeEvent } from '@mui/material';
 import type { SpotifyTimeRange, SpotifyTopArtist } from '@src/clients/spotify/spotify.types';
 
 const SearchOptionsWrapperDiv = styled.div(
@@ -45,6 +47,8 @@ const ArtistsH1 = styled.h1(
 
 const StyledSelect = styled(Select)(
   ({ theme }) => css`
+    width: 25rem;
+
     ${theme.media.extraSmall} {
       width: 100%;
       text-align: center;
@@ -78,8 +82,8 @@ const ArtistDetailsNameA = styled.a(
 
 const StyledButton = styled(Button)`
   display: flex;
-  justify-content: center;
   width: 20rem;
+  height: 3.6rem;
   margin: 2rem auto;
 `;
 
@@ -97,7 +101,7 @@ const MusicArtists: FC = () => {
     initialData: { pages: [initialTopArtists], pageParams: [] },
   });
 
-  function handleTimePeriodChange(event: React.ChangeEvent<HTMLSelectElement>) {
+  function handleTimePeriodChange(event: SelectChangeEvent) {
     setTimeRange(event.target.value as SpotifyTimeRange);
   }
 
@@ -106,16 +110,16 @@ const MusicArtists: FC = () => {
       <SearchOptionsWrapperDiv>
         <ArtistsH1>{t('music.topArtistsTitle')}</ArtistsH1>
         <StyledSelect value={timeRange} onChange={handleTimePeriodChange}>
-          <option value="long_term">{t('music.filters.artists.longTerm')}</option>
-          <option value="medium_term">{t('music.filters.artists.mediumTerm')}</option>
-          <option value="short_term">{t('music.filters.artists.shortTerm')}</option>
+          <MenuItem value="long_term">{t('music.filters.artists.longTerm')}</MenuItem>
+          <MenuItem value="medium_term">{t('music.filters.artists.mediumTerm')}</MenuItem>
+          <MenuItem value="short_term">{t('music.filters.artists.shortTerm')}</MenuItem>
         </StyledSelect>
       </SearchOptionsWrapperDiv>
 
-      <MusicGrid
+      <ImageGrid
         items={topArtists.pages.flat()}
-        render={({ image, name }, props) => (
-          <ArtistImageWrapperDiv key={name} {...props}>
+        render={({ image, name }, renderProps) => (
+          <ArtistImageWrapperDiv key={name} {...renderProps}>
             <ArtistImage
               src={image}
               alt={name}
@@ -132,7 +136,7 @@ const MusicArtists: FC = () => {
         )}
       />
 
-      <StyledButton onClick={() => fetchNextArtists()}>
+      <StyledButton variant="outlined" onClick={() => fetchNextArtists()}>
         {isFetchingNextPage ? <LoadingDots /> : t('music.loadMoreArtists')}
       </StyledButton>
     </section>

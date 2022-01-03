@@ -2,7 +2,7 @@ import '@src/theme/global-styles.css';
 
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from '@mui/material';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { theme } from '@src/theme';

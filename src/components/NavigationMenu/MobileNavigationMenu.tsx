@@ -1,16 +1,16 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
-import { useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { MdMenu, MdHome, MdPerson, MdMusicNote, MdPhotoAlbum, MdLocationOn } from 'react-icons/md';
+import { Menu } from '@mui/icons-material';
 
 import { Modal } from '@src/components/Modal/Modal';
 
 import type { FC } from 'react';
+import type { MobileNavigationMenuProps } from './NavigationMenu.types';
 
-const StyledMenu = styled(MdMenu)(
+const StyledMenu = styled(Menu)(
   ({ theme }) => css`
     width: 2.5rem;
     height: 2.5rem;
@@ -62,20 +62,9 @@ const A = styled.a<{ active?: boolean }>(
   `
 );
 
-const MobileNavigationMenu: FC = () => {
-  const { t } = useTranslation();
+const MobileNavigationMenu: FC<MobileNavigationMenuProps> = ({ navigationLinks }) => {
   const { pathname } = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigationLinks = useMemo(
-    () => [
-      { href: '/', title: t('navigation.home'), Icon: MdHome },
-      { href: '/about', title: t('navigation.about'), Icon: MdPerson },
-      { href: '/portfolio', title: t('navigation.portfolio'), Icon: MdPhotoAlbum },
-      { href: '/travels', title: t('navigation.travels'), Icon: MdLocationOn },
-      { href: '/music', title: t('navigation.music'), Icon: MdMusicNote },
-    ],
-    []
-  );
 
   function handleMenuIconClick() {
     setMenuOpen(true);

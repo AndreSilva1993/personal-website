@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useAnimation, motion } from 'framer-motion';
 import { useEffect, useState, Children, useRef } from 'react';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
 import type { FC } from 'react';
 import type { CarouselProps } from './Carousel.types';
@@ -74,12 +74,12 @@ const ChevronWrapperDiv = styled.div<{ disabled: boolean }>(
   `
 );
 
-const StyledMdChevronLeft = styled(MdChevronLeft)`
+const StyledChevronLeft = styled(ChevronLeft)`
   width: 100%;
   height: 100%;
 `;
 
-const StyledMdChevronRight = styled(MdChevronRight)`
+const StyledChevronRight = styled(ChevronRight)`
   width: 100%;
   height: 100%;
 `;
@@ -194,14 +194,14 @@ const Carousel: FC<CarouselProps> = ({
         disabled={carouselIndex === 0}
         css={{ left: '2rem' }}
       >
-        <StyledMdChevronLeft />
+        <StyledChevronLeft />
       </ChevronWrapperDiv>
       <ChevronWrapperDiv
         onClick={handleChevronRightClick}
         disabled={carouselIndex === Children.count(children) - 1}
         css={{ right: '2rem' }}
       >
-        <StyledMdChevronRight />
+        <StyledChevronRight />
       </ChevronWrapperDiv>
     </CarouselWrapperDiv>
   );
