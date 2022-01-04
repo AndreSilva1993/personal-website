@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
-import { Home, Person, MusicNote, PhotoAlbum, LocationOn } from '@mui/icons-material';
+import { Home, Person, MusicNote, PhotoAlbum, LocationOn, Movie } from '@mui/icons-material';
 
 import { MobileNavigationMenu } from '@src/components/NavigationMenu/MobileNavigationMenu';
 import { DesktopNavigationMenu } from 'src/components/NavigationMenu/DesktopNavigationMenu';
@@ -40,7 +40,7 @@ const NavigationMenu: FC = () => {
       { href: '/portfolio', title: t('navigation.portfolio'), Icon: PhotoAlbum },
       { href: '/travels', title: t('navigation.travels'), Icon: LocationOn },
       { href: '/music', title: t('navigation.music'), Icon: MusicNote },
-      { href: '/movies', title: t('navigation.movies'), Icon: MusicNote },
+      { href: '/movies', title: t('navigation.movies'), Icon: Movie },
     ],
     []
   );

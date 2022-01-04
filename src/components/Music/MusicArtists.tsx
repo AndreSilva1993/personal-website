@@ -118,7 +118,7 @@ const MusicArtists: FC = () => {
 
       <ImageGrid
         items={topArtists.pages.flat()}
-        render={({ image, name }, renderProps) => (
+        render={({ image, name }: SpotifyTopArtist, renderProps) => (
           <ArtistImageWrapperDiv key={name} {...renderProps}>
             <ArtistImage
               src={image}

@@ -47,13 +47,22 @@ const MovieIMDbAnchor = styled.a(
     text-decoration: none;
     text-transform: uppercase;
     margin-bottom: 1rem;
+
+    ${theme.media.lteSmall} {
+      font-size: 1rem;
+    }
   `
 );
 
-const MovieGenresSpan = styled.span`
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-`;
+const MovieGenresSpan = styled.span(
+  ({ theme }) => css`
+    font-size: 1.2rem;
+
+    ${theme.media.lteSmall} {
+      font-size: 1rem;
+    }
+  `
+);
 
 const Movies: FC = () => {
   const { t } = useTranslation();

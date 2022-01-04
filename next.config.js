@@ -7,7 +7,11 @@ const contentSecurityPolicies = [
   { 'style-src': ["'self'", 'fonts.googleapis.com', "'unsafe-inline'"] },
 ];
 
-module.exports = {
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+const nextConfiguration = {
   images: {
     minimumCacheTTL: 60 * 60 * 24,
     formats: ['image/avif', 'image/webp'],
@@ -36,3 +40,5 @@ module.exports = {
     ];
   },
 };
+
+module.exports = withBundleAnalyzer(nextConfiguration);

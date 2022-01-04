@@ -1,11 +1,12 @@
 import Image from 'next/image';
-import Button from '@mui/material/Button';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
+
+import Button from '@mui/material/Button';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
 import { useLastFMTopAlbums } from '@src/queries/last-fm';
 import { usePropsContext } from '@src/contexts/PropsContext';
@@ -139,7 +140,7 @@ const MusicAlbums = () => {
 
       <ImageGrid
         items={topAlbums.pages.flat()}
-        render={({ name, image }, renderProps) => (
+        render={({ name, image }: LastFMTopAlbum, renderProps) => (
           <AlbumCoverWrapperDiv key={name} {...renderProps}>
             <AlbumCoverImage
               src={image}
