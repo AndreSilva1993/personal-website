@@ -1,5 +1,16 @@
 [
   {
+    "title": "movies.titles.coco",
+    "poster": "/images/movies/coco.jpg",
+    "imdbIdentifier": "tt2380307",
+    "year": 2017,
+    "genres": [
+      "animation",
+      "adventure",
+      "comedy"
+    ]
+  },
+  {
     "title": "movies.titles.the-gentlemen",
     "poster": "/images/movies/the-gentlemen.jpg",
     "imdbIdentifier": "tt8367814",

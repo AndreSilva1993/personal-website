@@ -29,7 +29,6 @@ const GenresWrapperDiv = styled.div`
   margin-top: 1rem;
   margin-bottom: 2rem;
 `;
-
 const StyledGenreChip = styled(Chip)`
   margin-top: 1rem;
   margin-right: 0.5rem;
@@ -116,7 +115,7 @@ const Movies: FC = () => {
           ({ title, genres }) =>
             (activeMovieGenres.length === 0 ||
               genres.some((genre) => activeMovieGenres.includes(genre))) &&
-            (!searchQuery || title.toLowerCase().includes(searchQuery))
+            (!searchQuery || title.toLowerCase().includes(searchQuery.toLowerCase()))
         );
 
   return (

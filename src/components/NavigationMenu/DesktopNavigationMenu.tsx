@@ -2,7 +2,6 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'react-i18next';
 
 import type { FC } from 'react';
 import type { DesktopNavigationMenuProps } from './NavigationMenu.types';
@@ -58,7 +57,6 @@ const A = styled.a<{ active?: boolean }>(
 );
 
 const DesktopNavigationMenu: FC<DesktopNavigationMenuProps> = ({ navigationLinks }) => {
-  const { t } = useTranslation();
   const { pathname } = useRouter();
 
   return (
