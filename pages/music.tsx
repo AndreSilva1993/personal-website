@@ -27,6 +27,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
   auth(process.env.UPSTASH_REDIS_REST_URL, process.env.UPSTASH_REDIS_REST_TOKEN);
   const { data: accessToken } = await get(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY);
 
+  console.log('accessToken', accessToken);
+
   const [initialTopAlbums, initialRecentTracks, initialTopArtists] = await Promise.all([
     getTopAlbums(),
     getRecentTracks(),
