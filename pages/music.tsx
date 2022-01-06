@@ -24,12 +24,6 @@ export default function Page() {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   // Fetch the Spotify access token.
-  console.log(
-    'accessToken',
-    process.env.UPSTASH_REDIS_REST_URL,
-    process.env.UPSTASH_REDIS_REST_TOKEN
-  );
-
   auth(process.env.UPSTASH_REDIS_REST_URL, process.env.UPSTASH_REDIS_REST_TOKEN);
   const { data: accessToken } = await get(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY);
 
