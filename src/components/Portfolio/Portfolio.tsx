@@ -1,3 +1,8 @@
+import CarmoImage from '@public/images/portfolio/carmo/1.webp';
+import TankeyImage from '@public/images/portfolio/tankey/1.webp';
+import BurberryImage from '@public/images/portfolio/burberry/1.webp';
+import ToconlineImage from '@public/images/portfolio/toconline/1.webp';
+
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useState, useMemo } from 'react';
@@ -49,6 +54,7 @@ const Portfolio: FC = () => {
         name: 'Burberry',
         description: t('portfolio.items.burberry'),
         logoImage: `${IMAGES_BASE_URL}/burberry/logo.svg`,
+        mainImage: BurberryImage,
         images: [
           `${IMAGES_BASE_URL}/burberry/1.webp`,
           `${IMAGES_BASE_URL}/burberry/2.webp`,
@@ -60,23 +66,26 @@ const Portfolio: FC = () => {
       {
         name: 'Tankey',
         description: t('portfolio.items.tankey'),
-        images: [`${IMAGES_BASE_URL}/tankey/1.webp`, `${IMAGES_BASE_URL}/tankey/2.webp`],
         logoImage: `${IMAGES_BASE_URL}/tankey/logo.webp`,
+        mainImage: TankeyImage,
+        images: [`${IMAGES_BASE_URL}/tankey/1.webp`, `${IMAGES_BASE_URL}/tankey/2.webp`],
       },
       {
         name: 'Carmo',
+        logoImage: `${IMAGES_BASE_URL}/carmo/logo.svg`,
+        mainImage: CarmoImage,
         images: [
           `${IMAGES_BASE_URL}/carmo/1.webp`,
           `${IMAGES_BASE_URL}/carmo/2.webp`,
           `${IMAGES_BASE_URL}/carmo/3.webp`,
         ],
-        logoImage: `${IMAGES_BASE_URL}/carmo/logo.svg`,
         description: t('portfolio.items.carmo'),
       },
       {
         name: 'TOConline',
-        images: [`${IMAGES_BASE_URL}/toconline/1.webp`, `${IMAGES_BASE_URL}/toconline/2.webp`],
         logoImage: `${IMAGES_BASE_URL}/toconline/logo.webp`,
+        mainImage: ToconlineImage,
+        images: [`${IMAGES_BASE_URL}/toconline/1.webp`, `${IMAGES_BASE_URL}/toconline/2.webp`],
         description: t('portfolio.items.toconline'),
       },
     ],
@@ -91,12 +100,12 @@ const Portfolio: FC = () => {
     <StyledPageContainer>
       <PortfolioH1>{t('portfolio.title')}</PortfolioH1>
       <PortfolioGridDiv>
-        {portfolioItems.map(({ name, images, logoImage }, index) => (
+        {portfolioItems.map(({ name, images, mainImage, logoImage }, index) => (
           <PortfolioItem
             key={name}
             name={name}
             index={index}
-            image={images[0]}
+            image={mainImage}
             logoImage={logoImage}
             onClick={handlePortfolioItemClick}
           />

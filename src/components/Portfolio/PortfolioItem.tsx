@@ -102,6 +102,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, 
         priority
         alt={name}
         src={image}
+        placeholder="blur"
         objectFit="cover"
         layout="fill"
         sizes="(max-width: 767px) 100vw, 33vw"

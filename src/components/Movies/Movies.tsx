@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { debounce } from 'throttle-debounce';
 import { useTranslation } from 'react-i18next';
 
@@ -66,30 +66,24 @@ const MovieGenresSpan = styled.span(
 const Movies: FC = () => {
   const { t } = useTranslation();
 
-  const movies: IMovie[] = useMemo(
-    () => moviesJSON.map(({ title, ...rest }) => ({ title: t(title), ...rest })),
-    []
-  );
-
-  const movieGenres = useMemo(
-    () => Array.from(new Set(movies.flatMap(({ genres }) => genres))),
-    []
-  );
-
-  const moviesPerGenre = useMemo(
-    () =>
-      movies.reduce((moviesPerGenre, { genres }) => {
-        genres.forEach((genre) => {
-          moviesPerGenre[genre] = (moviesPerGenre[genre] || 0) + 1;
-        });
-
-        return moviesPerGenre;
-      }, {}),
-    []
-  );
-
   const [searchQuery, setSearchQuery] = useState<string>();
   const [activeMovieGenres, setActiveMovieGenres] = useState<string[]>([]);
+  const [movies, setMovies] = useState<IMovie[]>(() =>
+    moviesJSON.slice(0, 20).map(({ title, ...rest }) => ({ title: t(title), ...rest }))
+  );
+
+  const movieGenres = Array.from(new Set(movies.flatMap(({ genres }) => genres)));
+  const moviesPerGenre = movies.reduce((moviesPerGenre, { genres }) => {
+    genres.forEach((genre) => {
+      moviesPerGenre[genre] = (moviesPerGenre[genre] || 0) + 1;
+    });
+
+    return moviesPerGenre;
+  }, {});
+
+  useEffect(() => {
+    setMovies(moviesJSON.map(({ title, ...rest }) => ({ title: t(title), ...rest })));
+  });
 
   function toggleGenreFilter(genre: string) {
     if (activeMovieGenres.includes(genre)) {

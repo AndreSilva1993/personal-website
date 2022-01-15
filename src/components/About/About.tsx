@@ -1,3 +1,5 @@
+import AboutImage from '@public/images/about/about.jpeg';
+
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
@@ -133,7 +135,8 @@ const About: FC = () => {
         <Image
           alt="About"
           layout="fill"
-          src="/images/about/about.jpeg"
+          src={AboutImage}
+          placeholder="blur"
           objectFit="cover"
           sizes="(max-width: 992px) 100vw, 75vw"
         />
