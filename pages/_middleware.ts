@@ -4,7 +4,10 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export async function middleware({ page }: NextRequest) {
-  const { exists, set, expire } = Redis.fromEnv();
+  const { exists, set, expire } = new Redis({
+    url: process.env.UPSTASH_REDIS_REST_URL,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN,
+  });
 
   if (page.name && (page.name === '/music' || page.name.startsWith('/api/spotify'))) {
     const accessTokenExists = await exists(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY);
