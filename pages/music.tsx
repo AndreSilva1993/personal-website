@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { auth, get } from '@upstash/redis';
+import { Redis } from '@upstash/redis';
 import { useTranslation } from 'react-i18next';
 
 import { Music } from '@src/components/Music/Music';
@@ -24,8 +24,8 @@ export default function Page() {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   // Fetch the Spotify access token.
-  auth(process.env.UPSTASH_REDIS_REST_URL, process.env.UPSTASH_REDIS_REST_TOKEN);
-  const { data: accessToken } = await get(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY);
+  const { get } = Redis.fromEnv();
+  const accessToken = await get<string>(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY);
 
   const [initialTopAlbums, initialRecentTracks, initialTopArtists] = await Promise.all([
     getTopAlbums(),
