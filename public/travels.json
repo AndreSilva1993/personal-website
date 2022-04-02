@@ -931,11 +931,15 @@
             {
               "url": "/images/travels/milan/galleria-vittorio-emanuele-ii.jpeg",
               "landscape": true
+            },
+            {
+              "url": "/images/travels/milan/galleria-vittorio-emanuele-ii-2.jpeg",
+              "landscape": true
             }
           ],
           "coordinates": [
-            45.4658434,
-            9.1899401
+            45.4658,
+            9.1899
           ]
         }
       ]
