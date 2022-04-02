@@ -1,5 +1,185 @@
 [
   {
+    "title": "movies.titles.morbius",
+    "poster": "/images/movies/morbius.jpg",
+    "imdbIdentifier": "tt5108870",
+    "year": 2022,
+    "genres": [
+      "action",
+      "adventure",
+      "horror"
+    ]
+  },
+  {
+    "title": "movies.titles.luca",
+    "poster": "/images/movies/luca.jpg",
+    "imdbIdentifier": "tt12801262",
+    "year": 2021,
+    "genres": [
+      "animation",
+      "adventure",
+      "comedy"
+    ]
+  },
+  {
+    "title": "movies.titles.coda",
+    "poster": "/images/movies/coda.jpg",
+    "imdbIdentifier": "tt10366460",
+    "year": 2021,
+    "genres": [
+      "comedy",
+      "drama",
+      "music"
+    ]
+  },
+  {
+    "title": "movies.titles.encanto",
+    "poster": "/images/movies/encanto.jpg",
+    "imdbIdentifier": "tt2953050",
+    "year": 2021,
+    "genres": [
+      "animation",
+      "comedy",
+      "family"
+    ]
+  },
+  {
+    "title": "movies.titles.nightmare-alley",
+    "poster": "/images/movies/nightmare-alley.jpg",
+    "imdbIdentifier": "tt7740496",
+    "year": 2021,
+    "genres": [
+      "crime",
+      "drama",
+      "thriller"
+    ]
+  },
+  {
+    "title": "movies.titles.the-batman",
+    "poster": "/images/movies/the-batman.jpg",
+    "imdbIdentifier": "tt1877830",
+    "year": 2022,
+    "genres": [
+      "action",
+      "crime",
+      "drama"
+    ]
+  },
+  {
+    "title": "movies.titles.the-suicide-squad",
+    "poster": "/images/movies/the-suicide-squad.jpg",
+    "imdbIdentifier": "tt6334354",
+    "year": 2021,
+    "genres": [
+      "action",
+      "adventure",
+      "comedy"
+    ]
+  },
+  {
+    "title": "movies.titles.uncharted",
+    "poster": "/images/movies/uncharted.jpg",
+    "imdbIdentifier": "tt1464335",
+    "year": 2022,
+    "genres": [
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "title": "movies.titles.the-king",
+    "poster": "/images/movies/the-king.jpg",
+    "imdbIdentifier": "tt7984766",
+    "year": 2019,
+    "genres": [
+      "biography",
+      "drama",
+      "history"
+    ]
+  },
+  {
+    "title": "movies.titles.death-on-the-nile",
+    "poster": "/images/movies/death-on-the-nile.jpg",
+    "imdbIdentifier": "tt7657566",
+    "year": 2022,
+    "genres": [
+      "crime",
+      "drama",
+      "mystery"
+    ]
+  },
+  {
+    "title": "movies.titles.snatch",
+    "poster": "/images/movies/snatch.jpg",
+    "imdbIdentifier": "tt0208092",
+    "year": 2000,
+    "genres": [
+      "comedy",
+      "crime"
+    ]
+  },
+  {
+    "title": "movies.titles.the-kings-man",
+    "poster": "/images/movies/the-kings-man.jpg",
+    "imdbIdentifier": "tt6856242",
+    "year": 2021,
+    "genres": [
+      "action",
+      "adventure",
+      "thriller"
+    ]
+  },
+  {
+    "title": "movies.titles.the-matrix-reloaded",
+    "poster": "/images/movies/the-matrix-reloaded.jpg",
+    "imdbIdentifier": "tt0234215",
+    "year": 2003,
+    "genres": [
+      "action",
+      "sci-fi"
+    ]
+  },
+  {
+    "title": "movies.titles.nocturnal-animals",
+    "poster": "/images/movies/nocturnal-animals.jpg",
+    "imdbIdentifier": "tt4550098",
+    "year": 2016,
+    "genres": [
+      "drama",
+      "thriller"
+    ]
+  },
+  {
+    "title": "movies.titles.call-me-by-your-name",
+    "poster": "/images/movies/call-me-by-your-name.jpg",
+    "imdbIdentifier": "tt5726616",
+    "year": 2017,
+    "genres": [
+      "drama",
+      "romance"
+    ]
+  },
+  {
+    "title": "movies.titles.birdman",
+    "poster": "/images/movies/birdman.jpg",
+    "imdbIdentifier": "tt2562232",
+    "year": 2014,
+    "genres": [
+      "comedy",
+      "drama"
+    ]
+  },
+  {
+    "title": "movies.titles.dallas-buyers-club",
+    "poster": "/images/movies/dallas-buyers-club.jpg",
+    "imdbIdentifier": "tt0790636",
+    "year": 2013,
+    "genres": [
+      "biography",
+      "drama"
+    ]
+  },
+  {
     "title": "movies.titles.coco",
     "poster": "/images/movies/coco.jpg",
     "imdbIdentifier": "tt2380307",

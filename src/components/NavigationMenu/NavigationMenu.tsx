@@ -35,8 +35,7 @@ const NavigationMenu: FC = () => {
 
   const navigationLinks = useMemo(
     () => [
-      { href: '/', title: t('navigation.home'), Icon: Home },
-      { href: '/about', title: t('navigation.about'), Icon: Person },
+      { href: '/', title: t('navigation.about'), Icon: Person },
       { href: '/portfolio', title: t('navigation.portfolio'), Icon: PhotoAlbum },
       { href: '/travels', title: t('navigation.travels'), Icon: LocationOn },
       { href: '/music', title: t('navigation.music'), Icon: MusicNote },

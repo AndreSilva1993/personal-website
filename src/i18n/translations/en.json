@@ -53,7 +53,8 @@
       "hungary": "Hungary",
       "portugal": "Portugal",
       "czech-republic": "Czech Republic",
-      "united-kingdom": "United Kingdom"
+      "united-kingdom": "United Kingdom",
+      "italy": "Italy"
     },
     "places": {
       "london": {
@@ -267,6 +268,12 @@
           "title": "St. Stephen's Basilica",
           "description": "St. Stephen's Basilica is a Roman Catholic basilica in Budapest, Hungary. It is named in honour of Stephen, the first King of Hungary, whose right hand is housed in the reliquary. It was the sixth largest church building in Hungary before 1920. Since the renaming of the primatial see, it has been the co-cathedral of the Roman Catholic Archdiocese of Esztergom-Budapest. Today, it is the third largest church building in present-day Hungary. The site of today's basilica was a theater in the 18th century. This theater, named Hetz-Theater, was a place where animal fights were hosted. One of the wealthy citizens (János Zitterbarth) of the newly formed district built a temporary church there. In the late 1810s, about a thousand people formed the Lipótváros Parish. Then they began the fundraising and the believers started to make plans for the future church. This is the most important church building in Hungary, one of the most significant tourist attractions and the third highest church in Hungary."
         }
+      },
+      "milan": {
+        "galleria-vittorio-emanuele-ii": {
+          "title": "Galleria Vittorio Emanuele II",
+          "description": ""
+        }
       }
     }
   },
@@ -334,6 +341,23 @@
       "biography": "Biography"
     },
     "titles": {
+      "morbius": "Morbius",
+      "luca": "Luca",
+      "coda": "CODA",
+      "encanto": "Encanto",
+      "nightmare-alley": "Nightmare Alley",
+      "the-batman": "The Batman",
+      "the-suicide-squad": "The Suicide Squad",
+      "uncharted": "Uncharted",
+      "the-king": "The King",
+      "death-on-the-nile": "Death On The Nile",
+      "snatch": "Snatch",
+      "the-kings-man": "The King's Man",
+      "the-matrix-reloaded": "The Matrix Reloaded",
+      "nocturnal-animals": "Nocturnal Animals",
+      "call-me-by-your-name": "Call Me By Your Name",
+      "birdman": "Birdman Or (The Unexpected Virtue Of Ignorance)",
+      "dallas-buyers-club": "Dallas Buyers Club",
       "coco": "Coco",
       "the-gentlemen": "The Gentlemen",
       "the-power-of-the-dog": "The Power Of The Dog",

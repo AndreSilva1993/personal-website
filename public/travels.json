@@ -29,6 +29,11 @@
       "name": "travels.countries.hungary",
       "code": "hu",
       "image": "/images/travels/flags/hu.svg"
+    },
+    {
+      "name": "travels.countries.italy",
+      "code": "it",
+      "image": "/images/travels/flags/it.svg"
     }
   ],
   "travels": [
@@ -885,7 +890,7 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.casa-mila.description",
+          "name": "travels.places.barcelona.casa-mila.title",
           "description": "travels.places.barcelona.casa-mila.description",
           "images": [
             {
@@ -899,7 +904,7 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.casa-batllo.description",
+          "name": "travels.places.barcelona.casa-batllo.title",
           "description": "travels.places.barcelona.casa-batllo.description",
           "images": [
             {
@@ -910,6 +915,27 @@
           "coordinates": [
             41.3916088,
             2.1625536
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Milan",
+      "countryCode": "it",
+      "image": "/images/travels/milan/galleria-vittorio-emanuele-ii.jpeg",
+      "places": [
+        {
+          "name": "travels.places.milan.galleria-vittorio-emanuele-ii.title",
+          "description": "travels.places.milan.galleria-vittorio-emanuele-ii.description",
+          "images": [
+            {
+              "url": "/images/travels/milan/galleria-vittorio-emanuele-ii.jpeg",
+              "landscape": true
+            }
+          ],
+          "coordinates": [
+            45.4658434,
+            9.1899401
           ]
         }
       ]
