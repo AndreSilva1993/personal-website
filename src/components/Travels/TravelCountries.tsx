@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { motion, AnimateSharedLayout } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import type { FC } from 'react';
 import type { TravelCountriesProps } from './Travels.types';
@@ -67,18 +67,14 @@ const TravelCountries: FC<TravelCountriesProps> = ({
   }
 
   return (
-    <AnimateSharedLayout>
-      <CountriesUl>
-        {countries.map(({ name, image, code }, index) => (
-          <CountryLi key={name} onClick={() => handleCountryClick(index)}>
-            <CountryImage alt={name} src={image} layout="fill" />
-            {activeCountry.code === code && (
-              <CountryLiBorder initial={false} layoutId="underline" />
-            )}
-          </CountryLi>
-        ))}
-      </CountriesUl>
-    </AnimateSharedLayout>
+    <CountriesUl>
+      {countries.map(({ name, image, code }, index) => (
+        <CountryLi key={name} onClick={() => handleCountryClick(index)}>
+          <CountryImage alt={name} src={image} layout="fill" />
+          {activeCountry.code === code && <CountryLiBorder initial={false} layoutId="underline" />}
+        </CountryLi>
+      ))}
+    </CountriesUl>
   );
 };
 

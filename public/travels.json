@@ -920,9 +920,42 @@
       ]
     },
     {
+      "name": "Venice",
+      "countryCode": "it",
+      "image": "/images/travels/venice/venice-canals-1.jpeg",
+      "places": [
+        {
+          "name": "travels.places.venice.venice-canals.title",
+          "description": "travels.places.venice.venice-canals.description",
+          "images": [
+            {
+              "url": "/images/travels/venice/venice-canals-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/venice/venice-canals-2.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/venice/venice-canals-3.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/venice/venice-canals-4.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            45.4408,
+            12.3155
+          ]
+        }
+      ]
+    },
+    {
       "name": "Milan",
       "countryCode": "it",
-      "image": "/images/travels/milan/galleria-vittorio-emanuele-ii.jpeg",
+      "image": "/images/travels/milan/milan-cathedral-1.jpeg",
       "places": [
         {
           "name": "travels.places.milan.galleria-vittorio-emanuele-ii.title",
@@ -940,6 +973,99 @@
           "coordinates": [
             45.4658,
             9.1899
+          ]
+        },
+        {
+          "name": "travels.places.milan.milan-cathedral.title",
+          "description": "travels.places.milan.milan-cathedral.description",
+          "images": [
+            {
+              "url": "/images/travels/milan/milan-cathedral-1.jpeg",
+              "landscape": true
+            },
+            {
+              "url": "/images/travels/milan/milan-cathedral-2.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/milan/milan-cathedral-3.jpeg",
+              "landscape": true
+            }
+          ],
+          "coordinates": [
+            45.4641,
+            9.1919
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Florence",
+      "countryCode": "it",
+      "image": "/images/travels/florence/michelangelo-square.jpeg",
+      "places": [
+        {
+          "name": "travels.places.florence.cathedral-of-santa-maria-del-fiore.title",
+          "description": "travels.places.florence.cathedral-of-santa-maria-del-fiore.description",
+          "images": [
+            {
+              "url": "/images/travels/florence/cathedral-of-santa-maria-del-fiore-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/florence/cathedral-of-santa-maria-del-fiore-2.jpeg",
+              "landscape": true
+            },
+            {
+              "url": "/images/travels/florence/cathedral-of-santa-maria-del-fiore-3.jpeg",
+              "landscape": true
+            }
+          ],
+          "coordinates": [
+            43.7731,
+            11.2560
+          ]
+        },
+        {
+          "name": "travels.places.florence.michelangelo-square.title",
+          "description": "travels.places.florence.michelangelo-square.description",
+          "images": [
+            {
+              "url": "/images/travels/florence/michelangelo-square.jpeg",
+              "landscape": true
+            }
+          ],
+          "coordinates": [
+            43.7624561,
+            11.2627417
+          ]
+        },
+        {
+          "name": "travels.places.florence.accademia-gallery.title",
+          "description": "travels.places.florence.accademia-gallery.description",
+          "images": [
+            {
+              "url": "/images/travels/florence/accademia-gallery.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            43.7768,
+            11.2586
+          ]
+        },
+        {
+          "name": "travels.places.florence.gates-of-paradise.title",
+          "description": "travels.places.florence.gates-of-paradise.description",
+          "images": [
+            {
+              "url": "/images/travels/florence/gates-of-paradise.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            43.7731,
+            11.2553
           ]
         }
       ]

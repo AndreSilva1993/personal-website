@@ -1,31 +1,9 @@
-import { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { Close } from '@mui/icons-material';
-import { AnimatePresence, motion } from 'framer-motion';
+import { Modal as MaterialUIModal } from '@mui/material';
 
-import type { FC } from 'react';
-import type { ModalProps } from '@src/components/Modal/Modal.types';
-
-const ModalOverlay = styled(motion.div)(
-  ({ theme }) => css`
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: fixed;
-    background-color: ${theme.colors.black};
-    z-index: ${theme.layers.modalOverlay};
-  `
-);
-
-const ModalWrapperDiv = styled(motion.div)(
-  ({ theme }) => css`
-    position: fixed;
-    z-index: ${theme.layers.modal};
-  `
-);
+import type { ModalProps } from '@mui/material';
 
 const StyledClose = styled(Close)(
   ({ theme }) => css`
@@ -46,42 +24,13 @@ const StyledClose = styled(Close)(
   `
 );
 
-const Modal: FC<ModalProps> = ({ children, open, onClose, motionProps, ...remainingProps }) => {
-  useEffect(() => {
-    if (!open) return undefined;
-
-    const handleDocumentKeyDown = ({ key }: KeyboardEvent) => {
-      if (key === 'Escape') onClose();
-    };
-
-    document.addEventListener('keydown', handleDocumentKeyDown);
-
-    return () => document.removeEventListener('keydown', handleDocumentKeyDown);
-  }, [open]);
-
-  return (
-    <AnimatePresence>
-      {open ? (
-        <>
-          <ModalOverlay
-            onClick={onClose}
-            exit={{ opacity: 0 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
-            transition={{ duration: 0.5 }}
-          />
-
-          <ModalWrapperDiv {...motionProps} {...remainingProps}>
-            {children}
-          </ModalWrapperDiv>
-
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <StyledClose onClick={onClose} />
-          </motion.div>
-        </>
-      ) : null}
-    </AnimatePresence>
-  );
-};
+const Modal = ({ children, open, onClose }: ModalProps) => (
+  <MaterialUIModal open={open} onClose={onClose}>
+    <>
+      {children}
+      <StyledClose onClick={(event) => onClose(event, 'backdropClick')} />
+    </>
+  </MaterialUIModal>
+);
 
 export { Modal };

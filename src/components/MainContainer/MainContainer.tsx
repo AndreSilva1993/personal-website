@@ -4,7 +4,11 @@ import { useRouter } from 'next/router';
 
 import { NavigationMenu } from '@src/components/NavigationMenu/NavigationMenu';
 
-import type { FC, ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
+
+interface MainContainerProps {
+  children?: ReactNode;
+}
 
 const ContainerDiv = styled.div(
   ({ theme }) => css`
@@ -29,7 +33,7 @@ const ContentMain = styled.main(
   `
 );
 
-const MainContainer: FC = ({ children }) => {
+const MainContainer = ({ children }: MainContainerProps) => {
   const { pathname } = useRouter();
 
   if (pathname === '/404') {

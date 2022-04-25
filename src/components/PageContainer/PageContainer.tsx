@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
 
-import type { FC } from 'react';
+import type { ReactNode } from 'react';
 
-const PageContainer: FC = ({ children, ...remainingProps }) => (
+interface PageContainerProps {
+  children?: ReactNode;
+}
+
+const PageContainer = ({ children, ...remainingProps }: PageContainerProps) => (
   <motion.div
     animate={{ x: 0, opacity: 1 }}
     exit={{ x: -100, opacity: 0 }}

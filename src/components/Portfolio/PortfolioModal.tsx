@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
@@ -9,14 +8,19 @@ import { Carousel } from '@src/components/Carousel/Carousel';
 import type { FC } from 'react';
 import type { PortfolioModalProps } from './Portfolio.types';
 
-const StyledModal = styled(Modal)(
+const ModalWrapperDiv = styled.div(
   ({ theme }) => css`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+    background-color: ${theme.colors.white};
+
+    position: absolute;
     top: 5%;
     left: 25%;
     width: calc(100vw - 50%);
     height: calc(100% - 10%);
-    margin: auto;
-    background-color: ${theme.colors.white};
 
     ${theme.media.extraSmall} {
       top: 0;
@@ -24,16 +28,6 @@ const StyledModal = styled(Modal)(
       width: 100vw;
       height: 100%;
     }
-  `
-);
-
-const ModalWrapperDiv = styled.div<{ disableScroll: boolean }>(
-  ({ disableScroll }) => css`
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    overflow: ${disableScroll ? 'hidden' : 'auto'};
   `
 );
 
@@ -60,50 +54,26 @@ const DescriptionP = styled.p`
   text-align: center;
 `;
 
-const PortfolioModal: FC<PortfolioModalProps> = ({ item, open, onClose }) => {
-  const [disableModalScroll, setDisableModalScroll] = useState<boolean>();
-
-  function handleCarouselTouchStart() {
-    setDisableModalScroll(true);
-  }
-
-  function handleCarouselTouchEnd() {
-    setDisableModalScroll(false);
-  }
-
-  return (
-    <StyledModal
-      open={open}
-      onClose={onClose}
-      motionProps={{
-        exit: { opacity: 0, x: 0 },
-        initial: { opacity: 0, x: '-3rem' },
-        animate: { opacity: 1, x: 0 },
-        transition: { duration: 0.5 },
-      }}
-    >
-      <ModalWrapperDiv disableScroll={disableModalScroll}>
-        <StyledCarousel
-          onCarouselTouchEnd={handleCarouselTouchEnd}
-          onCarouselTouchStart={handleCarouselTouchStart}
-        >
-          {item?.images.map((image, index) => (
-            <Image
-              priority
-              src={image}
-              key={index}
-              alt={item?.name}
-              sizes="50vw"
-              layout="fill"
-              objectFit="cover"
-            />
-          ))}
-        </StyledCarousel>
-        <H1>{item?.name}</H1>
-        <DescriptionP>{item?.description}</DescriptionP>
-      </ModalWrapperDiv>
-    </StyledModal>
-  );
-};
+const PortfolioModal: FC<PortfolioModalProps> = ({ item, open, onClose }) => (
+  <Modal open={open} onClose={onClose}>
+    <ModalWrapperDiv>
+      <StyledCarousel>
+        {item?.images.map((image, index) => (
+          <Image
+            priority
+            src={image}
+            key={index}
+            alt={item?.name}
+            sizes="50vw"
+            layout="fill"
+            objectFit="cover"
+          />
+        ))}
+      </StyledCarousel>
+      <H1>{item?.name}</H1>
+      <DescriptionP>{item?.description}</DescriptionP>
+    </ModalWrapperDiv>
+  </Modal>
+);
 
 export { PortfolioModal };
