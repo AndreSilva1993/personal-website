@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
-import { Home, Person, MusicNote, PhotoAlbum, LocationOn, Movie } from '@mui/icons-material';
+import { Person, MusicNote, PhotoAlbum, LocationOn, Movie } from '@mui/icons-material';
 
 import { MobileNavigationMenu } from '@src/components/NavigationMenu/MobileNavigationMenu';
 import { DesktopNavigationMenu } from 'src/components/NavigationMenu/DesktopNavigationMenu';

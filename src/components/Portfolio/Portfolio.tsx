@@ -100,7 +100,7 @@ const Portfolio: FC = () => {
     <StyledPageContainer>
       <PortfolioH1>{t('portfolio.title')}</PortfolioH1>
       <PortfolioGridDiv>
-        {portfolioItems.map(({ name, images, mainImage, logoImage }, index) => (
+        {portfolioItems.map(({ name, mainImage, logoImage }, index) => (
           <PortfolioItem
             key={name}
             name={name}
