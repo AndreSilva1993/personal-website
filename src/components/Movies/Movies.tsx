@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { debounce } from 'throttle-debounce';
 import { useTranslation } from 'react-i18next';
 
@@ -83,7 +83,7 @@ const Movies: FC = () => {
 
   useEffect(() => {
     setMovies(moviesJSON.map(({ title, ...rest }) => ({ title: t(title), ...rest })));
-  });
+  }, []);
 
   function toggleGenreFilter(genre: string) {
     if (activeMovieGenres.includes(genre)) {
