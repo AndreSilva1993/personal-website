@@ -1,17 +1,16 @@
-import moviesJSON from '@public/movies.json';
-
+import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import React, { useEffect, useState } from 'react';
 import { debounce } from 'throttle-debounce';
 import { useTranslation } from 'react-i18next';
-
 import Chip from '@mui/material/Chip';
 import Search from '@mui/icons-material/Search';
 import OutlinedInput from '@mui/material/OutlinedInput';
 
+import { useMovies } from '@src/queries/movies';
+import { usePropsContext } from '@src/contexts/PropsContext';
 import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
@@ -65,25 +64,27 @@ const MovieGenresSpan = styled.span(
 
 const Movies: FC = () => {
   const { t } = useTranslation();
+  const { initialMovies } = usePropsContext<{ initialMovies: IMovie[] }>();
+  const { data: movies } = useMovies({ initialData: initialMovies });
 
   const [searchQuery, setSearchQuery] = useState<string>();
   const [activeMovieGenres, setActiveMovieGenres] = useState<string[]>([]);
-  const [movies, setMovies] = useState<IMovie[]>(() =>
-    moviesJSON.slice(0, 20).map(({ title, ...rest }) => ({ title: t(title), ...rest }))
+
+  const debounceHandleSearchInputChange = useCallback(
+    debounce(500, (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchQuery(event.target.value);
+    }),
+    []
   );
 
   const movieGenres = Array.from(new Set(movies.flatMap(({ genres }) => genres)));
-  const moviesPerGenre = movies.reduce((moviesPerGenre, { genres }) => {
+  const moviesPerGenre = movies.reduce((accumulator, { genres }) => {
     genres.forEach((genre) => {
-      moviesPerGenre[genre] = (moviesPerGenre[genre] || 0) + 1;
+      accumulator[genre] = (accumulator[genre] || 0) + 1;
     });
 
-    return moviesPerGenre;
+    return accumulator;
   }, {});
-
-  useEffect(() => {
-    setMovies(moviesJSON.map(({ title, ...rest }) => ({ title: t(title), ...rest })));
-  }, []);
 
   function toggleGenreFilter(genre: string) {
     if (activeMovieGenres.includes(genre)) {
@@ -94,13 +95,6 @@ const Movies: FC = () => {
       setActiveMovieGenres([...activeMovieGenres, genre]);
     }
   }
-
-  const debounceHandleSearchInputChange = debounce(
-    500,
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      setSearchQuery(event.target.value);
-    }
-  );
 
   const filteredMovies =
     activeMovieGenres.length === 0 && !searchQuery
@@ -151,7 +145,7 @@ const Movies: FC = () => {
         renderHoveringItem={({ title, year, genres, imdbIdentifier }: IMovie) => (
           <>
             <Link href={`https://imdb.com/title/${imdbIdentifier}`} passHref>
-              <MovieIMDbAnchor target="_blank">{`${title} (${year})`}</MovieIMDbAnchor>
+              <MovieIMDbAnchor target="_blank">{`${t(title)} (${year})`}</MovieIMDbAnchor>
             </Link>
             <MovieGenresSpan>
               {genres.map((genre) => t(`movies.genres.${genre}`)).join(', ')}

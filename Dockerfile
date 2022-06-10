@@ -1,4 +1,4 @@
-FROM node:17.2.0
+FROM node:16
 
 WORKDIR /usr/src/app
 
@@ -7,4 +7,4 @@ RUN yarn install
 
 EXPOSE 4000
 
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]

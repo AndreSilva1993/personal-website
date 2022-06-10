@@ -1,5 +1,91 @@
 [
   {
+    "title": "movies.titles.mystic-river",
+    "poster": "/images/movies/mystic-river.jpg",
+    "imdbIdentifier": "tt0327056",
+    "year": 2003,
+    "genres": [
+      "crime",
+      "drama",
+      "mystery"
+    ]
+  },
+  {
+    "title": "movies.titles.top-gun-maverick",
+    "poster": "/images/movies/top-gun-maverick.jpg",
+    "imdbIdentifier": "tt1745960",
+    "year": 2022,
+    "genres": [
+      "action",
+      "drama"
+    ]
+  },
+  {
+    "title": "movies.titles.howls-moving-castle",
+    "poster": "/images/movies/howls-moving-castle.jpg",
+    "imdbIdentifier": "tt0347149",
+    "year": 2004,
+    "genres": [
+      "animation",
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "title": "movies.titles.me-before-you",
+    "poster": "/images/movies/me-before-you.jpg",
+    "imdbIdentifier": "tt2674426",
+    "year": 2016,
+    "genres": [
+      "drama",
+      "romance"
+    ]
+  },
+  {
+    "title": "movies.titles.the-grand-budapest-hotel",
+    "poster": "/images/movies/the-grand-budapest-hotel.jpg",
+    "imdbIdentifier": "tt2278388",
+    "year": 2014,
+    "genres": [
+      "adventure",
+      "comedy",
+      "crime"
+    ]
+  },
+  {
+    "title": "movies.titles.american-sniper",
+    "poster": "/images/movies/american-sniper.jpg",
+    "imdbIdentifier": "tt2179136",
+    "year": 2014,
+    "genres": [
+      "action",
+      "biography",
+      "drama"
+    ]
+  },
+  {
+    "title": "movies.titles.doctor-strange-in-the-multiverse-of-madness",
+    "poster": "/images/movies/doctor-strange-in-the-multiverse-of-madness.jpg",
+    "imdbIdentifier": "tt9419884",
+    "year": 2022,
+    "genres": [
+      "action",
+      "adventure",
+      "comedy"
+    ]
+  },
+  {
+    "title": "movies.titles.everything-everywhere-all-at-once",
+    "poster": "/images/movies/everything-everywhere-all-at-once.jpg",
+    "year": 2022,
+    "imdbIdentifier": "tt6710474",
+    "genres": [
+      "action",
+      "adventure",
+      "comedy"
+    ]
+  },
+  {
     "title": "movies.titles.morbius",
     "poster": "/images/movies/morbius.jpg",
     "imdbIdentifier": "tt5108870",

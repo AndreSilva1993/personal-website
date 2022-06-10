@@ -13,9 +13,9 @@ export async function middleware({ page }: NextRequest) {
     const accessTokenExists = await exists(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY);
 
     if (!accessTokenExists) {
-      const clientIdAndSecret = Buffer.from(
+      const clientIdAndSecret = btoa(
         `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
-      ).toString('base64');
+      );
 
       const spotifyResponse = await fetch(`${process.env.SPOTIFY_ACCOUNTS_API_URL}/api/token`, {
         method: 'POST',
