@@ -19,7 +19,9 @@ const GridWrapperDiv = styled.div(
   `
 );
 
-const AlbumDetailsOverlayDiv = styled(motion.div)<{ aspectRatio: string }>(
+const ImageDetailsOverlayDiv = styled(motion.div, {
+  shouldForwardProp: (prop) => prop !== 'aspectRatio',
+})<{ aspectRatio: string }>(
   ({ theme, aspectRatio }) => css`
     top: 0;
     left: 0;
@@ -78,7 +80,7 @@ const ImageGrid: FC<ImageGridProps> = ({
 
         <AnimatePresence>
           {hoveringItem && (
-            <AlbumDetailsOverlayDiv
+            <ImageDetailsOverlayDiv
               aspectRatio={aspectRatio}
               exit={{ opacity: 0 }}
               initial={{ opacity: 0, x, y }}
@@ -86,7 +88,7 @@ const ImageGrid: FC<ImageGridProps> = ({
               transition={{ ease: 'easeOut', duration: 0.25 }}
             >
               {renderHoveringItem(hoveringItem)}
-            </AlbumDetailsOverlayDiv>
+            </ImageDetailsOverlayDiv>
           )}
         </AnimatePresence>
       </GridWrapperDiv>

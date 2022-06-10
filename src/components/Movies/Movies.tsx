@@ -128,18 +128,13 @@ const Movies: FC = () => {
         items={filteredMovies}
         render={({ title, poster }: Movie, renderProps) => (
           <PosterImageWrapperDiv key={title} {...renderProps}>
-            <Image
-              src={poster}
-              alt={t(title)}
-              layout="fill"
-              sizes="(max-width: 767px) 50vw, 20vw"
-            />
+            <Image src={poster} alt={title} layout="fill" sizes="(max-width: 767px) 50vw, 20vw" />
           </PosterImageWrapperDiv>
         )}
         renderHoveringItem={({ title, year, genres, imdbIdentifier }: Movie) => (
           <>
             <Link href={`https://imdb.com/title/${imdbIdentifier}`} passHref>
-              <MovieIMDbAnchor target="_blank">{`${t(title)} (${year})`}</MovieIMDbAnchor>
+              <MovieIMDbAnchor target="_blank">{`${title} (${year})`}</MovieIMDbAnchor>
             </Link>
             <MovieGenresSpan>
               {genres.map((genre) => t(`movies.genres.${genre}`)).join(', ')}
