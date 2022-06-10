@@ -9,13 +9,13 @@ import Chip from '@mui/material/Chip';
 import Search from '@mui/icons-material/Search';
 import OutlinedInput from '@mui/material/OutlinedInput';
 
+import type { FC } from 'react';
+import type { Movie, MoviesData } from '@src/clients/movies/movies.types';
+
 import { useMovies } from '@src/queries/movies';
 import { usePropsContext } from '@src/contexts/PropsContext';
 import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
-
-import type { FC } from 'react';
-import type { IMovie } from './Movies.types';
 
 const StyledPageContainer = styled(PageContainer)`
   margin: 0 auto;
@@ -64,8 +64,11 @@ const MovieGenresSpan = styled.span(
 
 const Movies: FC = () => {
   const { t } = useTranslation();
-  const { initialMovies } = usePropsContext<{ initialMovies: IMovie[] }>();
-  const { data: movies } = useMovies({ initialData: initialMovies });
+  const initialMovieData = usePropsContext<MoviesData>();
+
+  const {
+    data: { genres, movies, moviesPerGenre },
+  } = useMovies({ initialData: initialMovieData });
 
   const [searchQuery, setSearchQuery] = useState<string>();
   const [activeMovieGenres, setActiveMovieGenres] = useState<string[]>([]);
@@ -76,15 +79,6 @@ const Movies: FC = () => {
     }),
     []
   );
-
-  const movieGenres = Array.from(new Set(movies.flatMap(({ genres }) => genres)));
-  const moviesPerGenre = movies.reduce((accumulator, { genres }) => {
-    genres.forEach((genre) => {
-      accumulator[genre] = (accumulator[genre] || 0) + 1;
-    });
-
-    return accumulator;
-  }, {});
 
   function toggleGenreFilter(genre: string) {
     if (activeMovieGenres.includes(genre)) {
@@ -116,7 +110,7 @@ const Movies: FC = () => {
       />
 
       <GenresWrapperDiv>
-        {movieGenres.map((movieGenre) => (
+        {genres.map((movieGenre) => (
           <StyledGenreChip
             variant={activeMovieGenres.includes(movieGenre) ? 'filled' : 'outlined'}
             key={movieGenre}
@@ -132,7 +126,7 @@ const Movies: FC = () => {
       <ImageGrid
         aspectRatio="2 / 3"
         items={filteredMovies}
-        render={({ title, poster }: IMovie, renderProps) => (
+        render={({ title, poster }: Movie, renderProps) => (
           <PosterImageWrapperDiv key={title} {...renderProps}>
             <Image
               src={poster}
@@ -142,7 +136,7 @@ const Movies: FC = () => {
             />
           </PosterImageWrapperDiv>
         )}
-        renderHoveringItem={({ title, year, genres, imdbIdentifier }: IMovie) => (
+        renderHoveringItem={({ title, year, genres, imdbIdentifier }: Movie) => (
           <>
             <Link href={`https://imdb.com/title/${imdbIdentifier}`} passHref>
               <MovieIMDbAnchor target="_blank">{`${t(title)} (${year})`}</MovieIMDbAnchor>

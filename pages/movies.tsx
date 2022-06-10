@@ -20,6 +20,14 @@ export default function Page() {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  return { props: { initialMovies: getMovies().slice(0, 20) } };
+export const getStaticProps: GetStaticProps = () => {
+  const { movies, moviesPerGenre, genres } = getMovies();
+
+  return {
+    props: {
+      genres,
+      moviesPerGenre,
+      movies: movies.slice(0, 20),
+    },
+  };
 };
