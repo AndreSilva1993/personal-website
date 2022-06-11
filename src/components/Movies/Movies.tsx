@@ -126,9 +126,16 @@ const Movies: FC = () => {
       <ImageGrid
         aspectRatio="2 / 3"
         items={filteredMovies}
-        render={({ title, poster }: Movie, renderProps) => (
+        render={({ title, image, imagePlaceholder }: Movie, renderProps) => (
           <PosterImageWrapperDiv key={title} {...renderProps}>
-            <Image src={poster} alt={title} layout="fill" sizes="(max-width: 767px) 50vw, 20vw" />
+            <Image
+              src={image}
+              alt={title}
+              layout="fill"
+              sizes="(max-width: 767px) 50vw, 20vw"
+              placeholder="blur"
+              blurDataURL={imagePlaceholder}
+            />
           </PosterImageWrapperDiv>
         )}
         renderHoveringItem={({ title, year, genres, imdbIdentifier }: Movie) => (

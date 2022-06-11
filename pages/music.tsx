@@ -6,9 +6,10 @@ import { Music } from '@src/components/Music/Music';
 import { getTopArtists } from '@src/clients/spotify/spotify';
 import { getRecentTracks, getTopAlbums } from '@src/clients/last-fm/last-fm';
 
-import type { GetServerSideProps } from 'next';
+import type { FC } from 'react';
+import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 
-export default function Page() {
+const Page: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
   const { t } = useTranslation();
 
   return (
@@ -20,7 +21,7 @@ export default function Page() {
       <Music />
     </>
   );
-}
+};
 
 export const getServerSideProps: GetServerSideProps = async () => {
   // Fetch the Spotify access token.
@@ -40,3 +41,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: { initialTopAlbums, initialRecentTracks, initialTopArtists },
   };
 };
+
+export default Page;

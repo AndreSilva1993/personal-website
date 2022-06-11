@@ -1,6 +1,7 @@
 export interface Movie {
   title: string;
-  poster: string;
+  image: string;
+  imagePlaceholder: string;
   year: number;
   genres: string[];
   imdbIdentifier: string;
