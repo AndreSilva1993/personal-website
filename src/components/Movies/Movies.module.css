@@ -1,0 +1,44 @@
+.pageContainer {
+  margin: 0 auto;
+  max-width: 120rem;
+}
+
+.genresWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.genreChip {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 2 / 3;
+}
+
+.imdbLink {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-boldest);
+  color: var(--color-white);
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.currentMovieGenres {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .imdbLink {
+    font-size: 1rem;
+  }
+
+  .currentMovieGenres {
+    font-size: 1rem;
+  }
+}

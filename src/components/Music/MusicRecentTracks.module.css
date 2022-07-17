@@ -1,0 +1,76 @@
+.title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin: 3rem 0;
+}
+
+.recentTracksWrapper {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 3.5rem 1fr 1.5fr 1fr 12rem;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  color: var(--color-white);
+}
+
+.recentTrackCoverWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.recentTrackArtist {
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-weight-boldest);
+}
+
+.recentTrackName {
+  display: flex;
+  align-items: center;
+}
+
+.recentTrackAlbum {
+  display: flex;
+  align-items: center;
+}
+
+.recentTrackDate {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--color-light-grey);
+}
+
+.divider {
+  height: 0.1rem;
+  grid-column: span 5;
+  background-color: var(--color-grey);
+}
+
+@media only screen and (max-width: 767px) {
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .recentTracksWrapper {
+    padding: 0;
+    grid-template-columns: 3.5rem 1fr 1.5fr;
+  }
+
+  .recentTrackArtist,
+  .recentTrackName {
+    font-size: 1.2rem;
+  }
+
+  .recentTrackAlbum,
+  .recentTrackDate {
+    display: none;
+  }
+
+  .divider {
+    grid-column: span 3;
+  }
+}

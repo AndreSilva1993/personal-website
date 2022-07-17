@@ -1,26 +1,15 @@
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
+import styles from './PageProgressBar.module.css';
+
 import { AnimatePresence, motion } from 'framer-motion';
 
 import type { FC } from 'react';
 import type { PageProgressBarProps } from './PageProgressBar.types';
 
-const PageProgressBarDiv = styled(motion.div)(
-  ({ theme }) => css`
-    width: 100vw;
-    height: 0.5rem;
-
-    top: 0;
-    left: 0;
-    position: fixed;
-    background-color: ${theme.colors.white};
-  `
-);
-
 const PageProgressBar: FC<PageProgressBarProps> = ({ loading }) => (
   <AnimatePresence>
     {loading && (
-      <PageProgressBarDiv
+      <motion.div
+        className={styles.progressBar}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 0.8 }}
         transition={{ duration: 5 }}

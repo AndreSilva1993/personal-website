@@ -1,0 +1,64 @@
+.searchOptionsWrapper {
+  width: 100%;
+  display: flex;
+  margin: 2rem 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 2rem 0;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.searchSelect {
+  width: 25rem;
+}
+
+.artistImageWrapper {
+  height: 0;
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.artistImage {
+  max-width: 100%;
+}
+
+.artistLink {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-boldest);
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.button {
+  display: flex;
+  width: 20rem;
+  margin: 2rem auto;
+  height: 3.6rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .searchOptionsWrapper {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .searchSelect {
+    width: 100%;
+    text-align: center;
+  }
+
+  .artistLink {
+    font-size: 1rem;
+  }
+}

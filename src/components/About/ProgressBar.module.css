@@ -1,0 +1,9 @@
+.progressBarWrapper {
+  position: relative;
+  background-color: var(--color-grey);
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--color-white);
+}

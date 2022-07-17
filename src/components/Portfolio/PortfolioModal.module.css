@@ -1,0 +1,43 @@
+.modalWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+  background-color: var(--color-white);
+
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  width: calc(100vw - 50%);
+  height: calc(100% - 10%);
+}
+
+.carousel {
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  aspect-ratio: 16 / 10;
+}
+
+.title {
+  color: var(--color-black);
+  font-size: 3rem;
+  font-weight: var(--font-weight-boldest);
+  margin: 2.5rem 0;
+}
+
+.description {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  padding: 0 15% 2.5rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .modalWrapper {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+  }
+}

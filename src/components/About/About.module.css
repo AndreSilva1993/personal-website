@@ -1,0 +1,87 @@
+.pageContainer {
+  margin: 0 auto;
+  max-width: 96rem;
+}
+
+.imageWrapper {
+  width: 100%;
+  margin-bottom: 5rem;
+  position: relative;
+  padding-bottom: calc(100% * 9 / 16);
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--color-white);
+  font-size: 2.2rem;
+  font-weight: var(--font-weight-boldest);
+}
+
+.socialWrapper {
+  display: flex;
+}
+
+.socialLink:not(:first-of-type) {
+  margin-left: 2rem;
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  margin: 3rem 0;
+
+  font-style: italic;
+  line-height: 3rem;
+  text-align: justify;
+  color: var(--color-light-grey);
+  font-weight: var(--font-weight-normal);
+}
+
+.technologiesGridWrapper {
+  display: grid;
+  grid-gap: 2rem;
+  margin-top: 3rem;
+  grid-template-columns: repeat(2, 3rem auto 1fr);
+  color: var(--color-white);
+  font-size: 1.5rem;
+}
+
+.technologyGridItem {
+  display: flex;
+  align-items: center;
+}
+
+.progressBar {
+  width: 100%;
+  height: 0.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .titleWrapper {
+    flex-direction: column;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .socialWrapper {
+    margin-top: 3rem;
+  }
+
+  .technologiesGridWrapper {
+    grid-template-columns: 3rem auto 1fr;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .descriptionWrapper {
+    flex-direction: row;
+  }
+}

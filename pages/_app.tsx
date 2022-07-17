@@ -1,4 +1,5 @@
 import '@src/theme/global-styles.css';
+import '@src/theme/variables.css';
 
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';

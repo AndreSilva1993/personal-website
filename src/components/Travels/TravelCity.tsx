@@ -1,6 +1,6 @@
+import styles from './TravelCity.module.css';
+
 import Image from 'next/image';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Button from '@mui/material/Button';
@@ -9,67 +9,6 @@ import { Carousel } from '@src/components/Carousel/Carousel';
 
 import type { FC } from 'react';
 import type { TravelCityProps } from './Travels.types';
-
-const CityWrapperDiv = styled(motion.div)`
-  width: 100%;
-  min-height: 42rem;
-  user-select: none;
-`;
-
-const CityHeadingWrapperDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 3rem 0;
-`;
-
-const CityNameH1 = styled.h1(
-  ({ theme }) => css`
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: ${theme.colors.white};
-    font-weight: ${theme.fontWeights.boldest};
-  `
-);
-
-const StyledCarousel = styled(Carousel)(
-  ({ theme }) => css`
-    height: 45rem;
-    float: left;
-    margin: 0 4rem 0 0;
-    aspect-ratio: 4 / 3;
-
-    ${theme.media.lteExtraSmall} {
-      width: 100%;
-      height: unset;
-      float: initial;
-      margin: 0 0 4rem 0;
-    }
-  `
-);
-
-const PlaceNameH1 = styled.h1(
-  ({ theme }) => css`
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    color: ${theme.colors.white};
-    font-weight: ${theme.fontWeights.boldest};
-
-    ${theme.media.lteExtraSmall} {
-      text-align: center;
-    }
-  `
-);
-
-const PlaceDescriptionP = styled.p(
-  ({ theme }) => css`
-    line-height: 3.5rem;
-    font-size: 1.5rem;
-    text-align: justify;
-    color: ${theme.colors.lightGrey};
-  `
-);
 
 const TravelCity: FC<TravelCityProps> = ({
   city,
@@ -90,15 +29,16 @@ const TravelCity: FC<TravelCityProps> = ({
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <CityHeadingWrapperDiv>
-        <CityNameH1>{city.name}</CityNameH1>
+      <div className={styles.cityHeadingWrapper}>
+        <h1 className={styles.cityName}>{city.name}</h1>
 
         <Button variant="outlined" onClick={onGoBackButtonClick}>
           {t('common.goBack')}
         </Button>
-      </CityHeadingWrapperDiv>
-      <CityWrapperDiv>
-        <StyledCarousel
+      </div>
+      <div className={styles.cityWrapper}>
+        <Carousel
+          className={styles.carousel}
           onCarouselIndexChange={(index) => onCarouselPlaceChange(placesImages[index].name)}
         >
           {placesImages.map(({ url, landscape, name }, index) => (
@@ -112,11 +52,11 @@ const TravelCity: FC<TravelCityProps> = ({
               sizes="(max-width: 767px) 100vw, 33vw"
             />
           ))}
-        </StyledCarousel>
+        </Carousel>
 
-        <PlaceNameH1>{t(place.name)}</PlaceNameH1>
-        <PlaceDescriptionP>{t(place.description)}</PlaceDescriptionP>
-      </CityWrapperDiv>
+        <h1 className={styles.placeName}>{t(place.name)}</h1>
+        <p className={styles.placeDescription}>{t(place.description)}</p>
+      </div>
     </motion.div>
   );
 };

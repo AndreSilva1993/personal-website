@@ -1,0 +1,18 @@
+.closeIcon {
+  top: 3rem;
+  right: 3rem;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  cursor: pointer;
+  color: var(--color-white);
+  z-index: var(--layer-100);
+}
+
+@media only screen and (max-width: 767px) {
+  .closeIcon {
+    top: 1.5rem;
+    right: 1.5rem;
+    color: var(--color-black);
+  }
+}

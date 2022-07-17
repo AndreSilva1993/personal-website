@@ -1,47 +1,21 @@
+import styles from './PortfolioItem.module.css';
+
 import Image from 'next/image';
 import { useRef, useState } from 'react';
-import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useAnimation, motion } from 'framer-motion';
 
 import type { FC } from 'react';
 import type { PortfolioItemProps } from '@src/components/Portfolio/Portfolio.types';
-import type { ControlsAnimationDefinition } from 'framer-motion/types/animation/types';
 
 type AnimationDirection = 'left' | 'right' | 'top' | 'bottom';
-
-const PortfolioItemWrapperDiv = styled(motion.div)(
-  () => css`
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: 1;
-  `
-);
-
-const PortfolioItemNameDiv = styled(motion.div)`
-  width: 100%;
-  height: 100%;
-  padding: 20%;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
-`;
-
-const LogoWrapperDiv = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-`;
 
 const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, onClick }) => {
   const controls = useAnimation();
   const wrapperRef = useRef<HTMLDivElement>();
   const [isHovering, setIsHovering] = useState(false);
 
-  function getAnimationDirection({
-    clientX,
-    clientY,
-  }: React.MouseEvent): ControlsAnimationDefinition {
+  function getAnimationDirection({ clientX, clientY }: React.MouseEvent) {
     const { x, y, height, width } = wrapperRef.current.getBoundingClientRect();
 
     const elementBounds = [
@@ -89,7 +63,8 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, 
   }
 
   return (
-    <PortfolioItemWrapperDiv
+    <motion.div
+      className={styles.itemOuterWrapper}
       ref={wrapperRef}
       onClick={handleItemClick}
       onMouseLeave={handleItemMouseLeave}
@@ -112,12 +87,13 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, 
         `}
       />
 
-      <PortfolioItemNameDiv
+      <motion.div
+        className={styles.itemWrapper}
         animate={controls}
         initial={{ x: '-100%', y: 0 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
-        <LogoWrapperDiv>
+        <div className={styles.itemImage}>
           <Image
             priority
             alt={name}
@@ -126,9 +102,9 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, 
             objectFit="contain"
             sizes="(max-width: 767px) 100vw, 33vw"
           />
-        </LogoWrapperDiv>
-      </PortfolioItemNameDiv>
-    </PortfolioItemWrapperDiv>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

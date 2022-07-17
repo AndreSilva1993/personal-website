@@ -1,9 +1,8 @@
 import 'leaflet/dist/leaflet.css';
+import styles from './Travels.module.css';
 import travelsJSON from '@public/travels.json';
 
 import L from 'leaflet';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useRef, useMemo, useState } from 'react';
@@ -15,33 +14,6 @@ import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
 import type { FC } from 'react';
 import type { ITravelCity, ITravelPlace, ITravelCountry } from './Travels.types';
-
-const StyledPageContainer = styled(PageContainer)`
-  margin: 0 auto;
-  max-width: 150rem;
-`;
-
-const TravelH1 = styled.h1(
-  ({ theme }) => css`
-    color: ${theme.colors.white};
-    font-size: 3rem;
-    text-align: center;
-    font-weight: ${theme.fontWeights.boldest};
-  `
-);
-
-const MapContainerDiv = styled.div(
-  ({ theme }) => css`
-    width: 100%;
-    aspect-ratio: 16 / 6;
-    margin-bottom: 1rem;
-    z-index: 0;
-
-    ${theme.media.lteExtraSmall} {
-      aspect-ratio: 4 / 3;
-    }
-  `
-);
 
 const Travels: FC = () => {
   const { t } = useTranslation();
@@ -171,14 +143,14 @@ const Travels: FC = () => {
   );
 
   return (
-    <StyledPageContainer>
-      <TravelH1>{t(activeCountry.name)}</TravelH1>
+    <PageContainer className={styles.pageContainer}>
+      <h1 className={styles.title}>{t(activeCountry.name)}</h1>
       <TravelCountries
         countries={countries}
         activeCountry={activeCountry}
         onCountryClick={handleCountryClick}
       />
-      <MapContainerDiv id="map-container" ref={leafletMapContainerRef} />
+      <div className={styles.mapContainer} id="map-container" ref={leafletMapContainerRef} />
 
       <AnimatePresence exitBeforeEnter>
         {!activeCity ? (
@@ -197,7 +169,7 @@ const Travels: FC = () => {
           />
         )}
       </AnimatePresence>
-    </StyledPageContainer>
+    </PageContainer>
   );
 };
 

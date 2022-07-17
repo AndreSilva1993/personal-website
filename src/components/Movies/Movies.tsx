@@ -1,8 +1,8 @@
+import styles from './Movies.module.css';
+
 import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import { debounce } from 'throttle-debounce';
 import { useTranslation } from 'react-i18next';
 import Chip from '@mui/material/Chip';
@@ -16,51 +16,6 @@ import { useMovies } from '@src/queries/movies';
 import { usePropsContext } from '@src/contexts/PropsContext';
 import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
-
-const StyledPageContainer = styled(PageContainer)`
-  margin: 0 auto;
-  max-width: 120rem;
-`;
-
-const GenresWrapperDiv = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-`;
-const StyledGenreChip = styled(Chip)`
-  margin-top: 1rem;
-  margin-right: 0.5rem;
-`;
-const PosterImageWrapperDiv = styled.div`
-  position: relative;
-  aspect-ratio: 2 / 3;
-`;
-
-const MovieIMDbAnchor = styled.a(
-  ({ theme }) => css`
-    font-size: 1.5rem;
-    font-weight: ${theme.fontWeights.boldest};
-    color: ${theme.colors.white};
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-
-    ${theme.media.lteSmall} {
-      font-size: 1rem;
-    }
-  `
-);
-
-const MovieGenresSpan = styled.span(
-  ({ theme }) => css`
-    font-size: 1.2rem;
-
-    ${theme.media.lteSmall} {
-      font-size: 1rem;
-    }
-  `
-);
 
 const Movies: FC = () => {
   const { t } = useTranslation();
@@ -101,7 +56,7 @@ const Movies: FC = () => {
         );
 
   return (
-    <StyledPageContainer>
+    <PageContainer className={styles.pageContainer}>
       <OutlinedInput
         fullWidth
         endAdornment={<Search />}
@@ -109,9 +64,10 @@ const Movies: FC = () => {
         onChange={debounceHandleSearchInputChange}
       />
 
-      <GenresWrapperDiv>
+      <div className={styles.genresWrapper}>
         {genres.map((movieGenre) => (
-          <StyledGenreChip
+          <Chip
+            className={styles.genreChip}
             variant={activeMovieGenres.includes(movieGenre) ? 'filled' : 'outlined'}
             key={movieGenre}
             label={`${t(`movies.genres.${movieGenre}`)} (${moviesPerGenre[movieGenre]})`}
@@ -121,13 +77,13 @@ const Movies: FC = () => {
             }
           />
         ))}
-      </GenresWrapperDiv>
+      </div>
 
       <ImageGrid
         aspectRatio="2 / 3"
         items={filteredMovies}
         render={({ title, image, imagePlaceholder }: Movie, renderProps) => (
-          <PosterImageWrapperDiv key={title} {...renderProps}>
+          <div className={styles.imageWrapper} key={title} {...renderProps}>
             <Image
               src={image}
               alt={title}
@@ -136,20 +92,20 @@ const Movies: FC = () => {
               placeholder="blur"
               blurDataURL={imagePlaceholder}
             />
-          </PosterImageWrapperDiv>
+          </div>
         )}
         renderHoveringItem={({ title, year, genres, imdbIdentifier }: Movie) => (
           <>
             <Link href={`https://imdb.com/title/${imdbIdentifier}`} passHref>
-              <MovieIMDbAnchor target="_blank">{`${title} (${year})`}</MovieIMDbAnchor>
+              <a className={styles.imdbLink} target="_blank">{`${title} (${year})`}</a>
             </Link>
-            <MovieGenresSpan>
+            <span className={styles.currentMovieGenres}>
               {genres.map((genre) => t(`movies.genres.${genre}`)).join(', ')}
-            </MovieGenresSpan>
+            </span>
           </>
         )}
       />
-    </StyledPageContainer>
+    </PageContainer>
   );
 };
 

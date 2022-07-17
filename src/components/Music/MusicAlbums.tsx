@@ -1,7 +1,7 @@
+import styles from './MusicAlbums.module.css';
+
 import Image from 'next/image';
 import { useState } from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@mui/material/Button';
@@ -15,96 +15,6 @@ import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 
 import type { SelectChangeEvent } from '@mui/material';
 import type { LastFMTimePeriod, LastFMTopAlbum } from '@src/clients/last-fm/last-fm.types';
-
-const SearchOptionsWrapperDiv = styled.div(
-  ({ theme }) => css`
-    width: 100%;
-    display: flex;
-    margin: 2rem 0;
-    align-items: center;
-    justify-content: space-between;
-
-    ${theme.media.extraSmall} {
-      flex-direction: column;
-    }
-  `
-);
-
-const AlbumsH1 = styled.h1(
-  ({ theme }) => css`
-    font-size: 2rem;
-    font-weight: ${theme.fontWeights.bold};
-    text-transform: uppercase;
-    color: ${theme.colors.white};
-
-    ${theme.media.extraSmall} {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-  `
-);
-
-const StyledSelect = styled(Select)(
-  ({ theme }) => css`
-    width: 25rem;
-
-    ${theme.media.extraSmall} {
-      width: 100%;
-      text-align: center;
-    }
-  `
-);
-
-const AlbumCoverWrapperDiv = styled.div`
-  height: 0;
-  position: relative;
-  padding-bottom: 100%;
-`;
-
-const AlbumCoverImage = styled(Image)`
-  max-width: 100%;
-`;
-
-const AlbumDetailsArtistSpan = styled.span(
-  ({ theme }) => css`
-    font-size: 1.5rem;
-    font-weight: ${theme.fontWeights.boldest};
-    margin-bottom: 1rem;
-
-    ${theme.media.lteSmall} {
-      font-size: 1rem;
-    }
-  `
-);
-
-const AlbumDetailsNameSpan = styled.span(
-  ({ theme }) => css`
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-
-    ${theme.media.lteSmall} {
-      font-size: 1rem;
-    }
-  `
-);
-
-const AlbumDetailsPlayCountSpan = styled.span(
-  ({ theme }) => css`
-    font-size: 1.3rem;
-    color: ${theme.colors.lightGrey};
-
-    ${theme.media.lteSmall} {
-      font-size: 1rem;
-    }
-  `
-);
-
-const StyledButton = styled(Button)`
-  display: flex;
-  width: 20rem;
-  margin: 2rem auto;
-  height: 3.6rem;
-`;
 
 const MusicAlbums = () => {
   const { t } = useTranslation();
@@ -126,44 +36,47 @@ const MusicAlbums = () => {
 
   return (
     <section>
-      <SearchOptionsWrapperDiv>
-        <AlbumsH1>{t('music.topAlbumsTitle')}</AlbumsH1>
-        <StyledSelect value={timePeriod} onChange={handleTimePeriodChange}>
+      <div className={styles.searchOptionsWrapper}>
+        <h1 className={styles.title}>{t('music.topAlbumsTitle')}</h1>
+        <Select
+          value={timePeriod}
+          onChange={handleTimePeriodChange}
+          className={styles.searchSelect}
+        >
           <MenuItem value="overall">{t('music.filters.albums.allTime')}</MenuItem>
           <MenuItem value="12month">{t('music.filters.albums.last365Days')}</MenuItem>
           <MenuItem value="6month">{t('music.filters.albums.last180Days')}</MenuItem>
           <MenuItem value="3month">{t('music.filters.albums.last90Days')}</MenuItem>
           <MenuItem value="1month">{t('music.filters.albums.last30Days')}</MenuItem>
           <MenuItem value="7day">{t('music.filters.albums.last7Days')}</MenuItem>
-        </StyledSelect>
-      </SearchOptionsWrapperDiv>
+        </Select>
+      </div>
 
       <ImageGrid
         items={topAlbums.pages.flat()}
         render={({ name, image }: LastFMTopAlbum, renderProps) => (
-          <AlbumCoverWrapperDiv key={name} {...renderProps}>
-            <AlbumCoverImage
+          <div className={styles.albumCoverWrapper} key={name} {...renderProps}>
+            <Image
+              className={styles.albumCover}
               src={image}
               alt={name}
               layout="fill"
               sizes="(max-width: 767px) 50vw, 20vw"
             />
-          </AlbumCoverWrapperDiv>
+          </div>
         )}
         renderHoveringItem={({ artist, name, playCount }) => (
           <>
-            <AlbumDetailsArtistSpan>{artist}</AlbumDetailsArtistSpan>
-            <AlbumDetailsNameSpan>{name}</AlbumDetailsNameSpan>
-            <AlbumDetailsPlayCountSpan>
-              {t('music.playCount', { playCount })}
-            </AlbumDetailsPlayCountSpan>
+            <span className={styles.albumArtist}>{artist}</span>
+            <span className={styles.albumName}>{name}</span>
+            <span className={styles.albumPlayCount}>{t('music.playCount', { playCount })}</span>
           </>
         )}
       />
 
-      <StyledButton variant="outlined" onClick={() => fetchNextAlbums()}>
+      <Button className={styles.button} variant="outlined" onClick={() => fetchNextAlbums()}>
         {isFetchingNextPage ? <LoadingDots /> : t('music.loadMoreAlbums')}
-      </StyledButton>
+      </Button>
     </section>
   );
 };

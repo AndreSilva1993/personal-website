@@ -1,7 +1,7 @@
+import styles from './MobileNavigationMenu.module.css';
+
 import Link from 'next/link';
 import { useState } from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
 
 import Box from '@mui/material/Box';
@@ -14,18 +14,6 @@ import Menu from '@mui/icons-material/Menu';
 
 import type { FC } from 'react';
 import type { MobileNavigationMenuProps } from './NavigationMenu.types';
-
-const StyledMenu = styled(Menu)(
-  ({ theme }) => css`
-    width: 2.5rem;
-    height: 2.5rem;
-    color: ${theme.colors.white};
-
-    ${theme.media.gteSmall} {
-      display: none;
-    }
-  `
-);
 
 const MobileNavigationMenu: FC<MobileNavigationMenuProps> = ({ navigationLinks }) => {
   const { pathname } = useRouter();
@@ -41,7 +29,7 @@ const MobileNavigationMenu: FC<MobileNavigationMenuProps> = ({ navigationLinks }
 
   return (
     <>
-      <StyledMenu onClick={handleMenuIconClick} />
+      <Menu onClick={handleMenuIconClick} className={styles.navigationMenu} />
 
       <Drawer anchor="right" open={menuOpen} onClose={handleDrawerClose}>
         <Box css={{ width: '25rem' }}>

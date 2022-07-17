@@ -1,37 +1,26 @@
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
+import styles from './ProgressBar.module.css';
+
+import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
 import type { FC } from 'react';
 
-const ProgressBarWrapper = styled.div(
-  ({ theme }) => css`
-    position: relative;
-    background-color: ${theme.colors.grey};
-  `
-);
-
-const ProgressBarDiv = styled(motion.div)(
-  ({ theme }) => css`
-    height: 100%;
-    background-color: ${theme.colors.white};
-  `
-);
-
-const ProgressBar: FC<ProgressBarProps> = ({ value, delay = 0, ...remainingProps }) => (
-  <ProgressBarWrapper {...remainingProps}>
-    <ProgressBarDiv
+const ProgressBar: FC<ProgressBarProps> = ({ value, delay = 0, className }) => (
+  <div className={classNames(styles.progressBarWrapper, className)}>
+    <motion.div
+      className={styles.progressBar}
       style={{ transformOrigin: 'left' }}
       initial={{ scaleX: 0 }}
       animate={{ scaleX: value / 100 }}
       transition={{ duration: 1, delay, ease: 'easeOut' }}
     />
-  </ProgressBarWrapper>
+  </div>
 );
 
 interface ProgressBarProps {
   value: number;
   delay?: number;
+  className?: string;
 }
 
 export { ProgressBar };

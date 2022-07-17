@@ -1,0 +1,73 @@
+.searchOptionsWrapper {
+  width: 100%;
+  display: flex;
+  margin: 2rem 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.searchSelect {
+  width: 25rem;
+}
+
+.albumCoverWrapper {
+  height: 0;
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.albumCover {
+  max-width: 100%;
+}
+
+.albumArtist {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-boldest);
+  margin-bottom: 1rem;
+}
+
+.albumName {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.albumPlayCount {
+  font-size: 1.3rem;
+  color: var(--color-light-grey);
+}
+
+.button {
+  display: flex;
+  width: 20rem;
+  margin: 2rem auto;
+  height: 3.6rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .searchOptionsWrapper {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .searchSelect {
+    width: 100%;
+    text-align: center;
+  }
+
+  .albumArtist,
+  .albumName,
+  .albumPlayCount {
+    font-size: 1rem;
+  }
+}

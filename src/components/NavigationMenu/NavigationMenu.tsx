@@ -1,6 +1,6 @@
+import styles from './NavigationMenu.module.css';
+
 import { useMemo } from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
 import { Person, MusicNote, PhotoAlbum, LocationOn, Movie } from '@mui/icons-material';
 
@@ -8,27 +8,6 @@ import { MobileNavigationMenu } from '@src/components/NavigationMenu/MobileNavig
 import { DesktopNavigationMenu } from 'src/components/NavigationMenu/DesktopNavigationMenu';
 
 import type { FC } from 'react';
-
-const NavigationNav = styled.nav(
-  ({ theme }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: ${theme.colors.black};
-
-    width: 100%;
-    height: 7rem;
-    padding: 2rem 4rem;
-    flex-shrink: 0;
-
-    ${theme.media.large} {
-      width: 40rem;
-      height: 100%;
-      padding: 10rem;
-      justify-content: flex-start;
-    }
-  `
-);
 
 const NavigationMenu: FC = () => {
   const { t } = useTranslation();
@@ -45,10 +24,10 @@ const NavigationMenu: FC = () => {
   );
 
   return (
-    <NavigationNav>
+    <nav className={styles.navigationMenu}>
       <MobileNavigationMenu navigationLinks={navigationLinks} />
       <DesktopNavigationMenu navigationLinks={navigationLinks} />
-    </NavigationNav>
+    </nav>
   );
 };
 

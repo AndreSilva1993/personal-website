@@ -1,10 +1,10 @@
+import styles from './Portfolio.module.css';
+
 import CarmoImage from '@public/images/portfolio/carmo/1.webp';
 import TankeyImage from '@public/images/portfolio/tankey/1.webp';
 import BurberryImage from '@public/images/portfolio/burberry/1.webp';
 import ToconlineImage from '@public/images/portfolio/toconline/1.webp';
 
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -14,32 +14,6 @@ import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
 import type { FC } from 'react';
 import type { IPortfolioItem } from './Portfolio.types';
-
-const StyledPageContainer = styled(PageContainer)`
-  margin: 0 auto;
-  max-width: 96rem;
-`;
-
-const PortfolioH1 = styled.h1(
-  ({ theme }) => css`
-    color: ${theme.colors.white};
-    font-size: 3rem;
-    font-weight: ${theme.fontWeights.boldest};
-    margin-bottom: 5rem;
-  `
-);
-
-const PortfolioGridDiv = styled.div(
-  ({ theme }) => css`
-    display: grid;
-    grid-gap: 5rem;
-    grid-template-columns: repeat(2, 1fr);
-
-    ${theme.media.extraSmall} {
-      grid-template-columns: 1fr;
-    }
-  `
-);
 
 const IMAGES_BASE_URL = '/images/portfolio';
 
@@ -97,9 +71,9 @@ const Portfolio: FC = () => {
   }
 
   return (
-    <StyledPageContainer>
-      <PortfolioH1>{t('portfolio.title')}</PortfolioH1>
-      <PortfolioGridDiv>
+    <PageContainer className={styles.pageContainer}>
+      <h1 className={styles.title}>{t('portfolio.title')}</h1>
+      <div className={styles.gridWrapper}>
         {portfolioItems.map(({ name, mainImage, logoImage }, index) => (
           <PortfolioItem
             key={name}
@@ -110,14 +84,14 @@ const Portfolio: FC = () => {
             onClick={handlePortfolioItemClick}
           />
         ))}
-      </PortfolioGridDiv>
+      </div>
 
       <PortfolioModal
         item={portfolioItems[modalActiveItem]}
         open={modalActiveItem !== undefined}
         onClose={() => setModalActiveItem(undefined)}
       />
-    </StyledPageContainer>
+    </PageContainer>
   );
 };
 

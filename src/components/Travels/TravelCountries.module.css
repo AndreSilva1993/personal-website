@@ -1,0 +1,46 @@
+.countriesList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  color: var(--color-white);
+  justify-content: center;
+}
+
+.country {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem;
+
+  width: 5rem;
+  height: 5rem;
+}
+
+.countryBorder {
+  top: -1rem;
+  left: -1rem;
+  position: absolute;
+  width: calc(100% + 2rem);
+  height: calc(100% + 2rem);
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.countryImage {
+  height: 5rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .country {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .countryImage {
+    height: 3rem;
+  }
+}

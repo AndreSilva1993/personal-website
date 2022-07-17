@@ -1,0 +1,86 @@
+.citiesList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.city {
+  height: 46rem;
+  flex: 0 0 40%;
+  padding: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.city:hover .cityImage {
+  transform: scale(1.1);
+}
+
+.cityImageWrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.cityImage {
+  transition: transform 300ms ease;
+}
+
+.cityName {
+  color: white;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-boldest);
+}
+
+.cityName::after {
+  content: '';
+  width: 5rem;
+  height: 0.2rem;
+  margin-top: 1.5rem;
+  background-color: var(--color-white);
+  transition: transform 300ms ease;
+}
+
+.cityName:hover::after {
+  transform: scaleX(1.5);
+}
+
+@media only screen and (max-width: 767px) {
+  .city {
+    flex: 0 0 100%;
+    height: 20rem;
+    padding: 1rem 0;
+  }
+
+  .cityName {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .city:nth-of-type(4n + 1),
+  .city:nth-of-type(4n + 4) {
+    flex: 0 0 60%;
+  }
+
+  .city:nth-of-type(odd) {
+    padding-left: 0;
+  }
+
+  .city:nth-of-type(even) {
+    padding-right: 0;
+  }
+}
