@@ -1,0 +1,87 @@
+@keyframes astronaut {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.canvas {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.outerWrapper {
+  padding: 10rem;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 10rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.subTitle {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.imagesWrapper {
+  position: relative;
+}
+
+.astronautImageWrapper {
+  top: 5rem;
+  right: 5rem;
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+
+  animation: astronaut 10s infinite linear;
+}
+
+.planetImageWrapper {
+  width: 50rem;
+  height: 50rem;
+  position: relative;
+}
+
+.link {
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  border-radius: 1rem;
+  transition: color 150ms ease-out, background-color 150ms ease-out;
+}
+
+.link:hover {
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+@media only screen and (max-width: 767px) {
+  .planetWrapper {
+    width: 30rem;
+    height: 30rem;
+  }
+}
