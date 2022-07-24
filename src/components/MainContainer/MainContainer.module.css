@@ -11,10 +11,15 @@
   overflow: auto;
   padding: 6rem 4rem;
   background-color: var(--color-dark-grey);
+  margin-top: 7rem;
 }
 
 @media only screen and (min-width: 1367px) {
   .pageWrapper {
     flex-direction: row;
+  }
+
+  .mainContent {
+    margin-top: 0;
   }
 }

@@ -8,6 +8,8 @@
   height: 7rem;
   padding: 2rem 4rem;
   flex-shrink: 0;
+  top: 0;
+  position: fixed;
 }
 
 @media only screen and (min-width: 1367px) {
@@ -16,5 +18,7 @@
     height: 100%;
     padding: 10rem;
     justify-content: flex-start;
+
+    position: static;
   }
 }
