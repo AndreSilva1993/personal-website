@@ -1,6 +1,7 @@
 import styles from './Portfolio.module.css';
 
 import CarmoImage from '@public/images/portfolio/carmo/1.webp';
+import DockerImage from '@public/images/portfolio/docker/1.png';
 import TankeyImage from '@public/images/portfolio/tankey/1.webp';
 import BurberryImage from '@public/images/portfolio/burberry/1.webp';
 import ToconlineImage from '@public/images/portfolio/toconline/1.webp';
@@ -24,6 +25,18 @@ const Portfolio: FC = () => {
 
   const portfolioItems = useMemo<IPortfolioItem[]>(
     () => [
+      {
+        name: 'Docker',
+        description: t('portfolio.items.docker'),
+        logoImage: `${IMAGES_BASE_URL}/docker/logo.svg`,
+        mainImage: DockerImage,
+        images: [
+          `${IMAGES_BASE_URL}/docker/2.png`,
+          `${IMAGES_BASE_URL}/docker/3.png`,
+          `${IMAGES_BASE_URL}/docker/4.png`,
+          `${IMAGES_BASE_URL}/docker/5.png`,
+        ],
+      },
       {
         name: 'Burberry',
         description: t('portfolio.items.burberry'),
