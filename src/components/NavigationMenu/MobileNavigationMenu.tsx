@@ -29,10 +29,10 @@ const MobileNavigationMenu: FC<MobileNavigationMenuProps> = ({ navigationLinks }
 
   return (
     <>
-      <Menu onClick={handleMenuIconClick} className={styles.navigationMenu} />
+      <Menu onClick={handleMenuIconClick} className={styles.navigationMenuIcon} />
 
       <Drawer anchor="right" open={menuOpen} onClose={handleDrawerClose}>
-        <Box css={{ width: '25rem' }}>
+        <Box className={styles.navigationMenu}>
           <List>
             {navigationLinks.map(({ href, title, Icon }) => (
               <Link href={href} key={title} passHref>

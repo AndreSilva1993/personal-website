@@ -12,6 +12,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfiguration = {
+  swcMinify: true,
   images: {
     minimumCacheTTL: 60 * 60 * 24,
     formats: ['image/avif', 'image/webp'],

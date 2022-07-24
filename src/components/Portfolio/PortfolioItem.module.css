@@ -14,6 +14,14 @@
 }
 
 .itemImage {
+  transition: transform 500ms ease, filter 500ms ease;
+}
+
+.itemImageHovering {
+  transform: scale(1.1);
+}
+
+.itemCompanyImage {
   width: 100%;
   height: 100%;
   position: relative;

@@ -1,8 +1,8 @@
 import styles from './PortfolioItem.module.css';
 
 import Image from 'next/image';
+import classNames from 'classnames';
 import { useRef, useState } from 'react';
-import { css } from '@emotion/react';
 import { useAnimation, motion } from 'framer-motion';
 
 import type { FC } from 'react';
@@ -81,10 +81,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, 
         objectFit="cover"
         layout="fill"
         sizes="(max-width: 767px) 100vw, 33vw"
-        css={css`
-          transform: scale(${isHovering ? 1.1 : 1});
-          transition: transform 500ms ease, filter 500ms ease;
-        `}
+        className={classNames(styles.itemImage, { [styles.itemImageHovering]: isHovering })}
       />
 
       <motion.div
@@ -93,7 +90,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, 
         initial={{ x: '-100%', y: 0 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
-        <div className={styles.itemImage}>
+        <div className={styles.itemCompanyImage}>
           <Image
             priority
             alt={name}
