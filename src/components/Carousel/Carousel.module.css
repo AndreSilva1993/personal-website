@@ -51,6 +51,9 @@
   color: var(--color-black);
   background-color: var(--color-white);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   transition: color 250ms ease-out, background-color 250ms ease-out;
 }
