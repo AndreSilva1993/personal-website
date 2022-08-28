@@ -201,7 +201,8 @@
       "thriller": "Thriller",
       "animation": "Animation",
       "adventure": "Adventure",
-      "biography": "Biography"
+      "biography": "Biography",
+      "documentary": "Documentary"
     }
   }
 }
