@@ -6,9 +6,9 @@
   --layer-100: 100;
 
   --color-pink: #bb86fc;
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --color-grey: #555555;
-  --color-dark-grey: #111111;
-  --color-light-grey: #bbbbbb;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-grey: #555;
+  --color-dark-grey: #111;
+  --color-light-grey: #bbb;
 }

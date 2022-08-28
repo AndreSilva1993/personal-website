@@ -9,6 +9,6 @@ export const theme = createTheme({
   },
   typography: {
     fontSize: 22,
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: '"Montserrat", sans-serif',
   },
 });

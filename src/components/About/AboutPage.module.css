@@ -31,8 +31,6 @@
 }
 
 .descriptionWrapper {
-  display: flex;
-  flex-direction: column;
   font-size: 1.5rem;
   margin: 3rem 0;
 
@@ -77,11 +75,5 @@
 
   .technologiesGridWrapper {
     grid-template-columns: 3rem auto 1fr;
-  }
-}
-
-@media only screen and (min-width: 993px) {
-  .descriptionWrapper {
-    flex-direction: row;
   }
 }
