@@ -1,9 +1,9 @@
-.citiesList {
+.travelsList {
   display: flex;
   flex-wrap: wrap;
 }
 
-.city {
+.travelItem {
   height: 46rem;
   flex: 0 0 40%;
   padding: 1rem;
@@ -12,11 +12,11 @@
   position: relative;
 }
 
-.city:hover .cityImage {
+.travelItem:hover .travelItemImage {
   transform: scale(1.1);
 }
 
-.cityImageWrapper {
+.travelItemImageWrapper {
   width: 100%;
   height: 100%;
   display: block;
@@ -25,11 +25,11 @@
   overflow: hidden;
 }
 
-.cityImage {
+.travelItemImage {
   transition: transform 300ms ease;
 }
 
-.cityName {
+.travelName {
   color: white;
   font-size: 2.5rem;
   text-transform: uppercase;
@@ -45,7 +45,7 @@
   font-weight: var(--font-weight-boldest);
 }
 
-.cityName::after {
+.travelName::after {
   content: '';
   width: 5rem;
   height: 0.2rem;
@@ -54,33 +54,33 @@
   transition: transform 300ms ease;
 }
 
-.cityName:hover::after {
+.travelName:hover::after {
   transform: scaleX(1.5);
 }
 
 @media only screen and (max-width: 767px) {
-  .city {
+  .travelItem {
     flex: 0 0 100%;
     height: 20rem;
     padding: 1rem 0;
   }
 
-  .cityName {
+  .travelName {
     font-size: 1.5rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .city:nth-of-type(4n + 1),
-  .city:nth-of-type(4n + 4) {
+  .travelItem:nth-of-type(4n + 1),
+  .travelItem:nth-of-type(4n + 4) {
     flex: 0 0 60%;
   }
 
-  .city:nth-of-type(odd) {
+  .travelItem:nth-of-type(odd) {
     padding-left: 0;
   }
 
-  .city:nth-of-type(even) {
+  .travelItem:nth-of-type(even) {
     padding-right: 0;
   }
 }

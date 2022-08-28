@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useTranslation } from 'react-i18next';
 
-import { LazyTravels } from '@src/components/Travels/LazyTravels';
+import { LazyTravelsPage } from '@src/components/Travels/LazyTravelsPage';
 
 export default function Page() {
   const { t } = useTranslation();
@@ -12,7 +12,7 @@ export default function Page() {
         <title>{t('travels.seo.title')}</title>
         <meta name="description" content={t('travels.seo.description')} />
       </Head>
-      <LazyTravels />
+      <LazyTravelsPage />
     </>
   );
 }

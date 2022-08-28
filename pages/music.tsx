@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Redis } from '@upstash/redis';
 import { useTranslation } from 'react-i18next';
 
-import { Music } from '@src/components/Music/Music';
+import { MusicPage } from '@src/components/Music/MusicPage';
 import { getTopArtists } from '@src/clients/spotify/spotify';
 import { getRecentTracks, getTopAlbums } from '@src/clients/last-fm/last-fm';
 
@@ -18,7 +18,7 @@ const Page: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
         <title>{t('music.seo.title')}</title>
         <meta name="description" content={t('music.seo.description')} />
       </Head>
-      <Music />
+      <MusicPage />
     </>
   );
 };

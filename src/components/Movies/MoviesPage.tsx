@@ -1,4 +1,4 @@
-import styles from './Movies.module.css';
+import styles from './MoviesPage.module.css';
 
 import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
@@ -17,7 +17,7 @@ import { usePropsContext } from '@src/contexts/PropsContext';
 import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
-const Movies: FC = () => {
+export const MoviesPage: FC = () => {
   const { t } = useTranslation();
   const initialMovieData = usePropsContext<MoviesData>();
 
@@ -108,5 +108,3 @@ const Movies: FC = () => {
     </PageContainer>
   );
 };
-
-export { Movies };

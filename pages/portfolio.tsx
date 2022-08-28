@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useTranslation } from 'react-i18next';
 
-import { Portfolio } from '@src/components/Portfolio/Portfolio';
+import { PortfolioPage } from '@src/components/Portfolio/PortfolioPage';
 
 export default function Page() {
   const { t } = useTranslation();
@@ -12,7 +12,7 @@ export default function Page() {
         <title>{t('portfolio.seo.title')}</title>
         <meta name="description" content={t('portfolio.seo.description')} />
       </Head>
-      <Portfolio />
+      <PortfolioPage />
     </>
   );
 }

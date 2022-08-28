@@ -1,4 +1,4 @@
-import styles from './Portfolio.module.css';
+import styles from './PortfolioPage.module.css';
 
 import CarmoImage from '@public/images/portfolio/carmo/1.webp';
 import DockerImage from '@public/images/portfolio/docker/1.png';
@@ -13,12 +13,11 @@ import { PortfolioItem } from '@src/components/Portfolio/PortfolioItem';
 import { PortfolioModal } from '@src/components/Portfolio/PortfolioModal';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
-import type { FC } from 'react';
 import type { IPortfolioItem } from './Portfolio.types';
 
 const IMAGES_BASE_URL = '/images/portfolio';
 
-const Portfolio: FC = () => {
+export function PortfolioPage() {
   const { t } = useTranslation();
 
   const [modalActiveItem, setModalActiveItem] = useState<number>();
@@ -106,6 +105,4 @@ const Portfolio: FC = () => {
       />
     </PageContainer>
   );
-};
-
-export { Portfolio };
+}

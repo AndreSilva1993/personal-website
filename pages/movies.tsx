@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import type { GetStaticProps } from 'next';
 
 import { getMovies } from '@src/clients/movies/movies';
-import { Movies } from '@src/components/Movies/Movies';
+import { MoviesPage } from '@src/components/Movies/MoviesPage';
 
 export default function Page() {
   const { t } = useTranslation();
@@ -15,7 +15,7 @@ export default function Page() {
         <title>{t('movies.seo.title')}</title>
         <meta name="description" content={t('movies.seo.description')} />
       </Head>
-      <Movies />
+      <MoviesPage />
     </>
   );
 }

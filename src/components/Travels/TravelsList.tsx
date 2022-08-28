@@ -18,10 +18,10 @@ export const TravelsList: FC<TravelListItemProps> = ({ travels, onTravelClick })
     exit={{ opacity: 0, x: '-100%' }}
     initial={{ opacity: 0, x: '-100%' }}
   >
-    <ul className={styles.citiesList}>
+    <ul className={styles.travelsList}>
       {travels.map(({ name, image }, index) => (
-        <li className={styles.city} key={name} onClick={() => onTravelClick(index)}>
-          <div className={styles.cityImageWrapper}>
+        <li className={styles.travelItem} key={name} onClick={() => onTravelClick(index)}>
+          <div className={styles.travelItemImageWrapper}>
             <Image
               src={image}
               alt={name}
@@ -31,10 +31,10 @@ export const TravelsList: FC<TravelListItemProps> = ({ travels, onTravelClick })
               objectPosition="center"
               sizes="(max-width: 767px) 100vw, 50vw"
               priority={index < 2}
-              className={styles.cityImage}
+              className={styles.travelItemImage}
             />
           </div>
-          <span className={styles.cityName}>{name}</span>
+          <span className={styles.travelName}>{name}</span>
         </li>
       ))}
     </ul>

@@ -50,8 +50,8 @@ export const TravelsPage: FC = () => {
 
     leafletMapRef.current.flyToBounds(L.latLngBounds(markersCoordinates), {
       duration: 1,
-      paddingTopLeft: [50, 50],
-      paddingBottomRight: [50, 50],
+      paddingTopLeft: [25, 25],
+      paddingBottomRight: [25, 25],
     });
   }
 
@@ -75,10 +75,7 @@ export const TravelsPage: FC = () => {
       ],
     });
 
-    leafletMapRef.current.fitBounds(L.latLngBounds(getPlacesCoordinates()), {
-      paddingTopLeft: [50, 50],
-      paddingBottomRight: [50, 50],
-    });
+    leafletMapRef.current.fitBounds(L.latLngBounds(getPlacesCoordinates()));
   }, []);
 
   useEffect(

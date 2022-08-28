@@ -1,15 +1,23 @@
-import { Children, FC } from 'react';
+import { Children } from 'react';
+import Box from '@mui/material/Box';
 
-export const Masonry: FC<any> = ({ children }) => {
-  const columns = [
-    { columnCount: 0, items: [] },
-    { columnCount: 0, items: [] },
-    { columnCount: 0, items: [] },
-  ];
+import type { ReactElement } from 'react';
+
+interface MasonryProps {
+  children: ReactElement[];
+  numberOfColumns: number;
+}
+
+interface MasonryItemProps {
+  children: ReactElement;
+  landscape: boolean;
+}
+
+export function Masonry({ children, numberOfColumns = 1 }: MasonryProps) {
+  const columns = Array.from({ length: numberOfColumns }, () => ({ columnCount: 0, items: [] }));
 
   Children.forEach(children, (child) => {
     const smallerIndex = columns.reduce((lowest, next, index) => {
-      console.log(next);
       if (next.columnCount < columns[lowest].columnCount) return index;
 
       return lowest;
@@ -20,18 +28,29 @@ export const Masonry: FC<any> = ({ children }) => {
   });
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: 'grid',
-        gridGap: '20px',
-        gridTemplateColumns: `repeat(${columns.length}, 1fr)`,
+        gridGap: '2rem',
+        gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)`,
       }}
     >
-      {columns.map((column, columnIndex) => (
-        <div key={columnIndex} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          {column.items}
-        </div>
+      {columns.map(({ items }, columnIndex) => (
+        <Box
+          key={columnIndex}
+          sx={{
+            gap: '2rem',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          {items}
+        </Box>
       ))}
-    </div>
+    </Box>
   );
-};
+}
+
+export function MasonryItem({ children }: MasonryItemProps) {
+  return children;
+}

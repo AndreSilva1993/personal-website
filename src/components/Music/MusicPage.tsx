@@ -1,4 +1,4 @@
-import styles from './Music.module.css';
+import styles from './MusicPage.module.css';
 
 import { MusicAlbums } from '@src/components/Music/MusicAlbums';
 import { MusicArtists } from '@src/components/Music/MusicArtists';
@@ -8,7 +8,7 @@ import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
 import type { FC } from 'react';
 
-const Music: FC = () => (
+export const MusicPage: FC = () => (
   <PageContainer className={styles.pageContainer}>
     <MusicStatistics />
     <MusicAlbums />
@@ -16,5 +16,3 @@ const Music: FC = () => (
     <MusicRecentTracks />
   </PageContainer>
 );
-
-export { Music };

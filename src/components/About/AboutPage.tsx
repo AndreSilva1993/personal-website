@@ -1,4 +1,4 @@
-import styles from './About.module.css';
+import styles from './AboutPage.module.css';
 import AboutImage from '@public/images/about/about.jpeg';
 
 import Image from 'next/image';
@@ -10,7 +10,7 @@ import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
 import type { FC } from 'react';
 
-const About: FC = () => {
+export const AboutPage: FC = () => {
   const { t } = useTranslation();
 
   const technologiesData = useMemo(
@@ -99,5 +99,3 @@ const About: FC = () => {
     </PageContainer>
   );
 };
-
-export { About };
