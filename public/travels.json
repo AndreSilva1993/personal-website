@@ -1,65 +1,39 @@
 {
   "countries": [
-    {
-      "name": "travels.countries.world",
-      "code": "world",
-      "image": "/images/travels/flags/world.svg"
-    },
-    {
-      "name": "travels.countries.portugal",
-      "code": "pt",
-      "image": "/images/travels/flags/pt.svg"
-    },
-    {
-      "name": "travels.countries.united-kingdom",
-      "code": "gb",
-      "image": "/images/travels/flags/gb.svg"
-    },
-    {
-      "name": "travels.countries.spain",
-      "code": "es",
-      "image": "/images/travels/flags/es.svg"
-    },
-    {
-      "name": "travels.countries.czech-republic",
-      "code": "cz",
-      "image": "/images/travels/flags/cz.svg"
-    },
-    {
-      "name": "travels.countries.hungary",
-      "code": "hu",
-      "image": "/images/travels/flags/hu.svg"
-    },
-    {
-      "name": "travels.countries.italy",
-      "code": "it",
-      "image": "/images/travels/flags/it.svg"
-    }
+    "pt",
+    "gb",
+    "es",
+    "cz",
+    "hu",
+    "it",
+    "hr"
   ],
   "travels": [
     {
-      "name": "Budapest",
-      "countryCode": "hu",
-      "image": "/images/travels/budapest/hungarian-parliament.jpeg",
+      "name": "Prague / Budapest",
+      "countryCodes": [
+        "hu",
+        "cz"
+      ],
+      "image": "/images/travels/prague-budapest/hungarian-parliament.jpeg",
       "places": [
         {
-          "name": "travels.places.budapest.hungarian-parliament.title",
-          "description": "travels.places.budapest.hungarian-parliament.description",
+          "name": "travels.places.prague-budapest.hungarian-parliament",
           "images": [
             {
-              "url": "/images/travels/budapest/hungarian-parliament.jpeg",
+              "url": "/images/travels/prague-budapest/hungarian-parliament.jpeg",
               "landscape": true
             },
             {
-              "url": "/images/travels/budapest/hungarian-parliament-2.jpeg",
+              "url": "/images/travels/prague-budapest/hungarian-parliament-2.jpeg",
               "landscape": true
             },
             {
-              "url": "/images/travels/budapest/hungarian-parliament-3.jpeg",
+              "url": "/images/travels/prague-budapest/hungarian-parliament-3.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/budapest/hungarian-parliament-4.jpeg",
+              "url": "/images/travels/prague-budapest/hungarian-parliament-4.jpeg",
               "landscape": false
             }
           ],
@@ -69,15 +43,14 @@
           ]
         },
         {
-          "name": "travels.places.budapest.dohany-street-synagogue.title",
-          "description": "travels.places.budapest.dohany-street-synagogue.description",
+          "name": "travels.places.prague-budapest.dohany-street-synagogue",
           "images": [
             {
-              "url": "/images/travels/budapest/dohany-street-synagogue.jpeg",
+              "url": "/images/travels/prague-budapest/dohany-street-synagogue.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/budapest/dohany-street-synagogue-2.jpeg",
+              "url": "/images/travels/prague-budapest/dohany-street-synagogue-2.jpeg",
               "landscape": false
             }
           ],
@@ -87,19 +60,18 @@
           ]
         },
         {
-          "name": "travels.places.budapest.fisherman-bastion.title",
-          "description": "travels.places.budapest.fisherman-bastion.description",
+          "name": "travels.places.prague-budapest.fisherman-bastion",
           "images": [
             {
-              "url": "/images/travels/budapest/fisherman-bastion.jpeg",
+              "url": "/images/travels/prague-budapest/fisherman-bastion.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/budapest/fisherman-bastion-2.jpeg",
+              "url": "/images/travels/prague-budapest/fisherman-bastion-2.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/budapest/fisherman-bastion-3.jpeg",
+              "url": "/images/travels/prague-budapest/fisherman-bastion-3.jpeg",
               "landscape": false
             }
           ],
@@ -109,15 +81,14 @@
           ]
         },
         {
-          "name": "travels.places.budapest.matthias-church.title",
-          "description": "travels.places.budapest.matthias-church.description",
+          "name": "travels.places.prague-budapest.matthias-church",
           "images": [
             {
-              "url": "/images/travels/budapest/matthias-church.jpeg",
+              "url": "/images/travels/prague-budapest/matthias-church.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/budapest/matthias-church-2.jpeg",
+              "url": "/images/travels/prague-budapest/matthias-church-2.jpeg",
               "landscape": true
             }
           ],
@@ -127,15 +98,14 @@
           ]
         },
         {
-          "name": "travels.places.budapest.hungarian-national-museum.title",
-          "description": "travels.places.budapest.hungarian-national-museum.description",
+          "name": "travels.places.prague-budapest.hungarian-national-museum",
           "images": [
             {
-              "url": "/images/travels/budapest/hungarian-national-museum.jpeg",
+              "url": "/images/travels/prague-budapest/hungarian-national-museum.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/budapest/hungarian-national-museum-2.jpeg",
+              "url": "/images/travels/prague-budapest/hungarian-national-museum-2.jpeg",
               "landscape": false
             }
           ],
@@ -153,19 +123,18 @@
           ]
         },
         {
-          "name": "travels.places.budapest.st-stephen-basilica.title",
-          "description": "travels.places.budapest.st-stephen-basilica.description",
+          "name": "travels.places.prague-budapest.st-stephen-basilica",
           "images": [
             {
-              "url": "/images/travels/budapest/st-stephen-basilica.jpeg",
+              "url": "/images/travels/prague-budapest/st-stephen-basilica.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/budapest/st-stephen-basilica-2.jpeg",
+              "url": "/images/travels/prague-budapest/st-stephen-basilica-2.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/budapest/st-stephen-basilica-3.jpeg",
+              "url": "/images/travels/prague-budapest/st-stephen-basilica-3.jpeg",
               "landscape": false
             }
           ],
@@ -173,17 +142,110 @@
             47.5009,
             19.0540
           ]
+        },
+        {
+          "name": "Church of Our Lady before Týn",
+          "images": [],
+          "coordinates": [
+            50.0877361,
+            14.4226854
+          ]
+        },
+        {
+          "name": "travels.places.prague-budapest.national-museum",
+          "images": [
+            {
+              "url": "/images/travels/prague-budapest/national-museum.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/prague-budapest/national-museum-2.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/prague-budapest/national-museum-3.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            50.0789482,
+            14.4287322
+          ]
+        },
+        {
+          "name": "travels.places.prague-budapest.st-vitus-cathedral",
+          "images": [
+            {
+              "url": "/images/travels/prague-budapest/st-vitus-cathedral.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/prague-budapest/st-vitus-cathedral-2.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            50.0908918,
+            14.3983227
+          ]
+        },
+        {
+          "name": "travels.places.prague-budapest.dancing-house",
+          "images": [
+            {
+              "url": "/images/travels/prague-budapest/dancing-house.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            50.0754031,
+            14.4141787
+          ]
+        },
+        {
+          "name": "travels.places.prague-budapest.vysehrad",
+          "images": [
+            {
+              "url": "/images/travels/prague-budapest/vysehrad.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/prague-budapest/vysehrad-2.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/prague-budapest/vysehrad-3.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/prague-budapest/vysehrad-4.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            50.0638429,
+            14.4185331
+          ]
+        },
+        {
+          "name": "Charles Bridge",
+          "images": [],
+          "coordinates": [
+            50.0864771,
+            14.4114366
+          ]
         }
       ]
     },
     {
       "name": "London",
-      "countryCode": "gb",
+      "countryCodes": [
+        "gb"
+      ],
       "image": "/images/travels/london/the-shard.jpeg",
       "places": [
         {
-          "name": "travels.places.london.british-museum.title",
-          "description": "travels.places.london.british-museum.description",
+          "name": "travels.places.london.british-museum",
           "images": [
             {
               "url": "/images/travels/london/british-museum.jpeg",
@@ -196,8 +258,7 @@
           ]
         },
         {
-          "name": "travels.places.london.national-gallery.title",
-          "description": "travels.places.london.national-gallery.description",
+          "name": "travels.places.london.national-gallery",
           "images": [
             {
               "url": "/images/travels/london/national-gallery.jpeg",
@@ -214,8 +275,7 @@
           ]
         },
         {
-          "name": "travels.places.london.hyde-park.title",
-          "description": "travels.places.london.hyde-park.description",
+          "name": "travels.places.london.hyde-park",
           "images": [
             {
               "url": "/images/travels/london/hyde-park.jpeg",
@@ -228,8 +288,7 @@
           ]
         },
         {
-          "name": "travels.places.london.kew-gardens.title",
-          "description": "travels.places.london.kew-gardens.description",
+          "name": "travels.places.london.kew-gardens",
           "images": [
             {
               "url": "/images/travels/london/kew-gardens.jpeg",
@@ -242,8 +301,7 @@
           ]
         },
         {
-          "name": "travels.places.london.harrods.title",
-          "description": "travels.places.london.harrods.description",
+          "name": "travels.places.london.harrods",
           "images": [
             {
               "url": "/images/travels/london/harrods.jpeg",
@@ -256,8 +314,7 @@
           ]
         },
         {
-          "name": "travels.places.london.natural-history-museum.title",
-          "description": "travels.places.london.natural-history-museum.description",
+          "name": "travels.places.london.natural-history-museum",
           "images": [
             {
               "url": "/images/travels/london/natural-history-museum.jpeg",
@@ -270,8 +327,7 @@
           ]
         },
         {
-          "name": "travels.places.london.london-eye.title",
-          "description": "travels.places.london.london-eye.description",
+          "name": "travels.places.london.london-eye",
           "images": [
             {
               "url": "/images/travels/london/london-eye.jpeg",
@@ -284,8 +340,7 @@
           ]
         },
         {
-          "name": "travels.places.london.saint-pancras-international.title",
-          "description": "travels.places.london.saint-pancras-international.description",
+          "name": "travels.places.london.saint-pancras-international",
           "images": [
             {
               "url": "/images/travels/london/saint-pancras-international.jpeg",
@@ -298,8 +353,7 @@
           ]
         },
         {
-          "name": "travels.places.london.westminster-abbey.title",
-          "description": "travels.places.london.westminster-abbey.description",
+          "name": "travels.places.london.westminster-abbey",
           "images": [
             {
               "url": "/images/travels/london/westminster-abbey.jpeg",
@@ -316,8 +370,7 @@
           ]
         },
         {
-          "name": "travels.places.london.hays-galleria.title",
-          "description": "travels.places.london.hays-galleria.description",
+          "name": "travels.places.london.hays-galleria",
           "images": [
             {
               "url": "/images/travels/london/hays-galleria.jpeg",
@@ -330,8 +383,7 @@
           ]
         },
         {
-          "name": "travels.places.london.the-shard.title",
-          "description": "travels.places.london.the-shard.description",
+          "name": "travels.places.london.the-shard",
           "images": [
             {
               "url": "/images/travels/london/the-shard.jpeg",
@@ -344,8 +396,7 @@
           ]
         },
         {
-          "name": "travels.places.london.sky-garden.title",
-          "description": "travels.places.london.sky-garden.description",
+          "name": "travels.places.london.sky-garden",
           "images": [
             {
               "url": "/images/travels/london/sky-garden.jpeg",
@@ -368,116 +419,14 @@
       ]
     },
     {
-      "name": "Prague",
-      "countryCode": "cz",
-      "image": "/images/travels/prague/vysehrad.jpeg",
-      "places": [
-        {
-          "name": "Church of Our Lady before Týn",
-          "images": [],
-          "coordinates": [
-            50.0877361,
-            14.4226854
-          ]
-        },
-        {
-          "name": "travels.places.prague.national-museum.title",
-          "description": "travels.places.prague.national-museum.description",
-          "images": [
-            {
-              "url": "/images/travels/prague/national-museum.jpeg",
-              "landscape": false
-            },
-            {
-              "url": "/images/travels/prague/national-museum-2.jpeg",
-              "landscape": false
-            },
-            {
-              "url": "/images/travels/prague/national-museum-3.jpeg",
-              "landscape": false
-            }
-          ],
-          "coordinates": [
-            50.0789482,
-            14.4287322
-          ]
-        },
-        {
-          "name": "travels.places.prague.st-vitus-cathedral.title",
-          "description": "travels.places.prague.st-vitus-cathedral.description",
-          "images": [
-            {
-              "url": "/images/travels/prague/st-vitus-cathedral.jpeg",
-              "landscape": false
-            },
-            {
-              "url": "/images/travels/prague/st-vitus-cathedral-2.jpeg",
-              "landscape": false
-            }
-          ],
-          "coordinates": [
-            50.0908918,
-            14.3983227
-          ]
-        },
-        {
-          "name": "travels.places.prague.dancing-house.title",
-          "description": "travels.places.prague.dancing-house.description",
-          "images": [
-            {
-              "url": "/images/travels/prague/dancing-house.jpeg",
-              "landscape": false
-            }
-          ],
-          "coordinates": [
-            50.0754031,
-            14.4141787
-          ]
-        },
-        {
-          "name": "travels.places.prague.vysehrad.title",
-          "description": "travels.places.prague.vysehrad.description",
-          "images": [
-            {
-              "url": "/images/travels/prague/vysehrad.jpeg",
-              "landscape": false
-            },
-            {
-              "url": "/images/travels/prague/vysehrad-2.jpeg",
-              "landscape": false
-            },
-            {
-              "url": "/images/travels/prague/vysehrad-3.jpeg",
-              "landscape": false
-            },
-            {
-              "url": "/images/travels/prague/vysehrad-4.jpeg",
-              "landscape": false
-            }
-          ],
-          "coordinates": [
-            50.0638429,
-            14.4185331
-          ]
-        },
-        {
-          "name": "Charles Bridge",
-          "images": [],
-          "coordinates": [
-            50.0864771,
-            14.4114366
-          ]
-        }
-      ]
-    },
-    {
       "name": "Azores",
-      "countryCode": "pt",
+      "countryCodes": [
+        "pt"
+      ],
       "image": "/images/travels/azores/cumeeiras-viewpoint.jpeg",
       "places": [
         {
-          "name": "travels.places.azores.cumeeiras-viewpoint.title",
-          "description": "travels.places.azores.cumeeiras-viewpoint.description",
+          "name": "travels.places.azores.cumeeiras-viewpoint",
           "images": [
             {
               "url": "/images/travels/azores/cumeeiras-viewpoint.jpeg",
@@ -490,8 +439,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.carvao-cave.title",
-          "description": "travels.places.azores.carvao-cave.description",
+          "name": "travels.places.azores.carvao-cave",
           "images": [
             {
               "url": "/images/travels/azores/carvao-cave.jpeg",
@@ -504,8 +452,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.lake-of-fire.title",
-          "description": "travels.places.azores.lake-of-fire.description",
+          "name": "travels.places.azores.lake-of-fire",
           "images": [
             {
               "url": "/images/travels/azores/lake-of-fire.jpeg",
@@ -518,8 +465,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.caldeira-velha.title",
-          "description": "travels.places.azores.caldeira-velha.description",
+          "name": "travels.places.azores.caldeira-velha",
           "images": [
             {
               "url": "/images/travels/azores/caldeira-velha.jpeg",
@@ -532,12 +478,11 @@
           ]
         },
         {
-          "name": "travels.places.azores.congro-lake.title",
-          "description": "travels.places.azores.congro-lake.description",
+          "name": "travels.places.azores.congro-lake",
           "images": [
             {
               "url": "/images/travels/azores/congro-lake.jpeg",
-              "landscape": true
+              "landscape": false
             }
           ],
           "coordinates": [
@@ -546,8 +491,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.ponta-sossego-viewpoint.title",
-          "description": "travels.places.azores.ponta-sossego-viewpoint.description",
+          "name": "travels.places.azores.ponta-sossego-viewpoint",
           "images": [
             {
               "url": "/images/travels/azores/ponta-sossego-viewpoint.jpeg",
@@ -560,8 +504,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.hells-mouth-viewpoint.title",
-          "description": "travels.places.azores.hells-mouth-viewpoint.description",
+          "name": "travels.places.azores.hells-mouth-viewpoint",
           "images": [
             {
               "url": "/images/travels/azores/hells-mouth-viewpoint.jpeg",
@@ -574,8 +517,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.monte-palace-hotel.title",
-          "description": "travels.places.azores.monte-palace-hotel.description",
+          "name": "travels.places.azores.monte-palace-hotel",
           "images": [
             {
               "url": "/images/travels/azores/monte-palace-hotel.jpeg",
@@ -588,8 +530,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.lagoon-seven-cities.title",
-          "description": "travels.places.azores.lagoon-seven-cities.description",
+          "name": "travels.places.azores.lagoon-seven-cities",
           "images": [
             {
               "url": "/images/travels/azores/lagoon-seven-cities.jpeg",
@@ -603,7 +544,6 @@
         },
         {
           "name": "travels.places.azores.salto-cavalo-viewpoint.title",
-          "description": "travels.places.azores.salto-cavalo-viewpoint.description",
           "images": [
             {
               "url": "/images/travels/azores/salto-cavalo-viewpoint.jpeg",
@@ -617,7 +557,6 @@
         },
         {
           "name": "travels.places.azores.grena-park.title",
-          "description": "travels.places.azores.grena-park.description",
           "images": [
             {
               "url": "/images/travels/azores/grena-park.jpeg",
@@ -631,7 +570,6 @@
         },
         {
           "name": "travels.places.azores.furnas-lake.title",
-          "description": "travels.places.azores.furnas-lake.description",
           "images": [
             {
               "url": "/images/travels/azores/furnas-lake.jpeg",
@@ -645,10 +583,9 @@
         },
         {
           "name": "travels.places.azores.terra-nostra-garden.title",
-          "description": "travels.places.azores.terra-nostra-garden.description",
           "images": [
             {
-              "url": "/images/travels/azores/terra-nostra-garden.jpeg",
+              "url": "/images/travels/azores/terra-nostra-garden-1.jpeg",
               "landscape": true
             },
             {
@@ -669,12 +606,13 @@
     },
     {
       "name": "Madeira",
-      "countryCode": "pt",
+      "countryCodes": [
+        "pt"
+      ],
       "image": "/images/travels/madeira/sao-lourenco-point.jpeg",
       "places": [
         {
           "name": "travels.places.madeira.balcoes-viewpoint.title",
-          "description": "travels.places.madeira.balcoes-viewpoint.description",
           "images": [
             {
               "url": "/images/travels/madeira/balcoes-viewpoint.jpeg",
@@ -688,7 +626,6 @@
         },
         {
           "name": "travels.places.madeira.cape-girao.title",
-          "description": "travels.places.madeira.cape-girao.description",
           "images": [
             {
               "url": "/images/travels/madeira/cape-girao.jpeg",
@@ -702,7 +639,6 @@
         },
         {
           "name": "travels.places.madeira.queimadas-forest-park.title",
-          "description": "travels.places.madeira.queimadas-forest-park.description",
           "images": [
             {
               "url": "/images/travels/madeira/queimadas-forest-park.jpeg",
@@ -716,7 +652,6 @@
         },
         {
           "name": "travels.places.madeira.sao-lourenco-point.title",
-          "description": "travels.places.madeira.sao-lourenco-point.description",
           "images": [
             {
               "url": "/images/travels/madeira/sao-lourenco-point.jpeg",
@@ -734,7 +669,6 @@
         },
         {
           "name": "travels.places.madeira.monte-palace.title",
-          "description": "travels.places.madeira.monte-palace.description",
           "images": [
             {
               "url": "/images/travels/madeira/monte-palace.jpeg",
@@ -750,12 +684,13 @@
     },
     {
       "name": "Barcelona",
-      "countryCode": "es",
+      "countryCodes": [
+        "es"
+      ],
       "image": "/images/travels/barcelona/tibidabo.jpeg",
       "places": [
         {
-          "name": "travels.places.barcelona.tibidabo.title",
-          "description": "travels.places.barcelona.tibidabo.description",
+          "name": "travels.places.barcelona.tibidabo",
           "images": [
             {
               "url": "/images/travels/barcelona/tibidabo.jpeg",
@@ -768,8 +703,7 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.spain-square.title",
-          "description": "travels.places.barcelona.spain-square.description",
+          "name": "travels.places.barcelona.spain-square",
           "images": [
             {
               "url": "/images/travels/barcelona/spain-square.jpeg",
@@ -782,8 +716,7 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.montserrat.title",
-          "description": "travels.places.barcelona.montserrat.description",
+          "name": "travels.places.barcelona.montserrat",
           "images": [
             {
               "url": "/images/travels/barcelona/montserrat.jpeg",
@@ -804,8 +737,7 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.park-guell.title",
-          "description": "travels.places.barcelona.park-guell.description",
+          "name": "travels.places.barcelona.park-guell",
           "images": [
             {
               "url": "/images/travels/barcelona/park-guell.jpeg",
@@ -822,8 +754,7 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.arc-de-triomf.title",
-          "description": "travels.places.barcelona.arc-de-triomf.description",
+          "name": "travels.places.barcelona.arc-de-triomf",
           "images": [
             {
               "url": "/images/travels/barcelona/arc-de-triomf.jpeg",
@@ -836,8 +767,7 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.sagrada-familia.title",
-          "description": "travels.places.barcelona.sagrada-familia.description",
+          "name": "travels.places.barcelona.sagrada-familia",
           "images": [
             {
               "url": "/images/travels/barcelona/sagrada-familia.jpeg",
@@ -854,12 +784,11 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.cathedral-la-ribera.title",
-          "description": "travels.places.barcelona.cathedral-la-ribera.description",
+          "name": "travels.places.barcelona.cathedral-la-ribera",
           "images": [
             {
               "url": "/images/travels/barcelona/cathedral-la-ribera.jpeg",
-              "landscape": false
+              "landscape": true
             }
           ],
           "coordinates": [
@@ -868,8 +797,7 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.barcelona-cathedral.title",
-          "description": "travels.places.barcelona.barcelona-cathedral.description",
+          "name": "travels.places.barcelona.barcelona-cathedral",
           "images": [
             {
               "url": "/images/travels/barcelona/barcelona-cathedral.jpeg",
@@ -890,12 +818,11 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.casa-mila.title",
-          "description": "travels.places.barcelona.casa-mila.description",
+          "name": "travels.places.barcelona.casa-mila",
           "images": [
             {
               "url": "/images/travels/barcelona/casa-mila.jpeg",
-              "landscape": false
+              "landscape": true
             }
           ],
           "coordinates": [
@@ -904,12 +831,11 @@
           ]
         },
         {
-          "name": "travels.places.barcelona.casa-batllo.title",
-          "description": "travels.places.barcelona.casa-batllo.description",
+          "name": "travels.places.barcelona.casa-batllo",
           "images": [
             {
               "url": "/images/travels/barcelona/casa-batllo.jpeg",
-              "landscape": false
+              "landscape": true
             }
           ],
           "coordinates": [
@@ -920,28 +846,29 @@
       ]
     },
     {
-      "name": "Venice",
-      "countryCode": "it",
-      "image": "/images/travels/venice/venice-canals-1.jpeg",
+      "name": "Northern Italy",
+      "countryCodes": [
+        "it"
+      ],
+      "image": "/images/travels/northern-italy/venice-canals-1.jpeg",
       "places": [
         {
-          "name": "travels.places.venice.venice-canals.title",
-          "description": "travels.places.venice.venice-canals.description",
+          "name": "travels.places.northern-italy.venice-canals",
           "images": [
             {
-              "url": "/images/travels/venice/venice-canals-1.jpeg",
+              "url": "/images/travels/northern-italy/venice-canals-1.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/venice/venice-canals-2.jpeg",
+              "url": "/images/travels/northern-italy/venice-canals-2.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/venice/venice-canals-3.jpeg",
+              "url": "/images/travels/northern-italy/venice-canals-3.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/venice/venice-canals-4.jpeg",
+              "url": "/images/travels/northern-italy/venice-canals-4.jpeg",
               "landscape": false
             }
           ],
@@ -949,24 +876,16 @@
             45.4408,
             12.3155
           ]
-        }
-      ]
-    },
-    {
-      "name": "Milan",
-      "countryCode": "it",
-      "image": "/images/travels/milan/milan-cathedral-1.jpeg",
-      "places": [
+        },
         {
-          "name": "travels.places.milan.galleria-vittorio-emanuele-ii.title",
-          "description": "travels.places.milan.galleria-vittorio-emanuele-ii.description",
+          "name": "travels.places.northern-italy.galleria-vittorio-emanuele-ii",
           "images": [
             {
-              "url": "/images/travels/milan/galleria-vittorio-emanuele-ii.jpeg",
+              "url": "/images/travels/northern-italy/galleria-vittorio-emanuele-ii.jpeg",
               "landscape": true
             },
             {
-              "url": "/images/travels/milan/galleria-vittorio-emanuele-ii-2.jpeg",
+              "url": "/images/travels/northern-italy/galleria-vittorio-emanuele-ii-2.jpeg",
               "landscape": true
             }
           ],
@@ -976,19 +895,18 @@
           ]
         },
         {
-          "name": "travels.places.milan.milan-cathedral.title",
-          "description": "travels.places.milan.milan-cathedral.description",
+          "name": "travels.places.northern-italy.milan-cathedral",
           "images": [
             {
-              "url": "/images/travels/milan/milan-cathedral-1.jpeg",
+              "url": "/images/travels/northern-italy/milan-cathedral-1.jpeg",
               "landscape": true
             },
             {
-              "url": "/images/travels/milan/milan-cathedral-2.jpeg",
+              "url": "/images/travels/northern-italy/milan-cathedral-2.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/milan/milan-cathedral-3.jpeg",
+              "url": "/images/travels/northern-italy/milan-cathedral-3.jpeg",
               "landscape": true
             }
           ],
@@ -996,28 +914,20 @@
             45.4641,
             9.1919
           ]
-        }
-      ]
-    },
-    {
-      "name": "Florence",
-      "countryCode": "it",
-      "image": "/images/travels/florence/michelangelo-square.jpeg",
-      "places": [
+        },
         {
-          "name": "travels.places.florence.cathedral-of-santa-maria-del-fiore.title",
-          "description": "travels.places.florence.cathedral-of-santa-maria-del-fiore.description",
+          "name": "travels.places.northern-italy.cathedral-of-santa-maria-del-fiore",
           "images": [
             {
-              "url": "/images/travels/florence/cathedral-of-santa-maria-del-fiore-1.jpeg",
+              "url": "/images/travels/northern-italy/cathedral-of-santa-maria-del-fiore-1.jpeg",
               "landscape": false
             },
             {
-              "url": "/images/travels/florence/cathedral-of-santa-maria-del-fiore-2.jpeg",
+              "url": "/images/travels/northern-italy/cathedral-of-santa-maria-del-fiore-2.jpeg",
               "landscape": true
             },
             {
-              "url": "/images/travels/florence/cathedral-of-santa-maria-del-fiore-3.jpeg",
+              "url": "/images/travels/northern-italy/cathedral-of-santa-maria-del-fiore-3.jpeg",
               "landscape": true
             }
           ],
@@ -1027,11 +937,10 @@
           ]
         },
         {
-          "name": "travels.places.florence.michelangelo-square.title",
-          "description": "travels.places.florence.michelangelo-square.description",
+          "name": "travels.places.northern-italy.michelangelo-square",
           "images": [
             {
-              "url": "/images/travels/florence/michelangelo-square.jpeg",
+              "url": "/images/travels/northern-italy/michelangelo-square.jpeg",
               "landscape": true
             }
           ],
@@ -1041,11 +950,10 @@
           ]
         },
         {
-          "name": "travels.places.florence.accademia-gallery.title",
-          "description": "travels.places.florence.accademia-gallery.description",
+          "name": "travels.places.northern-italy.accademia-gallery",
           "images": [
             {
-              "url": "/images/travels/florence/accademia-gallery.jpeg",
+              "url": "/images/travels/northern-italy/accademia-gallery.jpeg",
               "landscape": false
             }
           ],
@@ -1055,17 +963,173 @@
           ]
         },
         {
-          "name": "travels.places.florence.gates-of-paradise.title",
-          "description": "travels.places.florence.gates-of-paradise.description",
+          "name": "travels.places.northern-italy.gates-of-paradise",
           "images": [
             {
-              "url": "/images/travels/florence/gates-of-paradise.jpeg",
+              "url": "/images/travels/northern-italy/gates-of-paradise.jpeg",
               "landscape": false
             }
           ],
           "coordinates": [
             43.7731,
             11.2553
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Croatia",
+      "countryCodes": [
+        "hr"
+      ],
+      "image": "/images/travels/croatia/plitvice-lakes-1.jpeg",
+      "places": [
+        {
+          "name": "travels.places.croatia.plitvice-lakes",
+          "images": [
+            {
+              "url": "/images/travels/croatia/plitvice-lakes-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/croatia/plitvice-lakes-2.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/croatia/plitvice-lakes-3.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/croatia/plitvice-lakes-4.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            44.8654,
+            15.5820
+          ]
+        },
+        {
+          "name": "travels.places.croatia.zadar",
+          "images": [
+            {
+              "url": "/images/travels/croatia/zadar-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            44.1194,
+            15.2314
+          ]
+        },
+        {
+          "name": "travels.places.croatia.gric-tunnel",
+          "images": [
+            {
+              "url": "/images/travels/croatia/gric-tunnel-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            45.8148,
+            15.9755
+          ]
+        },
+        {
+          "name": "travels.places.croatia.golden-horn-beach",
+          "images": [
+            {
+              "url": "/images/travels/croatia/golden-horn-beach-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            43.2563,
+            16.6338
+          ]
+        },
+        {
+          "name": "travels.places.croatia.krka-national-park",
+          "images": [
+            {
+              "url": "/images/travels/croatia/krka-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/croatia/krka-2.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/croatia/krka-3.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            43.8666,
+            15.9725
+          ]
+        },
+        {
+          "name": "travels.places.croatia.lokrum",
+          "images": [
+            {
+              "url": "/images/travels/croatia/lokrum-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/croatia/lokrum-2.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            42.6311,
+            18.1177
+          ]
+        },
+        {
+          "name": "travels.places.croatia.dubrovnik",
+          "images": [
+            {
+              "url": "/images/travels/croatia/dubrovnik-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/croatia/dubrovnik-2.jpeg",
+              "landscape": true
+            },
+            {
+              "url": "/images/travels/croatia/dubrovnik-3.jpeg",
+              "landscape": true
+            },
+            {
+              "url": "/images/travels/croatia/dubrovnik-4.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/croatia/dubrovnik-5.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            42.6507,
+            18.0944
+          ]
+        },
+        {
+          "name": "travels.places.croatia.klis-fortress",
+          "images": [
+            {
+              "url": "/images/travels/croatia/klis-fortress-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/croatia/klis-fortress-2.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            43.5596,
+            16.5227
           ]
         }
       ]

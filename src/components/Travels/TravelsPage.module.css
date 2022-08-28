@@ -1,0 +1,24 @@
+.pageContainer {
+  margin: 0 auto;
+  max-width: 150rem;
+}
+
+.title {
+  color: var(--color-white);
+  font-size: 3rem;
+  text-align: center;
+  font-weight: var(--font-weight-boldest);
+}
+
+.mapContainer {
+  width: 100%;
+  aspect-ratio: 16 / 6;
+  margin-bottom: 1rem;
+  z-index: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .mapContainer {
+    aspect-ratio: 4 / 3;
+  }
+}

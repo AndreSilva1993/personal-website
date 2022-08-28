@@ -12,9 +12,8 @@
 .country {
   display: flex;
   align-items: center;
-  cursor: pointer;
   position: relative;
-  margin: 1rem;
+  margin: 1rem 1.5rem;
 
   width: 5rem;
   height: 5rem;

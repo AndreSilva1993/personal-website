@@ -1,28 +1,29 @@
 import styles from './TravelCountries.module.css';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import type { FC } from 'react';
-import type { TravelCountriesProps } from './Travels.types';
 
-const TravelCountries: FC<TravelCountriesProps> = ({
-  countries,
-  activeCountry = {},
-  onCountryClick,
-}) => {
-  function handleCountryClick(index: number) {
-    onCountryClick(index);
-  }
+interface TravelCountriesProps {
+  countries: string[];
+  selectedCountries: string[];
+}
+
+const TravelCountries: FC<TravelCountriesProps> = ({ countries, selectedCountries }) => {
+  const { t } = useTranslation();
 
   return (
     <ul className={styles.countriesList}>
-      {countries.map(({ name, image, code }, index) => (
-        <li className={styles.country} key={name} onClick={() => handleCountryClick(index)}>
-          <Image className={styles.countryImage} alt={name} src={image} layout="fill" />
-          {activeCountry.code === code && (
-            <motion.div className={styles.countryBorder} initial={false} layoutId="underline" />
-          )}
+      {countries.map((country) => (
+        <li className={styles.country} key={country}>
+          <Image
+            layout="fill"
+            className={styles.countryImage}
+            alt={t(`travels.countries.${country}`)}
+            src={`/images/travels/flags/${country}.svg`}
+          />
+          {selectedCountries.includes(country) && <div className={styles.countryBorder} />}
         </li>
       ))}
     </ul>
