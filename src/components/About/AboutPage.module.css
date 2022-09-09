@@ -3,6 +3,13 @@
   max-width: 96rem;
 }
 
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-white);
+  font-weight: var(--font-weight-semi-bold);
+}
+
 .imageWrapper {
   width: 100%;
   margin-bottom: 5rem;
@@ -16,10 +23,8 @@
   justify-content: space-between;
 }
 
-.title {
+.subTitle {
   color: var(--color-white);
-  font-size: 2.2rem;
-  font-weight: var(--font-weight-boldest);
 }
 
 .socialWrapper {
@@ -31,11 +36,7 @@
 }
 
 .descriptionWrapper {
-  font-size: 1.5rem;
   margin: 3rem 0;
-
-  font-style: italic;
-  line-height: 3rem;
   text-align: justify;
   color: var(--color-light-grey);
   font-weight: var(--font-weight-normal);

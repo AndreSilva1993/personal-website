@@ -57,6 +57,7 @@ export const MoviesPage: FC = () => {
 
   return (
     <PageContainer className={styles.pageContainer}>
+      <h1 className={styles.title}>{t('movies.title')}</h1>
       <OutlinedInput
         fullWidth
         endAdornment={<Search />}

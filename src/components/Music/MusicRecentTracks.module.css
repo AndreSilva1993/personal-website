@@ -1,7 +1,4 @@
 .title {
-  font-size: 2rem;
-  font-weight: var(--font-weight-bold);
-  text-transform: uppercase;
   color: var(--color-white);
   margin: 3rem 0;
 }
@@ -10,8 +7,6 @@
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 3.5rem 1fr 1.5fr 1fr 12rem;
-  font-size: 1.5rem;
-  padding: 1rem 2rem;
   color: var(--color-white);
 }
 
@@ -23,7 +18,7 @@
 .recentTrackArtist {
   display: flex;
   align-items: center;
-  font-weight: var(--font-weight-boldest);
+  font-weight: var(--font-weight-bold);
 }
 
 .recentTrackName {
@@ -50,19 +45,12 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .title {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
   .recentTracksWrapper {
-    padding: 0;
     grid-template-columns: 3.5rem 1fr 1.5fr;
   }
 
-  .recentTrackArtist,
-  .recentTrackName {
-    font-size: 1.2rem;
+  .title {
+    text-align: center;
   }
 
   .recentTrackAlbum,

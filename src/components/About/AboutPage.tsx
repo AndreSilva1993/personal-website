@@ -35,6 +35,7 @@ export const AboutPage: FC = () => {
 
   return (
     <PageContainer className={styles.pageContainer}>
+      <h1 className={styles.title}>{t('about.title')}</h1>
       <div className={styles.imageWrapper}>
         <Image
           alt="About"
@@ -47,7 +48,7 @@ export const AboutPage: FC = () => {
       </div>
 
       <div className={styles.titleWrapper}>
-        <h1 className={styles.title}>{t('about.title')}</h1>
+        <h2 className={styles.subTitle}>{t('about.about-me')}</h2>
         <div className={styles.socialWrapper}>
           <a
             target="_blank"
@@ -75,9 +76,9 @@ export const AboutPage: FC = () => {
           </a>
         </div>
       </div>
-      <div className={styles.descriptionWrapper}>{t('about.description')}</div>
+      <p className={styles.descriptionWrapper}>{t('about.description')}</p>
 
-      <h1 className={styles.title}>{t('about.technologies')}</h1>
+      <h2 className={styles.subTitle}>{t('about.technologies')}</h2>
 
       <div className={styles.technologiesGridWrapper}>
         {technologiesData.map(({ name, image, value }, index) => (

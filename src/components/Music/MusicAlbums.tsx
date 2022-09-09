@@ -37,7 +37,7 @@ const MusicAlbums = () => {
   return (
     <section>
       <div className={styles.searchOptionsWrapper}>
-        <h1 className={styles.title}>{t('music.topAlbumsTitle')}</h1>
+        <h2 className={styles.title}>{t('music.topAlbumsTitle')}</h2>
         <Select
           value={timePeriod}
           onChange={handleTimePeriodChange}

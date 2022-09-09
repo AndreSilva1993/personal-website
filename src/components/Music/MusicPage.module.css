@@ -2,3 +2,10 @@
   margin: 0 auto;
   max-width: 120rem;
 }
+
+.title {
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--color-white);
+  font-weight: var(--font-weight-semi-bold);
+}

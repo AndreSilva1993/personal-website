@@ -3,6 +3,13 @@
   max-width: 120rem;
 }
 
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-white);
+  font-weight: var(--font-weight-semi-bold);
+}
+
 .genresWrapper {
   display: flex;
   flex-wrap: wrap;
@@ -22,7 +29,7 @@
 
 .imdbLink {
   font-size: 1.5rem;
-  font-weight: var(--font-weight-boldest);
+  font-weight: var(--font-weight-bold);
   color: var(--color-white);
   text-decoration: none;
   text-transform: uppercase;

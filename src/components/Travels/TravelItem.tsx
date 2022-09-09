@@ -30,7 +30,7 @@ export function TravelItem({ travel, onGoBackButtonClick }: TravelItemProps) {
       transition={{ duration: 0.5 }}
     >
       <div className={styles.travelHeadingWrapper}>
-        <h1 className={styles.travelName}>{travel.name}</h1>
+        <h2 className={styles.travelName}>{travel.name}</h2>
 
         <Button variant="outlined" onClick={onGoBackButtonClick}>
           {t('common.goBack')}

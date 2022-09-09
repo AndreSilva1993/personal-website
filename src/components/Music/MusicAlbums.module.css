@@ -7,9 +7,7 @@
 }
 
 .title {
-  font-size: 2rem;
-  font-weight: var(--font-weight-bold);
-  text-transform: uppercase;
+  margin: 2rem 0;
   color: var(--color-white);
 }
 
@@ -29,7 +27,7 @@
 
 .albumArtist {
   font-size: 1.5rem;
-  font-weight: var(--font-weight-boldest);
+  font-weight: var(--font-weight-bold);
   margin-bottom: 1rem;
 }
 
@@ -53,11 +51,6 @@
 @media only screen and (max-width: 767px) {
   .searchOptionsWrapper {
     flex-direction: column;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
   }
 
   .searchSelect {

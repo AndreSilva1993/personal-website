@@ -95,13 +95,7 @@ export const TravelsPage: FC = () => {
 
   return (
     <PageContainer className={styles.pageContainer}>
-      <h1 className={styles.title}>
-        {selectedCountries.length === 0
-          ? t('travels.countries.world')
-          : selectedCountries
-              .map((selectedCountry) => t(`travels.countries.${selectedCountry}`))
-              .join(' / ')}
-      </h1>
+      <h1 className={styles.title}>{t('travels.title')}</h1>
       <TravelCountries countries={countries} selectedCountries={selectedCountries} />
       <div className={styles.mapContainer} id="map-container" ref={leafletMapContainerRef} />
 

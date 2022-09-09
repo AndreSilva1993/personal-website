@@ -1,14 +1,47 @@
 :root {
-  --font-weight-normal: 400;
-  --font-weight-bold: 500;
-  --font-weight-boldest: 700;
+  /* Font family */
+  --font-family: 'Montserrat', sans-serif;
 
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+
+  /* Layers */
   --layer-100: 100;
 
+  /* Palette of colors */
   --color-pink: #bb86fc;
   --color-black: #000;
   --color-white: #fff;
   --color-grey: #555;
   --color-dark-grey: #111;
   --color-light-grey: #bbb;
+}
+
+/* The following sizes were generated using the major second scale on https://type-scale.com/ */
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2.9rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.8rem;
 }

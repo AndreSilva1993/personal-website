@@ -93,7 +93,7 @@ html {
   height: -webkit-fill-available;
   font-size: 10px;
   font-display: swap;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family);
   background-color: var(--color-black);
 }
 

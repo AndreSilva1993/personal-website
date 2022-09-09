@@ -23,19 +23,19 @@ const MusicRecentTracks: FC = () => {
 
   return (
     <section>
-      <h1 className={styles.title}>{t('music.recentTracksTitle')}</h1>
+      <h2 className={styles.title}>{t('music.recentTracksTitle')}</h2>
       <div className={styles.recentTracksWrapper}>
         {recentTracks.map(({ image, artist, name, album, unixTimestamp }) => (
           <Fragment key={unixTimestamp}>
             <div className={styles.recentTrackCoverWrapper}>
               <Image src={image} alt={album} width="35" height="35" />
             </div>
-            <span className={styles.recentTrackArtist}>{artist}</span>
-            <span className={styles.recentTrackName}>{name}</span>
-            <span className={styles.recentTrackAlbum}>{album}</span>
-            <span className={styles.recentTrackDate}>
+            <p className={styles.recentTrackArtist}>{artist}</p>
+            <p className={styles.recentTrackName}>{name}</p>
+            <p className={styles.recentTrackAlbum}>{album}</p>
+            <p className={styles.recentTrackDate}>
               {unixTimestamp ? formatTimestamp(unixTimestamp) : t('music.streamingNow')}
-            </span>
+            </p>
 
             <div className={styles.divider} />
           </Fragment>

@@ -4,10 +4,10 @@
 }
 
 .title {
-  color: var(--color-white);
-  font-size: 3rem;
   text-align: center;
-  font-weight: var(--font-weight-boldest);
+  margin-bottom: 3rem;
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
 }
 
 .mapContainer {

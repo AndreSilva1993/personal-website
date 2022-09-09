@@ -22,7 +22,7 @@
 .title {
   color: var(--color-black);
   font-size: 3rem;
-  font-weight: var(--font-weight-boldest);
+  font-weight: var(--font-weight-bold);
   margin: 2.5rem 0;
 }
 

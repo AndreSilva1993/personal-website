@@ -37,8 +37,8 @@ const MusicArtists: FC = () => {
   return (
     <section>
       <div className={styles.searchOptionsWrapper}>
-        <h1 className={styles.title}>{t('music.topArtistsTitle')}</h1>
-        <Select className={styles.select} value={timeRange} onChange={handleTimePeriodChange}>
+        <h2 className={styles.title}>{t('music.topArtistsTitle')}</h2>
+        <Select className={styles.searchSelect} value={timeRange} onChange={handleTimePeriodChange}>
           <MenuItem value="long_term">{t('music.filters.artists.longTerm')}</MenuItem>
           <MenuItem value="medium_term">{t('music.filters.artists.mediumTerm')}</MenuItem>
           <MenuItem value="short_term">{t('music.filters.artists.shortTerm')}</MenuItem>
