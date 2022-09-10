@@ -62,18 +62,6 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .titleWrapper {
-    flex-direction: column;
-  }
-
-  .title {
-    text-align: center;
-  }
-
-  .socialWrapper {
-    margin-top: 3rem;
-  }
-
   .technologiesGridWrapper {
     grid-template-columns: 3rem auto 1fr;
   }
