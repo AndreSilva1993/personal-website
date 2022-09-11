@@ -4,8 +4,8 @@ import Image from 'next/image';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import Button from '@mui/material/Button';
 
+import { Button } from '@src/components/Button/Button';
 import { Masonry, MasonryItem } from '@src/components/Masonry/Masonry';
 
 import type { ITravel } from './Travels.types';
@@ -32,9 +32,7 @@ export function TravelItem({ travel, onGoBackButtonClick }: TravelItemProps) {
       <div className={styles.travelHeadingWrapper}>
         <h2 className={styles.travelName}>{travel.name}</h2>
 
-        <Button variant="outlined" onClick={onGoBackButtonClick}>
-          {t('common.goBack')}
-        </Button>
+        <Button onClick={onGoBackButtonClick}>{t('common.goBack')}</Button>
       </div>
       <Masonry numberOfColumns={3}>
         {placesImages.map(({ url, landscape, name }, index) => (

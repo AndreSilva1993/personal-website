@@ -1,0 +1,16 @@
+.select {
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color: var(--color-white);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+
+.select:hover {
+  border: 1px solid var(--color-white);
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: border 250ms ease-out, background-color 250ms ease-out;
+}

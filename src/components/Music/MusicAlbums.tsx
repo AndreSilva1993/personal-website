@@ -4,16 +4,13 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Button from '@mui/material/Button';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-
+import { Button } from '@src/components/Button/Button';
+import { Select } from '@src/components/Select/Select';
 import { useLastFMTopAlbums } from '@src/queries/last-fm';
 import { usePropsContext } from '@src/contexts/PropsContext';
 import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
 import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 
-import type { SelectChangeEvent } from '@mui/material';
 import type { LastFMTimePeriod, LastFMTopAlbum } from '@src/clients/last-fm/last-fm.types';
 
 const MusicAlbums = () => {
@@ -30,25 +27,21 @@ const MusicAlbums = () => {
     initialData: { pages: [initialTopAlbums], pageParams: [] },
   });
 
-  function handleTimePeriodChange(event: SelectChangeEvent) {
-    setTimePeriod(event.target.value as LastFMTimePeriod);
-  }
-
   return (
     <section>
       <div className={styles.searchOptionsWrapper}>
         <h2 className={styles.title}>{t('music.topAlbumsTitle')}</h2>
         <Select
           value={timePeriod}
-          onChange={handleTimePeriodChange}
           className={styles.searchSelect}
+          onChange={(event) => setTimePeriod(event.target.value as LastFMTimePeriod)}
         >
-          <MenuItem value="overall">{t('music.filters.albums.allTime')}</MenuItem>
-          <MenuItem value="12month">{t('music.filters.albums.last365Days')}</MenuItem>
-          <MenuItem value="6month">{t('music.filters.albums.last180Days')}</MenuItem>
-          <MenuItem value="3month">{t('music.filters.albums.last90Days')}</MenuItem>
-          <MenuItem value="1month">{t('music.filters.albums.last30Days')}</MenuItem>
-          <MenuItem value="7day">{t('music.filters.albums.last7Days')}</MenuItem>
+          <option value="overall">{t('music.filters.albums.allTime')}</option>
+          <option value="12month">{t('music.filters.albums.last365Days')}</option>
+          <option value="6month">{t('music.filters.albums.last180Days')}</option>
+          <option value="3month">{t('music.filters.albums.last90Days')}</option>
+          <option value="1month">{t('music.filters.albums.last30Days')}</option>
+          <option value="7day">{t('music.filters.albums.last7Days')}</option>
         </Select>
       </div>
 
@@ -74,7 +67,7 @@ const MusicAlbums = () => {
         )}
       />
 
-      <Button className={styles.button} variant="outlined" onClick={() => fetchNextAlbums()}>
+      <Button className={styles.button} onClick={() => fetchNextAlbums()}>
         {isFetchingNextPage ? <LoadingDots /> : t('music.loadMoreAlbums')}
       </Button>
     </section>

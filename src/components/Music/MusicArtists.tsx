@@ -2,18 +2,16 @@ import styles from './MusicArtists.module.css';
 
 import Image from 'next/image';
 import { useState } from 'react';
-import Button from '@mui/material/Button';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { useTranslation } from 'react-i18next';
 
 import { useTopArtists } from '@src/queries/spotify';
+import { Select } from '@src/components/Select/Select';
+import { Button } from '@src/components/Button/Button';
 import { usePropsContext } from '@src/contexts/PropsContext';
 import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
 import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 
 import type { FC } from 'react';
-import type { SelectChangeEvent } from '@mui/material';
 import type { SpotifyTimeRange, SpotifyTopArtist } from '@src/clients/spotify/spotify.types';
 
 const MusicArtists: FC = () => {
@@ -30,18 +28,18 @@ const MusicArtists: FC = () => {
     initialData: { pages: [initialTopArtists], pageParams: [] },
   });
 
-  function handleTimePeriodChange(event: SelectChangeEvent) {
-    setTimeRange(event.target.value as SpotifyTimeRange);
-  }
-
   return (
     <section>
       <div className={styles.searchOptionsWrapper}>
         <h2 className={styles.title}>{t('music.topArtistsTitle')}</h2>
-        <Select className={styles.searchSelect} value={timeRange} onChange={handleTimePeriodChange}>
-          <MenuItem value="long_term">{t('music.filters.artists.longTerm')}</MenuItem>
-          <MenuItem value="medium_term">{t('music.filters.artists.mediumTerm')}</MenuItem>
-          <MenuItem value="short_term">{t('music.filters.artists.shortTerm')}</MenuItem>
+        <Select
+          value={timeRange}
+          className={styles.searchSelect}
+          onChange={(event) => setTimeRange(event.target.value as SpotifyTimeRange)}
+        >
+          <option value="long_term">{t('music.filters.artists.longTerm')}</option>
+          <option value="medium_term">{t('music.filters.artists.mediumTerm')}</option>
+          <option value="short_term">{t('music.filters.artists.shortTerm')}</option>
         </Select>
       </div>
 
@@ -66,7 +64,7 @@ const MusicArtists: FC = () => {
         )}
       />
 
-      <Button className={styles.button} variant="outlined" onClick={() => fetchNextArtists()}>
+      <Button className={styles.button} onClick={() => fetchNextArtists()}>
         {isFetchingNextPage ? <LoadingDots /> : t('music.loadMoreArtists')}
       </Button>
     </section>
