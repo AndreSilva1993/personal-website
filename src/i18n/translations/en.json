@@ -57,7 +57,8 @@
       "cz": "Czech Republic",
       "gb": "United Kingdom",
       "it": "Italy",
-      "hr": "Croatia"
+      "hr": "Croatia",
+      "us": "United States"
     },
     "places": {
       "london": {
@@ -138,6 +139,14 @@
         "plitvice-lakes": "Plitvice Lakes",
         "golden-horn-beach": "Golden Horn Beach",
         "krka-national-park": "Krka National Park"
+      },
+      "new-york": {
+        "moma": "Museum of Modern Art",
+        "oculus-station": "Oculus Station",
+        "brooklyn-bridge": "Brooklyn Bridge",
+        "helicopter-ride": "Helicopter Ride",
+        "the-met": "The Metropolitan Museum of Art",
+        "one-world-observatory": "One World Observatory"
       }
     }
   },

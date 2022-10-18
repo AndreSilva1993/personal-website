@@ -6,7 +6,8 @@
     "cz",
     "hu",
     "it",
-    "hr"
+    "hr",
+    "us"
   ],
   "travels": [
     {
@@ -543,7 +544,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.salto-cavalo-viewpoint.title",
+          "name": "travels.places.azores.salto-cavalo-viewpoint",
           "images": [
             {
               "url": "/images/travels/azores/salto-cavalo-viewpoint.jpeg",
@@ -556,7 +557,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.grena-park.title",
+          "name": "travels.places.azores.grena-park",
           "images": [
             {
               "url": "/images/travels/azores/grena-park.jpeg",
@@ -569,7 +570,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.furnas-lake.title",
+          "name": "travels.places.azores.furnas-lake",
           "images": [
             {
               "url": "/images/travels/azores/furnas-lake.jpeg",
@@ -582,7 +583,7 @@
           ]
         },
         {
-          "name": "travels.places.azores.terra-nostra-garden.title",
+          "name": "travels.places.azores.terra-nostra-garden",
           "images": [
             {
               "url": "/images/travels/azores/terra-nostra-garden-1.jpeg",
@@ -612,7 +613,7 @@
       "image": "/images/travels/madeira/sao-lourenco-point.jpeg",
       "places": [
         {
-          "name": "travels.places.madeira.balcoes-viewpoint.title",
+          "name": "travels.places.madeira.balcoes-viewpoint",
           "images": [
             {
               "url": "/images/travels/madeira/balcoes-viewpoint.jpeg",
@@ -625,7 +626,7 @@
           ]
         },
         {
-          "name": "travels.places.madeira.cape-girao.title",
+          "name": "travels.places.madeira.cape-girao",
           "images": [
             {
               "url": "/images/travels/madeira/cape-girao.jpeg",
@@ -638,7 +639,7 @@
           ]
         },
         {
-          "name": "travels.places.madeira.queimadas-forest-park.title",
+          "name": "travels.places.madeira.queimadas-forest-park",
           "images": [
             {
               "url": "/images/travels/madeira/queimadas-forest-park.jpeg",
@@ -651,7 +652,7 @@
           ]
         },
         {
-          "name": "travels.places.madeira.sao-lourenco-point.title",
+          "name": "travels.places.madeira.sao-lourenco-point",
           "images": [
             {
               "url": "/images/travels/madeira/sao-lourenco-point.jpeg",
@@ -668,7 +669,7 @@
           ]
         },
         {
-          "name": "travels.places.madeira.monte-palace.title",
+          "name": "travels.places.madeira.monte-palace",
           "images": [
             {
               "url": "/images/travels/madeira/monte-palace.jpeg",
@@ -1134,6 +1135,117 @@
           "coordinates": [
             43.5596,
             16.5227
+          ]
+        }
+      ]
+    },
+    {
+      "name": "New York",
+      "image": "/images/travels/new-york/helicopter-ride-1.jpeg",
+      "countryCodes": [
+        "us"
+      ],
+      "places": [
+        {
+          "name": "travels.places.new-york.brooklyn-bridge",
+          "images": [
+            {
+              "url": "/images/travels/new-york/brooklyn-bridge-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.7061,
+            -73.9969
+          ]
+        },
+        {
+          "name": "travels.places.new-york.one-world-observatory",
+          "images": [
+            {
+              "url": "/images/travels/new-york/one-world-observatory-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.7130,
+            -74.0132
+          ]
+        },
+        {
+          "name": "travels.places.new-york.helicopter-ride",
+          "images": [
+            {
+              "url": "/images/travels/new-york/helicopter-ride-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.7205977,
+            -74.1067179
+          ]
+        },
+        {
+          "name": "travels.places.new-york.moma",
+          "images": [
+            {
+              "url": "/images/travels/new-york/moma-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/moma-2.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/moma-3.jpeg",
+              "landscape": true
+            }
+          ],
+          "coordinates": [
+            40.7115,
+            -74.0114
+          ]
+        },
+        {
+          "name": "travels.places.new-york.oculus-station",
+          "images": [
+            {
+              "url": "/images/travels/new-york/oculus-station-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/oculus-station-2.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.7614,
+            -73.9776
+          ]
+        },
+        {
+          "name": "travels.places.new-york.the-met",
+          "images": [
+            {
+              "url": "/images/travels/new-york/the-met-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/the-met-2.jpeg",
+              "landscape": true
+            },
+            {
+              "url": "/images/travels/new-york/the-met-3.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/the-met-4.jpeg",
+              "landscape": true
+            }
+          ],
+          "coordinates": [
+            40.7794,
+            -73.9632
           ]
         }
       ]
