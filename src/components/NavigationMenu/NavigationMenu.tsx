@@ -2,23 +2,27 @@ import styles from './NavigationMenu.module.css';
 
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Person, MusicNote, PhotoAlbum, LocationOn, Movie } from '@mui/icons-material';
 
+import { PersonIcon } from '@src/icons/PersonIcon';
+import { MusicNoteIcon } from '@src/icons/MusicNoteIcon';
+import { PhotoAlbumIcon } from '@src/icons/PhotoAlbumIcon';
+import { LocationOnIcon } from '@src/icons/LocationOnIcon';
 import { MobileNavigationMenu } from '@src/components/NavigationMenu/MobileNavigationMenu';
 import { DesktopNavigationMenu } from 'src/components/NavigationMenu/DesktopNavigationMenu';
 
 import type { FC } from 'react';
+import { MovieIcon } from '@src/icons/MovieIcon';
 
 const NavigationMenu: FC = () => {
   const { t } = useTranslation();
 
   const navigationLinks = useMemo(
     () => [
-      { href: '/', title: t('navigation.about'), Icon: Person },
-      { href: '/portfolio', title: t('navigation.portfolio'), Icon: PhotoAlbum },
-      { href: '/travels', title: t('navigation.travels'), Icon: LocationOn },
-      { href: '/music', title: t('navigation.music'), Icon: MusicNote },
-      { href: '/movies', title: t('navigation.movies'), Icon: Movie },
+      { href: '/', title: t('navigation.about'), icon: <PersonIcon /> },
+      { href: '/portfolio', title: t('navigation.portfolio'), icon: <PhotoAlbumIcon /> },
+      { href: '/travels', title: t('navigation.travels'), icon: <LocationOnIcon /> },
+      { href: '/music', title: t('navigation.music'), icon: <MusicNoteIcon /> },
+      { href: '/movies', title: t('navigation.movies'), icon: <MovieIcon /> },
     ],
     []
   );

@@ -1,9 +1,7 @@
-import type { SvgIconComponent } from '@mui/icons-material';
-
 type NavigationLink = {
   href: string;
   title: string;
-  Icon: SvgIconComponent;
+  icon: JSX.Element;
 };
 
 interface DesktopNavigationMenuProps {

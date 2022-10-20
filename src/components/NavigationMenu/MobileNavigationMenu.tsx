@@ -2,55 +2,61 @@ import styles from './MobileNavigationMenu.module.css';
 
 import Link from 'next/link';
 import { useState } from 'react';
+import classNames from 'classnames';
 import { useRouter } from 'next/router';
-
-import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import Drawer from '@mui/material/Drawer';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemButton from '@mui/material/ListItemButton';
-import Menu from '@mui/icons-material/Menu';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import type { FC } from 'react';
 import type { MobileNavigationMenuProps } from './NavigationMenu.types';
+
+import { MenuIcon } from '@src/icons/MenuIcon';
 
 const MobileNavigationMenu: FC<MobileNavigationMenuProps> = ({ navigationLinks }) => {
   const { pathname } = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  function handleMenuIconClick() {
-    setMenuOpen(true);
-  }
-
-  function handleDrawerClose() {
-    setMenuOpen(false);
-  }
-
   return (
     <>
-      <Menu onClick={handleMenuIconClick} className={styles.navigationMenuIcon} />
+      <MenuIcon onClick={() => setMenuOpen(true)} className={styles.navigationMenuIcon} />
 
-      <Drawer anchor="right" open={menuOpen} onClose={handleDrawerClose}>
-        <Box className={styles.navigationMenu}>
-          <List>
-            {navigationLinks.map(({ href, title, Icon }) => (
-              <Link href={href} key={title} passHref>
-                <ListItemButton
-                  component="a"
-                  selected={href === pathname}
-                  onClick={handleDrawerClose}
-                >
-                  <ListItemIcon>
-                    <Icon />
-                  </ListItemIcon>
-                  <ListItemText primary={title} />
-                </ListItemButton>
-              </Link>
-            ))}
-          </List>
-        </Box>
-      </Drawer>
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            <motion.div
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              initial={{ x: '100%' }}
+              className={styles.navigationMenu}
+            >
+              <ul className={styles.navigationMenuList}>
+                {navigationLinks.map(({ href, title, icon }) => (
+                  <li className={styles.navigationMenuListItem} key={href}>
+                    <Link href={href} key={title} passHref>
+                      <a
+                        onClick={() => setMenuOpen(false)}
+                        className={classNames(styles.navigationMenuListItemLink, {
+                          [styles.navigationMenuListItemLinkSelected]: pathname === href,
+                        })}
+                      >
+                        {icon}
+                        {title}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div
+              exit={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className={styles.navigationMenuBackdrop}
+              onClick={() => setMenuOpen(false)}
+            />
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };
