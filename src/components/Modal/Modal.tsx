@@ -1,17 +1,30 @@
 import styles from './Modal.module.css';
 
-import { Close } from '@mui/icons-material';
-import { Modal as MaterialUIModal } from '@mui/material';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import type { ModalProps } from '@mui/material';
+import { CloseIcon } from '@src/icons/CloseIcon';
+
+interface ModalProps {
+  open: boolean;
+  children: JSX.Element;
+  onClose: () => void;
+}
 
 const Modal = ({ children, open, onClose }: ModalProps) => (
-  <MaterialUIModal open={open} onClose={onClose}>
-    <>
-      {children}
-      <Close onClick={(event) => onClose(event, 'backdropClick')} className={styles.closeIcon} />
-    </>
-  </MaterialUIModal>
+  <AnimatePresence>
+    {open && (
+      <motion.div
+        exit={{ opacity: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.25 }}
+      >
+        <div className={styles.modalBackdrop} onClick={onClose} />
+        {children}
+        <CloseIcon onClick={onClose} className={styles.closeIcon} />
+      </motion.div>
+    )}
+  </AnimatePresence>
 );
 
 export { Modal };

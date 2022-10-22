@@ -3,10 +3,12 @@ import styles from './Carousel.module.css';
 import classNames from 'classnames';
 import { useAnimation, motion } from 'framer-motion';
 import { useEffect, useState, Children, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
 import type { FC } from 'react';
 import type { CarouselProps } from './Carousel.types';
+
+import { ChevronLeftIcon } from '@src/icons/ChevronLeftIcon';
+import { ChevronRightIcon } from '@src/icons/ChevronRightIcon';
 
 const Carousel: FC<CarouselProps> = ({
   children,
@@ -123,7 +125,7 @@ const Carousel: FC<CarouselProps> = ({
           [styles.chevronWrapperDisabled]: carouselIndex === 0,
         })}
       >
-        <ChevronLeft className={styles.chevron} />
+        <ChevronLeftIcon className={styles.chevron} />
       </div>
       <div
         onClick={handleChevronRightClick}
@@ -131,7 +133,7 @@ const Carousel: FC<CarouselProps> = ({
           [styles.chevronWrapperDisabled]: carouselIndex === Children.count(children) - 1,
         })}
       >
-        <ChevronRight className={styles.chevron} />
+        <ChevronRightIcon className={styles.chevron} />
       </div>
     </div>
   );

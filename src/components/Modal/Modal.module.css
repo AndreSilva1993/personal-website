@@ -1,3 +1,17 @@
+.modalBackdrop {
+  z-index: var(--layer-100);
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.modalWrapper {
+  z-index: var(--layer-200);
+}
+
 .closeIcon {
   top: 3rem;
   right: 3rem;

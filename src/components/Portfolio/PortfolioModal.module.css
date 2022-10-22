@@ -5,9 +5,10 @@
   overflow: auto;
   background-color: var(--color-white);
 
-  position: absolute;
+  position: fixed;
   top: 5%;
   left: 25%;
+  z-index: var(--layer-200);
   width: calc(100vw - 50%);
   height: calc(100% - 10%);
 }
