@@ -95,7 +95,7 @@ export const TravelsPage: FC = () => {
 
   return (
     <PageContainer className={styles.pageContainer}>
-      <h1 className={styles.title}>{t('travels.title')}</h1>
+      <h1 className={styles.title}>{!selectedTravel ? t('travels.title') : selectedTravel.name}</h1>
       <TravelCountries countries={countries} selectedCountries={selectedCountries} />
       <div className={styles.mapContainer} id="map-container" ref={leafletMapContainerRef} />
 
