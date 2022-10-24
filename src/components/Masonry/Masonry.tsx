@@ -1,11 +1,11 @@
+import styles from './Masonry.module.css';
+
 import { Children } from 'react';
-import Box from '@mui/material/Box';
 
 import type { ReactElement } from 'react';
 
 interface MasonryProps {
   children: ReactElement[];
-  numberOfColumns: number;
 }
 
 interface MasonryItemProps {
@@ -13,8 +13,9 @@ interface MasonryItemProps {
   landscape: boolean;
 }
 
-export function Masonry({ children, numberOfColumns = 1 }: MasonryProps) {
-  const columns = Array.from({ length: numberOfColumns }, () => ({ columnCount: 0, items: [] }));
+export function Masonry({ children }: MasonryProps) {
+  // The default number of columns is three.
+  const columns = Array.from({ length: 3 }, () => ({ columnCount: 0, items: [] }));
 
   Children.forEach(children, (child) => {
     const smallerIndex = columns.reduce((lowest, next, index) => {
@@ -28,26 +29,13 @@ export function Masonry({ children, numberOfColumns = 1 }: MasonryProps) {
   });
 
   return (
-    <Box
-      sx={{
-        display: 'grid',
-        gridGap: '2rem',
-        gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)`,
-      }}
-    >
+    <div className={styles.masonry}>
       {columns.map(({ items }, columnIndex) => (
-        <Box
-          key={columnIndex}
-          sx={{
-            gap: '2rem',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
+        <div key={columnIndex} className={styles.masonryColumn}>
           {items}
-        </Box>
+        </div>
       ))}
-    </Box>
+    </div>
   );
 }
 

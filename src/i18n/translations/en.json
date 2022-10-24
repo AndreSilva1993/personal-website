@@ -141,11 +141,15 @@
         "krka-national-park": "Krka National Park"
       },
       "new-york": {
+        "the-edge": "The Edge",
+        "the-vessel": "The Vessel",
         "moma": "Museum of Modern Art",
         "oculus-station": "Oculus Station",
         "brooklyn-bridge": "Brooklyn Bridge",
         "helicopter-ride": "Helicopter Ride",
         "the-met": "The Metropolitan Museum of Art",
+        "radio-city-music-hall": "Radio City Music Hall",
+        "madison-square-garden": "Madison Square Garden",
         "one-world-observatory": "One World Observatory"
       }
     }

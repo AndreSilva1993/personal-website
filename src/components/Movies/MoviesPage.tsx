@@ -6,16 +6,16 @@ import Image from 'next/image';
 import { debounce } from 'throttle-debounce';
 import { useTranslation } from 'react-i18next';
 import Chip from '@mui/material/Chip';
-import Search from '@mui/icons-material/Search';
-import OutlinedInput from '@mui/material/OutlinedInput';
 
 import type { FC } from 'react';
 import type { Movie, MoviesData } from '@src/clients/movies/movies.types';
 
 import { useMovies } from '@src/queries/movies';
 import { usePropsContext } from '@src/contexts/PropsContext';
+import { Input } from '@src/components/Input/Input';
 import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
+import { SearchIcon } from '@src/icons/SearchIcon';
 
 export const MoviesPage: FC = () => {
   const { t } = useTranslation();
@@ -58,9 +58,8 @@ export const MoviesPage: FC = () => {
   return (
     <PageContainer className={styles.pageContainer}>
       <h1 className={styles.title}>{t('movies.title')}</h1>
-      <OutlinedInput
-        fullWidth
-        endAdornment={<Search />}
+      <Input
+        icon={<SearchIcon />}
         placeholder={t('movies.filters.name')}
         onChange={debounceHandleSearchInputChange}
       />

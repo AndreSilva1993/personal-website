@@ -1247,6 +1247,58 @@
             40.7794,
             -73.9632
           ]
+        },
+        {
+          "name": "travels.places.new-york.madison-square-garden",
+          "images": [
+            {
+              "url": "/images/travels/new-york/madison-square-garden.jpeg",
+              "landscape": true
+            }
+          ],
+          "coordinates": [
+            40.7505,
+            -73.9934
+          ]
+        },
+        {
+          "name": "travels.places.new-york.the-vessel",
+          "images": [
+            {
+              "url": "/images/travels/new-york/the-vessel-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.7538,
+            -74.0022
+          ]
+        },
+        {
+          "name": "travels.places.new-york.radio-city-music-hall",
+          "images": [
+            {
+              "url": "/images/travels/new-york/radio-city-music-hall.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.7600,
+            -73.9800
+          ]
+        },
+        {
+          "name": "travels.places.new-york.the-edge",
+          "images": [
+            {
+              "url": "/images/travels/new-york/the-edge-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.7541,
+            -74.0010
+          ]
         }
       ]
     }

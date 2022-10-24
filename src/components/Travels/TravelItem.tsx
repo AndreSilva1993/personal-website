@@ -34,7 +34,7 @@ export function TravelItem({ travel, onGoBackButtonClick }: TravelItemProps) {
 
         <Button onClick={onGoBackButtonClick}>{t('common.goBack')}</Button>
       </div>
-      <Masonry numberOfColumns={3}>
+      <Masonry>
         {placesImages.map(({ url, landscape, name }, index) => (
           <MasonryItem landscape={landscape} key={index}>
             <div
