@@ -47,14 +47,14 @@ export function NotFound() {
           <h2 className={styles.subTitle}>{t('404.description')}</h2>
           <div className={styles.imagesWrapper}>
             <div className={styles.planetImageWrapper}>
-              <Image src="/images/404/planet.svg" layout="fill" alt="Planet" />
+              <Image src="/images/404/planet.svg" fill alt="Planet" />
             </div>
             <div className={styles.astronautImageWrapper}>
-              <Image src="/images/404/astronaut.svg" layout="fill" alt="Astronaut" />
+              <Image src="/images/404/astronaut.svg" fill alt="Astronaut" />
             </div>
           </div>
-          <Link href="/" passHref>
-            <a className={styles.link}>{t('404.cta')}</a>
+          <Link href="/" className={styles.link}>
+            {t('404.cta')}
           </Link>
         </div>
       </div>

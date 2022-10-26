@@ -14,14 +14,13 @@ const DesktopNavigationMenu: FC<DesktopNavigationMenuProps> = ({ navigationLinks
     <ul className={styles.menuList}>
       {navigationLinks.map(({ href, title }) => (
         <li className={styles.menuItem} key={title}>
-          <Link href={href} passHref>
-            <a
-              className={classNames(styles.menuItemLink, {
-                [styles.menuItemLinkActive]: pathname === href,
-              })}
-            >
-              {title}
-            </a>
+          <Link
+            href={href}
+            className={classNames(styles.menuItemLink, {
+              [styles.menuItemLinkActive]: pathname === href,
+            })}
+          >
+            {title}
           </Link>
         </li>
       ))}

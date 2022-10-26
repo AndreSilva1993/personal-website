@@ -31,16 +31,16 @@ const MobileNavigationMenu: FC<MobileNavigationMenuProps> = ({ navigationLinks }
               <ul className={styles.navigationMenuList}>
                 {navigationLinks.map(({ href, title, icon }) => (
                   <li className={styles.navigationMenuListItem} key={href}>
-                    <Link href={href} key={title} passHref>
-                      <a
-                        onClick={() => setMenuOpen(false)}
-                        className={classNames(styles.navigationMenuListItemLink, {
-                          [styles.navigationMenuListItemLinkSelected]: pathname === href,
-                        })}
-                      >
-                        {icon}
-                        {title}
-                      </a>
+                    <Link
+                      href={href}
+                      key={title}
+                      onClick={() => setMenuOpen(false)}
+                      className={classNames(styles.navigationMenuListItemLink, {
+                        [styles.navigationMenuListItemLinkSelected]: pathname === href,
+                      })}
+                    >
+                      {icon}
+                      {title}
                     </Link>
                   </li>
                 ))}

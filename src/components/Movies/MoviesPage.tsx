@@ -85,9 +85,9 @@ export const MoviesPage: FC = () => {
         render={({ title, image, imagePlaceholder }: Movie, renderProps) => (
           <div className={styles.imageWrapper} key={title} {...renderProps}>
             <Image
+              fill
               src={image}
               alt={title}
-              layout="fill"
               sizes="(max-width: 767px) 50vw, 20vw"
               placeholder="blur"
               blurDataURL={imagePlaceholder}
@@ -96,8 +96,12 @@ export const MoviesPage: FC = () => {
         )}
         renderHoveringItem={({ title, year, genres, imdbIdentifier }: Movie) => (
           <>
-            <Link href={`https://imdb.com/title/${imdbIdentifier}`} passHref>
-              <a className={styles.imdbLink} target="_blank">{`${title} (${year})`}</a>
+            <Link
+              href={`https://imdb.com/title/${imdbIdentifier}`}
+              className={styles.imdbLink}
+              target="_blank"
+            >
+              {`${title} (${year})`}
             </Link>
             <span className={styles.currentMovieGenres}>
               {genres.map((genre) => t(`movies.genres.${genre}`)).join(', ')}

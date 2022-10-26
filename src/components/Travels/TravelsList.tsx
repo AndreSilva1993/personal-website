@@ -23,13 +23,12 @@ export const TravelsList: FC<TravelListItemProps> = ({ travels, onTravelClick })
         <li className={styles.travelItem} key={name} onClick={() => onTravelClick(index)}>
           <div className={styles.travelItemImageWrapper}>
             <Image
+              fill
               src={image}
               alt={name}
               title={name}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
               sizes="(max-width: 767px) 100vw, 50vw"
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
               priority={index < 2}
               className={styles.travelItemImage}
             />

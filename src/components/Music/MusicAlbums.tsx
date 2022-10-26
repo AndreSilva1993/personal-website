@@ -50,10 +50,10 @@ const MusicAlbums = () => {
         render={({ name, image }: LastFMTopAlbum, renderProps) => (
           <div className={styles.albumCoverWrapper} key={name} {...renderProps}>
             <Image
+              fill
               className={styles.albumCover}
               src={image}
               alt={name}
-              layout="fill"
               sizes="(max-width: 767px) 50vw, 20vw"
             />
           </div>

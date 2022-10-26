@@ -42,7 +42,7 @@ export function TravelItem({ travel, onGoBackButtonClick }: TravelItemProps) {
                 [styles.imageLandscapeWrapper]: landscape,
               })}
             >
-              <Image src={url} alt={name} layout="fill" draggable={false} objectFit="cover" />
+              <Image fill src={url} alt={name} draggable={false} style={{ objectFit: 'cover' }} />
               <p className={styles.imageTitle}>{t(name)}</p>
             </div>
           </MasonryItem>

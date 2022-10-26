@@ -38,11 +38,11 @@ export const AboutPage: FC = () => {
       <h1 className={styles.title}>{t('about.title')}</h1>
       <div className={styles.imageWrapper}>
         <Image
+          fill
+          style={{ objectFit: 'cover' }}
           alt="About"
-          layout="fill"
           src={AboutImage}
           placeholder="blur"
-          objectFit="cover"
           sizes="(max-width: 992px) 100vw, 75vw"
         />
       </div>

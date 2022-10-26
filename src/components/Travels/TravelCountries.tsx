@@ -18,7 +18,7 @@ const TravelCountries: FC<TravelCountriesProps> = ({ countries, selectedCountrie
       {countries.map((country) => (
         <li className={styles.country} key={country}>
           <Image
-            layout="fill"
+            fill
             className={styles.countryImage}
             alt={t(`travels.countries.${country}`)}
             src={`/images/travels/flags/${country}.svg`}

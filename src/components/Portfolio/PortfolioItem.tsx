@@ -74,12 +74,12 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, 
       transition={{ duration: 1, ease: 'easeOut', delay: 0.25 * index }}
     >
       <Image
+        fill
         priority
         alt={name}
         src={image}
         placeholder="blur"
-        objectFit="cover"
-        layout="fill"
+        style={{ objectFit: 'cover' }}
         sizes="(max-width: 767px) 100vw, 33vw"
         className={classNames(styles.itemImage, { [styles.itemImageHovering]: isHovering })}
       />
@@ -92,11 +92,11 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, 
       >
         <div className={styles.itemCompanyImage}>
           <Image
+            fill
             priority
             alt={name}
             src={logoImage}
-            layout="fill"
-            objectFit="contain"
+            style={{ objectFit: 'contain' }}
             sizes="(max-width: 767px) 100vw, 33vw"
           />
         </div>

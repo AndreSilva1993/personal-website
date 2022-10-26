@@ -14,13 +14,13 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ item, open, onClose }) => (
       <Carousel className={styles.carousel}>
         {item?.images.map((image, index) => (
           <Image
+            fill
             priority
             src={image}
             key={index}
             alt={item?.name}
             sizes="50vw"
-            layout="fill"
-            objectFit="cover"
+            style={{ objectFit: 'cover' }}
           />
         ))}
       </Carousel>

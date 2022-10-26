@@ -48,11 +48,11 @@ const MusicArtists: FC = () => {
         render={({ image, name }: SpotifyTopArtist, renderProps) => (
           <div className={styles.artistImageWrapper} key={name} {...renderProps}>
             <Image
+              fill
               className={styles.artistImage}
               src={image}
               alt={name}
-              layout="fill"
-              objectFit="cover"
+              style={{ objectFit: 'cover' }}
               sizes="(max-width: 767px) 50vw, 20vw"
             />
           </div>
