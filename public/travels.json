@@ -1178,6 +1178,10 @@
             {
               "url": "/images/travels/new-york/helicopter-ride-1.jpeg",
               "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/helicopter-ride-2.jpeg",
+              "landscape": false
             }
           ],
           "coordinates": [
@@ -1267,6 +1271,10 @@
             {
               "url": "/images/travels/new-york/the-vessel-1.jpeg",
               "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/the-vessel-2.jpeg",
+              "landscape": false
             }
           ],
           "coordinates": [
@@ -1293,11 +1301,28 @@
             {
               "url": "/images/travels/new-york/the-edge-1.jpeg",
               "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/the-edge-2.jpeg",
+              "landscape": false
             }
           ],
           "coordinates": [
             40.7541,
             -74.0010
+          ]
+        },
+        {
+          "name": "travels.places.new-york.34-street-herald-sq-station",
+          "images": [
+            {
+              "url": "/images/travels/new-york/34-street-herald-sq-station.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.7496,
+            73.9877
           ]
         }
       ]
