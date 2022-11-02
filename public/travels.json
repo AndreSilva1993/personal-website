@@ -1324,6 +1324,53 @@
             40.7496,
             -73.9877
           ]
+        },
+        {
+          "name": "travels.places.new-york.statue-of-liberty",
+          "images": [
+            {
+              "url": "/images/travels/new-york/statue-of-liberty.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.6892,
+            -74.0445
+          ]
+        },
+        {
+          "name": "travels.places.new-york.madame-tussauds",
+          "images": [
+            {
+              "url": "/images/travels/new-york/madame-tussauds-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/madame-tussauds-2.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/madame-tussauds-3.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.7564,
+            -73.9888
+          ]
+        },
+        {
+          "name": "travels.places.new-york.ed-sullivan-theater",
+          "images": [
+            {
+              "url": "/images/travels/new-york/ed-sullivan-theater.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.763812,
+            -73.982945
+          ]
         }
       ]
     }
