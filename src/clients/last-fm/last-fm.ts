@@ -1,36 +1,42 @@
-import axios from 'axios';
-
 import type {
   LastFMTimePeriod,
-  LastFMUserInfo,
   LastFMTopAlbum,
   LastFMRecentTrack,
-  LastFMUserInfoResponse,
   LastFMTopAlbumsResponse,
-  LastFMTopArtistsResponse,
-  LastFMLovedTracksResponse,
   LastFMRecentTracksResponse,
 } from './last-fm.types';
 
-const lastFMClient = axios.create({
-  baseURL: process.env.LAST_FM_API_URL,
-  params: {
+async function requestLastFM<T>(searchParams: Record<string, string | number>) {
+  const fetchSearchParams = new URLSearchParams({
     format: 'json',
     user: process.env.LAST_FM_API_USER,
     api_key: process.env.LAST_FM_API_KEY,
-  },
-});
+    ...searchParams,
+  });
+
+  const response = await fetch(`${process.env.LAST_FM_API_URL}?${fetchSearchParams}`);
+
+  if (!response.ok) {
+    return [] as T;
+  }
+
+  const responseBody: T = await response.json();
+  return responseBody;
+}
 
 export const getTopAlbums = async (
   page: number = 1,
   period: LastFMTimePeriod = 'overall'
 ): Promise<LastFMTopAlbum[]> => {
   try {
-    const { data } = await lastFMClient.get<LastFMTopAlbumsResponse>('', {
-      params: { method: 'user.gettopalbums', page, period, limit: 20 },
+    const { topalbums } = await requestLastFM<LastFMTopAlbumsResponse>({
+      method: 'user.gettopalbums',
+      page,
+      period,
+      limit: 20,
     });
 
-    return data.topalbums.album.map(({ name, artist, image, playcount }) => ({
+    return topalbums.album.map(({ name, artist, image, playcount }) => ({
       name,
       artist: artist.name,
       playCount: playcount,
@@ -43,11 +49,12 @@ export const getTopAlbums = async (
 
 export const getRecentTracks = async (): Promise<LastFMRecentTrack[]> => {
   try {
-    const { data } = await lastFMClient.get<LastFMRecentTracksResponse>('', {
-      params: { method: 'user.getrecenttracks', limit: 20 },
+    const { recenttracks } = await requestLastFM<LastFMRecentTracksResponse>({
+      method: 'user.getrecenttracks',
+      limit: 20,
     });
 
-    return data.recenttracks.track.map(({ name, artist, image, album, date }) => ({
+    return recenttracks.track.map(({ name, artist, image, album, date }) => ({
       name,
       album: album['#text'],
       artist: artist['#text'],
@@ -58,16 +65,3 @@ export const getRecentTracks = async (): Promise<LastFMRecentTrack[]> => {
     return [];
   }
 };
-
-export const getUserInfo = async (): Promise<LastFMUserInfo> =>
-  Promise.all([
-    lastFMClient.get<LastFMUserInfoResponse>('', { params: { method: 'user.getinfo' } }),
-    lastFMClient.get<LastFMTopAlbumsResponse>('', { params: { method: 'user.gettopalbums' } }),
-    lastFMClient.get<LastFMTopArtistsResponse>('', { params: { method: 'user.gettopartists' } }),
-    lastFMClient.get<LastFMLovedTracksResponse>('', { params: { method: 'user.getlovedtracks' } }),
-  ]).then(([{ data: userInfo }, { data: albums }, { data: artists }, { data: lovedTracks }]) => ({
-    playCount: Number(userInfo.user.playcount),
-    albumsCount: Number(albums.topalbums['@attr'].total),
-    artistsCount: Number(artists.topartists['@attr'].total),
-    lovedTracksCount: Number(lovedTracks.lovedtracks['@attr'].total),
-  }));

@@ -1,13 +1,13 @@
-import axios from 'axios';
 import { useQuery } from 'react-query';
 
 import type { UseQueryOptions } from 'react-query';
 import type { MoviesData } from '@src/clients/movies/movies.types';
 
 async function fetchMovies(): Promise<MoviesData> {
-  const { data } = await axios.get<MoviesData>('/api/movies');
+  const response = await fetch('/api/movies');
 
-  return data;
+  const responseBody: MoviesData = await response.json();
+  return responseBody;
 }
 
 const useMovies = (options: UseQueryOptions<MoviesData> = {}) => {

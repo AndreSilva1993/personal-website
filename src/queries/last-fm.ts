@@ -1,9 +1,7 @@
-import axios from 'axios';
 import { useQuery, useInfiniteQuery } from 'react-query';
 
 import type { UseQueryOptions, UseInfiniteQueryOptions } from 'react-query';
 import type {
-  LastFMUserInfo,
   LastFMTopAlbum,
   LastFMTimePeriod,
   LastFMRecentTrack,
@@ -13,32 +11,31 @@ async function fetchTopAlbums(
   pageParam: number,
   timePeriod: LastFMTimePeriod
 ): Promise<LastFMTopAlbum[]> {
-  try {
-    const { data } = await axios.get<LastFMTopAlbum[]>('/api/last-fm/top-albums', {
-      params: { page: pageParam, period: timePeriod },
-    });
-    return data;
-  } catch (error) {
+  const fetchSearchParams = new URLSearchParams({
+    page: pageParam.toString(),
+    period: timePeriod,
+  });
+
+  const response = await fetch(`/api/last-fm/top-albums?${fetchSearchParams}`);
+
+  if (!response.ok) {
     return [];
   }
+
+  const responseBody: LastFMTopAlbum[] = await response.json();
+
+  return responseBody;
 }
 
 async function fetchRecentTracks(): Promise<LastFMRecentTrack[]> {
-  try {
-    const { data } = await axios.get<LastFMRecentTrack[]>('/api/last-fm/recent-tracks');
-    return data;
-  } catch (error) {
+  const response = await fetch('/api/last-fm/recent-tracks');
+
+  if (!response.ok) {
     return [];
   }
-}
 
-async function fetchUserInfo(): Promise<LastFMUserInfo> {
-  try {
-    const { data } = await axios.get<LastFMUserInfo>('/api/last-fm/user-info');
-    return data;
-  } catch (error) {
-    return { playCount: 0, lovedTracksCount: 0, artistsCount: 0, albumsCount: 0 };
-  }
+  const responseBody: LastFMRecentTrack[] = await response.json();
+  return responseBody;
 }
 
 const useLastFMTopAlbums = (
@@ -57,6 +54,4 @@ const useLastFMTopAlbums = (
 const useLastFMRecentTracks = (options?: UseQueryOptions<LastFMRecentTrack[]>) =>
   useQuery(['last-fm', 'recent-tracks'], () => fetchRecentTracks(), options);
 
-const useLastFMUserInfo = () => useQuery(['last-fm', 'user-info'], () => fetchUserInfo());
-
-export { useLastFMTopAlbums, useLastFMRecentTracks, useLastFMUserInfo };
+export { useLastFMTopAlbums, useLastFMRecentTracks };

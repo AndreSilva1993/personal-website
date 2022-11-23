@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useInfiniteQuery, UseInfiniteQueryOptions } from 'react-query';
 
 import type { SpotifyTimeRange, SpotifyTopArtist } from '@src/clients/spotify/spotify.types';
@@ -7,15 +6,18 @@ async function fetchTopArtists(
   pageParam: number,
   timeRange: SpotifyTimeRange
 ): Promise<SpotifyTopArtist[]> {
-  try {
-    const { data } = await axios.get<SpotifyTopArtist[]>('/api/spotify/top-artists', {
-      params: { page: pageParam, timeRange },
-    });
+  const searchParams = new URLSearchParams({
+    timeRange,
+    page: pageParam.toString(),
+  });
+  const response = await fetch(`/api/spotify/top-artists?${searchParams}`);
 
-    return data;
-  } catch (error) {
+  if (!response.ok) {
     return [];
   }
+
+  const responseBody: SpotifyTopArtist[] = await response.json();
+  return responseBody;
 }
 
 export const useTopArtists = (

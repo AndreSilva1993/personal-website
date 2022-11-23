@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import type {
   SpotifyTopArtist,
   SpotifyTimeRange,
@@ -11,21 +9,24 @@ export const getTopArtists = async (
   timeRange: SpotifyTimeRange = 'long_term',
   page: number = 1
 ): Promise<SpotifyTopArtist[]> => {
-  const { data: topArtists } = await axios.get<SpotifyTopArtistsResponse>(
-    `${process.env.SPOTIFY_API_URL}/me/top/artists`,
+  const fetchSearchParams = new URLSearchParams({
+    limit: '20',
+    time_range: timeRange,
+    offset: String(20 * (page - 1)),
+  });
+
+  const response = await fetch(
+    `${process.env.SPOTIFY_API_URL}/me/top/artists?${fetchSearchParams}`,
     {
-      params: {
-        time_range: timeRange,
-        limit: 20,
-        offset: 20 * (page - 1),
-      },
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
+      headers: { Authorization: `Bearer ${accessToken}` },
     }
   );
 
-  return topArtists.items.map(({ name, images, external_urls }) => ({
+  if (!response.ok) return [];
+
+  const { items }: SpotifyTopArtistsResponse = await response.json();
+
+  return items.map(({ name, images, external_urls }) => ({
     name,
     link: external_urls.spotify,
     image: images.sort(
