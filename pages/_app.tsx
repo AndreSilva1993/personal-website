@@ -3,10 +3,8 @@ import '@src/theme/variables.css';
 
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { ThemeProvider } from '@mui/material';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import { theme } from '@src/theme';
 import { initI18n } from '@src/i18n/i18n';
 import { PropsContextProvider } from '@src/contexts/PropsContext';
 import { MainContainer } from '@src/components/MainContainer/MainContainer';
@@ -37,12 +35,10 @@ export default function App({ Component, pageProps }) {
   return (
     <PropsContextProvider props={pageProps}>
       <QueryClientProvider client={queryClient}>
-        <ThemeProvider theme={theme}>
-          <PageProgressBar loading={isLoadingPage} />
-          <MainContainer>
-            <Component />
-          </MainContainer>
-        </ThemeProvider>
+        <PageProgressBar loading={isLoadingPage} />
+        <MainContainer>
+          <Component />
+        </MainContainer>
       </QueryClientProvider>
     </PropsContextProvider>
   );

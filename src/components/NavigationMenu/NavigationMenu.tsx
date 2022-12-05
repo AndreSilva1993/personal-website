@@ -11,7 +11,6 @@ import { MobileNavigationMenu } from '@src/components/NavigationMenu/MobileNavig
 import { DesktopNavigationMenu } from 'src/components/NavigationMenu/DesktopNavigationMenu';
 
 import type { FC } from 'react';
-import { MovieIcon } from '@src/icons/MovieIcon';
 
 const NavigationMenu: FC = () => {
   const { t } = useTranslation();
@@ -22,7 +21,6 @@ const NavigationMenu: FC = () => {
       { href: '/portfolio', title: t('navigation.portfolio'), icon: <PhotoAlbumIcon /> },
       { href: '/travels', title: t('navigation.travels'), icon: <LocationOnIcon /> },
       { href: '/music', title: t('navigation.music'), icon: <MusicNoteIcon /> },
-      { href: '/movies', title: t('navigation.movies'), icon: <MovieIcon /> },
     ],
     []
   );

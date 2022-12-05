@@ -7,8 +7,7 @@
     "about": "About",
     "portfolio": "Portfolio",
     "travels": "Travels",
-    "music": "Music",
-    "movies": "Movies"
+    "music": "Music"
   },
   "404": {
     "seo": {
@@ -191,38 +190,6 @@
         "mediumTerm": "Medium Term",
         "shortTerm": "Short Term"
       }
-    }
-  },
-  "movies": {
-    "seo": {
-      "title": "Movies",
-      "description": "As seen in the about page, I'm an avid movie watcher as well and in here I keep record of all the movies that I've seen"
-    },
-    "title": "Movies",
-    "filters": {
-      "name": "Filter by name"
-    },
-    "genres": {
-      "war": "War",
-      "crime": "Crime",
-      "drama": "Drama",
-      "music": "Music",
-      "sport": "Sport",
-      "horror": "Horror",
-      "comedy": "Comedy",
-      "sci-fi": "Sci-Fi",
-      "action": "Action",
-      "family": "Family",
-      "fantasy": "Fantasy",
-      "history": "History",
-      "western": "Western",
-      "romance": "Romance",
-      "mystery": "Mystery",
-      "thriller": "Thriller",
-      "animation": "Animation",
-      "adventure": "Adventure",
-      "biography": "Biography",
-      "documentary": "Documentary"
     }
   }
 }
