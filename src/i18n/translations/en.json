@@ -141,6 +141,7 @@
       },
       "new-york": {
         "the-edge": "The Edge",
+        "luna-park": "Luna Park",
         "the-vessel": "The Vessel",
         "moma": "Museum of Modern Art",
         "oculus-station": "Oculus Station",
@@ -153,6 +154,7 @@
         "radio-city-music-hall": "Radio City Music Hall",
         "madison-square-garden": "Madison Square Garden",
         "one-world-observatory": "One World Observatory",
+        "st-patrick-cathedral": "St. Patrick's Cathedral",
         "34-street-herald-sq-station": "34 Street - Herald Sq Station"
       }
     }

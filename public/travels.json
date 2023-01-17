@@ -1182,6 +1182,10 @@
             {
               "url": "/images/travels/new-york/helicopter-ride-2.jpeg",
               "landscape": false
+            },
+            {
+              "url": "/images/travels/new-york/helicopter-ride-3.jpeg",
+              "landscape": false
             }
           ],
           "coordinates": [
@@ -1370,6 +1374,32 @@
           "coordinates": [
             40.763812,
             -73.982945
+          ]
+        },
+        {
+          "name": "travels.places.new-york.st-patrick-cathedral",
+          "images": [
+            {
+              "url": "/images/travels/new-york/st-patrick-cathedral.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.7586,
+            -73.9762
+          ]
+        },
+        {
+          "name": "travels.places.new-york.luna-park",
+          "images": [
+            {
+              "url": "/images/travels/new-york/luna-park.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            40.5753,
+            -73.9785
           ]
         }
       ]
