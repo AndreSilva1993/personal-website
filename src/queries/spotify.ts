@@ -3,7 +3,7 @@ import { useInfiniteQuery, UseInfiniteQueryOptions } from 'react-query';
 import type { SpotifyTimeRange, SpotifyTopArtist } from '@src/clients/spotify/spotify.types';
 
 async function fetchTopArtists(
-  pageParam: number,
+  pageParam = 1,
   timeRange: SpotifyTimeRange
 ): Promise<SpotifyTopArtist[]> {
   const searchParams = new URLSearchParams({

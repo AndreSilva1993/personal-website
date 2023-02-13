@@ -8,7 +8,7 @@ import type {
 } from '@src/clients/last-fm/last-fm.types';
 
 async function fetchTopAlbums(
-  pageParam: number,
+  pageParam = 1,
   timePeriod: LastFMTimePeriod
 ): Promise<LastFMTopAlbum[]> {
   const fetchSearchParams = new URLSearchParams({
