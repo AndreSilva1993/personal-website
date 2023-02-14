@@ -49,6 +49,7 @@ const MusicArtists: FC = () => {
           <div className={styles.artistImageWrapper} key={name} {...renderProps}>
             <Image
               fill
+              priority
               className={styles.artistImage}
               src={image}
               alt={name}

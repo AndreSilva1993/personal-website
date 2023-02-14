@@ -51,6 +51,7 @@ const MusicAlbums = () => {
           <div className={styles.albumCoverWrapper} key={name} {...renderProps}>
             <Image
               fill
+              priority
               className={styles.albumCover}
               src={image}
               alt={name}

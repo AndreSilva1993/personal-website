@@ -99,7 +99,7 @@ export const TravelsPage: FC = () => {
       <TravelCountries countries={countries} selectedCountries={selectedCountries} />
       <div className={styles.mapContainer} id="map-container" ref={leafletMapContainerRef} />
 
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode="wait">
         {!selectedTravel ? (
           <TravelsList
             travels={travels}
