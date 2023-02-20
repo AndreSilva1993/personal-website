@@ -3,6 +3,13 @@ import '@src/theme/variables.css';
 
 import { MainContainer } from '@src/components/MainContainer/MainContainer';
 
+export const metadata = {
+  title: {
+    default: 'André Silva',
+    template: '%s | André Silva',
+  },
+};
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html>
