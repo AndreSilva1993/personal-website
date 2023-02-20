@@ -3,7 +3,7 @@ const contentSecurityPolicies = [
   { 'img-src': ["'self'", 'data:', 'tiles.stadiamaps.com'] },
   { 'font-src': ["'self'", 'fonts.gstatic.com'] },
   { 'connect-src': ["'self'", 'vitals.vercel-insights.com'] },
-  { 'script-src': ["'self'", 'cdn.vercel-insights.com', "'unsafe-eval'"] },
+  { 'script-src': ["'self'", 'cdn.vercel-insights.com', "'unsafe-eval'", "'unsafe-inline'"] },
   { 'style-src': ["'self'", 'fonts.googleapis.com', "'unsafe-inline'"] },
 ];
 
@@ -13,6 +13,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfiguration = {
   reactStrictMode: true,
+  experimental: { appDir: true },
   images: {
     minimumCacheTTL: 60 * 60 * 24,
     formats: ['image/avif', 'image/webp'],

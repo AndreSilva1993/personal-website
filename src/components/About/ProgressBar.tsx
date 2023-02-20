@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './ProgressBar.module.css';
 
 import classNames from 'classnames';

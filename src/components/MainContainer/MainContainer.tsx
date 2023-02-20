@@ -1,6 +1,8 @@
+'use client';
+
 import styles from './MainContainer.module.css';
 
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import { NavigationMenu } from '@src/components/NavigationMenu/NavigationMenu';
 
@@ -11,7 +13,7 @@ interface MainContainerProps {
 }
 
 const MainContainer = ({ children }: MainContainerProps) => {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   if (pathname === '/404') {
     return children as ReactElement;

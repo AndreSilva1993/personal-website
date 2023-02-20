@@ -3,7 +3,7 @@ import styles from './MobileNavigationMenu.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
 import classNames from 'classnames';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import type { FC } from 'react';
@@ -12,7 +12,7 @@ import type { MobileNavigationMenuProps } from './NavigationMenu.types';
 import { MenuIcon } from '@src/icons/MenuIcon';
 
 const MobileNavigationMenu: FC<MobileNavigationMenuProps> = ({ navigationLinks }) => {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (

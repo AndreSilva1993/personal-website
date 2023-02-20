@@ -1,9 +1,9 @@
 import styles from './NavigationMenu.module.css';
 
 import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { PersonIcon } from '@src/icons/PersonIcon';
+import { useTranslation } from '@src/i18n/i18n-client';
 import { MusicNoteIcon } from '@src/icons/MusicNoteIcon';
 import { PhotoAlbumIcon } from '@src/icons/PhotoAlbumIcon';
 import { LocationOnIcon } from '@src/icons/LocationOnIcon';

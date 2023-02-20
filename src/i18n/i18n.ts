@@ -1,14 +1,15 @@
-import i18next from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import { createInstance } from 'i18next';
+import { initReactI18next } from 'react-i18next/initReactI18next';
 
 import translations from './translations/en.json';
 
-const initI18n = () => {
-  i18next.use(initReactI18next).init({
+export const initI18next = async () => {
+  const i18nInstance = createInstance();
+  await i18nInstance.use(initReactI18next).init({
     lng: 'en',
     defaultNS: 'translations',
     resources: { en: { translations } },
   });
-};
 
-export { initI18n };
+  return { t: i18nInstance.getFixedT('en') };
+};

@@ -2,13 +2,13 @@ import styles from './DesktopNavigationMenu.module.css';
 
 import Link from 'next/link';
 import classNames from 'classnames';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import type { FC } from 'react';
 import type { DesktopNavigationMenuProps } from './NavigationMenu.types';
 
 const DesktopNavigationMenu: FC<DesktopNavigationMenuProps> = ({ navigationLinks }) => {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   return (
     <ul className={styles.menuList}>

@@ -6,13 +6,13 @@ import { useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import { initI18n } from '@src/i18n/i18n';
+import { initI18next } from '@src/i18n/i18n';
 import { PropsContextProvider } from '@src/contexts/PropsContext';
 import { MainContainer } from '@src/components/MainContainer/MainContainer';
 import { PageProgressBar } from '@src/components/PageProgressBar/PageProgressBar';
 
 export default function App({ Component, pageProps }) {
-  initI18n();
+  initI18next();
   const router = useRouter();
   const [isLoadingPage, setIsLoadingPage] = useState(false);
 

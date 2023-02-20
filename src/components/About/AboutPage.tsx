@@ -2,36 +2,31 @@ import styles from './AboutPage.module.css';
 import AboutImage from '@public/images/about/about.jpeg';
 
 import Image from 'next/image';
-import { Fragment, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Fragment } from 'react';
 
+import { initI18next } from '@src/i18n/i18n';
 import { ProgressBar } from '@src/components/About/ProgressBar';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
-import type { FC } from 'react';
+export async function AboutPage() {
+  const { t } = await initI18next();
 
-export const AboutPage: FC = () => {
-  const { t } = useTranslation();
-
-  const technologiesData = useMemo(
-    () => [
-      { image: 'react.svg', name: 'ReactJS', value: 100 },
-      { image: 'typescript.svg', name: 'TypeScript', value: 100 },
-      { image: 'javascript.svg', name: 'JavaScript', value: 100 },
-      { image: 'css.svg', name: 'CSS', value: 100 },
-      { image: 'html.svg', name: 'HTML 5', value: 100 },
-      { image: 'next.svg', name: 'Next.js', value: 100 },
-      { image: 'node.svg', name: 'Node.js', value: 80 },
-      { image: 'jest.svg', name: 'Jest', value: 80 },
-      { image: 'polymer.svg', name: 'Polymer', value: 70 },
-      { image: 'rails.svg', name: 'Rails', value: 60 },
-      { image: 'php.svg', name: 'PHP', value: 50 },
-      { image: 'postgresql.svg', name: 'PostgreSQL', value: 50 },
-      { image: 'mysql.svg', name: 'MySQL', value: 50 },
-      { image: 'angular.svg', name: 'Angular', value: 40 },
-    ],
-    []
-  );
+  const technologiesData = [
+    { image: 'react.svg', name: 'ReactJS', value: 100 },
+    { image: 'typescript.svg', name: 'TypeScript', value: 100 },
+    { image: 'javascript.svg', name: 'JavaScript', value: 100 },
+    { image: 'css.svg', name: 'CSS', value: 100 },
+    { image: 'html.svg', name: 'HTML 5', value: 100 },
+    { image: 'next.svg', name: 'Next.js', value: 100 },
+    { image: 'node.svg', name: 'Node.js', value: 80 },
+    { image: 'jest.svg', name: 'Jest', value: 80 },
+    { image: 'polymer.svg', name: 'Polymer', value: 70 },
+    { image: 'rails.svg', name: 'Rails', value: 60 },
+    { image: 'php.svg', name: 'PHP', value: 50 },
+    { image: 'postgresql.svg', name: 'PostgreSQL', value: 50 },
+    { image: 'mysql.svg', name: 'MySQL', value: 50 },
+    { image: 'angular.svg', name: 'Angular', value: 40 },
+  ];
 
   return (
     <PageContainer className={styles.pageContainer}>
@@ -66,14 +61,6 @@ export const AboutPage: FC = () => {
           >
             <Image width={25} height={25} src="/images/about/linkedin.svg" alt="LinkedIn" />
           </a>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            className={styles.socialLink}
-            href={process.env.NEXT_PUBLIC_INSTAGRAM_URL}
-          >
-            <Image width={25} height={25} src="/images/about/instagram.svg" alt="Instagram" />
-          </a>
         </div>
       </div>
       <p className={styles.descriptionWrapper}>{t('about.description')}</p>
@@ -99,4 +86,4 @@ export const AboutPage: FC = () => {
       </div>
     </PageContainer>
   );
-};
+}
