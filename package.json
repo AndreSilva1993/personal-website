@@ -16,9 +16,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.5",
-    "react-query": "^3.39.3",
-    "sharp": "^0.31.3",
-    "throttle-debounce": "^5.0.0"
+    "react-query": "^3.39.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
@@ -28,7 +26,6 @@
     "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@types/throttle-debounce": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
     "eslint": "^8.34.0",
