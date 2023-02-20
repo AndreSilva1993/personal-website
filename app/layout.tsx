@@ -3,7 +3,7 @@ import '@src/theme/variables.css';
 
 import { MainContainer } from '@src/components/MainContainer/MainContainer';
 
-export default function Layout({ children }: { children: JSX.Element }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <head>

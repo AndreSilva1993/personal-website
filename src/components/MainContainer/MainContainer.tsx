@@ -6,17 +6,15 @@ import { usePathname } from 'next/navigation';
 
 import { NavigationMenu } from '@src/components/NavigationMenu/NavigationMenu';
 
-import type { ReactElement } from 'react';
-
 interface MainContainerProps {
-  children?: ReactElement;
+  children?: any;
 }
 
 const MainContainer = ({ children }: MainContainerProps) => {
   const pathname = usePathname();
 
   if (pathname === '/404') {
-    return children as ReactElement;
+    return children;
   }
 
   return (
