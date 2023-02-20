@@ -76,6 +76,10 @@ export const TravelsPage: FC = () => {
     });
 
     leafletMapRef.current.fitBounds(L.latLngBounds(getPlacesCoordinates()));
+
+    return () => {
+      leafletMapRef.current.remove();
+    };
   }, []);
 
   useEffect(
