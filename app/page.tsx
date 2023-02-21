@@ -1,4 +1,4 @@
-import { initI18next } from '@src/i18n/i18n';
+import { initI18next } from '@src/i18n/server';
 import { AboutPage } from '@src/components/About/AboutPage';
 
 export async function generateMetadata() {

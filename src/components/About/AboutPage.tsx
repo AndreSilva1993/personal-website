@@ -4,7 +4,7 @@ import AboutImage from '@public/images/about/about.jpeg';
 import Image from 'next/image';
 import { Fragment } from 'react';
 
-import { initI18next } from '@src/i18n/i18n';
+import { initI18next } from '@src/i18n/server';
 import { ProgressBar } from '@src/components/About/ProgressBar';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
 

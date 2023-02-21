@@ -11,8 +11,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
+/** @type {import('next').NextConfig} */
 const nextConfiguration = {
-  reactStrictMode: true,
   experimental: { appDir: true },
   images: {
     minimumCacheTTL: 60 * 60 * 24,

@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './MusicArtists.module.css';
 
 import Image from 'next/image';
@@ -7,18 +9,18 @@ import { useTranslation } from 'react-i18next';
 import { useTopArtists } from '@src/queries/spotify';
 import { Select } from '@src/components/Select/Select';
 import { Button } from '@src/components/Button/Button';
-import { usePropsContext } from '@src/contexts/PropsContext';
 import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
 import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 
-import type { FC } from 'react';
 import type { SpotifyTimeRange, SpotifyTopArtist } from '@src/clients/spotify/spotify.types';
 
-const MusicArtists: FC = () => {
+interface MusicArtistsProps {
+  initialTopArtists: SpotifyTopArtist[];
+}
+
+export function MusicArtists({ initialTopArtists }: MusicArtistsProps) {
   const { t } = useTranslation();
   const [timeRange, setTimeRange] = useState<SpotifyTimeRange>('long_term');
-
-  const { initialTopArtists } = usePropsContext<{ initialTopArtists: SpotifyTopArtist[] }>();
 
   const {
     isFetchingNextPage,
@@ -70,6 +72,4 @@ const MusicArtists: FC = () => {
       </Button>
     </section>
   );
-};
-
-export { MusicArtists };
+}

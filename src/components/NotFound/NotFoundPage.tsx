@@ -1,11 +1,13 @@
-import styles from './NotFound.module.css';
+'use client';
+
+import styles from './NotFoundPage.module.css';
 
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export function NotFound() {
+export function NotFoundPage() {
   const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>();
 
@@ -47,10 +49,10 @@ export function NotFound() {
           <h2 className={styles.subTitle}>{t('404.description')}</h2>
           <div className={styles.imagesWrapper}>
             <div className={styles.planetImageWrapper}>
-              <Image src="/images/404/planet.svg" fill alt="Planet" />
+              <Image priority fill src="/images/404/planet.svg" alt="Planet" />
             </div>
             <div className={styles.astronautImageWrapper}>
-              <Image src="/images/404/astronaut.svg" fill alt="Astronaut" />
+              <Image priority fill src="/images/404/astronaut.svg" alt="Astronaut" />
             </div>
           </div>
           <Link href="/" className={styles.link}>

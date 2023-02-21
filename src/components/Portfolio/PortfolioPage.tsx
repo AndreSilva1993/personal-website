@@ -9,8 +9,8 @@ import BurberryImage from '@public/images/portfolio/burberry/1.webp';
 import ToconlineImage from '@public/images/portfolio/toconline/1.webp';
 
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { useTranslation } from '@src/i18n/i18n-client';
 import { PortfolioItem } from '@src/components/Portfolio/PortfolioItem';
 import { PortfolioModal } from '@src/components/Portfolio/PortfolioModal';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';

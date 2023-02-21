@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './MusicAlbums.module.css';
 
 import Image from 'next/image';
@@ -7,15 +9,17 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@src/components/Button/Button';
 import { Select } from '@src/components/Select/Select';
 import { useLastFMTopAlbums } from '@src/queries/last-fm';
-import { usePropsContext } from '@src/contexts/PropsContext';
 import { ImageGrid } from '@src/components/ImageGrid/ImageGrid';
 import { LoadingDots } from '@src/components/LoadingDots/LoadingDots';
 
 import type { LastFMTimePeriod, LastFMTopAlbum } from '@src/clients/last-fm/last-fm.types';
 
-const MusicAlbums = () => {
+interface MusicAlbumsProps {
+  initialTopAlbums: LastFMTopAlbum[];
+}
+
+export function MusicAlbums({ initialTopAlbums }: MusicAlbumsProps) {
   const { t } = useTranslation();
-  const { initialTopAlbums } = usePropsContext<{ initialTopAlbums: LastFMTopAlbum[] }>();
 
   const [timePeriod, setTimePeriod] = useState<LastFMTimePeriod>('overall');
 
@@ -73,6 +77,4 @@ const MusicAlbums = () => {
       </Button>
     </section>
   );
-};
-
-export { MusicAlbums };
+}

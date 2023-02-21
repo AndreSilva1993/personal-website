@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useTranslation } from 'react-i18next';
 
-import { NotFound } from '@src/components/NotFound/NotFound';
+import { NotFoundPage } from '@src/components/NotFound/NotFoundPage';
 
 export default function Page() {
   const { t } = useTranslation();
@@ -12,7 +12,7 @@ export default function Page() {
         <title>{t('404.seo.title')}</title>
         <meta name="description" content={t('404.seo.description')} />
       </Head>
-      <NotFound />
+      <NotFoundPage />
     </>
   );
 }

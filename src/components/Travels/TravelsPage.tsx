@@ -5,13 +5,13 @@ import styles from './TravelsPage.module.css';
 import travelsJSON from '@public/travels.json';
 
 import L from 'leaflet';
+import { useTranslation } from 'react-i18next';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useRef, useMemo, useState } from 'react';
 
 import type { FC } from 'react';
 import type { ITravel } from './Travels.types';
 
-import { useTranslation } from '@src/i18n/i18n-client';
 import { TravelItem } from '@src/components/Travels/TravelItem';
 import { TravelsList } from '@src/components/Travels/TravelsList';
 import { TravelCountries } from '@src/components/Travels/TravelCountries';
