@@ -34,11 +34,12 @@ export async function AboutPage() {
       <div className={styles.imageWrapper}>
         <Image
           fill
+          priority
           style={{ objectFit: 'cover' }}
           alt="About"
           src={AboutImage}
           placeholder="blur"
-          sizes="(max-width: 992px) 100vw, 75vw"
+          sizes="(max-width: 1366px) 100vw, 75vw"
         />
       </div>
 
