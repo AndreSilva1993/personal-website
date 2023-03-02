@@ -101,7 +101,7 @@ export function PortfolioPage() {
       </div>
 
       <PortfolioModal
-        item={portfolioItems[modalActiveItem]}
+        item={modalActiveItem ? portfolioItems[modalActiveItem] : undefined}
         open={modalActiveItem !== undefined}
         onClose={() => setModalActiveItem(undefined)}
       />

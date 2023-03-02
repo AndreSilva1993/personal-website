@@ -17,12 +17,12 @@ const Carousel: FC<CarouselProps> = ({
   onCarouselTouchStart,
   onCarouselIndexChange,
 }) => {
-  const wrapperRef = useRef<HTMLDivElement>();
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const swipeRef = useRef<{
     startX: number;
     shouldGoToNextSlide?: boolean;
     shouldGoToPreviousSlide?: boolean;
-  }>();
+  }>({ startX: 0 });
 
   const controls = useAnimation();
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
@@ -44,7 +44,8 @@ const Carousel: FC<CarouselProps> = ({
 
   function handleWrapperTouchMove(event: React.TouchEvent<HTMLDivElement>) {
     const swipePercentage =
-      ((swipeRef.current.startX - event.touches[0].clientX) / wrapperRef.current.offsetWidth) * 100;
+      ((swipeRef.current.startX - event.touches[0].clientX) / wrapperRef.current!.offsetWidth) *
+      100;
 
     swipeRef.current = {
       ...swipeRef.current,

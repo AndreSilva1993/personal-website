@@ -13,7 +13,7 @@ export async function middleware({ nextUrl }: NextRequest) {
     nextUrl.pathname &&
     (nextUrl.pathname === '/music' || nextUrl.pathname.startsWith('/api/spotify'))
   ) {
-    const accessTokenExists = await exists(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY);
+    const accessTokenExists = await exists(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY!);
 
     if (!accessTokenExists) {
       const clientIdAndSecret = btoa(
@@ -24,7 +24,7 @@ export async function middleware({ nextUrl }: NextRequest) {
         method: 'POST',
         body: new URLSearchParams({
           grant_type: 'refresh_token',
-          refresh_token: process.env.SPOTIFY_REFRESH_TOKEN,
+          refresh_token: process.env.SPOTIFY_REFRESH_TOKEN!,
         }),
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -34,8 +34,8 @@ export async function middleware({ nextUrl }: NextRequest) {
 
       const { access_token: accessToken, expires_in: expiresIn } = await spotifyResponse.json();
 
-      await set(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY, accessToken);
-      await expire(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY, expiresIn);
+      await set(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY!, accessToken);
+      await expire(process.env.SPOTIFY_ACCESS_TOKEN_REDIS_KEY!, expiresIn);
     }
   }
 

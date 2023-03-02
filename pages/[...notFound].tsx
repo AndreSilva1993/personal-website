@@ -10,7 +10,7 @@ export default function Page() {
     <>
       <Head>
         <title>{t('404.seo.title')}</title>
-        <meta name="description" content={t('404.seo.description')} />
+        <meta name="description" content={t('404.seo.description') || ''} />
       </Head>
       <NotFoundPage />
     </>

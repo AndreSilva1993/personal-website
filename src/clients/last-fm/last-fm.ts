@@ -9,8 +9,8 @@ import type {
 async function requestLastFM<T>(searchParams: Record<string, string | number>) {
   const fetchSearchParams = new URLSearchParams({
     format: 'json',
-    user: process.env.LAST_FM_API_USER,
-    api_key: process.env.LAST_FM_API_KEY,
+    user: process.env.LAST_FM_API_USER!,
+    api_key: process.env.LAST_FM_API_KEY!,
     ...searchParams,
   });
 
@@ -40,7 +40,7 @@ export const getTopAlbums = async (
       name,
       artist: artist.name,
       playCount: playcount,
-      image: image.find(({ size }) => size === 'extralarge')['#text'],
+      image: image.find(({ size }) => size === 'extralarge')!['#text'],
     }));
   } catch (error) {
     return [];
@@ -58,8 +58,8 @@ export const getRecentTracks = async (): Promise<LastFMRecentTrack[]> => {
       name,
       album: album['#text'],
       artist: artist['#text'],
-      unixTimestamp: date?.uts || null,
-      image: image.find(({ size }) => size === 'extralarge')['#text'],
+      unixTimestamp: date?.uts || undefined,
+      image: image.find(({ size }) => size === 'extralarge')!['#text'],
     }));
   } catch (error) {
     return [];

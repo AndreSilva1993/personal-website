@@ -33,8 +33,10 @@ const ImageGrid: FC<ImageGridProps> = ({
       {items.map((item: any, index: number) =>
         render(item, {
           onMouseEnter: () => handleItemMouseEnter(index),
-          ref: (ref: HTMLElement) => {
-            itemsWrappersRef.current[index] = ref;
+          ref: (ref: HTMLElement | null) => {
+            if (ref) {
+              itemsWrappersRef.current[index] = ref;
+            }
           },
         })
       )}

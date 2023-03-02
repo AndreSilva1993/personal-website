@@ -9,15 +9,19 @@ import { useTranslation } from 'react-i18next';
 
 export function NotFoundPage() {
   const { t } = useTranslation();
-  const canvasRef = useRef<HTMLCanvasElement>();
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const numberOfStars = 600;
-    const canvasContext = canvasRef.current.getContext('2d');
 
-    const { offsetWidth, offsetHeight } = canvasRef.current;
-    canvasRef.current.width = offsetWidth;
-    canvasRef.current.height = offsetHeight;
+    const canvasElement = canvasRef.current!;
+    const canvasContext = canvasElement.getContext('2d');
+
+    if (!canvasContext) return;
+
+    const { offsetWidth, offsetHeight } = canvasElement;
+    canvasElement.width = offsetWidth;
+    canvasElement.height = offsetHeight;
 
     canvasContext.fillStyle = '#111';
     canvasContext.fillRect(0, 0, offsetWidth, offsetHeight);

@@ -22,7 +22,7 @@ export const TravelsPage: FC = () => {
 
   const leafletMapRef = useRef<L.Map>();
   const leafletMarkersLayerGroup = useRef<L.LayerGroup>();
-  const leafletMapContainerRef = useRef<HTMLDivElement>();
+  const leafletMapContainerRef = useRef<HTMLDivElement | null>(null);
 
   const travels = useMemo<ITravel[]>(() => travelsJSON.travels, []);
   const countries = useMemo<string[]>(() => travelsJSON.countries, []);
@@ -36,7 +36,7 @@ export const TravelsPage: FC = () => {
     setSelectedTravel(selectedTravel);
     setSelectedCountries(selectedTravel.countryCodes);
 
-    leafletMapContainerRef.current.scrollIntoView({
+    leafletMapContainerRef.current!.scrollIntoView({
       block: 'center',
       behavior: 'smooth',
     });
@@ -50,7 +50,7 @@ export const TravelsPage: FC = () => {
   function flyToMapBounds(markersCoordinates: L.LatLngExpression[]) {
     if (markersCoordinates.length === 0) return;
 
-    leafletMapRef.current.flyToBounds(L.latLngBounds(markersCoordinates), {
+    leafletMapRef.current!.flyToBounds(L.latLngBounds(markersCoordinates), {
       duration: 1,
       paddingTopLeft: [25, 25],
       paddingBottomRight: [25, 25],
@@ -80,7 +80,7 @@ export const TravelsPage: FC = () => {
     leafletMapRef.current.fitBounds(L.latLngBounds(getPlacesCoordinates()));
 
     return () => {
-      leafletMapRef.current.remove();
+      leafletMapRef.current!.remove();
     };
   }, []);
 
@@ -94,7 +94,7 @@ export const TravelsPage: FC = () => {
 
       leafletMarkersLayerGroup.current = L.layerGroup(
         getPlacesCoordinates(selectedTravel).map((coordinates) => L.marker(coordinates))
-      ).addTo(leafletMapRef.current);
+      ).addTo(leafletMapRef.current!);
     },
     [selectedTravel]
   );

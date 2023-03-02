@@ -12,10 +12,12 @@ type AnimationDirection = 'left' | 'right' | 'top' | 'bottom';
 
 const PortfolioItem: FC<PortfolioItemProps> = ({ name, image, index, logoImage, onClick }) => {
   const controls = useAnimation();
-  const wrapperRef = useRef<HTMLDivElement>();
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const [isHovering, setIsHovering] = useState(false);
 
   function getAnimationDirection({ clientX, clientY }: React.MouseEvent) {
+    if (!wrapperRef.current) return {};
+
     const { x, y, height, width } = wrapperRef.current.getBoundingClientRect();
 
     const elementBounds = [

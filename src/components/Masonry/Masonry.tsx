@@ -15,7 +15,10 @@ interface MasonryItemProps {
 
 export function Masonry({ children }: MasonryProps) {
   // The default number of columns is three.
-  const columns = Array.from({ length: 3 }, () => ({ columnCount: 0, items: [] }));
+  const columns = Array.from({ length: 3 }, () => ({
+    columnCount: 0,
+    items: [] as ReactElement[],
+  }));
 
   Children.forEach(children, (child) => {
     const smallerIndex = columns.reduce((lowest, next, index) => {
@@ -25,7 +28,7 @@ export function Masonry({ children }: MasonryProps) {
     }, 0);
 
     columns[smallerIndex].columnCount += child.props.landscape ? 1 : 2;
-    columns[smallerIndex].items = [...columns[smallerIndex].items, child];
+    columns[smallerIndex].items.push(child);
   });
 
   return (
