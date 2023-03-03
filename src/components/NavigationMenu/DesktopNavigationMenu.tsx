@@ -1,13 +1,14 @@
+'use client';
+
 import styles from './DesktopNavigationMenu.module.css';
 
 import Link from 'next/link';
 import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
 
-import type { FC } from 'react';
 import type { DesktopNavigationMenuProps } from './NavigationMenu.types';
 
-const DesktopNavigationMenu: FC<DesktopNavigationMenuProps> = ({ navigationLinks }) => {
+export function DesktopNavigationMenu({ navigationLinks }: DesktopNavigationMenuProps) {
   const pathname = usePathname();
 
   return (
@@ -26,6 +27,4 @@ const DesktopNavigationMenu: FC<DesktopNavigationMenuProps> = ({ navigationLinks
       ))}
     </ul>
   );
-};
-
-export { DesktopNavigationMenu };
+}
