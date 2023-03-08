@@ -27,7 +27,10 @@ export function MusicArtists({ initialTopArtists }: MusicArtistsProps) {
     data: topArtists = { pages: [] },
     fetchNextPage: fetchNextArtists,
   } = useTopArtists(timeRange, {
-    initialData: { pages: [initialTopArtists], pageParams: [] },
+    queryKey: ['music-artists', timeRange],
+    staleTime: 60 * 60 * 1000, // 1 hour cache.
+    initialData:
+      timeRange === 'long_term' ? { pages: [initialTopArtists], pageParams: [] } : undefined,
   });
 
   return (

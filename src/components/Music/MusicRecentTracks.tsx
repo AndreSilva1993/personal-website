@@ -22,6 +22,8 @@ export function MusicRecentTracks({ initialRecentTracks }: MusicRecentTracksProp
   const { t } = useTranslation();
 
   const { data: recentTracks = [] } = useLastFMRecentTracks({
+    queryKey: 'music-recent-tracks',
+    staleTime: 5 * 60 * 1000, // 5 minutes cache.
     initialData: initialRecentTracks,
   });
 

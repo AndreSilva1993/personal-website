@@ -6,15 +6,19 @@ import type {
   LastFMRecentTracksResponse,
 } from './last-fm.types';
 
-async function requestLastFM<T>(searchParams: Record<string, string | number>) {
+async function requestLastFM<T>(
+  searchParams: Record<string, string | number>,
+  cacheDuration: number
+) {
   const fetchSearchParams = new URLSearchParams({
     format: 'json',
     user: process.env.LAST_FM_API_USER!,
     api_key: process.env.LAST_FM_API_KEY!,
     ...searchParams,
   });
-
-  const response = await fetch(`${process.env.LAST_FM_API_URL}?${fetchSearchParams}`);
+  const response = await fetch(`${process.env.LAST_FM_API_URL}?${fetchSearchParams}`, {
+    next: { revalidate: cacheDuration },
+  });
 
   if (!response.ok) {
     return [] as T;
@@ -29,12 +33,10 @@ export const getTopAlbums = async (
   period: LastFMTimePeriod = 'overall'
 ): Promise<LastFMTopAlbum[]> => {
   try {
-    const { topalbums } = await requestLastFM<LastFMTopAlbumsResponse>({
-      method: 'user.gettopalbums',
-      page,
-      period,
-      limit: 20,
-    });
+    const { topalbums } = await requestLastFM<LastFMTopAlbumsResponse>(
+      { method: 'user.gettopalbums', page, period, limit: 20 },
+      60 * 60 // 1 hour cache.
+    );
 
     return topalbums.album.map(({ name, artist, image, playcount }) => ({
       name,
@@ -49,10 +51,10 @@ export const getTopAlbums = async (
 
 export const getRecentTracks = async (): Promise<LastFMRecentTrack[]> => {
   try {
-    const { recenttracks } = await requestLastFM<LastFMRecentTracksResponse>({
-      method: 'user.getrecenttracks',
-      limit: 20,
-    });
+    const { recenttracks } = await requestLastFM<LastFMRecentTracksResponse>(
+      { method: 'user.getrecenttracks', limit: 20 },
+      5 * 60 // 5 minutes cache.
+    );
 
     return recenttracks.track.map(({ name, artist, image, album, date }) => ({
       name,

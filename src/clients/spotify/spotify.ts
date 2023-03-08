@@ -18,6 +18,7 @@ export const getTopArtists = async (
   const response = await fetch(
     `${process.env.SPOTIFY_API_URL}/me/top/artists?${fetchSearchParams}`,
     {
+      next: { revalidate: 60 * 60 }, // 1 hour cache.
       headers: { Authorization: `Bearer ${accessToken}` },
     }
   );

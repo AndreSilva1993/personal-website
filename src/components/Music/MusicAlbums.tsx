@@ -28,7 +28,10 @@ export function MusicAlbums({ initialTopAlbums }: MusicAlbumsProps) {
     data: topAlbums = { pages: [] },
     fetchNextPage: fetchNextAlbums,
   } = useLastFMTopAlbums(timePeriod, {
-    initialData: { pages: [initialTopAlbums], pageParams: [] },
+    queryKey: ['music-albums', timePeriod],
+    staleTime: 60 * 60 * 1000, // 1 hour cache.
+    initialData:
+      timePeriod === 'overall' ? { pages: [initialTopAlbums], pageParams: [] } : undefined,
   });
 
   return (

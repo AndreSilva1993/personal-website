@@ -38,11 +38,11 @@ async function fetchRecentTracks(): Promise<LastFMRecentTrack[]> {
   return responseBody;
 }
 
-const useLastFMTopAlbums = (
+export function useLastFMTopAlbums(
   timePeriod: LastFMTimePeriod,
   options?: UseInfiniteQueryOptions<LastFMTopAlbum[]>
-) =>
-  useInfiniteQuery(
+) {
+  return useInfiniteQuery(
     ['last-fm', 'top-albums', timePeriod],
     ({ pageParam }) => fetchTopAlbums(pageParam, timePeriod),
     {
@@ -50,8 +50,8 @@ const useLastFMTopAlbums = (
       ...options,
     }
   );
+}
 
-const useLastFMRecentTracks = (options?: UseQueryOptions<LastFMRecentTrack[]>) =>
-  useQuery(['last-fm', 'recent-tracks'], () => fetchRecentTracks(), options);
-
-export { useLastFMTopAlbums, useLastFMRecentTracks };
+export function useLastFMRecentTracks(options?: UseQueryOptions<LastFMRecentTrack[]>) {
+  return useQuery(['last-fm', 'recent-tracks'], () => fetchRecentTracks(), options);
+}
