@@ -23,8 +23,9 @@ export function MusicRecentTracks({ initialRecentTracks }: MusicRecentTracksProp
 
   const { data: recentTracks = [] } = useLastFMRecentTracks({
     queryKey: 'music-recent-tracks',
-    staleTime: 5 * 60 * 1000, // 5 minutes cache.
     initialData: initialRecentTracks,
+    staleTime: 1 * 10 * 1000, // 10 seconds cache.
+    refetchInterval: 1 * 10 * 1000, // Refetch every 10 seconds.
   });
 
   return (

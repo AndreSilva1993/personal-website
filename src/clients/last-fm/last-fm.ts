@@ -53,7 +53,7 @@ export const getRecentTracks = async (): Promise<LastFMRecentTrack[]> => {
   try {
     const { recenttracks } = await requestLastFM<LastFMRecentTracksResponse>(
       { method: 'user.getrecenttracks', limit: 20 },
-      5 * 60 // 5 minutes cache.
+      1 * 10 // 10 seconds cache.
     );
 
     return recenttracks.track.map(({ name, artist, image, album, date }) => ({
