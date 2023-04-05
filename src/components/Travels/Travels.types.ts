@@ -1,4 +1,5 @@
 export interface ITravel {
+  slug: string;
   name: string;
   image: string;
   countryCodes: string[];

@@ -11,6 +11,7 @@
   ],
   "travels": [
     {
+      "slug": "prague-budapest",
       "name": "Prague / Budapest",
       "countryCodes": [
         "hu",
@@ -239,6 +240,7 @@
       ]
     },
     {
+      "slug": "london",
       "name": "London",
       "countryCodes": [
         "gb"
@@ -420,6 +422,7 @@
       ]
     },
     {
+      "slug": "azores",
       "name": "Azores",
       "countryCodes": [
         "pt"
@@ -606,6 +609,7 @@
       ]
     },
     {
+      "slug": "madeira",
       "name": "Madeira",
       "countryCodes": [
         "pt"
@@ -684,6 +688,7 @@
       ]
     },
     {
+      "slug": "barcelona",
       "name": "Barcelona",
       "countryCodes": [
         "es"
@@ -847,6 +852,7 @@
       ]
     },
     {
+      "slug": "northern-italy",
       "name": "Northern Italy",
       "countryCodes": [
         "it"
@@ -979,6 +985,7 @@
       ]
     },
     {
+      "slug": "croatia",
       "name": "Croatia",
       "countryCodes": [
         "hr"
@@ -1140,6 +1147,7 @@
       ]
     },
     {
+      "slug": "new-york",
       "name": "New York",
       "image": "/images/travels/new-york/helicopter-ride-1.jpeg",
       "countryCodes": [

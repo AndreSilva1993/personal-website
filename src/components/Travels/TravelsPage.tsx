@@ -5,6 +5,7 @@ import styles from './TravelsPage.module.css';
 import travelsJSON from '@public/travels.json';
 
 import L from 'leaflet';
+import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useRef, useMemo, useState } from 'react';
@@ -17,43 +18,30 @@ import { TravelsList } from '@src/components/Travels/TravelsList';
 import { TravelCountries } from '@src/components/Travels/TravelCountries';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
-export const TravelsPage: FC = () => {
+interface TravelsPageProps {
+  initialSelectedTravel?: string;
+}
+
+export const TravelsPage: FC<TravelsPageProps> = ({ initialSelectedTravel }) => {
+  const router = useRouter();
   const { t } = useTranslation();
 
-  const leafletMapRef = useRef<L.Map>();
   const leafletMarkersLayerGroup = useRef<L.LayerGroup>();
   const leafletMapContainerRef = useRef<HTMLDivElement | null>(null);
 
   const travels = useMemo<ITravel[]>(() => travelsJSON.travels, []);
   const countries = useMemo<string[]>(() => travelsJSON.countries, []);
 
-  const [selectedTravel, setSelectedTravel] = useState<ITravel>();
-  const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
+  const [leafletMap, setLeafletMap] = useState<L.Map>();
+  const [selectedTravel, setSelectedTravel] = useState<ITravel | undefined>(() => {
+    return travelsJSON.travels.find(({ slug }) => slug === initialSelectedTravel);
+  });
 
   function handleTravelClick(index: number) {
-    const selectedTravel = travels[index];
-
-    setSelectedTravel(selectedTravel);
-    setSelectedCountries(selectedTravel.countryCodes);
-
+    setSelectedTravel(travels[index]);
     leafletMapContainerRef.current!.scrollIntoView({
       block: 'center',
       behavior: 'smooth',
-    });
-  }
-
-  function handleGoBackButtonClick() {
-    setSelectedTravel(undefined);
-    setSelectedCountries([]);
-  }
-
-  function flyToMapBounds(markersCoordinates: L.LatLngExpression[]) {
-    if (markersCoordinates.length === 0) return;
-
-    leafletMapRef.current!.flyToBounds(L.latLngBounds(markersCoordinates), {
-      duration: 1,
-      paddingTopLeft: [25, 25],
-      paddingBottomRight: [25, 25],
     });
   }
 
@@ -68,7 +56,7 @@ export const TravelsPage: FC = () => {
   useEffect(function initializeLeafletMap() {
     L.Icon.Default.imagePath = '/images/leaflet/';
 
-    leafletMapRef.current = L.map('map-container', {
+    const newLeafletMap = L.map('map-container', {
       scrollWheelZoom: false,
       layers: [
         L.tileLayer(
@@ -77,16 +65,26 @@ export const TravelsPage: FC = () => {
       ],
     });
 
-    leafletMapRef.current.fitBounds(L.latLngBounds(getPlacesCoordinates()));
+    newLeafletMap.fitBounds(L.latLngBounds(getPlacesCoordinates()));
+    setLeafletMap(newLeafletMap);
 
     return () => {
-      leafletMapRef.current!.remove();
+      newLeafletMap.remove();
     };
   }, []);
 
   useEffect(
     function onSelectedTravelChange() {
-      flyToMapBounds(getPlacesCoordinates(selectedTravel));
+      if (!leafletMap) return;
+
+      router.replace(!selectedTravel ? '/travels' : `/travels?travel=${selectedTravel.slug}`);
+
+      const markersCoordinates = getPlacesCoordinates(selectedTravel);
+      leafletMap.flyToBounds(L.latLngBounds(markersCoordinates), {
+        duration: 1,
+        paddingTopLeft: [25, 25],
+        paddingBottomRight: [25, 25],
+      });
 
       if (leafletMarkersLayerGroup.current) {
         leafletMarkersLayerGroup.current.clearLayers();
@@ -94,10 +92,12 @@ export const TravelsPage: FC = () => {
 
       leafletMarkersLayerGroup.current = L.layerGroup(
         getPlacesCoordinates(selectedTravel).map((coordinates) => L.marker(coordinates))
-      ).addTo(leafletMapRef.current!);
+      ).addTo(leafletMap);
     },
-    [selectedTravel]
+    [leafletMap, selectedTravel]
   );
+
+  const selectedCountries = selectedTravel?.countryCodes || [];
 
   return (
     <PageContainer className={styles.pageContainer}>
@@ -107,16 +107,12 @@ export const TravelsPage: FC = () => {
 
       <AnimatePresence mode="wait">
         {!selectedTravel ? (
-          <TravelsList
-            travels={travels}
-            onTravelClick={handleTravelClick}
-            key={selectedCountries.join(',')}
-          />
+          <TravelsList travels={travels} onTravelClick={handleTravelClick} />
         ) : (
           <TravelItem
             key={selectedTravel.name}
             travel={selectedTravel}
-            onGoBackButtonClick={handleGoBackButtonClick}
+            onGoBackButtonClick={() => setSelectedTravel(undefined)}
           />
         )}
       </AnimatePresence>
