@@ -12,8 +12,6 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function Page({ searchParams }) {
-  const initialSelectedTravel: string = searchParams.travel || '';
-
-  return <LazyTravelsPage initialSelectedTravel={initialSelectedTravel} />;
+export default function Page() {
+  return <LazyTravelsPage />;
 }

@@ -156,6 +156,11 @@
         "one-world-observatory": "One World Observatory",
         "st-patrick-cathedral": "St. Patrick's Cathedral",
         "34-street-herald-sq-station": "34 Street - Herald Sq Station"
+      },
+      "bavaria-austria": {
+        "konigsee": "Konigsee",
+        "neuschwanstein-castle": "Neuschwanstein Castle",
+        "dachau-concentration-camp": "Dachau Concentration Camp"
       }
     }
   },

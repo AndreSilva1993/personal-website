@@ -5,10 +5,10 @@ import styles from './TravelsPage.module.css';
 import travelsJSON from '@public/travels.json';
 
 import L from 'leaflet';
-import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useRef, useMemo, useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import type { FC } from 'react';
 import type { ITravel } from './Travels.types';
@@ -18,13 +18,11 @@ import { TravelsList } from '@src/components/Travels/TravelsList';
 import { TravelCountries } from '@src/components/Travels/TravelCountries';
 import { PageContainer } from '@src/components/PageContainer/PageContainer';
 
-interface TravelsPageProps {
-  initialSelectedTravel?: string;
-}
-
-export const TravelsPage: FC<TravelsPageProps> = ({ initialSelectedTravel }) => {
-  const router = useRouter();
+export const TravelsPage: FC = () => {
   const { t } = useTranslation();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const leafletMarkersLayerGroup = useRef<L.LayerGroup>();
   const leafletMapContainerRef = useRef<HTMLDivElement | null>(null);
@@ -34,6 +32,8 @@ export const TravelsPage: FC<TravelsPageProps> = ({ initialSelectedTravel }) => 
 
   const [leafletMap, setLeafletMap] = useState<L.Map>();
   const [selectedTravel, setSelectedTravel] = useState<ITravel | undefined>(() => {
+    const initialSelectedTravel = searchParams?.get('travel') || '';
+
     return travelsJSON.travels.find(({ slug }) => slug === initialSelectedTravel);
   });
 
@@ -75,11 +75,13 @@ export const TravelsPage: FC<TravelsPageProps> = ({ initialSelectedTravel }) => 
 
   useEffect(
     function onSelectedTravelChange() {
-      if (!leafletMap) return;
+      if (!leafletMap || !pathname) return;
 
-      router.replace(!selectedTravel ? '/travels' : `/travels?travel=${selectedTravel.slug}`);
+      router.replace(!selectedTravel ? pathname : `${pathname}?travel=${selectedTravel.slug}`);
 
       const markersCoordinates = getPlacesCoordinates(selectedTravel);
+      if (markersCoordinates.length === 0) return;
+
       leafletMap.flyToBounds(L.latLngBounds(markersCoordinates), {
         duration: 1,
         paddingTopLeft: [25, 25],

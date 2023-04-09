@@ -7,7 +7,9 @@
     "hu",
     "it",
     "hr",
-    "us"
+    "us",
+    "de",
+    "at"
   ],
   "travels": [
     {
@@ -1408,6 +1410,56 @@
           "coordinates": [
             40.5753,
             -73.9785
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bavaria-austria",
+      "name": "Bavaria / Austria",
+      "image": "/images/travels/bavaria-austria/konigsee-1.jpeg",
+      "countryCodes": [
+        "de",
+        "at"
+      ],
+      "places": [
+        {
+          "name": "travels.places.bavaria-austria.konigsee",
+          "images": [
+            {
+              "url": "/images/travels/bavaria-austria/konigsee-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            47.5542,
+            12.9784
+          ]
+        },
+        {
+          "name": "travels.places.bavaria-austria.dachau-concentration-camp",
+          "images": [
+            {
+              "url": "/images/travels/bavaria-austria/dachau-concentration-camp-1.jpeg",
+              "landscape": true
+            }
+          ],
+          "coordinates": [
+            48.268832258,
+            11.46749813
+          ]
+        },
+        {
+          "name": "travels.places.bavaria-austria.neuschwanstein-castle",
+          "images": [
+            {
+              "url": "/images/travels/bavaria-austria/neuschwanstein-castle-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            47.5576,
+            10.7498
           ]
         }
       ]
