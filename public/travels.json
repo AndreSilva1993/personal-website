@@ -1442,6 +1442,10 @@
             {
               "url": "/images/travels/bavaria-austria/dachau-concentration-camp-1.jpeg",
               "landscape": true
+            },
+            {
+              "url": "/images/travels/bavaria-austria/dachau-concentration-camp-2.jpeg",
+              "landscape": false
             }
           ],
           "coordinates": [
