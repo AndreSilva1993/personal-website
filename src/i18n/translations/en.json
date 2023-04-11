@@ -159,8 +159,10 @@
       },
       "bavaria-austria": {
         "konigsee": "Konigsee",
+        "hallstatt": "Hallstatt",
         "neuschwanstein-castle": "Neuschwanstein Castle",
-        "dachau-concentration-camp": "Dachau Concentration Camp"
+        "dachau-concentration-camp": "Dachau Concentration Camp",
+        "herrenchiemsee-new-palace": "Herrenchiemsee New Palace"
       }
     }
   },

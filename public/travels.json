@@ -1465,6 +1465,36 @@
             47.5576,
             10.7498
           ]
+        },
+        {
+          "name": "travels.places.bavaria-austria.herrenchiemsee-new-palace",
+          "images": [
+            {
+              "url": "/images/travels/bavaria-austria/herrenchiemsee-new-palace.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            47.8605,
+            12.4021
+          ]
+        },
+        {
+          "name": "travels.places.bavaria-austria.hallstatt",
+          "images": [
+            {
+              "url": "/images/travels/bavaria-austria/hallstatt-1.jpeg",
+              "landscape": true
+            },
+            {
+              "url": "/images/travels/bavaria-austria/hallstatt-2.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            47.5622,
+            13.6493
+          ]
         }
       ]
     }

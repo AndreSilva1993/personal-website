@@ -4,6 +4,7 @@
     "prepare": "husky install",
     "type-check": "tsc --noEmit",
     "dev": "next dev --port 4000",
+    "start": "next start",
     "build": "next build"
   },
   "dependencies": {
