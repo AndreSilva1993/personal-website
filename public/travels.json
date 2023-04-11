@@ -1495,6 +1495,19 @@
             47.5622,
             13.6493
           ]
+        },
+        {
+          "name": "travels.places.bavaria-austria.walchensee",
+          "images": [
+            {
+              "url": "/images/travels/bavaria-austria/walchensee-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            47.5922,
+            11.3463
+          ]
         }
       ]
     }
