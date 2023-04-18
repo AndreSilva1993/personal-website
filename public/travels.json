@@ -1417,7 +1417,7 @@
     {
       "slug": "bavaria-austria",
       "name": "Bavaria / Austria",
-      "image": "/images/travels/bavaria-austria/konigsee-1.jpeg",
+      "image": "/images/travels/bavaria-austria/nymphenburg-palace-1.jpeg",
       "countryCodes": [
         "de",
         "at"
@@ -1502,11 +1502,49 @@
             {
               "url": "/images/travels/bavaria-austria/walchensee-1.jpeg",
               "landscape": false
+            },
+            {
+              "url": "/images/travels/bavaria-austria/walchensee-2.jpeg",
+              "landscape": false
             }
           ],
           "coordinates": [
             47.5922,
             11.3463
+          ]
+        },
+        {
+          "name": "travels.places.bavaria-austria.marienplatz",
+          "images": [
+            {
+              "url": "/images/travels/bavaria-austria/marienplatz-1.jpeg",
+              "landscape": true
+            },
+            {
+              "url": "/images/travels/bavaria-austria/marienplatz-2.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            48.1374,
+            11.5754
+          ]
+        },
+        {
+          "name": "travels.places.bavaria-austria.nymphenburg-palace",
+          "images": [
+            {
+              "url": "/images/travels/bavaria-austria/nymphenburg-palace-1.jpeg",
+              "landscape": true
+            },
+            {
+              "url": "/images/travels/bavaria-austria/nymphenburg-palace-2.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [
+            48.1583,
+            11.5033
           ]
         }
       ]

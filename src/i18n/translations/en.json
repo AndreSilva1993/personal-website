@@ -159,8 +159,10 @@
       },
       "bavaria-austria": {
         "konigsee": "Konigsee",
-        "walchensee": "Walchensee",
         "hallstatt": "Hallstatt",
+        "walchensee": "Walchensee",
+        "marienplatz": "Marienplatz",
+        "nymphenburg-palace": "Nymphenburg Palace",
         "neuschwanstein-castle": "Neuschwanstein Castle",
         "dachau-concentration-camp": "Dachau Concentration Camp",
         "herrenchiemsee-new-palace": "Herrenchiemsee New Palace"
