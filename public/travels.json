@@ -1239,6 +1239,20 @@
             }
           ],
           "coordinates": [48.1583, 11.5033]
+        },
+        {
+          "name": "travels.places.bavaria-austria.munich-residenz",
+          "images": [
+            {
+              "url": "/images/travels/bavaria-austria/munich-residenz-1.jpeg",
+              "landscape": false
+            },
+            {
+              "url": "/images/travels/bavaria-austria/munich-residenz-2.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [48.1418, 11.5795]
         }
       ]
     }
