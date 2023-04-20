@@ -1253,6 +1253,16 @@
             }
           ],
           "coordinates": [48.1418, 11.5795]
+        },
+        {
+          "name": "travels.places.bavaria-austria.salzburg-cathedral",
+          "images": [
+            {
+              "url": "/images/travels/bavaria-austria/salzburg-cathedral-1.jpeg",
+              "landscape": false
+            }
+          ],
+          "coordinates": [47.7979, 13.0462]
         }
       ]
     }
