@@ -1,9 +1,9 @@
 const contentSecurityPolicies = [
   { 'default-src': ["'self'"] },
+  { 'connect-src': ["'self'"] },
   { 'img-src': ["'self'", 'data:', 'tiles.stadiamaps.com'] },
   { 'font-src': ["'self'", 'fonts.gstatic.com'] },
-  { 'connect-src': ["'self'", 'vitals.vercel-insights.com'] },
-  { 'script-src': ["'self'", 'cdn.vercel-insights.com', "'unsafe-eval'", "'unsafe-inline'"] },
+  { 'script-src': ["'self'", 'va.vercel-scripts.com', "'unsafe-eval'", "'unsafe-inline'"] },
   { 'style-src': ["'self'", 'fonts.googleapis.com', "'unsafe-inline'"] },
 ];
 
